@@ -26,7 +26,7 @@ IMAGE = (
 app = modal.App("kilometervision-egowalk-synthetic-maps")
 
 
-def _render(points, marker_start: bool = True) -> bytes:
+def _render(points, marker_start: bool = True, line_width: int = 5, pin_radius: int = 16) -> bytes:
     import cv2
     import numpy as np
 
@@ -35,11 +35,11 @@ def _render(points, marker_start: bool = True) -> bytes:
     span = max(float((hi - lo).max()), 1e-6)
     xy = ((values - lo) * (430.0 / span) + 37.0).round().astype("int32")
     image = np.full((512, 512, 3), 245, dtype="uint8")
-    cv2.polylines(image, [xy], False, (0, 0, 220), 5, cv2.LINE_AA)
+    cv2.polylines(image, [xy], False, (0, 0, 220), line_width, cv2.LINE_AA)
     labels = (("S", "E") if marker_start else ("E", "S"))
     for point, label in zip((xy[0], xy[-1]), labels):
         x, y = map(int, point)
-        cv2.circle(image, (x, y), 16, (0, 0, 220), -1, cv2.LINE_AA)
+        cv2.circle(image, (x, y), pin_radius, (0, 0, 220), -1, cv2.LINE_AA)
         cv2.putText(image, label, (x - 7, y - 6), cv2.FONT_HERSHEY_SIMPLEX,
                     0.48, (255, 255, 255), 2, cv2.LINE_AA)
     ok, encoded = cv2.imencode(".png", image)
@@ -68,7 +68,10 @@ def run_remote() -> dict:
     output_dir = ROOT / "experiments" / "external-egowalk"
     output_dir.mkdir(parents=True, exist_ok=True)
     records = []
-    for session in SESSIONS:
+    variants = ((3, 14), (5, 16), (7, 18), (9, 22))
+    for line_width, pin_radius in variants:
+      variant_records = []
+      for session in SESSIONS:
         path = hf_hub_download("EgoWalk/trajectories", f"data/{session}.parquet",
                                repo_type="dataset", local_dir=cache)
         truth = _pose_points(pq.read_table(path).to_pylist())
@@ -82,16 +85,16 @@ def run_remote() -> dict:
             "segment_swapped": _segment_swapped(truth),
         }
         archive_path = Path("/tmp") / f"{session}.zip"
-        payloads = {name: _render(points) for name, points in candidates.items()}
+        payloads = {name: _render(points, line_width=line_width, pin_radius=pin_radius) for name, points in candidates.items()}
         # Keep the geometric route unchanged but swap only S/E for this
         # distractor. The scorer must use markers to reject the wrong traversal
         # direction; rendering a reversed point list with reversed labels would
         # cancel that test.
-        payloads["reversed"] = _render(truth, marker_start=False)
+        payloads["reversed"] = _render(truth, marker_start=False, line_width=line_width, pin_radius=pin_radius)
         question = _write_archive(archive_path, payloads)
         scores = ordered_trace_candidate_scores(question, truth, archive_path)
         order = sorted(range(len(scores)), key=lambda index: scores[index]["score"])
-        records.append({
+        variant_records.append({
             "session": session,
             "candidate_names": list(candidates),
             "scores": [float(item["score"]) for item in scores],
@@ -100,15 +103,24 @@ def run_remote() -> dict:
             "order": [list(candidates)[index] for index in order],
             "truth_rank": order.index(0) + 1,
         })
+      records.append({
+          "line_width": line_width, "pin_radius": pin_radius,
+          "sessions": variant_records,
+          "summary": {
+              "sessions": len(variant_records),
+              "truth_top1": sum(row["truth_rank"] == 1 for row in variant_records),
+              "marker_pairs": sum(all(set(item) == {"S", "E"} for item in row["markers"]) for row in variant_records),
+          },
+      })
     result = {
         "dataset": "EgoWalk/trajectories",
         "test": "synthetic rendered five-map candidates from oracle camera poses",
         "ground_truth_used_for_inference": False,
         "records": records,
         "summary": {
-            "sessions": len(records),
-            "truth_top1": sum(row["truth_rank"] == 1 for row in records),
-            "marker_pairs": sum(all(set(item) == {"S", "E"} for item in row["markers"]) for row in records),
+            "variants": len(records),
+            "best": max((row["summary"] for row in records), key=lambda item: item["truth_top1"]),
+            "by_variant": [{"line_width": row["line_width"], "pin_radius": row["pin_radius"], **row["summary"]} for row in records],
         },
     }
     (output_dir / "synthetic-map-gate.json").write_text(json.dumps(result, indent=2) + "\n")
