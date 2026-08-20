@@ -83,6 +83,8 @@ A lightweight remote triage of the 431 test map-family questions found 284 image
 
 The production evidence audit found 38 route-instruction questions with no Qwen2.5-VL answer (across eight videos). A separate remote Qwen2.5-VL retry produced parseable answers for all 38; 28 differ from the existing deterministic fallback. These predictions are stored under `experiments/vlm-route-retry/` but are not merged into a submission because test labels are unavailable. A 32-frame temporal-stability rerun was stopped after excessive latency without writing an artifact; the 16-frame retry is the usable cost/coverage point.
 
+The reversible candidate `submissions/test_submission_route_retry_2026-08-21.json` applies only those 28 route-instruction replacements to the current 986-question baseline. `submission.audit_predictions` confirms the archive is schema-valid (986/986, no missing or extra IDs); it has not been submitted and its leaderboard effect is unknown.
+
 ## Planned commands
 
 ```bash
