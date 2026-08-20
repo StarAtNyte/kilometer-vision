@@ -226,6 +226,17 @@ def symmetric_chamfer_distance(left, right) -> float:
     return float((distances.min(axis=1).mean() + distances.min(axis=0).mean()) / 2.0)
 
 
+def route_compactness(points) -> float:
+    """Scale-invariant route length divided by endpoint chord."""
+    import numpy as np
+    values = resample_polyline(points)
+    if len(values) < 2:
+        return float("inf")
+    length = float(np.linalg.norm(np.diff(values, axis=0), axis=1).sum())
+    chord = float(np.linalg.norm(values[-1] - values[0]))
+    return length / max(chord, 1e-9)
+
+
 def curvature_sequence(points, stride: int = 4) -> list[float]:
     import numpy as np
     values = np.asarray(points, dtype="float64")
@@ -254,7 +265,8 @@ def dtw_distance(left: Sequence[float], right: Sequence[float]) -> float:
 def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True,
                            reflection_penalty: float = 0.04,
                            frechet_weight: float = 0.0,
-                           chamfer_weight: float = 0.0) -> dict[str, float | str]:
+                           chamfer_weight: float = 0.0,
+                           compactness_weight: float = 0.0) -> dict[str, float | str]:
     """Compare ordered routes while enumerating traversal and axis conventions."""
     import numpy as np
     left = resample_polyline(left_points)
@@ -276,10 +288,11 @@ def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True
             turn_score = float(np.mean(turn_scores))
             frechet = discrete_frechet_distance(left, transformed)
             chamfer = symmetric_chamfer_distance(left, transformed)
-            score = point_score + 0.35 * turn_score + frechet_weight * frechet + chamfer_weight * chamfer + (reflection_penalty if reflect else 0.0)
-            hypotheses.append((score, point_score, turn_score, frechet, chamfer, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
-    score, point_score, turn_score, frechet, chamfer, hypothesis = min(hypotheses)
-    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "chamfer": float(chamfer), "hypothesis": hypothesis}
+            compactness = abs(math.log((route_compactness(left) + 1e-9) / (route_compactness(transformed) + 1e-9)))
+            score = point_score + 0.35 * turn_score + frechet_weight * frechet + chamfer_weight * chamfer + compactness_weight * compactness + (reflection_penalty if reflect else 0.0)
+            hypotheses.append((score, point_score, turn_score, frechet, chamfer, compactness, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
+    score, point_score, turn_score, frechet, chamfer, compactness, hypothesis = min(hypotheses)
+    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "chamfer": float(chamfer), "compactness": float(compactness), "hypothesis": hypothesis}
 
 
 def route_marker_positions(image_bytes: bytes) -> dict[str, tuple[float, float]]:
@@ -352,7 +365,8 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
                                    reflection_penalty: float = 0.04,
                                    frechet_weight: float = 0.0,
                                    marker_guided: bool = False,
-                                   chamfer_weight: float = 0.0) -> list[dict[str, Any]]:
+                                   chamfer_weight: float = 0.0,
+                                   compactness_weight: float = 0.0) -> list[dict[str, Any]]:
     """Score five map candidates against any time-ordered 2-D trajectory."""
     references = question.get("image_paths")
     if not isinstance(references, list) or len(references) != 5:
@@ -369,7 +383,8 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
                 path = orient_path_from_start(path, markers)
             result = ordered_shape_distance(
                 trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty,
-                frechet_weight=frechet_weight, chamfer_weight=chamfer_weight
+                frechet_weight=frechet_weight, chamfer_weight=chamfer_weight,
+                compactness_weight=compactness_weight
             )
             result["candidate_path_points"] = len(path)
             result["marker_positions"] = markers

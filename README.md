@@ -55,6 +55,8 @@ The official VGGT-SLAM 2.0 runner was then tested remotely on the long `G0fWvIxy
 
 DA3-Streaming (DA3NESTED-GIANT-LARGE-1.1, chunk size 60) was also run remotely, with both raw camera-center and gait-smoothed pedestrian trajectories. The available validation map windows scored 0/5 for each DA3 trajectory variant. Independent depth/streaming motion therefore does not currently beat DPVO; the 1 FPS/focal 0.9/p16 lane remains the motion baseline.
 
+Finally, map-conditioned calibration was tested using the scale-invariant route compactness (polyline length divided by S→E chord). It reached only 3/5; a weight sweep from 0.05 to 0.5 never exceeded 3/5. This is another useful negative result: endpoint/length priors overfit the five-question validation set and remain opt-in.
+
 ## Planned commands
 
 ```bash

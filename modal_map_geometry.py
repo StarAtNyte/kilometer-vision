@@ -128,6 +128,20 @@ def evaluate(split: str = "validation") -> dict:
                 reflection_penalty=0.0, frechet_weight=0.25, marker_guided=True
             ) if motion.get("steps") else []
             guided_prediction = min(range(len(guided_scores)), key=lambda index: float(guided_scores[index]["score"])) if guided_scores else None
+            compact_scores = ordered_trace_candidate_scores(
+                question, motion_polyline(motion.get("steps", [])), archive,
+                reflection_penalty=0.0, frechet_weight=0.25, compactness_weight=0.25
+            ) if motion.get("steps") else []
+            compact_prediction = min(range(len(compact_scores)), key=lambda index: float(compact_scores[index]["score"])) if compact_scores else None
+            compact_weight_predictions = {}
+            if motion.get("steps"):
+                for weight in (0.05, 0.1, 0.25, 0.5):
+                    scores = ordered_trace_candidate_scores(
+                        question, motion_polyline(motion.get("steps", [])), archive,
+                        reflection_penalty=0.0, frechet_weight=0.25, compactness_weight=weight
+                    )
+                    if scores:
+                        compact_weight_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -159,6 +173,8 @@ def evaluate(split: str = "validation") -> dict:
                     "ordered_correct": ordered_prediction == answer_id if answer_id is not None else None,
                     "frechet_correct": frechet_prediction == answer_id if answer_id is not None else None,
                     "guided_correct": guided_prediction == answer_id if answer_id is not None else None,
+                    "compact_correct": compact_prediction == answer_id if answer_id is not None else None,
+                    "compact_weight_predictions": compact_weight_predictions,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -181,6 +197,11 @@ def evaluate(split: str = "validation") -> dict:
         "ordered_correct": sum(row["ordered_correct"] is True for row in records),
         "frechet_correct": sum(row["frechet_correct"] is True for row in records),
         "guided_correct": sum(row["guided_correct"] is True for row in records),
+        "compact_correct": sum(row["compact_correct"] is True for row in records),
+        "compact_weight_correct": {
+            weight: sum(row["compact_weight_predictions"].get(weight) == row["answer_id"] for row in records)
+            for weight in ("0.05", "0.1", "0.25", "0.5")
+        },
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)
