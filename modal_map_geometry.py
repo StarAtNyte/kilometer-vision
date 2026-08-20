@@ -105,6 +105,19 @@ def evaluate(split: str = "validation") -> dict:
                         scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0)
                         if scores:
                             slam_predictions[variant] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
+            da3_predictions = {}
+            da3_root = ROOT / "experiments" / "da3-streaming-motion" / split
+            if da3_root.exists():
+                for path in da3_root.glob(f"*/{video_id}.json"):
+                    payload = json.loads(path.read_text())
+                    for row in payload.get("records", []):
+                        if str(row.get("question_id")) != str(question_id):
+                            continue
+                        for name in ("trajectory_2d", "pedestrian_trajectory_2d"):
+                            trace = row.get(name, [])
+                            scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0) if trace else []
+                            if scores:
+                                da3_predictions[f"{path.parent.name}-{name}"] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             frechet_scores = ordered_trace_candidate_scores(
                 question, motion_polyline(motion.get("steps", [])), archive,
                 reflection_penalty=0.0, frechet_weight=0.25
@@ -140,6 +153,7 @@ def evaluate(split: str = "validation") -> dict:
                     "dpvo_scores": dpvo_variants,
                     "dpvo_predictions": dpvo_predictions,
                     "vggt_slam_predictions": slam_predictions,
+                    "da3_predictions": da3_predictions,
                     "answer_id": answer_id,
                     "hu_correct": hu_prediction == answer_id if answer_id is not None else None,
                     "ordered_correct": ordered_prediction == answer_id if answer_id is not None else None,
@@ -153,6 +167,10 @@ def evaluate(split: str = "validation") -> dict:
                     "vggt_slam_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
                         for variant, prediction in slam_predictions.items()
+                    },
+                    "da3_correct": {
+                        variant: prediction == answer_id if answer_id is not None else None
+                        for variant, prediction in da3_predictions.items()
                     },
                 }
             )
@@ -171,6 +189,10 @@ def evaluate(split: str = "validation") -> dict:
         "vggt_slam_correct": {
             variant: sum(row["vggt_slam_correct"].get(variant) is True for row in records)
             for variant in sorted({variant for row in records for variant in row["vggt_slam_correct"]})
+        },
+        "da3_correct": {
+            variant: sum(row["da3_correct"].get(variant) is True for row in records)
+            for variant in sorted({variant for row in records for variant in row["da3_correct"]})
         },
         "records": records,
     }

@@ -53,6 +53,8 @@ Upstream DPVO sweeps were also run remotely: 0.5 FPS scored 1/5, 1.5 FPS scored 
 
 The official VGGT-SLAM 2.0 runner was then tested remotely on the long `G0fWvIxy88A` validation window. It produced 60 keyframes but no loop-closure events and scored 0/1 on that map question. This is a negative loop-closure result, not a reason to replace DPVO.
 
+DA3-Streaming (DA3NESTED-GIANT-LARGE-1.1, chunk size 60) was also run remotely, with both raw camera-center and gait-smoothed pedestrian trajectories. The available validation map windows scored 0/5 for each DA3 trajectory variant. Independent depth/streaming motion therefore does not currently beat DPVO; the 1 FPS/focal 0.9/p16 lane remains the motion baseline.
+
 ## Planned commands
 
 ```bash
