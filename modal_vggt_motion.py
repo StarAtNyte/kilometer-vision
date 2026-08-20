@@ -107,6 +107,8 @@ def _merge_chunks(chunks: list[list[list[float]]], overlap: int) -> list[list[fl
               timeout=6 * 60 * 60)
 def run_vggt(split: str = "validation", max_frames: int = 60,
              chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> dict[str, Any]:
+    os.environ.setdefault("HF_HOME", str(ROOT / "checkpoints" / "huggingface"))
+    os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     import torch
     from vggt.models.vggt import VGGT
     from vggt.utils.load_fn import load_and_preprocess_images
@@ -116,7 +118,9 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     device = "cuda"
     dtype = torch.bfloat16
-    model = VGGT.from_pretrained("facebook/VGGT-1B").to(device).eval()
+    model = VGGT.from_pretrained(
+        "facebook/VGGT-1B", cache_dir=os.environ["HF_HOME"]
+    ).to(device).eval()
     summaries = []
     for video_id, questions in manifest.items():
         if target_video != "__all__" and video_id != target_video:
