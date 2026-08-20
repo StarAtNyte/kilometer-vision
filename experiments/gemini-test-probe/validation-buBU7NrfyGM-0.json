@@ -1,0 +1,16 @@
+{
+  "split": "validation",
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.6-flash",
+  "p16_ranking": [
+    3,
+    0,
+    4,
+    2,
+    1
+  ],
+  "p16_margin": 0.004324268139672457,
+  "ground_truth_used_for_inference": false,
+  "raw_response": "{\n  \"answer\": \"A\",\n  \"confidence\": 0.95,\n  \"reason"
+}

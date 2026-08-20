@@ -1,0 +1,15 @@
+{
+  "video_id": "fGX0Te6pFvk",
+  "question_id": "39",
+  "model": "gemini-3.6-flash",
+  "p16_ranking": [
+    4,
+    0,
+    3,
+    1,
+    2
+  ],
+  "p16_margin": 0.00026152234937463353,
+  "ground_truth_used_for_inference": false,
+  "raw_response": "{\n  \"answer\": \"E\","
+}

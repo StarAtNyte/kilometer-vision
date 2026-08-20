@@ -28,6 +28,8 @@ The original `gpudashboard0` Modal workspace was recovered after a profile mix-u
 
 The follow-up motion-variant audit confirms that `fps1-focal0.9-w256-b256-p16` is the only complete strong lane on the five-question validation map set: it scores 4/5; p8 scores 0/5, fps0.5 scores 1/5, fps1.5 scores 0/5, and focal-0.75 variants score 0–1/5 (several older variants are incomplete). A panel-only Qwen3-VL-32B probe, deliberately omitting video and depth to isolate model reasoning, scores 1/5 and does not provide a safe override. Artifacts are `experiments/map-motion-variant-audit/validation.json` and `experiments/qwen-map-panel-probe/validation.json`; neither changes production predictions.
 
+A two-case held-out Gemini 3.6 Flash probe shows why the validated endpoint/evidence gate cannot be replaced by a generic map prompt: it returned the existing p16 choice on one near-tie and a different choice on another, while the same lightweight prompt returned A on the labeled buBU validation map (the correct answer is C). These answer-blind probes are preserved under `experiments/gemini-test-probe/` and are explicitly excluded from production.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
