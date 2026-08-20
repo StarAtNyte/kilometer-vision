@@ -1,0 +1,65 @@
+{
+  "44": {
+    "selected_index": 1,
+    "raw_text": "ANSWER: B",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "45": {
+    "selected_index": 3,
+    "raw_text": "ANSWER: D",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "46": {
+    "selected_index": 3,
+    "raw_text": "ANSWER: D",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "47": {
+    "selected_index": 4,
+    "raw_text": "ANSWER: E",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "48": {
+    "selected_index": 1,
+    "raw_text": "ANSWER: B",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "49": {
+    "selected_index": 4,
+    "raw_text": "ANSWER: E",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "50": {
+    "selected_index": 2,
+    "raw_text": "ANSWER: C",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "51": {
+    "selected_index": 2,
+    "raw_text": "ANSWER: C",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  },
+  "52": {
+    "selected_index": 2,
+    "raw_text": "ANSWER: C",
+    "status": "ok",
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "frame_count": 16
+  }
+}

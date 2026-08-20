@@ -85,6 +85,8 @@ The production evidence audit found 38 route-instruction questions with no Qwen2
 
 The reversible candidate `submissions/test_submission_route_retry_2026-08-21.json` applies only those 28 route-instruction replacements to the current 986-question baseline. `submission.audit_predictions` confirms the archive is schema-valid (986/986, no missing or extra IDs); it has not been submitted and its leaderboard effect is unknown.
 
+As a stronger-model control, Qwen3.8-27B was run remotely on the nine 4MY route-instruction questions with the same 16-frame budget. It produced nine parseable answers but disagreed with the Qwen2.5 retry on 8/9 questions. This is a negative reliability result; the Qwen3.8 outputs remain an isolated ablation under `experiments/qwen38-route/` and are not merged.
+
 ## Planned commands
 
 ```bash
