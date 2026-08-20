@@ -1,6 +1,10 @@
 import unittest
+import tempfile
+import zipfile
+from pathlib import Path
+from unittest.mock import patch
 
-from map_solver import motion_polyline, ordered_shape_distance, resample_polyline
+from map_solver import motion_polyline, ordered_shape_distance, ordered_trace_candidate_scores, resample_polyline
 
 
 class MapSolverTests(unittest.TestCase):
@@ -39,6 +43,22 @@ class MapSolverTests(unittest.TestCase):
         self.assertEqual(free["hypothesis"], "forward-reflect")
         self.assertAlmostEqual(free["score"], 0.0, places=8)
         self.assertGreater(penalised["score"], free["score"])
+
+    def test_candidate_with_markers_is_oriented_from_start_before_scoring(self):
+        route = [(0, 0), (0, 3), (2, 3), (2, 6), (5, 6)]
+        question = {"image_paths": [f"candidate-{index}.png" for index in range(5)]}
+        with tempfile.TemporaryDirectory() as directory:
+            archive_path = Path(directory) / "maps.zip"
+            with zipfile.ZipFile(archive_path, "w") as archive:
+                for reference in question["image_paths"]:
+                    archive.writestr(reference, b"map")
+            with patch("map_solver.route_path", return_value=route), patch(
+                "map_solver.route_marker_positions", return_value={"S": route[-1], "E": route[0]}
+            ):
+                scores = ordered_trace_candidate_scores(question, list(reversed(route)), archive_path)
+        self.assertEqual(len(scores), 5)
+        self.assertTrue(all(row["hypothesis"] == "forward-direct" for row in scores))
+        self.assertTrue(all(row["score"] < 1e-8 for row in scores))
 
 
 if __name__ == "__main__": unittest.main()

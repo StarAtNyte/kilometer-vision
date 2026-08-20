@@ -1,0 +1,440 @@
+{
+  "dataset": "EgoWalk/trajectories",
+  "sessions_requested": [
+    "2024_07_02__15_27_22",
+    "2024_07_03__09_58_27",
+    "2024_07_04__12_07_13",
+    "2024_07_08__09_36_43",
+    "2024_07_09__12_04_48",
+    "2024_07_09__14_58_27",
+    "2024_07_11__09_55_53",
+    "2024_07_17__16_53_42",
+    "2024_07_19__16_53_59",
+    "2024_08_20__13_03_53"
+  ],
+  "distractors": [
+    "reversed",
+    "reflected",
+    "turn_changed",
+    "segment_swapped"
+  ],
+  "motion_source": "ground-truth camera pose; no KilometerVision labels",
+  "records": [
+    {
+      "session": "2024_07_02__15_27_22",
+      "points": 96,
+      "directed_scores": {
+        "truth": 2.289785593543665e-17,
+        "reversed": 0.061424501326778416,
+        "reflected": 0.036802744273070426,
+        "turn_changed": 0.03634469237864421,
+        "segment_swapped": 0.19402015824938904
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-direct",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "turn_changed",
+        "reflected",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 2.289785593543665e-17,
+        "reversed": 3.2093873756826327e-16,
+        "reflected": 0.036802744273070426,
+        "turn_changed": 0.03634469237864421,
+        "segment_swapped": 0.19402015824938904
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "turn_changed",
+        "reflected",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_03__09_58_27",
+      "points": 96,
+      "directed_scores": {
+        "truth": 3.6118946886945086e-17,
+        "reversed": 0.13351430570722633,
+        "reflected": 0.040000000000000036,
+        "turn_changed": 0.0955052794662512,
+        "segment_swapped": 0.1889213939352652
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 3.6118946886945086e-17,
+        "reversed": 2.7369918424090074e-16,
+        "reflected": 0.040000000000000036,
+        "turn_changed": 0.0955052794662512,
+        "segment_swapped": 0.1889213939352652
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_04__12_07_13",
+      "points": 96,
+      "directed_scores": {
+        "truth": 4.025424535287102e-17,
+        "reversed": 0.04949437257752161,
+        "reflected": 0.03367611406495258,
+        "turn_changed": 0.04611628068931484,
+        "segment_swapped": 0.17953132925549
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-direct",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 4.025424535287102e-17,
+        "reversed": 3.3374079210605236e-16,
+        "reflected": 0.03367611406495258,
+        "turn_changed": 0.04611628068931484,
+        "segment_swapped": 0.17953132925549
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_08__09_36_43",
+      "points": 96,
+      "directed_scores": {
+        "truth": 1.9072330432489886e-17,
+        "reversed": 0.11822029928530926,
+        "reflected": 0.04000000000000002,
+        "turn_changed": 0.09568175522304856,
+        "segment_swapped": 0.18035145292905452
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 1.9072330432489886e-17,
+        "reversed": 8.274862099965496e-16,
+        "reflected": 0.04000000000000002,
+        "turn_changed": 0.09568175522304856,
+        "segment_swapped": 0.18035145292905452
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_09__12_04_48",
+      "points": 96,
+      "directed_scores": {
+        "truth": 2.7871622205544116e-17,
+        "reversed": 0.018198744221196904,
+        "reflected": 0.012131774096729416,
+        "turn_changed": 0.07437377529716833,
+        "segment_swapped": 0.20371569762303018
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-direct",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "reversed",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 2.7871622205544116e-17,
+        "reversed": 9.585443107980958e-17,
+        "reflected": 0.012131774096729416,
+        "turn_changed": 0.07437377529716833,
+        "segment_swapped": 0.20371569762303018
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_09__14_58_27",
+      "points": 96,
+      "directed_scores": {
+        "truth": 4.216429700302375e-17,
+        "reversed": 0.22195897590370411,
+        "reflected": 0.04000000000000004,
+        "turn_changed": 0.1911389532899112,
+        "segment_swapped": 0.18754494991398538
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "segment_swapped",
+        "turn_changed",
+        "reversed"
+      ],
+      "reverse_free_scores": {
+        "truth": 4.216429700302375e-17,
+        "reversed": 5.722511283643957e-16,
+        "reflected": 0.04000000000000004,
+        "turn_changed": 0.1911389532899112,
+        "segment_swapped": 0.18754494991398538
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "segment_swapped",
+        "turn_changed"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_11__09_55_53",
+      "points": 96,
+      "directed_scores": {
+        "truth": 1.5246593050577406e-20,
+        "reversed": 0.06144058435247658,
+        "reflected": 0.04,
+        "turn_changed": 0.0462326840393192,
+        "segment_swapped": 0.19885846526394135
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-reflect",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 1.5246593050577406e-20,
+        "reversed": 1.1343237269102646e-16,
+        "reflected": 0.021440584352476578,
+        "turn_changed": 0.0462326840393192,
+        "segment_swapped": 0.1899761968518357
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_17__16_53_42",
+      "points": 96,
+      "directed_scores": {
+        "truth": 1.8900795751887956e-19,
+        "reversed": 0.22329617571935945,
+        "reflected": 0.04,
+        "turn_changed": 0.10480956148834505,
+        "segment_swapped": 0.16618734139127644
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "segment_swapped",
+        "reversed"
+      ],
+      "reverse_free_scores": {
+        "truth": 1.8900795751887956e-19,
+        "reversed": 3.169561368152447e-16,
+        "reflected": 0.04,
+        "turn_changed": 0.10480956148834505,
+        "segment_swapped": 0.16618734139127644
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_07_19__16_53_59",
+      "points": 96,
+      "directed_scores": {
+        "truth": 2.1694408655644534e-17,
+        "reversed": 0.17853351208295049,
+        "reflected": 0.04000000000000002,
+        "turn_changed": 0.15644600451417798,
+        "segment_swapped": 0.21174846532277836
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 2.1694408655644534e-17,
+        "reversed": 6.621811320555649e-16,
+        "reflected": 0.04000000000000002,
+        "turn_changed": 0.15644600451417798,
+        "segment_swapped": 0.20889949088833307
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    },
+    {
+      "session": "2024_08_20__13_03_53",
+      "points": 96,
+      "directed_scores": {
+        "truth": 2.561797870338293e-17,
+        "reversed": 0.18133746379809035,
+        "reflected": 0.04000000000000003,
+        "turn_changed": 0.09610491388153838,
+        "segment_swapped": 0.18366209118330315
+      },
+      "directed_hypotheses": {
+        "truth": "forward-direct",
+        "reversed": "forward-direct",
+        "reflected": "forward-reflect",
+        "turn_changed": "forward-direct",
+        "segment_swapped": "forward-direct"
+      },
+      "directed_order": [
+        "truth",
+        "reflected",
+        "turn_changed",
+        "reversed",
+        "segment_swapped"
+      ],
+      "reverse_free_scores": {
+        "truth": 2.561797870338293e-17,
+        "reversed": 1.4653494815969193e-15,
+        "reflected": 0.04000000000000003,
+        "turn_changed": 0.09610491388153838,
+        "segment_swapped": 0.18366209118330315
+      },
+      "reverse_free_order": [
+        "truth",
+        "reversed",
+        "reflected",
+        "turn_changed",
+        "segment_swapped"
+      ],
+      "directed_truth_rank": 1,
+      "reverse_free_truth_rank": 1
+    }
+  ],
+  "summary": {
+    "sessions": 10,
+    "directed_truth_top1": 10,
+    "reverse_free_truth_top1": 10,
+    "reversal_separated": 10
+  }
+}

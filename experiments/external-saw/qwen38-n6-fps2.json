@@ -1,0 +1,372 @@
+{
+  "benchmark": "ucsbai/SAW-Bench",
+  "checkpoint": "Qwen/Qwen3.8-27B",
+  "samples_per_task": 6,
+  "fps": 2.0,
+  "selection": "even deterministic row positions; label-blind",
+  "ground_truth_used_for_inference": false,
+  "by_task": {
+    "direction": {
+      "correct": 2,
+      "total": 6,
+      "accuracy": 0.3333333333333333,
+      "unparsed": 0
+    },
+    "shape": {
+      "correct": 2,
+      "total": 6,
+      "accuracy": 0.3333333333333333,
+      "unparsed": 0
+    },
+    "revplan": {
+      "correct": 0,
+      "total": 6,
+      "accuracy": 0.0,
+      "unparsed": 0
+    }
+  },
+  "records": [
+    {
+      "task": "direction",
+      "row_index": 69,
+      "key": "1_23",
+      "question": "From my viewing point at the end of this video, where am I located at the beginning of the video?",
+      "options": [
+        "Same location",
+        "Back right",
+        "Right",
+        "Front right"
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 2,
+      "correct": true,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "direction",
+      "row_index": 208,
+      "key": "3_35",
+      "question": "From my viewing point at the beginning of this video, where am I located at the end of the video?",
+      "options": [
+        "Front left",
+        "Front right",
+        "Front",
+        "Same location"
+      ],
+      "prediction": 1,
+      "raw_text": "B",
+      "answer": 2,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "direction",
+      "row_index": 347,
+      "key": "5_46",
+      "question": "From my viewing point at the end of this video, where am I located at the beginning of the video?",
+      "options": [
+        "Back left",
+        "Back",
+        "Same location",
+        "Back right"
+      ],
+      "prediction": 3,
+      "raw_text": "D",
+      "answer": 2,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "direction",
+      "row_index": 486,
+      "key": "9_18",
+      "question": "From my viewing point at the beginning of this video, where am I located at the end of the video?",
+      "options": [
+        "Same location",
+        "Front left",
+        "Front",
+        "Left"
+      ],
+      "prediction": 0,
+      "raw_text": "A",
+      "answer": 1,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "direction",
+      "row_index": 625,
+      "key": "11_29",
+      "question": "From my viewing point at the end of this video, where am I located at the beginning of the video?",
+      "options": [
+        "Back left",
+        "Left",
+        "Back",
+        "Same location"
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 0,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "direction",
+      "row_index": 764,
+      "key": "13_41",
+      "question": "From my viewing point at the beginning of this video, where am I located at the end of the video?",
+      "options": [
+        "Right",
+        "Same location",
+        "Front right",
+        "Back right"
+      ],
+      "prediction": 0,
+      "raw_text": "A",
+      "answer": 0,
+      "correct": true,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 45,
+      "key": "1_7",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "Circle",
+        "In-place orientation",
+        "Triangle",
+        "U-Shape"
+      ],
+      "prediction": 1,
+      "raw_text": "B",
+      "answer": 1,
+      "correct": true,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 136,
+      "key": "3_31",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "Manhattan-style piecewise linear",
+        "Square",
+        "Triangle",
+        "Zigzag"
+      ],
+      "prediction": 0,
+      "raw_text": "A",
+      "answer": 0,
+      "correct": true,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 227,
+      "key": "5_46",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "Zigzag",
+        "L-Shape",
+        "Square",
+        "Triangle"
+      ],
+      "prediction": 1,
+      "raw_text": "B",
+      "answer": 3,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 318,
+      "key": "9_0",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "L-Shape",
+        "Zigzag",
+        "In-place orientation",
+        "U-Shape"
+      ],
+      "prediction": 3,
+      "raw_text": "D",
+      "answer": 2,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 409,
+      "key": "11_24",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "L-Shape",
+        "Triangle",
+        "Manhattan-style piecewise linear",
+        "In-place orientation"
+      ],
+      "prediction": 1,
+      "raw_text": "B",
+      "answer": 2,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "shape",
+      "row_index": 500,
+      "key": "13_39",
+      "question": "What's the shape of my moving trajectory?",
+      "options": [
+        "Straight line",
+        "U-Shape",
+        "Triangle",
+        "L-Shape"
+      ],
+      "prediction": 0,
+      "raw_text": "A",
+      "answer": 1,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 19,
+      "key": "1_21",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight."
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 1,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 57,
+      "key": "3_27",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight."
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 3,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 95,
+      "key": "5_33",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight."
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 1,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 133,
+      "key": "9_18",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight."
+      ],
+      "prediction": 3,
+      "raw_text": "D",
+      "answer": 0,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 171,
+      "key": "11_24",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight."
+      ],
+      "prediction": 2,
+      "raw_text": "C",
+      "answer": 3,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "task": "revplan",
+      "row_index": 209,
+      "key": "13_30",
+      "question": "From my viewpoint at the end of the video, how can I go back to my starting point?",
+      "options": [
+        "Turn around, go straight. Turn left, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn left and continue go straight.",
+        "Turn around, go straight. Turn right, go straight, then turn right and continue go straight.",
+        "Turn around, go straight. Turn left, go straight, then turn left and continue go straight."
+      ],
+      "prediction": 1,
+      "raw_text": "B",
+      "answer": 3,
+      "correct": false,
+      "fps": 2.0,
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "ground_truth_used_for_inference": false
+    }
+  ]
+}

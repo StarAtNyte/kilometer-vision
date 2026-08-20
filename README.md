@@ -37,6 +37,12 @@ Two newer answer-blind feasibility lanes are also rejected from production. `mod
 
 The subsequent isolated-candidate experiments found a more useful boundary. Gemini 3.6 Flash map-only audits scored 3/5 directly; exact reversed-route direction checks and OCR/OSM start-landmark registration explain all 5/5 validation maps, but this is not yet treated as a robust estimate because validation contains only five map questions. `modal_qwen36_independent_maps.py` evaluates the newer native-multimodal `Qwen/Qwen3.8-27B` without candidate-order exposure. Direct generated scores collapsed to `[92,92,92,92,92]`; raw YES/NO logits scored 1/5 on the hard Czech case until candidate-blind route evidence was frozen. With public source-title grounding, the frozen-evidence variant reached 3/5 (Istanbul, York, Czech). Doubling from 16 to 32 frames did not fix Salzburg or Warsaw, and map-only coordinate OCR returned no labels for Salzburg. The accepted conclusion is narrow: Qwen3.8 is useful for candidate-blind semantic/OCR evidence, not for calibrated candidate selection or compass direction. None of these ablations feed a submission.
 
+### External geometry gates (Modal-only)
+
+Two label-independent checks now isolate geometry from KilometerVision. A six-example-per-task SAW-Bench pilot (`modal_saw_benchmark.py`) gave Qwen3.8-27B 2/6 direction, 2/6 shape, and 0/6 reverse-plan accuracy (4/18 overall), confirming that a stronger VLM does not by itself maintain route state. An EgoWalk oracle-pose benchmark (`egowalk_oracle_geometry.py`) gave the ordered scorer 10/10 top-1 on both directed and reversal-free candidate sets, with all ten reversals separated. This validates the mathematical scorer, not visual odometry.
+
+The rendered five-map follow-up (`modal_egowalk_synthetic_maps.py`) found a remaining image-extraction issue: S/E markers were recovered on 8/10 sessions, but the synthetic raster route was not consistently ranked top-1. This is a useful negative gate—the next work is to make marker/route extraction robust before trusting visual motion or submitting a new map system. All external-video/model work runs on Modal; the local machine is limited to lightweight tests and repository operations.
+
 ## Planned commands
 
 ```bash

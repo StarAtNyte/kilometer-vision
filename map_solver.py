@@ -294,6 +294,8 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
             image_bytes = archive.read(matches[0]) if len(matches) == 1 else b""
             markers = route_marker_positions(image_bytes) if image_bytes else {}
             path = route_path(image_bytes) if image_bytes else []
+            if markers:
+                path = orient_path_from_start(path, markers)
             result = ordered_shape_distance(
                 trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty
             )
