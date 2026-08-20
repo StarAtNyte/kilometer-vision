@@ -49,7 +49,7 @@ def _ground_projection(positions) -> list[list[float]]:
 @app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="H200", memory=65536,
               timeout=3 * 60 * 60)
 def run_loger(split: str = "validation", only_video_id: str = "G0fWvIxy88A",
-              frame_count: int = 60) -> dict:
+              frame_count: int = 60, target_question: str = "__all__") -> dict:
     import sys
     import time
     import cv2
@@ -82,6 +82,8 @@ def run_loger(split: str = "validation", only_video_id: str = "G0fWvIxy88A",
             continue
         for question_id, question in questions.items():
             if len(question.get("image_paths", [])) != 5 or "map" not in classify_question_facets(question):
+                continue
+            if target_question != "__all__" and str(question_id) not in {item.strip() for item in str(target_question).split(",")}:
                 continue
             start = float(question["start_seconds"]); end = float(question["end_seconds"])
             with tempfile.TemporaryDirectory() as tmp:
@@ -127,8 +129,9 @@ def run_loger(split: str = "validation", only_video_id: str = "G0fWvIxy88A",
 
 
 @app.local_entrypoint()
-def main(split: str = "validation", video_id: str = "G0fWvIxy88A", frame_count: int = 60) -> None:
-    result = run_loger.remote(split, video_id, frame_count)
+def main(split: str = "validation", video_id: str = "G0fWvIxy88A", frame_count: int = 60,
+         target_question: str = "__all__") -> None:
+    result = run_loger.remote(split, video_id, frame_count, target_question)
     print(json.dumps({"split": split, "records": len(result["records"]),
                       "frames": [row["frame_count"] for row in result["records"]],
                       "runtime": [row["runtime_seconds"] for row in result["records"]]}, indent=2))
