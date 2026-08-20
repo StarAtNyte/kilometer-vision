@@ -236,15 +236,23 @@ def evaluate(split: str = "validation") -> dict:
                         gemini_reverse_prediction = ord(answer_letter.upper()) - ord("A")
                         gemini_reverse_confidence = float(reverse_payload.get("response", {}).get("confidence", 0.0))
             gemini_gated_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
+            gemini_threshold_predictions = {
+                str(confidence_threshold): gemini_gated_prediction
+                for confidence_threshold in (0.98, 0.99, 0.995)
+            }
             if gemini_duel_prediction is not None and gemini_gated_prediction is not None:
                 base_scores = dpvo_variants.get("fps1-focal0.9-w256-b256-p16", [])
                 ordered_scores = sorted(float(item["score"]) for item in base_scores)
                 margin = ordered_scores[1] - ordered_scores[0] if len(ordered_scores) > 1 else float("inf")
-                if (gemini_reverse_prediction == gemini_duel_prediction
-                        and gemini_duel_confidence >= 0.98
-                        and gemini_reverse_confidence >= 0.98
-                        and margin < 0.005):
-                    gemini_gated_prediction = gemini_duel_prediction
+                for confidence_threshold in (0.98, 0.99, 0.995):
+                    threshold_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
+                    if (gemini_reverse_prediction == gemini_duel_prediction
+                            and gemini_duel_confidence >= confidence_threshold
+                            and gemini_reverse_confidence >= confidence_threshold
+                            and margin < 0.005):
+                        threshold_prediction = gemini_duel_prediction
+                    gemini_threshold_predictions[str(confidence_threshold)] = threshold_prediction
+                gemini_gated_prediction = gemini_threshold_predictions.get("0.99", gemini_gated_prediction)
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -291,6 +299,7 @@ def evaluate(split: str = "validation") -> dict:
                     "gemini_reverse_prediction": gemini_reverse_prediction,
                     "gemini_reverse_confidence": gemini_reverse_confidence,
                     "gemini_gated_prediction": gemini_gated_prediction,
+                    "gemini_threshold_predictions": gemini_threshold_predictions,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -331,6 +340,10 @@ def evaluate(split: str = "validation") -> dict:
             for threshold in ("0", "2", "4", "6", "8")
         },
         "gemini_gated_correct": sum(row["gemini_gated_prediction"] == row["answer_id"] for row in records),
+        "gemini_threshold_correct": {
+            threshold: sum(row.get("gemini_threshold_predictions", {}).get(threshold) == row["answer_id"] for row in records)
+            for threshold in ("0.98", "0.99", "0.995")
+        },
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)
