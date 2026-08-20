@@ -96,8 +96,15 @@ def run_remote() -> dict:
         order = sorted(range(len(scores)), key=lambda index: scores[index]["score"])
         frechet_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25)
         frechet_order = sorted(range(len(frechet_scores)), key=lambda index: frechet_scores[index]["score"])
+        sweep_ranks = {}
+        for weight in (0.1, 0.25, 0.5, 1.0):
+            sweep_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=weight)
+            sweep_order = sorted(range(len(sweep_scores)), key=lambda index: sweep_scores[index]["score"])
+            sweep_ranks[str(weight)] = sweep_order.index(0) + 1
         guided_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25, marker_guided=True)
         guided_order = sorted(range(len(guided_scores)), key=lambda index: guided_scores[index]["score"])
+        chamfer_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25, chamfer_weight=0.25)
+        chamfer_order = sorted(range(len(chamfer_scores)), key=lambda index: chamfer_scores[index]["score"])
         base_rank = {index: rank for rank, index in enumerate(order)}
         frechet_rank = {index: rank for rank, index in enumerate(frechet_order)}
         fusion_order = sorted(range(len(scores)), key=lambda index: base_rank[index] + frechet_rank[index])
@@ -114,6 +121,8 @@ def run_remote() -> dict:
             "fusion_order": [list(candidates)[index] for index in fusion_order],
             "fusion_truth_rank": fusion_order.index(0) + 1,
             "guided_truth_rank": guided_order.index(0) + 1,
+            "chamfer_truth_rank": chamfer_order.index(0) + 1,
+            "frechet_weight_ranks": sweep_ranks,
         })
       records.append({
           "line_width": line_width, "pin_radius": pin_radius,
@@ -124,6 +133,8 @@ def run_remote() -> dict:
               "frechet_truth_top1": sum(row["frechet_truth_rank"] == 1 for row in variant_records),
               "fusion_truth_top1": sum(row["fusion_truth_rank"] == 1 for row in variant_records),
               "guided_truth_top1": sum(row["guided_truth_rank"] == 1 for row in variant_records),
+              "chamfer_truth_top1": sum(row["chamfer_truth_rank"] == 1 for row in variant_records),
+              "frechet_weight_top1": {weight: sum(row["frechet_weight_ranks"][weight] == 1 for row in variant_records) for weight in ("0.1", "0.25", "0.5", "1.0")},
               "marker_pairs": sum(all(set(item) == {"S", "E"} for item in row["markers"]) for row in variant_records),
           },
       })

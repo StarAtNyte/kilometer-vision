@@ -216,6 +216,16 @@ def discrete_frechet_distance(left, right) -> float:
     return float(table[-1, -1])
 
 
+def symmetric_chamfer_distance(left, right) -> float:
+    """Bidirectional nearest-point distance for normalized polylines."""
+    import numpy as np
+    a, b = _normalise(left), _normalise(right)
+    if not len(a) or not len(b):
+        return float("inf")
+    distances = np.linalg.norm(a[:, None, :] - b[None, :, :], axis=2)
+    return float((distances.min(axis=1).mean() + distances.min(axis=0).mean()) / 2.0)
+
+
 def curvature_sequence(points, stride: int = 4) -> list[float]:
     import numpy as np
     values = np.asarray(points, dtype="float64")
@@ -243,7 +253,8 @@ def dtw_distance(left: Sequence[float], right: Sequence[float]) -> float:
 
 def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True,
                            reflection_penalty: float = 0.04,
-                           frechet_weight: float = 0.0) -> dict[str, float | str]:
+                           frechet_weight: float = 0.0,
+                           chamfer_weight: float = 0.0) -> dict[str, float | str]:
     """Compare ordered routes while enumerating traversal and axis conventions."""
     import numpy as np
     left = resample_polyline(left_points)
@@ -264,10 +275,11 @@ def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True
             ]
             turn_score = float(np.mean(turn_scores))
             frechet = discrete_frechet_distance(left, transformed)
-            score = point_score + 0.35 * turn_score + frechet_weight * frechet + (reflection_penalty if reflect else 0.0)
-            hypotheses.append((score, point_score, turn_score, frechet, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
-    score, point_score, turn_score, frechet, hypothesis = min(hypotheses)
-    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "hypothesis": hypothesis}
+            chamfer = symmetric_chamfer_distance(left, transformed)
+            score = point_score + 0.35 * turn_score + frechet_weight * frechet + chamfer_weight * chamfer + (reflection_penalty if reflect else 0.0)
+            hypotheses.append((score, point_score, turn_score, frechet, chamfer, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
+    score, point_score, turn_score, frechet, chamfer, hypothesis = min(hypotheses)
+    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "chamfer": float(chamfer), "hypothesis": hypothesis}
 
 
 def route_marker_positions(image_bytes: bytes) -> dict[str, tuple[float, float]]:
@@ -339,7 +351,8 @@ def ordered_candidate_scores(question: Mapping[str, Any], motion: Mapping[str, A
 def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_path: Path,
                                    reflection_penalty: float = 0.04,
                                    frechet_weight: float = 0.0,
-                                   marker_guided: bool = False) -> list[dict[str, Any]]:
+                                   marker_guided: bool = False,
+                                   chamfer_weight: float = 0.0) -> list[dict[str, Any]]:
     """Score five map candidates against any time-ordered 2-D trajectory."""
     references = question.get("image_paths")
     if not isinstance(references, list) or len(references) != 5:
@@ -356,7 +369,7 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
                 path = orient_path_from_start(path, markers)
             result = ordered_shape_distance(
                 trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty,
-                frechet_weight=frechet_weight
+                frechet_weight=frechet_weight, chamfer_weight=chamfer_weight
             )
             result["candidate_path_points"] = len(path)
             result["marker_positions"] = markers

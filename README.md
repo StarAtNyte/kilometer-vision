@@ -47,6 +47,8 @@ The next research-backed ablation adds an opt-in discrete Fréchet term to the o
 
 An S/E-guided skeleton shortest-path variant was also tested. It matched the Fréchet result externally (4/10) and remained 1/5 on validation; rank fusion did not improve it. The production path therefore stays on the proven DPVO fps1/p16 lane while these alternatives remain explicit ablations.
 
+A Fréchet weight sweep (0.1, 0.25, 0.5, 1.0) found 0.25–1.0 tied at 4/10 on the external gate; no coefficient exceeded that ceiling. Chamfer matching also tied at 4/10. This rules out simple metric-weight tuning as the main remaining fix.
+
 ## Planned commands
 
 ```bash
