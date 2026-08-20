@@ -245,7 +245,8 @@ def run_vlm_solver(
 
     manifest_path = ROOT / "manifests" / f"{split}.json"
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
-    targets = sorted(payload.keys()) if video_id == "__all__" else [video_id]
+    targets = (sorted(payload.keys()) if video_id == "__all__"
+               else [target for target in video_id.split(",") if target])
 
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(checkpoint, torch_dtype=torch.bfloat16, device_map="cuda")
     processor = AutoProcessor.from_pretrained(checkpoint)

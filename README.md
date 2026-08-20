@@ -81,6 +81,8 @@ The evaluator now prefers a complete Gemini 3.7 base/reverse artifact pair over 
 
 A lightweight remote triage of the 431 test map-family questions found 284 image-candidate map questions and 147 text route-instruction questions. All 284 image questions have a DPVO ordered-map ranking; 130 have a top-two margin below 0.005. The 147 text questions are a separate route-instruction bottleneck, not failed image-map extraction. This is a measurement for planning, not a test-label-informed change.
 
+The production evidence audit found 38 route-instruction questions with no Qwen2.5-VL answer (across eight videos). A separate remote Qwen2.5-VL retry produced parseable answers for all 38; 28 differ from the existing deterministic fallback. These predictions are stored under `experiments/vlm-route-retry/` but are not merged into a submission because test labels are unavailable. A 32-frame temporal-stability rerun was stopped after excessive latency without writing an artifact; the 16-frame retry is the usable cost/coverage point.
+
 ## Planned commands
 
 ```bash

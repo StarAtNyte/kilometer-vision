@@ -1,0 +1,26 @@
+{
+  "1": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "2": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "3": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "4": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  }
+}

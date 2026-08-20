@@ -1,0 +1,134 @@
+{
+  "21": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "22": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "23": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "B",
+    "selected_index": 1,
+    "status": "ok"
+  },
+  "24": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "25": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "B",
+    "selected_index": 1,
+    "status": "ok"
+  },
+  "26": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "27": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "D",
+    "selected_index": 3,
+    "status": "ok"
+  },
+  "28": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "B",
+    "selected_index": 1,
+    "status": "ok"
+  },
+  "29": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "30": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "31": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "32": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "33": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "34": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "37": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "38": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "D",
+    "selected_index": 3,
+    "status": "ok"
+  },
+  "39": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "A",
+    "selected_index": 0,
+    "status": "ok"
+  },
+  "40": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "D",
+    "selected_index": 3,
+    "status": "ok"
+  },
+  "41": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "C",
+    "selected_index": 2,
+    "status": "ok"
+  },
+  "42": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "A",
+    "selected_index": 0,
+    "status": "ok"
+  },
+  "43": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "44": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "D",
+    "selected_index": 3,
+    "status": "ok"
+  }
+}

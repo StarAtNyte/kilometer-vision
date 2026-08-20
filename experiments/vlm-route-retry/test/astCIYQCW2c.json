@@ -1,0 +1,38 @@
+{
+  "21": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "22": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "B",
+    "selected_index": 1,
+    "status": "ok"
+  },
+  "23": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "24": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "27": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  },
+  "28": {
+    "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "raw_text": "E",
+    "selected_index": 4,
+    "status": "ok"
+  }
+}
