@@ -6,7 +6,24 @@ PATHFINDER is an evidence-first spatial reasoning pipeline for the Perception Te
 
 Challenge media and derived artifacts belong only in Modal Volume `perception-test-2026-data`. Shared originals are under `/data/shared/walking-tours`; this project will reference them rather than duplicate videos locally. Local files contain code, manifests/schema documentation, and tiny synthetic fixtures only.
 
-The August 11, 2026 organizer release currently reports 13 validation videos / 18 questions and 54 test videos / 986 questions. Re-download updated metadata and images before inference; the organizer explicitly replaced questions. Geometry-integrated validation submission **579418** completed privately on EvalAI with Top-1 **0.4444444444**; geometry-integrated private test submission **579417** scored **0.2454361055** (baseline 579376: **0.2434077079**, +0.0020284). The public leaderboard reference leader is approximately **0.4544**; this private score is about **20.9 percentage points lower** and has no public rank.
+The August 11, 2026 organizer release currently reports 13 validation videos / 18 questions and 54 test videos / 986 questions. Re-download updated metadata and images before inference; the organizer explicitly replaced questions.
+
+## Test leaderboard
+
+Current EvalAI test leaderboard plus our best private submission, checked **August 20, 2026**:
+
+| Position | Team / submission | Top-1 | Visibility |
+| ---: | --- | ---: | --- |
+| 1 | BoundedAccord | 0.454 | Public |
+| 2* | StarAtNyte — submission 579590 | **0.250507** | Private; projected position if made public |
+| 2 | StarAtNyte — submission 579438 | 0.245436 | Public |
+| 3 | Host_37595_Team | 0.196 | Public |
+
+`2*` is a comparison position, not an official EvalAI rank while submission 579590 remains private. It is the production baseline: 247/986 correct and three answers better than submission 579535 after the isolated compass change. Refresh the official public table with:
+
+```bash
+evalai challenge 2707 leaderboard 7010
+```
 
 ## Architecture
 

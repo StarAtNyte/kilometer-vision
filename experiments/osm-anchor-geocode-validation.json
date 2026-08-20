@@ -1,0 +1,1734 @@
+{
+  "ground_truth_used": false,
+  "radius_km": 30.0,
+  "records": {
+    "4MYTCny_FZs": {
+      "title": "Walking in ISTANBUL / Turkey 🇹🇷- Kadıköy Tour (Asian Side) - 4K 60fps (UHD)",
+      "queries": [
+        "ISTANBUL",
+        "Kadıköy Tour",
+        "Kadıköy",
+        "Istanbul’s Asian",
+        "Both Kadıköy",
+        "Khalkedon",
+        "Üsküdar",
+        "Scutari",
+        "Bosphorus",
+        "Anatolian",
+        "Kadikoy Square",
+        "Ataturk"
+      ],
+      "queries_with_results": 10,
+      "cluster": {
+        "score": [
+          7,
+          2.4893726011477493
+        ],
+        "center": [
+          41.006381,
+          28.9758715
+        ],
+        "members": [
+          {
+            "query": "ISTANBUL",
+            "lat": 41.006381,
+            "lon": 28.9758715,
+            "display_name": "İstanbul, Fatih, İstanbul, Marmara Bölgesi, 34122, Türkiye",
+            "type": "city",
+            "importance": 0.7828175079468411
+          },
+          {
+            "query": "Kadıköy Tour",
+            "lat": 40.9837392,
+            "lon": 29.0394267,
+            "display_name": "Hira Tour, 42, Recep Peker Caddesi, Kızıltoprak, Zühtüpaşa Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34724, Türkiye",
+            "type": "travel_agency",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "query": "Kadıköy",
+            "lat": 40.9912955,
+            "lon": 29.0245631,
+            "display_name": "Kadıköy, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.5349770990604704
+          },
+          {
+            "query": "Khalkedon",
+            "lat": 41.0020025,
+            "lon": 29.0329013,
+            "display_name": "Khalkedon Antik Şehri, İbrahimağa Zaviyesi Sokağı, Koşuyolu Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34718, Türkiye",
+            "type": "archaeological_site",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "query": "Üsküdar",
+            "lat": 41.0265498,
+            "lon": 29.0151321,
+            "display_name": "Üsküdar, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.5617350440588295
+          },
+          {
+            "query": "Bosphorus",
+            "lat": 41.1125268,
+            "lon": 29.0718072,
+            "display_name": "İstanbul Boğazı, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "strait",
+            "importance": 0.6095985165727964
+          },
+          {
+            "query": "Kadikoy Square",
+            "lat": 40.9647954,
+            "lon": 29.0866266,
+            "display_name": "Square Coffee & Bowl, no:11/a, Hakim Kemal Sokağı, Ayşekadın, Suadiye Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34740, Türkiye",
+            "type": "cafe",
+            "importance": 8.147783627064954e-05
+          }
+        ]
+      },
+      "query_results": {
+        "ISTANBUL": [
+          {
+            "lat": 41.006381,
+            "lon": 28.9758715,
+            "display_name": "İstanbul, Fatih, İstanbul, Marmara Bölgesi, 34122, Türkiye",
+            "type": "city",
+            "importance": 0.7828175079468411
+          },
+          {
+            "lat": 41.0707456,
+            "lon": 29.0509414,
+            "display_name": "İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.603835278568622
+          }
+        ],
+        "Kadıköy Tour": [
+          {
+            "lat": 40.9837392,
+            "lon": 29.0394267,
+            "display_name": "Hira Tour, 42, Recep Peker Caddesi, Kızıltoprak, Zühtüpaşa Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34724, Türkiye",
+            "type": "travel_agency",
+            "importance": 8.147783627064954e-05
+          }
+        ],
+        "Kadıköy": [
+          {
+            "lat": 40.9912955,
+            "lon": 29.0245631,
+            "display_name": "Kadıköy, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.5349770990604704
+          },
+          {
+            "lat": 39.947201,
+            "lon": 38.4537917,
+            "display_name": "Kadıköy, Refahiye, Erzincan, Doğu Anadolu Bölgesi, Türkiye",
+            "type": "village",
+            "importance": 0.38656660986684044
+          },
+          {
+            "lat": 41.4814455,
+            "lon": 34.1629107,
+            "display_name": "Kadıköy, Taşköprü, Kastamonu, Karadeniz Bölgesi, Türkiye",
+            "type": "village",
+            "importance": 0.38154785896147225
+          },
+          {
+            "lat": 39.472138,
+            "lon": 32.484181,
+            "display_name": "Kadıköy, Haymana, Ankara, İç Anadolu Bölgesi, 06860, Türkiye",
+            "type": "village",
+            "importance": 0.3735437609124175
+          },
+          {
+            "lat": 39.180672,
+            "lon": 27.367924,
+            "display_name": "Kadıköy Mahallesi, Bergama, İzmir, Ege Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.36315663276805743
+          }
+        ],
+        "Istanbul’s Asian": [],
+        "Both Kadıköy": [],
+        "Khalkedon": [
+          {
+            "lat": 41.0020025,
+            "lon": 29.0329013,
+            "display_name": "Khalkedon Antik Şehri, İbrahimağa Zaviyesi Sokağı, Koşuyolu Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34718, Türkiye",
+            "type": "archaeological_site",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "lat": 40.9987509,
+            "lon": 29.0245932,
+            "display_name": "Khalkedon Kilisesi, Haydarpaşa Köprüsü, Yeldeğirmeni, Rasimpaşa Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34716, Türkiye",
+            "type": "archaeological_site",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "lat": 40.9894068,
+            "lon": 29.0252188,
+            "display_name": "Khalkedon Hotel Istanbul, 2, Tellalzade Sokağı, Bahariye, Caferağa Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34710, Türkiye",
+            "type": "hotel",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "lat": 40.980819,
+            "lon": 29.0237483,
+            "display_name": "Khalkedon Tekel, Moda Caddesi, Moda, Caferağa Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34710, Türkiye",
+            "type": "alcohol",
+            "importance": 8.147783627064954e-05
+          },
+          {
+            "lat": 40.9814605,
+            "lon": 29.0372757,
+            "display_name": "Khalkedon Kalamış, Münir Nürettin Selçuk Caddesi, Kalamış, Fenerbahçe Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34726, Türkiye",
+            "type": "restaurant",
+            "importance": 8.147783627064954e-05
+          }
+        ],
+        "Üsküdar": [
+          {
+            "lat": 41.0265498,
+            "lon": 29.0151321,
+            "display_name": "Üsküdar, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.5617350440588295
+          }
+        ],
+        "Scutari": [
+          {
+            "lat": 42.0681371,
+            "lon": 19.5121437,
+            "display_name": "Shkodër, Bashkia Shkodër, Qarku i Shkodrës, 4001-4007, Shqipëria",
+            "type": "administrative",
+            "importance": 0.6051958363923308
+          },
+          {
+            "lat": 48.0598222,
+            "lon": 26.7573958,
+            "display_name": "Scutari, Mileanca, Botoșani, 717282, România",
+            "type": "village",
+            "importance": 0.3933592766861344
+          }
+        ],
+        "Bosphorus": [
+          {
+            "lat": 41.1125268,
+            "lon": 29.0718072,
+            "display_name": "İstanbul Boğazı, İstanbul, Marmara Bölgesi, Türkiye",
+            "type": "strait",
+            "importance": 0.6095985165727964
+          }
+        ],
+        "Anatolian": [
+          {
+            "lat": 25.2796851,
+            "lon": 51.5436648,
+            "display_name": "Anatolian, الطريق الدائري الثاني, الغانم القديم, الدوحة, قطر",
+            "type": "restaurant",
+            "importance": 7.378728923471454e-05
+          },
+          {
+            "lat": 50.9009917,
+            "lon": -1.4037848,
+            "display_name": "Anatolian, High Street, Below Bar, St Mary's, Southampton, England, SO14 2BT, United Kingdom",
+            "type": "restaurant",
+            "importance": 7.061646448458102e-05
+          },
+          {
+            "lat": 47.9250199,
+            "lon": 9.7523233,
+            "display_name": "Anatolian, 51, Bahnhofstraße, Waldsee, Bad Waldsee, VVG der Stadt Bad Waldsee, Landkreis Ravensburg, Baden-Württemberg, 88339, Deutschland",
+            "type": "restaurant",
+            "importance": 5.5830472266682195e-05
+          },
+          {
+            "lat": 50.9580728,
+            "lon": 5.6901696,
+            "display_name": "Anatolian, 18, Ringlaan, Proosterbos, Mechelen-aan-de-Maas, Maasmechelen, Tongeren, Limburg, Vlaanderen, 3630, België / Belgique / Belgien",
+            "type": "fast_food",
+            "importance": 5.506141756308869e-05
+          },
+          {
+            "lat": 7.8359363,
+            "lon": 98.2986763,
+            "display_name": "Anatolian, ถนนปฏัก, หาดกะตะใหญ่, บ้านกะรน, กะรน, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83100, ประเทศไทย",
+            "type": "restaurant",
+            "importance": 5.3094529640604524e-05
+          }
+        ],
+        "Kadikoy Square": [
+          {
+            "lat": 40.9647954,
+            "lon": 29.0866266,
+            "display_name": "Square Coffee & Bowl, no:11/a, Hakim Kemal Sokağı, Ayşekadın, Suadiye Mahallesi, Kadıköy, İstanbul, Marmara Bölgesi, 34740, Türkiye",
+            "type": "cafe",
+            "importance": 8.147783627064954e-05
+          }
+        ],
+        "Ataturk": [
+          {
+            "lat": 37.189576,
+            "lon": 40.599674,
+            "display_name": "Atatürk Mahallesi, Üçevler, Artuklu, Mardin, Güneydoğu Anadolu Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.3425880974885877
+          },
+          {
+            "lat": 41.1353568,
+            "lon": 35.4644894,
+            "display_name": "Atatürk, Doyran, Vezirköprü, Samsun, Karadeniz Bölgesi, 55900, Türkiye",
+            "type": "suburb",
+            "importance": 0.33278388606982795
+          },
+          {
+            "lat": 39.1023586,
+            "lon": 27.1935983,
+            "display_name": "Atatürk Mahallesi, Bergama, İzmir, Ege Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.322688475709118
+          },
+          {
+            "lat": 40.0354918,
+            "lon": 28.3911988,
+            "display_name": "Atatürk, Mustafakemalpaşa, Bursa, Marmara Bölgesi, Türkiye",
+            "type": "suburb",
+            "importance": 0.3202715765630289
+          },
+          {
+            "lat": 38.9196866,
+            "lon": 27.8239381,
+            "display_name": "Atatürk, Atatürk Mahallesi, Akhisar, Manisa, Ege Bölgesi, 45200, Türkiye",
+            "type": "suburb",
+            "importance": 0.3090170114439377
+          }
+        ]
+      }
+    },
+    "G0fWvIxy88A": {
+      "title": "Walking in YORK / England (UK) 🇬🇧- 4K 60fps (UHD)",
+      "queries": [
+        "YORK",
+        "England",
+        "Romans",
+        "Gothic",
+        "Exhibition Square",
+        "York Minster",
+        "River Ouse",
+        "Selby Magistrates' Courthouse",
+        "Clifford's Tower",
+        "It's",
+        "October"
+      ],
+      "queries_with_results": 10,
+      "cluster": {
+        "score": [
+          5,
+          2.3438273944335863
+        ],
+        "center": [
+          53.9656579,
+          -1.0743052
+        ],
+        "members": [
+          {
+            "query": "YORK",
+            "lat": 53.9656579,
+            "lon": -1.0743052,
+            "display_name": "York, York and North Yorkshire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.6579197554292212
+          },
+          {
+            "query": "Exhibition Square",
+            "lat": 53.9628119,
+            "lon": -1.0856005,
+            "display_name": "Exhibition Square, Bootham, Bishophill, York, York and North Yorkshire, England, United Kingdom",
+            "type": "square",
+            "importance": 0.28008114849440524
+          },
+          {
+            "query": "York Minster",
+            "lat": 53.9623561,
+            "lon": -1.0820834,
+            "display_name": "York Minster, Minster Yard, Bootham, Bishophill, York, York and North Yorkshire, England, YO1 7HH, United Kingdom",
+            "type": "place_of_worship",
+            "importance": 0.5231517204284291
+          },
+          {
+            "query": "River Ouse",
+            "lat": 53.8103182,
+            "lon": -1.0426146,
+            "display_name": "Ouse, North Yorkshire, York and North Yorkshire, England, United Kingdom",
+            "type": "river",
+            "importance": 0.49296401080628877
+          },
+          {
+            "query": "Clifford's Tower",
+            "lat": 53.9558294,
+            "lon": -1.0801796,
+            "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9SA, United Kingdom",
+            "type": "attraction",
+            "importance": 0.3897107592752421
+          }
+        ]
+      },
+      "query_results": {
+        "YORK": [
+          {
+            "lat": 53.9656579,
+            "lon": -1.0743052,
+            "display_name": "York, York and North Yorkshire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.6579197554292212
+          },
+          {
+            "lat": 53.9590555,
+            "lon": -1.0815361,
+            "display_name": "York, York and North Yorkshire, England, YO1 8SG, United Kingdom",
+            "type": "city",
+            "importance": 0.6579197554292212
+          },
+          {
+            "lat": 39.962493,
+            "lon": -76.7276989,
+            "display_name": "York, York County, Pennsylvania, 17401, United States",
+            "type": "administrative",
+            "importance": 0.5744823392037788
+          },
+          {
+            "lat": 37.2230374,
+            "lon": -76.5156945,
+            "display_name": "York County, Virginia, United States",
+            "type": "administrative",
+            "importance": 0.5431817411558527
+          },
+          {
+            "lat": 40.871617,
+            "lon": -97.6001401,
+            "display_name": "York County, Nebraska, United States",
+            "type": "administrative",
+            "importance": 0.5242976136510101
+          }
+        ],
+        "England": [
+          {
+            "lat": 52.5310214,
+            "lon": -1.2649062,
+            "display_name": "England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.8954187298341272
+          }
+        ],
+        "Romans": [
+          {
+            "lat": 46.1217852,
+            "lon": 5.0238916,
+            "display_name": "Romans, Bourg-en-Bresse, Ain, Auvergne-Rhône-Alpes, France métropolitaine, 01400, France",
+            "type": "administrative",
+            "importance": 0.5666746919213501
+          },
+          {
+            "lat": 45.0458886,
+            "lon": 5.0528681,
+            "display_name": "Romans-sur-Isère, Valence, Drôme, Auvergne-Rhône-Alpes, France métropolitaine, 26100, France",
+            "type": "administrative",
+            "importance": 0.5662386222714181
+          },
+          {
+            "lat": 46.3599089,
+            "lon": -0.2281165,
+            "display_name": "Romans, Niort, Deux-Sèvres, Nouvelle-Aquitaine, France métropolitaine, 79260, France",
+            "type": "administrative",
+            "importance": 0.5282396767478131
+          },
+          {
+            "lat": 45.8906065,
+            "lon": 13.4382187,
+            "display_name": "Romans d'Isonzo / Romans dal Lusinç, Gorizia / Gurize / Gorica, Friuli-Venezia Giulia, 34076, Italia",
+            "type": "administrative",
+            "importance": 0.47329590008323624
+          },
+          {
+            "lat": 45.1127,
+            "lon": 5.32627,
+            "display_name": "Saint-Romans, Grenoble, Isère, Auvergne-Rhône-Alpes, France métropolitaine, 38160, France",
+            "type": "administrative",
+            "importance": 0.5763340326321279
+          }
+        ],
+        "Gothic": [
+          {
+            "lat": 38.9591503,
+            "lon": -106.9903295,
+            "display_name": "Gothic, Gunnison County, Colorado, United States",
+            "type": "hamlet",
+            "importance": 0.13336833524071104
+          },
+          {
+            "lat": 45.7969173,
+            "lon": 24.152713,
+            "display_name": "Gothic, 14, Piața Mare, Orașul de Sus, Centrul Istoric, Sibiu, 550163, România",
+            "type": "restaurant",
+            "importance": 6.810330357819513e-05
+          },
+          {
+            "lat": 46.0659657,
+            "lon": 23.5681017,
+            "display_name": "Gothic, Aleea Sfântul Eugeniu, Cetatea Bastionară Alba Carolina, Alba Iulia, Alba, 510010, România",
+            "type": "restaurant",
+            "importance": 6.600671396958903e-05
+          },
+          {
+            "lat": 10.1320032,
+            "lon": -64.6848315,
+            "display_name": "gothic, Calle Maturín, Barrio La Chica, Casco Central, Barcelona, Parroquia San Cristóbal, Municipio Simón Bolívar, Anzoátegui, 6001, Venezuela",
+            "type": "internet_cafe",
+            "importance": 4.6659800106767646e-05
+          },
+          {
+            "lat": 38.9581524,
+            "lon": -106.9884683,
+            "display_name": "Gothic, Gothic Road, Gothic, Gunnison County, Colorado, United States",
+            "type": "drinking_water",
+            "importance": 3.500190737769158e-05
+          }
+        ],
+        "Exhibition Square": [
+          {
+            "lat": 53.9628119,
+            "lon": -1.0856005,
+            "display_name": "Exhibition Square, Bootham, Bishophill, York, York and North Yorkshire, England, United Kingdom",
+            "type": "square",
+            "importance": 0.28008114849440524
+          },
+          {
+            "lat": 53.9619934,
+            "lon": -1.0856388,
+            "display_name": "Exhibition Square, St Leonard's Place, Bootham, Bishophill, York, York and North Yorkshire, England, YO1 7HF, United Kingdom",
+            "type": "bus_stop",
+            "importance": 7.103303578236083e-05
+          },
+          {
+            "lat": 53.9625019,
+            "lon": -1.0856146,
+            "display_name": "Exhibition Square, Bootham, Bishophill, York, York and North Yorkshire, England, YO30 7BN, United Kingdom",
+            "type": "bus_stop",
+            "importance": 7.103303578236083e-05
+          }
+        ],
+        "York Minster": [
+          {
+            "lat": 53.9623561,
+            "lon": -1.0820834,
+            "display_name": "York Minster, Minster Yard, Bootham, Bishophill, York, York and North Yorkshire, England, YO1 7HH, United Kingdom",
+            "type": "place_of_worship",
+            "importance": 0.5231517204284291
+          },
+          {
+            "lat": 53.9624391,
+            "lon": -1.0815244,
+            "display_name": "Minster Police Office, Minster Yard, Bootham, Bishophill, York, York and North Yorkshire, England, YO1 7HH, United Kingdom",
+            "type": "police",
+            "importance": 0.3331894015087746
+          }
+        ],
+        "River Ouse": [
+          {
+            "lat": 53.8103182,
+            "lon": -1.0426146,
+            "display_name": "Ouse, North Yorkshire, York and North Yorkshire, England, United Kingdom",
+            "type": "river",
+            "importance": 0.49296401080628877
+          },
+          {
+            "lat": -42.1449247,
+            "lon": 146.7482395,
+            "display_name": "River Ouse, Tasmania, Australia",
+            "type": "river",
+            "importance": 0.16004295643549246
+          },
+          {
+            "lat": 50.7961066,
+            "lon": 0.0477213,
+            "display_name": "River Ouse, Newhaven, South Heighton, Lewes, East Sussex, England, BN9 9BG, United Kingdom",
+            "type": "river",
+            "importance": 0.1467176462958724
+          },
+          {
+            "lat": 53.7250359,
+            "lon": -0.8665003,
+            "display_name": "River Ouse, Hook, Howden, East Riding of Yorkshire, Hull and East Yorkshire, England, United Kingdom",
+            "type": "river",
+            "importance": 0.1467173945220111
+          }
+        ],
+        "Selby Magistrates' Courthouse": [],
+        "Clifford's Tower": [
+          {
+            "lat": 53.9558294,
+            "lon": -1.0801796,
+            "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9SA, United Kingdom",
+            "type": "attraction",
+            "importance": 0.3897107592752421
+          },
+          {
+            "lat": 53.9556195,
+            "lon": -1.0808516,
+            "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9SA, United Kingdom",
+            "type": "bus_stop",
+            "importance": 7.103303578236083e-05
+          },
+          {
+            "lat": 53.9554323,
+            "lon": -1.0801852,
+            "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9SA, United Kingdom",
+            "type": "board",
+            "importance": 7.103303578236083e-05
+          },
+          {
+            "lat": 53.9558647,
+            "lon": -1.0799516,
+            "display_name": "Clifford’s Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9WD, United Kingdom",
+            "type": "information",
+            "importance": 7.103303578236083e-05
+          },
+          {
+            "lat": 53.9556075,
+            "lon": -1.0796905,
+            "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9WZ, United Kingdom",
+            "type": "board",
+            "importance": 7.103303578236083e-05
+          }
+        ],
+        "It's": [
+          {
+            "lat": 35.6445431,
+            "lon": 139.6708627,
+            "display_name": "It's, 茶沢通り, 太子堂二丁目, 太子堂, 世田谷区, 東京都, 154-0004, 日本",
+            "type": "hairdresser",
+            "importance": 8.593499656667457e-05
+          },
+          {
+            "lat": 40.8445364,
+            "lon": 14.2513151,
+            "display_name": "it‘s, Via del Chiostro, Rione Carità, San Giuseppe, Municipalità 2, Napoli, Campania, 80134, Italia",
+            "type": "cafe",
+            "importance": 8.093614099331682e-05
+          },
+          {
+            "lat": 53.8650352,
+            "lon": 27.5500023,
+            "display_name": "It's, 9, Брацкая вуліца, Мінск-Свет, Сярова, Кастрычніцкі раён, Мінск, 220065, Беларусь",
+            "type": "beauty",
+            "importance": 7.699473563740013e-05
+          },
+          {
+            "lat": 35.0569244,
+            "lon": 135.7441115,
+            "display_name": "IT's, 御薗橋通, 大宮北林町, 北区, 京都市, 京都府, 603-8417, 日本",
+            "type": "hairdresser",
+            "importance": 7.531471732657385e-05
+          },
+          {
+            "lat": 43.945309,
+            "lon": 4.804697,
+            "display_name": "It’s, Rue Joseph Vernet, Joseph Vernet, Quartier Centre, Avignon, Vaucluse, Provence-Alpes-Côte d'Azur, France métropolitaine, 84000, France",
+            "type": "clothes",
+            "importance": 7.22110322727858e-05
+          }
+        ],
+        "October": [
+          {
+            "lat": 2.7962307,
+            "lon": 41.0123453,
+            "display_name": "October أكتوبر, Ceelwaaq عيل واق, El Waq مقاطعة عيل واق, Gedo جدو, Jubaland جوبالاند, Soomaaliya الصومال",
+            "type": "suburb",
+            "importance": 0.14671166781109327
+          },
+          {
+            "lat": 3.21252,
+            "lon": 43.19,
+            "display_name": "October, Berdale, Baidoa بيدوا, Bay باي, Koonfur Galbeed جنوب غرب, Soomaaliya الصومال",
+            "type": "suburb",
+            "importance": 0.14670666742961772
+          },
+          {
+            "lat": 1.97666,
+            "lon": 44.8318,
+            "display_name": "October, Aw Dheegle, Afgooye أفجوي, Shabeellaha Hoose شبيلي السفلى, Koonfur Galbeed جنوب غرب, Soomaaliya الصومال",
+            "type": "suburb",
+            "importance": 0.14670666742961772
+          },
+          {
+            "lat": -33.6496693,
+            "lon": 19.4600353,
+            "display_name": "October, Esselen Park, Breede Valley Ward 9, Worcester, Breede Valley Local Municipality, Cape Winelands District Municipality, Western Cape, South Africa",
+            "type": "residential",
+            "importance": 0.05338290150301362
+          },
+          {
+            "lat": -33.793094,
+            "lon": 19.8919576,
+            "display_name": "October, Langeberg Ward 3, Robertson, Langeberg Local Municipality, Cape Winelands District Municipality, Western Cape, 6705, South Africa",
+            "type": "residential",
+            "importance": 0.05337721446555272
+          }
+        ]
+      }
+    },
+    "Htw4yFOWghU": {
+      "title": "Walking in SALZBURG / Austria 🇦🇹- 4K 60fps (UHD)",
+      "queries": [
+        "SALZBURG",
+        "Austria",
+        "Mozart",
+        "Located",
+        "Salzach River",
+        "The Sound",
+        "Parish Church St",
+        "Andrä",
+        "Mirabell Palace",
+        "This",
+        "South",
+        "Salzach"
+      ],
+      "queries_with_results": 12,
+      "cluster": {
+        "score": [
+          5,
+          1.6756139827471916
+        ],
+        "center": [
+          47.7981346,
+          13.0464806
+        ],
+        "members": [
+          {
+            "query": "SALZBURG",
+            "lat": 47.7981346,
+            "lon": 13.0464806,
+            "display_name": "Salzburg, Österreich",
+            "type": "administrative",
+            "importance": 0.6958514766295458
+          },
+          {
+            "query": "Mozart",
+            "lat": 47.7988742,
+            "lon": 13.0478057,
+            "display_name": "Mozart Denkmal, Mozartplatz, Altstadt, Salzburg, 5020, Österreich",
+            "type": "artwork",
+            "importance": 0.26244239079806453
+          },
+          {
+            "query": "Salzach River",
+            "lat": 47.6856277,
+            "lon": 13.0935254,
+            "display_name": "Salzach, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich",
+            "type": "river",
+            "importance": 0.14672134966048672
+          },
+          {
+            "query": "Mirabell Palace",
+            "lat": 47.8055548,
+            "lon": 13.0416161,
+            "display_name": "Schloss Mirabell, Bernhard-Paumgartner-Weg, Neustadt, Salzburg, 5020, Österreich",
+            "type": "attraction",
+            "importance": 0.4238774159986079
+          },
+          {
+            "query": "Salzach",
+            "lat": 47.6856277,
+            "lon": 13.0935254,
+            "display_name": "Salzach, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich",
+            "type": "river",
+            "importance": 0.14672134966048672
+          }
+        ]
+      },
+      "query_results": {
+        "SALZBURG": [
+          {
+            "lat": 47.7981346,
+            "lon": 13.0464806,
+            "display_name": "Salzburg, Österreich",
+            "type": "administrative",
+            "importance": 0.6958514766295458
+          },
+          {
+            "lat": 47.4166667,
+            "lon": 13.25,
+            "display_name": "Salzburg, Österreich",
+            "type": "administrative",
+            "importance": 0.6148186255588196
+          },
+          {
+            "lat": 48.8230783,
+            "lon": 6.5113122,
+            "display_name": "Château-Salins, Sarrebourg-Château-Salins, Moselle, Grand Est, France métropolitaine, 57170, France",
+            "type": "administrative",
+            "importance": 0.5896078164726849
+          },
+          {
+            "lat": 50.6667428,
+            "lon": 8.0474914,
+            "display_name": "Salzburg, Rennerod, Westerwaldkreis, Rheinland-Pfalz, Deutschland",
+            "type": "administrative",
+            "importance": 0.5029485483624343
+          },
+          {
+            "lat": 45.8804278,
+            "lon": 24.0576688,
+            "display_name": "Ocna Sibiului, Sibiu, România",
+            "type": "administrative",
+            "importance": 0.4773110188024878
+          }
+        ],
+        "Austria": [
+          {
+            "lat": 47.59397,
+            "lon": 14.12456,
+            "display_name": "Österreich",
+            "type": "administrative",
+            "importance": 0.8855929155245079
+          }
+        ],
+        "Mozart": [
+          {
+            "lat": 40.0322953,
+            "lon": -80.7148037,
+            "display_name": "Mozart, Wheeling, Ohio County, West Virginia, 26031, United States",
+            "type": "hamlet",
+            "importance": 0.27438272693865795
+          },
+          {
+            "lat": 47.7988742,
+            "lon": 13.0478057,
+            "display_name": "Mozart Denkmal, Mozartplatz, Altstadt, Salzburg, 5020, Österreich",
+            "type": "artwork",
+            "importance": 0.26244239079806453
+          },
+          {
+            "lat": -33.8207,
+            "lon": 149.8276,
+            "display_name": "Mozart, New South Wales, 2787, Australia",
+            "type": "administrative",
+            "importance": 0.16004237201495383
+          },
+          {
+            "lat": 51.7778039,
+            "lon": -103.9906503,
+            "display_name": "Mozart, Elfros No. 307, Saskatchewan, Canada",
+            "type": "hamlet",
+            "importance": 0.13337945601586937
+          },
+          {
+            "lat": 40.2759406,
+            "lon": -75.0537809,
+            "display_name": "Mozart, Buckingham Township, Bucks County, Pennsylvania, 18922, United States",
+            "type": "hamlet",
+            "importance": 0.1333772388799878
+          }
+        ],
+        "Located": [
+          {
+            "lat": 21.96391,
+            "lon": 90.5698404,
+            "display_name": "Marsh located at north side of Char Larig village, রাঙ্গাবালী উপজেলা, পটুয়াখালী জেলা, বরিশাল বিভাগ, বাংলাদেশ",
+            "type": "wetland",
+            "importance": 0.10667666666666664
+          },
+          {
+            "lat": 44.0246271,
+            "lon": -122.9227726,
+            "display_name": "Bob Straub Parkway, Lane County, Oregon, 97478, United States",
+            "type": "primary",
+            "importance": 0.05338954528114744
+          },
+          {
+            "lat": 44.041348,
+            "lon": -122.9292031,
+            "display_name": "Bob Straub Parkway, Thurston, Springfield, Lane County, Oregon, 97478, United States",
+            "type": "primary",
+            "importance": 0.05338954528114744
+          },
+          {
+            "lat": 44.0329359,
+            "lon": -122.9240237,
+            "display_name": "Bob Straub Parkway, Springfield, Lane County, Oregon, 97478, United States",
+            "type": "primary",
+            "importance": 0.05338954528114744
+          }
+        ],
+        "Salzach River": [
+          {
+            "lat": 47.2876535,
+            "lon": 12.8225262,
+            "display_name": "Salzach, Salzburg, Österreich",
+            "type": "river",
+            "importance": 0.5143622024538567
+          },
+          {
+            "lat": 47.6856277,
+            "lon": 13.0935254,
+            "display_name": "Salzach, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich",
+            "type": "river",
+            "importance": 0.14672134966048672
+          },
+          {
+            "lat": 47.6055116,
+            "lon": 13.1610784,
+            "display_name": "Salzach, Kuchl, Bezirk Hallein, Salzburg, 5431, Österreich",
+            "type": "river",
+            "importance": 0.1467142923628595
+          }
+        ],
+        "The Sound": [
+          {
+            "lat": 42.8032639,
+            "lon": -70.828902,
+            "display_name": "The Sound, Newburyport, Essex County, Massachusetts, 01951, United States",
+            "type": "strait",
+            "importance": 0.10672509422446019
+          },
+          {
+            "lat": 51.873822,
+            "lon": -9.5777274,
+            "display_name": "The Sound, Killaha East, Éire / Ireland",
+            "type": "bay",
+            "importance": 0.10671731822690163
+          },
+          {
+            "lat": 54.614803,
+            "lon": -8.4392274,
+            "display_name": "The Sound, Éire / Ireland",
+            "type": "strait",
+            "importance": 0.10671659647516592
+          },
+          {
+            "lat": 51.4902823,
+            "lon": -9.3984827,
+            "display_name": "The Sound, Baltimore, Éire / Ireland",
+            "type": "bay",
+            "importance": 0.10671596780346378
+          },
+          {
+            "lat": 43.4747372,
+            "lon": -65.7357032,
+            "display_name": "The Sound, Shag Harbour, Municipality of the District of Barrington, Shelburne County, Nova Scotia, B0W 3B0, Canada",
+            "type": "bay",
+            "importance": 0.1067125375753414
+          }
+        ],
+        "Parish Church St": [
+          {
+            "lat": 43.4063147,
+            "lon": -76.1275946,
+            "display_name": "Church Street, Village of Parish, Town of Parish, Oswego County, New York, 13131, United States",
+            "type": "residential",
+            "importance": 0.053383060196841345
+          }
+        ],
+        "Andrä": [
+          {
+            "lat": 15.9240905,
+            "lon": 80.1863809,
+            "display_name": "Andhra Pradesh, India",
+            "type": "administrative",
+            "importance": 0.6777178961126312
+          },
+          {
+            "lat": 62.5343484,
+            "lon": 65.9071578,
+            "display_name": "городское поселение Андра, Октябрьский район, Ханты-Мансийский автономный округ — Югра, Уральский федеральный округ, 628125, Россия",
+            "type": "administrative",
+            "importance": 0.4996275397280466
+          },
+          {
+            "lat": 62.5156287,
+            "lon": 65.8855373,
+            "display_name": "Андра, городское поселение Андра, Октябрьский район, Ханты-Мансийский автономный округ — Югра, Уральский федеральный округ, 628125, Россия",
+            "type": "town",
+            "importance": 0.4996275397280466
+          },
+          {
+            "lat": 47.6677606,
+            "lon": 19.0760467,
+            "display_name": "Szentendre, Szentendrei járás, Pest vármegye, Közép-Magyarország, 2000, Magyarország",
+            "type": "administrative",
+            "importance": 0.5574672574809957
+          },
+          {
+            "lat": 40.8677128,
+            "lon": 40.4650006,
+            "display_name": "Kayabaşı, Kalkandere, Rize, Karadeniz Bölgesi, Türkiye",
+            "type": "administrative",
+            "importance": 0.21337448257116948
+          }
+        ],
+        "Mirabell Palace": [
+          {
+            "lat": 47.8055548,
+            "lon": 13.0416161,
+            "display_name": "Schloss Mirabell, Bernhard-Paumgartner-Weg, Neustadt, Salzburg, 5020, Österreich",
+            "type": "attraction",
+            "importance": 0.4238774159986079
+          }
+        ],
+        "This": [
+          {
+            "lat": 49.74903,
+            "lon": 4.60862,
+            "display_name": "This, Charleville-Mézières, Ardennes, Grand Est, France métropolitaine, 08090, France",
+            "type": "administrative",
+            "importance": 0.5509390608833246
+          },
+          {
+            "lat": 49.74197,
+            "lon": 4.5990658,
+            "display_name": "Neuville-lès-This, Charleville-Mézières, Ardennes, Grand Est, France métropolitaine, 08090, France",
+            "type": "administrative",
+            "importance": 0.5623488305023039
+          }
+        ],
+        "South": [
+          {
+            "lat": 18.2612839,
+            "lon": -73.8444985,
+            "display_name": "Département du Sud, Ayiti",
+            "type": "administrative",
+            "importance": 0.49153869809411044
+          },
+          {
+            "lat": 2.7312374,
+            "lon": 11.6254622,
+            "display_name": "Sud, Cameroun",
+            "type": "administrative",
+            "importance": 0.47219196607725816
+          },
+          {
+            "lat": 11.4088213,
+            "lon": -16.0042494,
+            "display_name": "Província Sul, Guiné-Bissau",
+            "type": "administrative",
+            "importance": 0.1570394422394589
+          }
+        ],
+        "Salzach": [
+          {
+            "lat": 47.2876535,
+            "lon": 12.8225262,
+            "display_name": "Salzach, Salzburg, Österreich",
+            "type": "river",
+            "importance": 0.5143622024538567
+          },
+          {
+            "lat": 47.6856277,
+            "lon": 13.0935254,
+            "display_name": "Salzach, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich",
+            "type": "river",
+            "importance": 0.14672134966048672
+          },
+          {
+            "lat": 47.6055116,
+            "lon": 13.1610784,
+            "display_name": "Salzach, Kuchl, Bezirk Hallein, Salzburg, 5431, Österreich",
+            "type": "river",
+            "importance": 0.1467142923628595
+          }
+        ]
+      }
+    },
+    "UKyT_a-raW4": {
+      "title": "Walking in WARSAW / Poland 🇵🇱- 4K 60fps (UHD)",
+      "queries": [
+        "WARSAW",
+        "Poland",
+        "Polish",
+        "Warszawa",
+        "Another",
+        "This",
+        "Palace",
+        "Culture",
+        "Science",
+        "Pałac Kultury",
+        "Nauki",
+        "Soviet"
+      ],
+      "queries_with_results": 12,
+      "cluster": {
+        "score": [
+          5,
+          3.2017343723877785
+        ],
+        "center": [
+          52.2319581,
+          21.0067249
+        ],
+        "members": [
+          {
+            "query": "WARSAW",
+            "lat": 52.2319581,
+            "lon": 21.0067249,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          },
+          {
+            "query": "Polish",
+            "lat": 52.2377936,
+            "lon": 21.0181978,
+            "display_name": "Polska Akademia Nauk, 72, Nowy Świat, Centrum, Śródmieście Północne, Śródmieście, Warszawa, województwo mazowieckie, 00-330, Polska",
+            "type": "research_institute",
+            "importance": 0.6227470257238991
+          },
+          {
+            "query": "Warszawa",
+            "lat": 52.2333742,
+            "lon": 21.0711489,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          },
+          {
+            "query": "Pałac Kultury",
+            "lat": 52.2317657,
+            "lon": 21.0057979,
+            "display_name": "Pałac Kultury i Nauki, 1, Plac Defilad, Żelazna Brama, Śródmieście Północne, Śródmieście, Warszawa, województwo mazowieckie, 00-110, Polska",
+            "type": "attraction",
+            "importance": 0.47964157576844363
+          },
+          {
+            "query": "Nauki",
+            "lat": 52.2278695,
+            "lon": 21.0197898,
+            "display_name": "Ministerstwo Nauki i Szkolnictwa Wyższego, 1/3, Wspólna, Krucza, Śródmieście Południowe, Śródmieście, Warszawa, województwo mazowieckie, 00-529, Polska",
+            "type": "government",
+            "importance": 0.4994681565047098
+          }
+        ]
+      },
+      "query_results": {
+        "WARSAW": [
+          {
+            "lat": 52.2319581,
+            "lon": 21.0067249,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          },
+          {
+            "lat": 52.2333742,
+            "lon": 21.0711489,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          },
+          {
+            "lat": 41.2381017,
+            "lon": -85.8530544,
+            "display_name": "Warsaw, Kosciusko County, Indiana, United States",
+            "type": "administrative",
+            "importance": 0.46476807375622703
+          },
+          {
+            "lat": 38.7833963,
+            "lon": -84.9016151,
+            "display_name": "Warsaw, Gallatin County, Kentucky, United States",
+            "type": "administrative",
+            "importance": 0.4577956320282617
+          },
+          {
+            "lat": 42.7401871,
+            "lon": -78.1325548,
+            "display_name": "Village of Warsaw, Town of Warsaw, Wyoming County, New York, 14569, United States",
+            "type": "administrative",
+            "importance": 0.4472868399702154
+          }
+        ],
+        "Poland": [
+          {
+            "lat": 52.215933,
+            "lon": 19.134422,
+            "display_name": "Polska",
+            "type": "administrative",
+            "importance": 0.9164212477872486
+          }
+        ],
+        "Polish": [
+          {
+            "lat": 52.2377936,
+            "lon": 21.0181978,
+            "display_name": "Polska Akademia Nauk, 72, Nowy Świat, Centrum, Śródmieście Północne, Śródmieście, Warszawa, województwo mazowieckie, 00-330, Polska",
+            "type": "research_institute",
+            "importance": 0.6227470257238991
+          },
+          {
+            "lat": 52.1867483,
+            "lon": 21.0107699,
+            "display_name": "Telewizja Polska, 17, Ksawerów, Mokotów, Warszawa, województwo mazowieckie, 00-999, Polska",
+            "type": "commercial",
+            "importance": 0.5974011304697107
+          },
+          {
+            "lat": 34.0663421,
+            "lon": -118.4107889,
+            "display_name": "Polish, South Santa Monica Boulevard, Beverly Hills, Los Angeles County, California, 90025, United States",
+            "type": "cosmetics",
+            "importance": 8.738155184248139e-05
+          },
+          {
+            "lat": 34.9524905,
+            "lon": 135.7046881,
+            "display_name": "POLISH, 向日町停車場線, 梅ノ木, 寺戸町, 向日市, 京都府, 617-0002, 日本",
+            "type": "hairdresser",
+            "importance": 7.531471732657385e-05
+          },
+          {
+            "lat": 34.9534657,
+            "lon": 135.7063058,
+            "display_name": "POLISH, 向日町停車場線, 東田中瀬, 寺戸町, 向日市, 京都府, 617-0002, 日本",
+            "type": "hairdresser",
+            "importance": 7.531471732657385e-05
+          }
+        ],
+        "Warszawa": [
+          {
+            "lat": 52.2333742,
+            "lon": 21.0711489,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          },
+          {
+            "lat": 52.2319581,
+            "lon": 21.0067249,
+            "display_name": "Warszawa, województwo mazowieckie, Polska",
+            "type": "administrative",
+            "importance": 0.7999388071953629
+          }
+        ],
+        "Another": [
+          {
+            "lat": 53.3607251,
+            "lon": -6.2733912,
+            "display_name": "& another, North Circular Road, Arran Quay A Ward 1986, Dublin, County Dublin, Leinster, D07 P592, Éire / Ireland",
+            "type": "wine",
+            "importance": 8.015945677877496e-05
+          },
+          {
+            "lat": 32.8799668,
+            "lon": -117.235953,
+            "display_name": "Another, 9500, Gilman Drive, Torrey Pines, San Diego, San Diego County, California, 92093, United States",
+            "type": "artwork",
+            "importance": 7.728007934686836e-05
+          },
+          {
+            "lat": 52.9556958,
+            "lon": -1.148824,
+            "display_name": "Another?, 9, Trinity Square, Rainbow Quarter, Hockley, St Ann's, City of Nottingham, East Midlands, England, NG1 4AF, United Kingdom",
+            "type": "bar",
+            "importance": 7.24719615472193e-05
+          },
+          {
+            "lat": 44.6485007,
+            "lon": -63.5714656,
+            "display_name": "Another, 1715, Lower Water Street, Downtown Halifax, Halifax, Halifax Regional Municipality, Halifax County, Nova Scotia, B3J 0J2, Canada",
+            "type": "clothes",
+            "importance": 6.857480735480305e-05
+          },
+          {
+            "lat": 36.3509885,
+            "lon": 127.3769116,
+            "display_name": "Another, 대덕대로195번길, 둔산2동, 서구, 대전광역시, 35230, 대한민국",
+            "type": "nightclub",
+            "importance": 6.655756466005978e-05
+          }
+        ],
+        "This": [
+          {
+            "lat": 49.74903,
+            "lon": 4.60862,
+            "display_name": "This, Charleville-Mézières, Ardennes, Grand Est, France métropolitaine, 08090, France",
+            "type": "administrative",
+            "importance": 0.5509390608833246
+          },
+          {
+            "lat": 49.74197,
+            "lon": 4.5990658,
+            "display_name": "Neuville-lès-This, Charleville-Mézières, Ardennes, Grand Est, France métropolitaine, 08090, France",
+            "type": "administrative",
+            "importance": 0.5623488305023039
+          }
+        ],
+        "Palace": [
+          {
+            "lat": 50.8479548,
+            "lon": 4.3482191,
+            "display_name": "Palace, Borgval - Borgwal, Quartier Saint-Géry - Sint-Gorikswijk, Pentagone - Vijfhoek, Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, 1000, België / Belgique / Belgien",
+            "type": "cinema",
+            "importance": 0.29322317952748045
+          },
+          {
+            "lat": 37.6203207,
+            "lon": -92.1398843,
+            "display_name": "Palace, Pulaski County, Missouri, United States",
+            "type": "hamlet",
+            "importance": 0.26922332516764147
+          },
+          {
+            "lat": 51.5008349,
+            "lon": -0.1430045,
+            "display_name": "Buckingham Palace, Buckingham Gate, Victoria, City of Westminster, Greater London, England, SW1A 1AA, United Kingdom",
+            "type": "attraction",
+            "importance": 0.6171139384352247
+          },
+          {
+            "lat": 51.499387,
+            "lon": -0.1244812,
+            "display_name": "Palace of Westminster, The Terrace, Westminster, Millbank, City of Westminster, Greater London, England, SW1A 0AA, United Kingdom",
+            "type": "government",
+            "importance": 0.5999548552906706
+          },
+          {
+            "lat": 48.8044252,
+            "lon": 2.1202853,
+            "display_name": "Château de Versailles, Place Léon Gambetta, Notre-Dame, Versailles, Yvelines, Île-de-France, France métropolitaine, 78000, France",
+            "type": "fire_detection_system",
+            "importance": 0.6482761585865329
+          }
+        ],
+        "Culture": [
+          {
+            "lat": 48.8627033,
+            "lon": 2.3384505,
+            "display_name": "Ministère de la Culture et de la Communication, Rue des Bons Enfants, Quartier du Palais Royal, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+            "type": "government",
+            "importance": 0.7225602894071015
+          },
+          {
+            "lat": 46.035615,
+            "lon": 12.491111,
+            "display_name": "Coltura / Culture, Polcenigo / Polcenic - Al Borc, Pordenone / Pordenon, Friuli-Venezia Giulia, 33070, Italia",
+            "type": "village",
+            "importance": 0.14672208361943995
+          },
+          {
+            "lat": 3.865128,
+            "lon": 11.4594873,
+            "display_name": "culture, Nkolbisson, Yaoundé VII, Communauté urbaine de Yaoundé, Mfoundi, Centre, Cameroun",
+            "type": "commercial",
+            "importance": 0.08007050049591818
+          },
+          {
+            "lat": 3.8649335,
+            "lon": 11.459772,
+            "display_name": "culture, Nkolbisson, Yaoundé VII, Communauté urbaine de Yaoundé, Mfoundi, Centre, Cameroun",
+            "type": "residential",
+            "importance": 0.08007050049591818
+          },
+          {
+            "lat": 10.7850995,
+            "lon": -4.9032594,
+            "display_name": "Culture (1.15ha), Lieu-dit Djindjan (Campement), Lobi, Moussodougou, Comoé, Cascades, Burkina Faso",
+            "type": "farmland",
+            "importance": 0.08003750133516438
+          }
+        ],
+        "Science": [
+          {
+            "lat": 51.5146063,
+            "lon": -0.1164509,
+            "display_name": "London School of Economics and Political Science, Houghton Street, St Clement Danes, Covent Garden, City of Westminster, Greater London, England, WC2A 2AE, United Kingdom",
+            "type": "university",
+            "importance": 0.6491000320018444
+          },
+          {
+            "lat": -34.0609726,
+            "lon": -70.7599124,
+            "display_name": "Bayer Crop Science Chile - Santa Julia, 2550, Santa Julia, Graneros, Provincia de Cachapoal, Región del Libertador General Bernardo O'Higgins, Chile",
+            "type": "industrial",
+            "importance": 0.5774010120985231
+          },
+          {
+            "lat": 51.4989595,
+            "lon": -0.1756407,
+            "display_name": "Imperial College London, Exhibition Road, Brompton, City of Westminster, Greater London, England, SW7 2AZ, United Kingdom",
+            "type": "university",
+            "importance": 0.608023831191298
+          },
+          {
+            "lat": 42.0279608,
+            "lon": -93.6447375,
+            "display_name": "Iowa State University, University Boulevard Trail, Ames, Story County, Iowa, 50011, United States",
+            "type": "university",
+            "importance": 0.5889924972478597
+          },
+          {
+            "lat": 51.4973983,
+            "lon": -0.1746726,
+            "display_name": "Science Museum, Observatory Road, Brompton, Royal Borough of Kensington and Chelsea, Greater London, England, SW7 2AD, United Kingdom",
+            "type": "museum",
+            "importance": 0.5375606718049718
+          }
+        ],
+        "Pałac Kultury": [
+          {
+            "lat": 50.9499426,
+            "lon": 28.64887,
+            "display_name": "Палац культури, 3, вулиця Михайла Грушевського, Центр, Коростень, Коростенська міська громада, Коростенський район, Житомирська область, 11500, Україна",
+            "type": "community_centre",
+            "importance": 5.7742427710338254e-05
+          },
+          {
+            "lat": 45.6185502,
+            "lon": 29.3980188,
+            "display_name": "Палац культури, 6, Центральна вулиця, Трудове, Трудівський старостинський округ, Трудове, Кілійська міська громада, Ізмаїльський район, Одеська область, 68331, Україна",
+            "type": "community_centre",
+            "importance": 3.8914320592004536e-05
+          },
+          {
+            "lat": 45.5234614,
+            "lon": 29.1645595,
+            "display_name": "Палац культури, 34, Шкільна вулиця, Василівський старостинський округ, Василівка, Кілійська міська громада, Ізмаїльський район, Одеська область, 68323, Україна",
+            "type": "community_centre",
+            "importance": 3.8683909361364424e-05
+          },
+          {
+            "lat": 52.2317657,
+            "lon": 21.0057979,
+            "display_name": "Pałac Kultury i Nauki, 1, Plac Defilad, Żelazna Brama, Śródmieście Północne, Śródmieście, Warszawa, województwo mazowieckie, 00-110, Polska",
+            "type": "attraction",
+            "importance": 0.47964157576844363
+          }
+        ],
+        "Nauki": [
+          {
+            "lat": 52.2278695,
+            "lon": 21.0197898,
+            "display_name": "Ministerstwo Nauki i Szkolnictwa Wyższego, 1/3, Wspólna, Krucza, Śródmieście Południowe, Śródmieście, Warszawa, województwo mazowieckie, 00-529, Polska",
+            "type": "government",
+            "importance": 0.4994681565047098
+          },
+          {
+            "lat": 52.2317657,
+            "lon": 21.0057979,
+            "display_name": "Pałac Kultury i Nauki, 1, Plac Defilad, Żelazna Brama, Śródmieście Północne, Śródmieście, Warszawa, województwo mazowieckie, 00-110, Polska",
+            "type": "building",
+            "importance": 0.47964157576844363
+          },
+          {
+            "lat": 51.4973983,
+            "lon": -0.1746726,
+            "display_name": "Science Museum, Armstrong Road, South Kensington, Royal Borough of Kensington and Chelsea, Greater London, England, SW7 5HD, United Kingdom",
+            "type": "museum",
+            "importance": 0.5375606718049718
+          },
+          {
+            "lat": 50.448769,
+            "lon": 30.4854404,
+            "display_name": "Міністерство освіти і науки України, 10, Берестейський проспект, Арештантські городи, Лукʼянівка, Шевченківський район, Київ, 01035, Україна",
+            "type": "government",
+            "importance": 0.5050920662703771
+          },
+          {
+            "lat": 48.8957518,
+            "lon": 2.3879761,
+            "display_name": "Cité des Sciences et de l'Industrie, 30, Avenue Corentin Cariou, Quartier du Pont-de-Flandre, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+            "type": "museum",
+            "importance": 0.49422079736455954
+          }
+        ],
+        "Soviet": [
+          {
+            "lat": -29.7252798,
+            "lon": 31.0657356,
+            "display_name": "Soviet, Sugar Road, Somerset Park, eThekwini Ward 35, Umhlanga Rocks, eThekwini Metropolitan Municipality, KwaZulu-Natal, 4021, South Africa",
+            "type": "clothes",
+            "importance": 7.016632333862847e-05
+          },
+          {
+            "lat": -25.6849526,
+            "lon": 28.1894764,
+            "display_name": "Soviet, Pietro Street, Annlin-Wes, Tshwane Ward 50, Pretoria, City of Tshwane Metropolitan Municipality, Gauteng, 0066, South Africa",
+            "type": "shoes",
+            "importance": 7.011596856636938e-05
+          },
+          {
+            "lat": 60.6341745,
+            "lon": 24.8670677,
+            "display_name": "SoViet, Parantolankatu, Tehdas, Hyvinkää, Helsingin seutukunta, Uusimaa, Manner-Suomi, 05800, Suomi / Finland",
+            "type": "restaurant",
+            "importance": 5.922102693212814e-05
+          },
+          {
+            "lat": -34.7975529,
+            "lon": -58.3913982,
+            "display_name": "soviet, Benigno Macías, Adrogué, Partido de Almirante Brown, Buenos Aires, B1846, Argentina",
+            "type": "restaurant",
+            "importance": 5.432745860985759e-05
+          },
+          {
+            "lat": -28.7524599,
+            "lon": 32.0506504,
+            "display_name": "Soviet, Metica Moon Street, uMhlathuze Ward 2, Richards Bay, uMhlathuze Local Municipality, King Cetswayo District Municipality, KwaZulu-Natal, 3900, South Africa",
+            "type": "clothes",
+            "importance": 4.793392843514179e-05
+          }
+        ]
+      }
+    },
+    "buBU7NrfyGM": {
+      "title": "Walking in CESKY KRUMLOV / Czech Republic 🇨🇿- 4K 60fps (UHD)",
+      "queries": [
+        "CESKY KRUMLOV",
+        "Czech Republic",
+        "Krumlov",
+        "Southern Bohemia",
+        "Baroque",
+        "Prague",
+        "UNESCO World Heritage List",
+        "With",
+        "August"
+      ],
+      "queries_with_results": 8,
+      "cluster": {
+        "score": [
+          2,
+          1.1145125904794437
+        ],
+        "center": [
+          48.8106526,
+          14.3150586
+        ],
+        "members": [
+          {
+            "query": "CESKY KRUMLOV",
+            "lat": 48.8106526,
+            "lon": 14.3150586,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "administrative",
+            "importance": 0.5572562952397219
+          },
+          {
+            "query": "Krumlov",
+            "lat": 48.8106526,
+            "lon": 14.3150586,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "administrative",
+            "importance": 0.5572562952397219
+          }
+        ]
+      },
+      "query_results": {
+        "CESKY KRUMLOV": [
+          {
+            "lat": 48.8106526,
+            "lon": 14.3150586,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "administrative",
+            "importance": 0.5572562952397219
+          },
+          {
+            "lat": 48.805115,
+            "lon": 14.3161978,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "cadastral_community",
+            "importance": 0.5572562952397219
+          }
+        ],
+        "Czech Republic": [
+          {
+            "lat": 49.7439047,
+            "lon": 15.3381061,
+            "display_name": "Česko",
+            "type": "administrative",
+            "importance": 0.8762322323266029
+          }
+        ],
+        "Krumlov": [
+          {
+            "lat": 48.8106526,
+            "lon": 14.3150586,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "administrative",
+            "importance": 0.5572562952397219
+          },
+          {
+            "lat": 48.805115,
+            "lon": 14.3161978,
+            "display_name": "Český Krumlov, okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "cadastral",
+            "importance": 0.5572562952397219
+          },
+          {
+            "lat": 48.7759713,
+            "lon": 14.291078,
+            "display_name": "okres Český Krumlov, Jihočeský kraj, Jihozápad, Česko",
+            "type": "administrative",
+            "importance": 0.5500753082231928
+          },
+          {
+            "lat": 49.0492698,
+            "lon": 16.3115273,
+            "display_name": "Moravský Krumlov, okres Znojmo, Jihomoravský kraj, 672 01, Česko",
+            "type": "administrative",
+            "importance": 0.5300251550534555
+          },
+          {
+            "lat": 48.9962575,
+            "lon": 16.2958917,
+            "display_name": "SO ORP Moravský Krumlov, okres Znojmo, Jihomoravský kraj, Česko",
+            "type": "administrative",
+            "importance": 0.22672818875410083
+          }
+        ],
+        "Southern Bohemia": [
+          {
+            "lat": 47.2300578,
+            "lon": 39.7149435,
+            "display_name": "Bohemia, 80, улица Тельмана, Рабочий городок, Октябрьский район, Ростов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Южный федеральный округ, 344003, Россия",
+            "type": "lighting",
+            "importance": 6.820859082928233e-05
+          },
+          {
+            "lat": 45.0298452,
+            "lon": 38.9719318,
+            "display_name": "Aura of Bohemia, 71, Красная улица, Западный округ, Краснодар, городской округ Краснодар, Краснодарский край, Южный федеральный округ, 350000, Россия",
+            "type": "lighting",
+            "importance": 6.974517433427967e-05
+          }
+        ],
+        "Baroque": [
+          {
+            "lat": 43.4837629,
+            "lon": -1.1392049,
+            "display_name": "Baroque, Bidaxune, Nafarroa Beherea, Bidache, Bayonne, Pyrénées-Atlantiques, Nouvelle-Aquitaine, France métropolitaine, 64520, France",
+            "type": "isolated_dwelling",
+            "importance": 0.10673160372320131
+          },
+          {
+            "lat": 44.4328975,
+            "lon": -0.4512594,
+            "display_name": "Baroque, A Magrin, Saint-Léger-de-Balson, Langon, Gironde, Nouvelle-Aquitaine, France métropolitaine, 33113, France",
+            "type": "isolated_dwelling",
+            "importance": 0.10673063019760431
+          },
+          {
+            "lat": 43.9056983,
+            "lon": -0.5734023,
+            "display_name": "Baroque, Campet-et-Lamolère, Mont-de-Marsan, Landes, Nouvelle-Aquitaine, France métropolitaine, 40090, France",
+            "type": "farm",
+            "importance": 0.10672843595025557
+          },
+          {
+            "lat": 43.9521447,
+            "lon": -0.1525426,
+            "display_name": "Baroque, Labastide-d'Armagnac, Mont-de-Marsan, Landes, Nouvelle-Aquitaine, France métropolitaine, 40240, France",
+            "type": "isolated_dwelling",
+            "importance": 0.10672839475089645
+          },
+          {
+            "lat": 43.9251841,
+            "lon": -0.1836133,
+            "display_name": "Baroque, Mauléon-d'Armagnac, Condom, Gers, Occitanie, France métropolitaine, 32240, France",
+            "type": "isolated_dwelling",
+            "importance": 0.10672808499275194
+          }
+        ],
+        "Prague": [
+          {
+            "lat": 50.0874654,
+            "lon": 14.4212535,
+            "display_name": "Praha, Česko",
+            "type": "administrative",
+            "importance": 0.8087110358566758
+          }
+        ],
+        "UNESCO World Heritage List": [],
+        "With": [
+          {
+            "lat": 63.5338769,
+            "lon": 22.9489381,
+            "display_name": "With, Purmo, Pedersöre, Jakobstadsregionen, Österbotten, Manner-Suomi, 68930, Suomi / Finland",
+            "type": "hamlet",
+            "importance": 0.13338370107576103
+          },
+          {
+            "lat": 53.699177,
+            "lon": -2.4709001,
+            "display_name": "Blackburn with Darwen, Lancashire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.4986976707455308
+          },
+          {
+            "lat": 54.2054706,
+            "lon": -1.267108,
+            "display_name": "Thirkleby High and Low with Osgodby, North Yorkshire, York and North Yorkshire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.4790775597326248
+          },
+          {
+            "lat": 54.3313847,
+            "lon": -1.6001395,
+            "display_name": "Ainderby Miers with Holtby, North Yorkshire, York and North Yorkshire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.4783766510047209
+          },
+          {
+            "lat": 54.2548263,
+            "lon": -1.4082944,
+            "display_name": "Newsham with Breckenbrough, North Yorkshire, York and North Yorkshire, England, United Kingdom",
+            "type": "administrative",
+            "importance": 0.4782885076076401
+          }
+        ],
+        "August": [
+          {
+            "lat": 37.9801274,
+            "lon": -121.2620769,
+            "display_name": "August, San Joaquin County, California, United States",
+            "type": "census",
+            "importance": 0.36081278497828223
+          },
+          {
+            "lat": 51.5592251,
+            "lon": 9.9524442,
+            "display_name": "Georg-August-Universität, Göttingen, Radolfshausen, Landkreis Göttingen, Niedersachsen, 37077, Deutschland",
+            "type": "university",
+            "importance": 0.673686403506242
+          },
+          {
+            "lat": 50.9605087,
+            "lon": 14.128136,
+            "display_name": "August, Hohnstein, Sächsische Schweiz-Osterzgebirge, Sachsen, 01848, Deutschland",
+            "type": "peak",
+            "importance": 0.16005389105058365
+          },
+          {
+            "lat": 37.9788123,
+            "lon": -121.2621683,
+            "display_name": "August, San Joaquin County, California, 95205, United States",
+            "type": "hamlet",
+            "importance": 0.13336833524071104
+          },
+          {
+            "lat": 6.3525973,
+            "lon": -10.2149717,
+            "display_name": "August, Kpana, District 1, Grand Bassa County, Liberia",
+            "type": "isolated_dwelling",
+            "importance": 0.10670166857404438
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "videos": 5,
+    "coherent_2plus": 5,
+    "coherent_3plus": 4
+  }
+}
