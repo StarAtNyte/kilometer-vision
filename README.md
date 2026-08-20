@@ -38,6 +38,8 @@ Marker-guided S→E extraction plus a Fréchet term fixes buBU under a validatio
 
 Red-route pin-mask cleanup was swept at radii 8, 10, 12, 15, 18, 22, and 26. Validation peaks at 4/5 for radii 8, 12, and 15; radii 10/22/26 fall to 2/5. On test, radius 15 is exactly identical to the production ranking, while radius 8 changes 54/284 and radius 12 changes 69/284 with no labels to justify those changes. The default radius 15 is retained. See `experiments/map-pin-radius-sweep/`.
 
+A visual forensic render of the remaining buBU validation failure shows the yaw-integrated trace as a broad shallow arc while every candidate is a mostly vertical route; raw DPVO XZ positions produce a long diagonal but still select the same wrong candidate. This confirms that the missing signal is scene-to-map localization or better motion estimation, not red-line extraction. The comparison panels are retained in `experiments/map-forensics/`.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
