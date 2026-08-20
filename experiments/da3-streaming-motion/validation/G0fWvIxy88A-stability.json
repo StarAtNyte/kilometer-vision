@@ -1,0 +1,26 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "comparison": "official DA3-Streaming 1 FPS versus 2 FPS",
+  "upstream_commit": "3d835ec1a5802d64a8b8b15f817a1ab54809bfe4",
+  "checkpoint": "depth-anything/DA3NESTED-GIANT-LARGE-1.1",
+  "chunk_size": 60,
+  "overlap": 30,
+  "loop_pairs_fps1": 0,
+  "loop_pairs_fps2": 0,
+  "raw_camera_path": {
+    "procrustes_disparity": 0.10800757453563657,
+    "turn_signature_correlation": 0.4180362097136013,
+    "endpoint_path_ratio_fps1": 0.1276362506534079,
+    "endpoint_path_ratio_fps2": 0.3884980207837906
+  },
+  "smoothed_pedestrian_path": {
+    "procrustes_disparity": 0.10080704588698562,
+    "turn_signature_correlation": 0.16563594571421644,
+    "endpoint_path_ratio_fps1": 0.1526602740006042,
+    "endpoint_path_ratio_fps2": 0.41315823509601135
+  },
+  "gate": "failed",
+  "candidate_correctness_consulted_after_gate": false,
+  "production_changed": false
+}

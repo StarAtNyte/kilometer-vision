@@ -130,6 +130,8 @@ Important metrics beyond top-1: landmark Recall@K and geometric verification pre
 
 The target stack is hierarchical temporal retrieval plus local-region VPR plus aligned long-sequence geometry. A larger sparse-frame VLM is not the main solution: Qwen2.5-VL-32B scored 0/5 validation maps even after removing stale geometry and labeling ordered frames.
 
+Official DA3-Streaming was subsequently run at 1 FPS and 2 FPS on the same sealed map window. Despite using the released nested 1.4B checkpoint, dense half-overlap Sim(3) alignment, and SALAD loop detection, it found no loop constraints and failed cross-density route stability (smoothed-path disparity 0.1008; turn correlation 0.1656; endpoint/path ratio 0.1527 versus 0.4132). The important pedestrian-video failure is upstream of candidate decoding: camera-centre topology itself changes with sampling, and a moving-average body-path proxy cannot repair chunk orientation errors. Do not treat DA3-Streaming's KITTI/TUM ranking as evidence that it transfers to head-turn-heavy walking tours.
+
 ### Map-route research update (2026-08-19)
 
 The rejected Hu-moment matcher is structurally mismatched to the problem. Global image moments are useful for coarse silhouette comparison but discard path order, signed turns, endpoint identity, branch structure, and traversal reversal. Candidate routes should instead be decoded as ordered graphs and compared to a posterior over video trajectories.
