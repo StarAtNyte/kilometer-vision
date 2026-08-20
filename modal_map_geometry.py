@@ -211,6 +211,27 @@ def evaluate(split: str = "validation") -> dict:
                             best = max(counts); second = sorted(counts)[-2] if len(counts) > 1 else 0
                             if best - second >= threshold:
                                 ocr_predictions[str(threshold)] = counts.index(best)
+            gemini_duel_prediction = None
+            gemini_duel_confidence = None
+            gemini_duel_path = None
+            for identity_set in ("ABCDE", "ACE"):
+                candidate_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{identity_set}-base.json"
+                if candidate_path.exists():
+                    payload = json.loads(candidate_path.read_text())
+                    if str(payload.get("question_id")) == str(question_id):
+                        answer_letter = payload.get("response", {}).get("answer")
+                        if isinstance(answer_letter, str) and len(answer_letter) == 1 and answer_letter in identity_set:
+                            gemini_duel_prediction = ord(answer_letter.upper()) - ord("A")
+                            gemini_duel_confidence = float(payload.get("response", {}).get("confidence", 0.0))
+                            gemini_duel_path = identity_set
+                            break
+            gemini_gated_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
+            if gemini_duel_prediction is not None and gemini_gated_prediction is not None:
+                base_scores = dpvo_variants.get("fps1-focal0.9-w256-b256-p16", [])
+                ordered_scores = sorted(float(item["score"]) for item in base_scores)
+                margin = ordered_scores[1] - ordered_scores[0] if len(ordered_scores) > 1 else float("inf")
+                if gemini_duel_confidence >= 0.98 and margin < 0.005:
+                    gemini_gated_prediction = gemini_duel_prediction
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -251,6 +272,10 @@ def evaluate(split: str = "validation") -> dict:
                     "turn_weight_predictions": turn_weight_predictions,
                     "translation_predictions": translation_predictions,
                     "ocr_predictions": ocr_predictions,
+                    "gemini_duel_prediction": gemini_duel_prediction,
+                    "gemini_duel_confidence": gemini_duel_confidence,
+                    "gemini_duel_identity_set": gemini_duel_path,
+                    "gemini_gated_prediction": gemini_gated_prediction,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -290,6 +315,7 @@ def evaluate(split: str = "validation") -> dict:
             threshold: sum(row["ocr_predictions"].get(threshold) == row["answer_id"] for row in records)
             for threshold in ("0", "2", "4", "6", "8")
         },
+        "gemini_gated_correct": sum(row["gemini_gated_prediction"] == row["answer_id"] for row in records),
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)

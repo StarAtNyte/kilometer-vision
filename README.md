@@ -69,6 +69,8 @@ PCA chirality was tested separately by adding reflection penalties from 0.005 th
 
 Candidate-map Tesseract OCR was also scored by label richness, with outlier thresholds from 0 to 8 labels. It reached only 1/5; the correct landmark-rich Czech map is a useful diagnostic example, but OCR richness is not a safe automatic override.
 
+The first positive semantic result is an endpoint-focused Gemini 3.6 Flash duel gate. On all five validation map questions, it preserves the DPVO 1 FPS/p16 answer unless DPVO's top-two margin is below 0.005 and Gemini's endpoint-focused duel confidence is at least 0.98. That gate changes only the ambiguous Czech case (D→C) and reaches 5/5 versus DPVO's 4/5. This is promising but still validation-sized and API-dependent; it remains an experiment until tested on held-out/public data.
+
 ## Planned commands
 
 ```bash
