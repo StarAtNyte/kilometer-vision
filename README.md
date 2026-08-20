@@ -67,6 +67,8 @@ Finally, DPVO's stored 3-D positions were projected directly on XY, XZ, and YZ a
 
 PCA chirality was tested separately by adding reflection penalties from 0.005 through 0.08. Every nonzero penalty dropped DPVO to 2/5, confirming that the route maps do not provide a safe global mirror convention for these relative trajectories.
 
+Candidate-map Tesseract OCR was also scored by label richness, with outlier thresholds from 0 to 8 labels. It reached only 1/5; the correct landmark-rich Czech map is a useful diagnostic example, but OCR richness is not a safe automatic override.
+
 ## Planned commands
 
 ```bash

@@ -199,6 +199,18 @@ def evaluate(split: str = "validation") -> dict:
                         if scores:
                             key = f"f{forward_sign:g}-l{lateral_sign:g}"
                             translation_predictions[key] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
+            ocr_predictions = {}
+            ocr_path = ROOT / "experiments" / "map-ocr" / "candidates" / split / f"{video_id}.json"
+            if ocr_path.exists():
+                ocr_payload = json.loads(ocr_path.read_text())
+                ocr_rows = next((row for row in ocr_payload.get("records", []) if str(row.get("question_id")) == str(question_id)), None)
+                if ocr_rows:
+                    counts = [len({str(text).lower().strip() for text in candidate if len(str(text).strip()) >= 4}) for candidate in ocr_rows.get("candidates", [])]
+                    for threshold in (0, 2, 4, 6, 8):
+                        if counts:
+                            best = max(counts); second = sorted(counts)[-2] if len(counts) > 1 else 0
+                            if best - second >= threshold:
+                                ocr_predictions[str(threshold)] = counts.index(best)
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -238,6 +250,7 @@ def evaluate(split: str = "validation") -> dict:
                     "compact_weight_predictions": compact_weight_predictions,
                     "turn_weight_predictions": turn_weight_predictions,
                     "translation_predictions": translation_predictions,
+                    "ocr_predictions": ocr_predictions,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -272,6 +285,10 @@ def evaluate(split: str = "validation") -> dict:
         "translation_correct": {
             variant: sum(row["translation_predictions"].get(variant) == row["answer_id"] for row in records)
             for variant in sorted({variant for row in records for variant in row["translation_predictions"]})
+        },
+        "ocr_correct": {
+            threshold: sum(row["ocr_predictions"].get(threshold) == row["answer_id"] for row in records)
+            for threshold in ("0", "2", "4", "6", "8")
         },
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
