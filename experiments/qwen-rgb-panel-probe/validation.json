@@ -1,0 +1,49 @@
+{
+  "split": "validation",
+  "model": "Qwen/Qwen3-VL-32B-Instruct",
+  "variant": "fps1-focal0.9-w256-b256-p16",
+  "frame_count": 4,
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "prediction": 2,
+      "raw_text": "C",
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "prediction": 1,
+      "raw_text": "B",
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}

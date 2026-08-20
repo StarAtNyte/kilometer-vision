@@ -30,6 +30,8 @@ The follow-up motion-variant audit confirms that `fps1-focal0.9-w256-b256-p16` i
 
 A two-case held-out Gemini 3.6 Flash probe shows why the validated endpoint/evidence gate cannot be replaced by a generic map prompt: it returned the existing p16 choice on one near-tie and a different choice on another, while the same lightweight prompt returned A on the labeled buBU validation map (the correct answer is C). These answer-blind probes are preserved under `experiments/gemini-test-probe/` and are explicitly excluded from production.
 
+The corresponding Qwen3-VL-32B RGB control (geometry panel plus four ordered walking frames, no depth) also scored 1/5, exactly matching the panel-only control. This negative result rules out a simple “add more RGB context” fix; the remaining problem is trajectory/map alignment, not raw visual context. Its artifact is `experiments/qwen-rgb-panel-probe/validation.json`.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
