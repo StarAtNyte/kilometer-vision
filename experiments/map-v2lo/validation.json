@@ -1,0 +1,87 @@
+{
+  "split": "validation",
+  "checkpoint": "ybrrraway/V2LO-7B",
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "prediction": 2,
+      "raw_text": "<answer>\nC\n</answer>",
+      "display_order": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "checkpoint": "ybrrraway/V2LO-7B",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "prediction": 4,
+      "raw_text": "<answer>\nE\n</answer>",
+      "display_order": [
+        1,
+        2,
+        0,
+        4,
+        3
+      ],
+      "checkpoint": "ybrrraway/V2LO-7B",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 4
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "prediction": 1,
+      "raw_text": "<answer>\nB\n</answer>",
+      "display_order": [
+        0,
+        3,
+        4,
+        1,
+        2
+      ],
+      "checkpoint": "ybrrraway/V2LO-7B",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "prediction": 3,
+      "raw_text": "<answer>\nD\n</answer>",
+      "display_order": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "checkpoint": "ybrrraway/V2LO-7B",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 1,
+      "raw_text": "<answer>\nB\n</answer>",
+      "display_order": [
+        4,
+        3,
+        1,
+        2,
+        0
+      ],
+      "checkpoint": "ybrrraway/V2LO-7B",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}
