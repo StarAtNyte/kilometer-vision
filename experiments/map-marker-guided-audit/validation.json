@@ -1,0 +1,1775 @@
+{
+  "split": "validation",
+  "summary": {
+    "guided": {
+      "questions": 5,
+      "correct": 4
+    },
+    "guided_frechet": {
+      "questions": 5,
+      "correct": 3
+    },
+    "guided_chamfer": {
+      "questions": 5,
+      "correct": 4
+    }
+  },
+  "rows": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "guided",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        4,
+        1,
+        0
+      ],
+      "scores": [
+        {
+          "score": 0.13177631872752088,
+          "procrustes": 0.07976675874921994,
+          "turn_dtw": 0.14859874279514557,
+          "frechet": 0.30530426946221634,
+          "chamfer": 0.059038467573176476,
+          "compactness": 0.5891128162024863,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              131.0,
+              315.0
+            ],
+            "S": [
+              269.0,
+              96.0
+            ]
+          }
+        },
+        {
+          "score": 0.1312936128781715,
+          "procrustes": 0.07973885994361149,
+          "turn_dtw": 0.14729929409874296,
+          "frechet": 0.30540424630406304,
+          "chamfer": 0.05902261566712203,
+          "compactness": 0.5882159573278156,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              156.0,
+              304.0
+            ],
+            "S": [
+              243.0,
+              106.0
+            ]
+          }
+        },
+        {
+          "score": 0.11663824046965854,
+          "procrustes": 0.07473891084535654,
+          "turn_dtw": 0.11971237035514858,
+          "frechet": 0.3793784187000973,
+          "chamfer": 0.05803222331816916,
+          "compactness": 0.5989483266408571,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              153.0,
+              300.0
+            ],
+            "E": [
+              246.0,
+              111.0
+            ]
+          }
+        },
+        {
+          "score": 0.11651581231229288,
+          "procrustes": 0.07482453701544331,
+          "turn_dtw": 0.11911792941957022,
+          "frechet": 0.3793890723705824,
+          "chamfer": 0.05806815208727353,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              166.0,
+              294.0
+            ],
+            "E": [
+              234.0,
+              116.0
+            ]
+          }
+        },
+        {
+          "score": 0.11893624129038624,
+          "procrustes": 0.07608179750989799,
+          "turn_dtw": 0.12244126794425214,
+          "frechet": 0.4010186283696814,
+          "chamfer": 0.06751629047686138,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "E": [
+              166.0,
+              294.0
+            ],
+            "S": [
+              234.0,
+              116.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "guided_frechet",
+      "prediction": 2,
+      "ranking": [
+        2,
+        3,
+        4,
+        1,
+        0
+      ],
+      "scores": [
+        {
+          "score": 0.20810238609307496,
+          "procrustes": 0.07976675874921994,
+          "turn_dtw": 0.14859874279514557,
+          "frechet": 0.30530426946221634,
+          "chamfer": 0.059038467573176476,
+          "compactness": 0.5891128162024863,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              131.0,
+              315.0
+            ],
+            "S": [
+              269.0,
+              96.0
+            ]
+          }
+        },
+        {
+          "score": 0.20764467445418727,
+          "procrustes": 0.07973885994361149,
+          "turn_dtw": 0.14729929409874296,
+          "frechet": 0.30540424630406304,
+          "chamfer": 0.05902261566712203,
+          "compactness": 0.5882159573278156,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              156.0,
+              304.0
+            ],
+            "S": [
+              243.0,
+              106.0
+            ]
+          }
+        },
+        {
+          "score": 0.19931525289891489,
+          "procrustes": 0.07473891084535654,
+          "turn_dtw": 0.14397540891878755,
+          "frechet": 0.2967397957279309,
+          "chamfer": 0.06743674054810098,
+          "compactness": 0.5989483266408571,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              153.0,
+              300.0
+            ],
+            "E": [
+              246.0,
+              111.0
+            ]
+          }
+        },
+        {
+          "score": 0.1993284521891806,
+          "procrustes": 0.07482453701544331,
+          "turn_dtw": 0.14376577630403012,
+          "frechet": 0.296743573869307,
+          "chamfer": 0.06751629047686142,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              166.0,
+              294.0
+            ],
+            "E": [
+              234.0,
+              116.0
+            ]
+          }
+        },
+        {
+          "score": 0.2053833333448439,
+          "procrustes": 0.07608179750989799,
+          "turn_dtw": 0.13302824372378988,
+          "frechet": 0.3309666021264778,
+          "chamfer": 0.058068152087273436,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "E": [
+              166.0,
+              294.0
+            ],
+            "S": [
+              234.0,
+              116.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "guided_chamfer",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        4,
+        1,
+        0
+      ],
+      "scores": [
+        {
+          "score": 0.146535935620815,
+          "procrustes": 0.07976675874921994,
+          "turn_dtw": 0.14859874279514557,
+          "frechet": 0.30530426946221634,
+          "chamfer": 0.059038467573176476,
+          "compactness": 0.5891128162024863,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              131.0,
+              315.0
+            ],
+            "S": [
+              269.0,
+              96.0
+            ]
+          }
+        },
+        {
+          "score": 0.14604926679495203,
+          "procrustes": 0.07973885994361149,
+          "turn_dtw": 0.14729929409874296,
+          "frechet": 0.30540424630406304,
+          "chamfer": 0.05902261566712203,
+          "compactness": 0.5882159573278156,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              156.0,
+              304.0
+            ],
+            "S": [
+              243.0,
+              106.0
+            ]
+          }
+        },
+        {
+          "score": 0.13114629629920083,
+          "procrustes": 0.07473891084535654,
+          "turn_dtw": 0.11971237035514858,
+          "frechet": 0.3793784187000973,
+          "chamfer": 0.05803222331816916,
+          "compactness": 0.5989483266408571,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              153.0,
+              300.0
+            ],
+            "E": [
+              246.0,
+              111.0
+            ]
+          }
+        },
+        {
+          "score": 0.13103285033411127,
+          "procrustes": 0.07482453701544331,
+          "turn_dtw": 0.11911792941957022,
+          "frechet": 0.3793890723705824,
+          "chamfer": 0.05806815208727353,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              166.0,
+              294.0
+            ],
+            "E": [
+              234.0,
+              116.0
+            ]
+          }
+        },
+        {
+          "score": 0.13581531390960158,
+          "procrustes": 0.07608179750989799,
+          "turn_dtw": 0.12244126794425214,
+          "frechet": 0.4010186283696814,
+          "chamfer": 0.06751629047686138,
+          "compactness": 0.5986524126887319,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "E": [
+              166.0,
+              294.0
+            ],
+            "S": [
+              234.0,
+              116.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "guided",
+      "prediction": 4,
+      "ranking": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "scores": [
+        {
+          "score": 0.0834312207933296,
+          "procrustes": 0.027251974851558898,
+          "turn_dtw": 0.160512131262202,
+          "frechet": 0.36573056736059106,
+          "chamfer": 0.08551903532243962,
+          "compactness": 0.0636008121594128,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 113,
+          "marker_positions": {
+            "S": [
+              216.0,
+              129.0
+            ],
+            "E": [
+              236.0,
+              260.0
+            ]
+          }
+        },
+        {
+          "score": 0.09384230419199963,
+          "procrustes": 0.03619867248155199,
+          "turn_dtw": 0.164696090601279,
+          "frechet": 0.3613410292375248,
+          "chamfer": 0.07570839524674616,
+          "compactness": 0.3278586522976273,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              164.0,
+              83.0
+            ],
+            "E": [
+              282.0,
+              326.0
+            ]
+          }
+        },
+        {
+          "score": 0.09510206851388728,
+          "procrustes": 0.03806657494112486,
+          "turn_dtw": 0.1629585530650355,
+          "frechet": 0.25466465201253735,
+          "chamfer": 0.07571848762308486,
+          "compactness": 0.32785389319229263,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              315.0,
+              245.0
+            ],
+            "E": [
+              250.0,
+              307.0
+            ]
+          }
+        },
+        {
+          "score": 0.10013648891076685,
+          "procrustes": 0.03919998063170921,
+          "turn_dtw": 0.1741043093687361,
+          "frechet": 0.26953626654145474,
+          "chamfer": 0.08434111954424098,
+          "compactness": 0.3099088143192617,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "E": [
+              152.0,
+              227.0
+            ],
+            "S": [
+              315.0,
+              276.0
+            ]
+          }
+        },
+        {
+          "score": 0.08175763357225724,
+          "procrustes": 0.03583261845158772,
+          "turn_dtw": 0.13121432891619864,
+          "frechet": 0.15399295178918027,
+          "chamfer": 0.07731135029353842,
+          "compactness": 0.3099088143192612,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "S": [
+              152.0,
+              227.0
+            ],
+            "E": [
+              315.0,
+              276.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "guided_frechet",
+      "prediction": 4,
+      "ranking": [
+        4,
+        1,
+        0,
+        2,
+        3
+      ],
+      "scores": [
+        {
+          "score": 0.1386136960232416,
+          "procrustes": 0.027251974851558898,
+          "turn_dtw": 0.17408458704265406,
+          "frechet": 0.20172846282701515,
+          "chamfer": 0.07469019431456042,
+          "compactness": 0.0636008121594128,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 113,
+          "marker_positions": {
+            "S": [
+              216.0,
+              129.0
+            ],
+            "E": [
+              236.0,
+              260.0
+            ]
+          }
+        },
+        {
+          "score": 0.1307628648403853,
+          "procrustes": 0.03619867248155199,
+          "turn_dtw": 0.16579934435047514,
+          "frechet": 0.14613768734466803,
+          "chamfer": 0.0667482633145379,
+          "compactness": 0.3278586522976273,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              164.0,
+              83.0
+            ],
+            "E": [
+              282.0,
+              326.0
+            ]
+          }
+        },
+        {
+          "score": 0.15876823151702163,
+          "procrustes": 0.03806657494112486,
+          "turn_dtw": 0.1629585530650355,
+          "frechet": 0.25466465201253735,
+          "chamfer": 0.07571848762308486,
+          "compactness": 0.32785389319229263,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              315.0,
+              245.0
+            ],
+            "E": [
+              250.0,
+              307.0
+            ]
+          }
+        },
+        {
+          "score": 0.16752055554613055,
+          "procrustes": 0.03919998063170921,
+          "turn_dtw": 0.1741043093687361,
+          "frechet": 0.26953626654145474,
+          "chamfer": 0.08434111954424098,
+          "compactness": 0.3099088143192617,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "E": [
+              152.0,
+              227.0
+            ],
+            "S": [
+              315.0,
+              276.0
+            ]
+          }
+        },
+        {
+          "score": 0.1202558715195523,
+          "procrustes": 0.03583261845158772,
+          "turn_dtw": 0.13121432891619864,
+          "frechet": 0.15399295178918027,
+          "chamfer": 0.07731135029353842,
+          "compactness": 0.3099088143192612,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "S": [
+              152.0,
+              227.0
+            ],
+            "E": [
+              315.0,
+              276.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "guided_chamfer",
+      "prediction": 4,
+      "ranking": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "scores": [
+        {
+          "score": 0.10481097962393951,
+          "procrustes": 0.027251974851558898,
+          "turn_dtw": 0.160512131262202,
+          "frechet": 0.36573056736059106,
+          "chamfer": 0.08551903532243962,
+          "compactness": 0.0636008121594128,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 113,
+          "marker_positions": {
+            "S": [
+              216.0,
+              129.0
+            ],
+            "E": [
+              236.0,
+              260.0
+            ]
+          }
+        },
+        {
+          "score": 0.11091550883285275,
+          "procrustes": 0.03619867248155199,
+          "turn_dtw": 0.16579934435047514,
+          "frechet": 0.14613768734466803,
+          "chamfer": 0.0667482633145379,
+          "compactness": 0.3278586522976273,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              164.0,
+              83.0
+            ],
+            "E": [
+              282.0,
+              326.0
+            ]
+          }
+        },
+        {
+          "score": 0.1140316904196585,
+          "procrustes": 0.03806657494112486,
+          "turn_dtw": 0.1629585530650355,
+          "frechet": 0.25466465201253735,
+          "chamfer": 0.07571848762308486,
+          "compactness": 0.32785389319229263,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              315.0,
+              245.0
+            ],
+            "E": [
+              250.0,
+              307.0
+            ]
+          }
+        },
+        {
+          "score": 0.12122176879682708,
+          "procrustes": 0.03919998063170921,
+          "turn_dtw": 0.1741043093687361,
+          "frechet": 0.26953626654145474,
+          "chamfer": 0.08434111954424098,
+          "compactness": 0.3099088143192617,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "E": [
+              152.0,
+              227.0
+            ],
+            "S": [
+              315.0,
+              276.0
+            ]
+          }
+        },
+        {
+          "score": 0.10108547114564184,
+          "procrustes": 0.03583261845158772,
+          "turn_dtw": 0.13121432891619864,
+          "frechet": 0.15399295178918027,
+          "chamfer": 0.07731135029353842,
+          "compactness": 0.3099088143192612,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "S": [
+              152.0,
+              227.0
+            ],
+            "E": [
+              315.0,
+              276.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "guided",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "scores": [
+        {
+          "score": 0.036788206214817654,
+          "procrustes": 0.015033096923067332,
+          "turn_dtw": 0.06215745511928663,
+          "frechet": 0.4214643252445583,
+          "chamfer": 0.05142700286831361,
+          "compactness": 0.07061464674170563,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 80,
+          "marker_positions": {
+            "E": [
+              157.0,
+              170.0
+            ],
+            "S": [
+              241.0,
+              211.0
+            ]
+          }
+        },
+        {
+          "score": 0.05305568511690178,
+          "procrustes": 0.03605872817649204,
+          "turn_dtw": 0.0485627341154564,
+          "frechet": 0.32968375800557914,
+          "chamfer": 0.09498410335804436,
+          "compactness": 0.11765391743755144,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "S": [
+              173.0,
+              100.0
+            ],
+            "E": [
+              235.0,
+              308.0
+            ]
+          }
+        },
+        {
+          "score": 0.059428092094685,
+          "procrustes": 0.040366376960787737,
+          "turn_dtw": 0.054462043239706465,
+          "frechet": 0.3769273541583399,
+          "chamfer": 0.09749944650881064,
+          "compactness": 0.15000749704435842,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "E": [
+              176.0,
+              115.0
+            ],
+            "S": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.05082071133418689,
+          "procrustes": 0.03537449437433809,
+          "turn_dtw": 0.04413204845671087,
+          "frechet": 0.3322571672779416,
+          "chamfer": 0.09551685239378677,
+          "compactness": 0.15000749704435778,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "S": [
+              176.0,
+              115.0
+            ],
+            "E": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.057848278258629496,
+          "procrustes": 0.03975116282978678,
+          "turn_dtw": 0.051706044082407775,
+          "frechet": 0.37511393575664365,
+          "chamfer": 0.09694497562976731,
+          "compactness": 0.11765391743755331,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "E": [
+              173.0,
+              100.0
+            ],
+            "S": [
+              235.0,
+              308.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "guided_frechet",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "scores": [
+        {
+          "score": 0.07463210349483246,
+          "procrustes": 0.015033096923067332,
+          "turn_dtw": 0.06330311298183983,
+          "frechet": 0.1497716681124847,
+          "chamfer": 0.047619754394545424,
+          "compactness": 0.07061464674170563,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 80,
+          "marker_positions": {
+            "E": [
+              157.0,
+              170.0
+            ],
+            "S": [
+              241.0,
+              211.0
+            ]
+          }
+        },
+        {
+          "score": 0.13547662461829657,
+          "procrustes": 0.03605872817649204,
+          "turn_dtw": 0.0485627341154564,
+          "frechet": 0.32968375800557914,
+          "chamfer": 0.09498410335804436,
+          "compactness": 0.11765391743755144,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "S": [
+              173.0,
+              100.0
+            ],
+            "E": [
+              235.0,
+              308.0
+            ]
+          }
+        },
+        {
+          "score": 0.14706848033812886,
+          "procrustes": 0.040366376960787737,
+          "turn_dtw": 0.08159610033970473,
+          "frechet": 0.31257387303377787,
+          "chamfer": 0.09551685239378692,
+          "compactness": 0.15000749704435842,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "E": [
+              176.0,
+              115.0
+            ],
+            "S": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.1338850031536723,
+          "procrustes": 0.03537449437433809,
+          "turn_dtw": 0.04413204845671087,
+          "frechet": 0.3322571672779416,
+          "chamfer": 0.09551685239378677,
+          "compactness": 0.15000749704435778,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "S": [
+              176.0,
+              115.0
+            ],
+            "E": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.14619358874907762,
+          "procrustes": 0.03975116282978678,
+          "turn_dtw": 0.08213742821978004,
+          "frechet": 0.31077730416947136,
+          "chamfer": 0.09498410335804444,
+          "compactness": 0.11765391743755331,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "E": [
+              173.0,
+              100.0
+            ],
+            "S": [
+              235.0,
+              308.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "guided_chamfer",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "scores": [
+        {
+          "score": 0.04909412506534763,
+          "procrustes": 0.015033096923067332,
+          "turn_dtw": 0.06330311298183983,
+          "frechet": 0.1497716681124847,
+          "chamfer": 0.047619754394545424,
+          "compactness": 0.07061464674170563,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 80,
+          "marker_positions": {
+            "E": [
+              157.0,
+              170.0
+            ],
+            "S": [
+              241.0,
+              211.0
+            ]
+          }
+        },
+        {
+          "score": 0.07680171095641286,
+          "procrustes": 0.03605872817649204,
+          "turn_dtw": 0.0485627341154564,
+          "frechet": 0.32968375800557914,
+          "chamfer": 0.09498410335804436,
+          "compactness": 0.11765391743755144,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "S": [
+              173.0,
+              100.0
+            ],
+            "E": [
+              235.0,
+              308.0
+            ]
+          }
+        },
+        {
+          "score": 0.08380295372188766,
+          "procrustes": 0.040366376960787737,
+          "turn_dtw": 0.054462043239706465,
+          "frechet": 0.3769273541583399,
+          "chamfer": 0.09749944650881064,
+          "compactness": 0.15000749704435842,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "E": [
+              176.0,
+              115.0
+            ],
+            "S": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.07469992443263358,
+          "procrustes": 0.03537449437433809,
+          "turn_dtw": 0.04413204845671087,
+          "frechet": 0.3322571672779416,
+          "chamfer": 0.09551685239378677,
+          "compactness": 0.15000749704435778,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "S": [
+              176.0,
+              115.0
+            ],
+            "E": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.08208452216607132,
+          "procrustes": 0.03975116282978678,
+          "turn_dtw": 0.051706044082407775,
+          "frechet": 0.37511393575664365,
+          "chamfer": 0.09694497562976731,
+          "compactness": 0.11765391743755331,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "E": [
+              173.0,
+              100.0
+            ],
+            "S": [
+              235.0,
+              308.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "guided",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "scores": [
+        {
+          "score": 0.20430063183189864,
+          "procrustes": 0.13561961564255084,
+          "turn_dtw": 0.196231474826708,
+          "frechet": 0.3863460597267126,
+          "chamfer": 0.07091029001563814,
+          "compactness": 1.9022515510868196,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "E": [
+              172.0,
+              110.0
+            ],
+            "S": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.20835118543988063,
+          "procrustes": 0.14584669476771003,
+          "turn_dtw": 0.17858425906334455,
+          "frechet": 0.4239836717967579,
+          "chamfer": 0.06135492173393316,
+          "compactness": 1.882553000532147,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 274,
+          "marker_positions": {
+            "S": [
+              189.0,
+              89.0
+            ],
+            "E": [
+              165.0,
+              320.0
+            ]
+          }
+        },
+        {
+          "score": 0.22646068877936532,
+          "procrustes": 0.1577615714872723,
+          "turn_dtw": 0.19628319226312294,
+          "frechet": 0.3233216416572568,
+          "chamfer": 0.07091029001563814,
+          "compactness": 1.9022515510868216,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "S": [
+              172.0,
+              110.0
+            ],
+            "E": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.22623342411074066,
+          "procrustes": 0.1579234559518906,
+          "turn_dtw": 0.19517133759671437,
+          "frechet": 0.3845566247457137,
+          "chamfer": 0.06343414239563834,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "E": [
+              240.0,
+              108.0
+            ],
+            "S": [
+              159.0,
+              283.0
+            ]
+          }
+        },
+        {
+          "score": 0.2076373892269291,
+          "procrustes": 0.13940975428711147,
+          "turn_dtw": 0.1949360998280504,
+          "frechet": 0.2894172606915291,
+          "chamfer": 0.06343414239563813,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "S": [
+              240.0,
+              108.0
+            ],
+            "E": [
+              159.0,
+              283.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "guided_frechet",
+      "prediction": 4,
+      "ranking": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "scores": [
+        {
+          "score": 0.2833443542128902,
+          "procrustes": 0.13561961564255084,
+          "turn_dtw": 0.21994247118072807,
+          "frechet": 0.2829794946283382,
+          "chamfer": 0.055190849380170784,
+          "compactness": 1.9022515510868196,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "E": [
+              172.0,
+              110.0
+            ],
+            "S": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.3031876389212632,
+          "procrustes": 0.14584669476771003,
+          "turn_dtw": 0.23177021141272136,
+          "frechet": 0.3048854806364028,
+          "chamfer": 0.06823258490368145,
+          "compactness": 1.882553000532147,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 274,
+          "marker_positions": {
+            "S": [
+              189.0,
+              89.0
+            ],
+            "E": [
+              165.0,
+              320.0
+            ]
+          }
+        },
+        {
+          "score": 0.30729109919367953,
+          "procrustes": 0.1577615714872723,
+          "turn_dtw": 0.19628319226312294,
+          "frechet": 0.3233216416572568,
+          "chamfer": 0.07091029001563814,
+          "compactness": 1.9022515510868216,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "S": [
+              172.0,
+              110.0
+            ],
+            "E": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.3223725802971691,
+          "procrustes": 0.1579234559518906,
+          "turn_dtw": 0.19517133759671437,
+          "frechet": 0.3845566247457137,
+          "chamfer": 0.06343414239563834,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "E": [
+              240.0,
+              108.0
+            ],
+            "S": [
+              159.0,
+              283.0
+            ]
+          }
+        },
+        {
+          "score": 0.27999170439981136,
+          "procrustes": 0.13940975428711147,
+          "turn_dtw": 0.1949360998280504,
+          "frechet": 0.2894172606915291,
+          "chamfer": 0.06343414239563813,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "S": [
+              240.0,
+              108.0
+            ],
+            "E": [
+              159.0,
+              283.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "guided_chamfer",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "scores": [
+        {
+          "score": 0.22202820433580817,
+          "procrustes": 0.13561961564255084,
+          "turn_dtw": 0.196231474826708,
+          "frechet": 0.3863460597267126,
+          "chamfer": 0.07091029001563814,
+          "compactness": 1.9022515510868196,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "E": [
+              172.0,
+              110.0
+            ],
+            "S": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.22368991587336393,
+          "procrustes": 0.14584669476771003,
+          "turn_dtw": 0.17858425906334455,
+          "frechet": 0.4239836717967579,
+          "chamfer": 0.06135492173393316,
+          "compactness": 1.882553000532147,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 274,
+          "marker_positions": {
+            "S": [
+              189.0,
+              89.0
+            ],
+            "E": [
+              165.0,
+              320.0
+            ]
+          }
+        },
+        {
+          "score": 0.24418826128327487,
+          "procrustes": 0.1577615714872723,
+          "turn_dtw": 0.19628319226312294,
+          "frechet": 0.3233216416572568,
+          "chamfer": 0.07091029001563814,
+          "compactness": 1.9022515510868216,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "S": [
+              172.0,
+              110.0
+            ],
+            "E": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.24209195970965025,
+          "procrustes": 0.1579234559518906,
+          "turn_dtw": 0.19517133759671437,
+          "frechet": 0.3845566247457137,
+          "chamfer": 0.06343414239563834,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "E": [
+              240.0,
+              108.0
+            ],
+            "S": [
+              159.0,
+              283.0
+            ]
+          }
+        },
+        {
+          "score": 0.22349592482583863,
+          "procrustes": 0.13940975428711147,
+          "turn_dtw": 0.1949360998280504,
+          "frechet": 0.2894172606915291,
+          "chamfer": 0.06343414239563813,
+          "compactness": 1.9600610255117898,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "S": [
+              240.0,
+              108.0
+            ],
+            "E": [
+              159.0,
+              283.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "guided",
+      "prediction": 3,
+      "ranking": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "scores": [
+        {
+          "score": 0.020210724092208615,
+          "procrustes": 0.011650706844259251,
+          "turn_dtw": 0.024457192136998183,
+          "frechet": 0.3631072009926024,
+          "chamfer": 0.08490873734754346,
+          "compactness": 0.008591316030939919,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              318.0,
+              291.0
+            ],
+            "E": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.026732305059187784,
+          "procrustes": 0.013207787988267754,
+          "turn_dtw": 0.03864147734548581,
+          "frechet": 0.36480420698849764,
+          "chamfer": 0.08552419603387963,
+          "compactness": 0.00859131603094036,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "E": [
+              318.0,
+              291.0
+            ],
+            "S": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.0253495551254586,
+          "procrustes": 0.007298120472497311,
+          "turn_dtw": 0.0515755275798894,
+          "frechet": 0.19176373833268812,
+          "chamfer": 0.08925905142774741,
+          "compactness": 0.007034893489835224,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 155,
+          "marker_positions": {
+            "S": [
+              150.0,
+              115.0
+            ],
+            "E": [
+              248.0,
+              293.0
+            ]
+          }
+        },
+        {
+          "score": 0.01588645595253616,
+          "procrustes": 0.00656446648273878,
+          "turn_dtw": 0.026634255627992515,
+          "frechet": 0.371487479644991,
+          "chamfer": 0.0941236536460871,
+          "compactness": 0.024743091025723356,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 290,
+          "marker_positions": {
+            "E": [
+              57.0,
+              31.0
+            ],
+            "S": [
+              342.0,
+              378.0
+            ]
+          }
+        },
+        {
+          "score": 0.020481700351136813,
+          "procrustes": 0.011821499887871756,
+          "turn_dtw": 0.024743429895043013,
+          "frechet": 0.36306595317119883,
+          "chamfer": 0.08494056240586362,
+          "compactness": 0.007447922667875252,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              273.0,
+              296.0
+            ],
+            "E": [
+              124.0,
+              115.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "guided_frechet",
+      "prediction": 2,
+      "ranking": [
+        2,
+        3,
+        1,
+        0,
+        4
+      ],
+      "scores": [
+        {
+          "score": 0.08708672931618991,
+          "procrustes": 0.011650706844259251,
+          "turn_dtw": 0.04701654120145257,
+          "frechet": 0.23592093220568905,
+          "chamfer": 0.08552419603387962,
+          "compactness": 0.008591316030939919,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              318.0,
+              291.0
+            ],
+            "E": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.08593108685353629,
+          "procrustes": 0.013207787988267754,
+          "turn_dtw": 0.04329679194107275,
+          "frechet": 0.23027768674357232,
+          "chamfer": 0.08490873734754348,
+          "compactness": 0.00859131603094036,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "E": [
+              318.0,
+              291.0
+            ],
+            "S": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.07329048970863063,
+          "procrustes": 0.007298120472497311,
+          "turn_dtw": 0.0515755275798894,
+          "frechet": 0.19176373833268812,
+          "chamfer": 0.08925905142774741,
+          "compactness": 0.007034893489835224,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 155,
+          "marker_positions": {
+            "S": [
+              150.0,
+              115.0
+            ],
+            "E": [
+              248.0,
+              293.0
+            ]
+          }
+        },
+        {
+          "score": 0.07872128405689273,
+          "procrustes": 0.00656446648273878,
+          "turn_dtw": 0.034691149538315987,
+          "frechet": 0.2400596609429734,
+          "chamfer": 0.09466391038332146,
+          "compactness": 0.024743091025723356,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 290,
+          "marker_positions": {
+            "E": [
+              57.0,
+              31.0
+            ],
+            "S": [
+              342.0,
+              378.0
+            ]
+          }
+        },
+        {
+          "score": 0.08716555529103827,
+          "procrustes": 0.011821499887871756,
+          "turn_dtw": 0.04669955427763009,
+          "frechet": 0.23599684562398393,
+          "chamfer": 0.08555642287562787,
+          "compactness": 0.007447922667875252,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              273.0,
+              296.0
+            ],
+            "E": [
+              124.0,
+              115.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "guided_chamfer",
+      "prediction": 3,
+      "ranking": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "scores": [
+        {
+          "score": 0.04143790842909448,
+          "procrustes": 0.011650706844259251,
+          "turn_dtw": 0.024457192136998183,
+          "frechet": 0.3631072009926024,
+          "chamfer": 0.08490873734754346,
+          "compactness": 0.008591316030939919,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              318.0,
+              291.0
+            ],
+            "E": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.048113354067657696,
+          "procrustes": 0.013207787988267754,
+          "turn_dtw": 0.03864147734548581,
+          "frechet": 0.36480420698849764,
+          "chamfer": 0.08552419603387963,
+          "compactness": 0.00859131603094036,
+          "hypothesis": "forward-reflect",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "E": [
+              318.0,
+              291.0
+            ],
+            "S": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.047664317982395454,
+          "procrustes": 0.007298120472497311,
+          "turn_dtw": 0.0515755275798894,
+          "frechet": 0.19176373833268812,
+          "chamfer": 0.08925905142774741,
+          "compactness": 0.007034893489835224,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 155,
+          "marker_positions": {
+            "S": [
+              150.0,
+              115.0
+            ],
+            "E": [
+              248.0,
+              293.0
+            ]
+          }
+        },
+        {
+          "score": 0.03941736936405793,
+          "procrustes": 0.00656446648273878,
+          "turn_dtw": 0.026634255627992515,
+          "frechet": 0.371487479644991,
+          "chamfer": 0.0941236536460871,
+          "compactness": 0.024743091025723356,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 290,
+          "marker_positions": {
+            "E": [
+              57.0,
+              31.0
+            ],
+            "S": [
+              342.0,
+              378.0
+            ]
+          }
+        },
+        {
+          "score": 0.04171684095260272,
+          "procrustes": 0.011821499887871756,
+          "turn_dtw": 0.024743429895043013,
+          "frechet": 0.36306595317119883,
+          "chamfer": 0.08494056240586362,
+          "compactness": 0.007447922667875252,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              273.0,
+              296.0
+            ],
+            "E": [
+              124.0,
+              115.0
+            ]
+          }
+        }
+      ],
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}

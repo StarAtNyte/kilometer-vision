@@ -34,6 +34,8 @@ The corresponding Qwen3-VL-32B RGB control (geometry panel plus four ordered wal
 
 Two direct alignment tests were also negative. Anchoring both routes at S and normalizing by the S→E chord scored 3/5 (mirror variant 2/5), below centered ordered Procrustes at 4/5. Projecting raw DPVO camera positions instead of the yaw-integrated trace scored 3/5 for XZ and 2/5 for XY/YZ. The yaw-integrated p16 trace remains the best measured representation; artifacts are under `experiments/map-endpoint-alignment/` and `experiments/map-dpvo3d-projection/`.
 
+Marker-guided S→E extraction plus a Fréchet term fixes buBU under a validation-sized gate, but the same gate changes 55 of 284 unlabeled test map answers (and ungated guided scoring changes 141). This is strong evidence of broad extraction instability, not a safe production improvement. The full audit is `experiments/map-marker-guided-audit/test.json`; it remains rejected.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
