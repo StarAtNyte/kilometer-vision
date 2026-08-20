@@ -49,12 +49,28 @@ def _api_key(key_index: int | None = None) -> str:
 
 
 def _parse_json_response(text: str) -> dict:
-    """Repair a bare invalid JSON backslash-u escape emitted by the model."""
+    """Parse JSON, tolerating the small malformed fragments returned by Flash."""
     try:
         return json.loads(text)
     except json.JSONDecodeError:
         repaired = re.sub(r"\\u(?![0-9a-fA-F]{4})", r"\\\\u", text)
-        return json.loads(repaired)
+        try:
+            return json.loads(repaired)
+        except json.JSONDecodeError:
+            # Flash occasionally emits a valid answer followed by one malformed
+            # quoted field. Recover only the schema fields needed downstream;
+            # never infer the answer from candidate geometry or labels.
+            answer = re.search(r'"answer"\s*:\s*"([A-E])"', text, re.I)
+            if not answer:
+                raise
+            confidence = re.search(r'"confidence"\s*:\s*([-+]?\d+(?:\.\d+)?)', text)
+            result = {"answer": answer.group(1).upper()}
+            result["confidence"] = float(confidence.group(1)) if confidence else 0.0
+            for field in ("observed_start", "observed_end", "reason", "start_pin_location", "end_pin_location"):
+                match = re.search(rf'"{field}"\s*:\s*"((?:\\.|[^"\\])*)"', text, re.S)
+                if match:
+                    result[field] = match.group(1)
+            return result
 
 
 @app.function(image=IMAGE, secrets=[SECRET], timeout=300)
