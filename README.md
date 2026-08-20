@@ -36,6 +36,8 @@ Two direct alignment tests were also negative. Anchoring both routes at S and no
 
 Marker-guided S→E extraction plus a Fréchet term fixes buBU under a validation-sized gate, but the same gate changes 55 of 284 unlabeled test map answers (and ungated guided scoring changes 141). This is strong evidence of broad extraction instability, not a safe production improvement. The full audit is `experiments/map-marker-guided-audit/test.json`; it remains rejected.
 
+Red-route pin-mask cleanup was swept at radii 8, 10, 12, 15, 18, 22, and 26. Validation peaks at 4/5 for radii 8, 12, and 15; radii 10/22/26 fall to 2/5. On test, radius 15 is exactly identical to the production ranking, while radius 8 changes 54/284 and radius 12 changes 69/284 with no labels to justify those changes. The default radius 15 is retained. See `experiments/map-pin-radius-sweep/`.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
