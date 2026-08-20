@@ -57,6 +57,8 @@ DA3-Streaming (DA3NESTED-GIANT-LARGE-1.1, chunk size 60) was also run remotely, 
 
 Finally, map-conditioned calibration was tested using the scale-invariant route compactness (polyline length divided by S→E chord). It reached only 3/5; a weight sweep from 0.05 to 0.5 never exceeded 3/5. This is another useful negative result: endpoint/length priors overfit the five-question validation set and remain opt-in.
 
+The curvature term was then swept on the actual DPVO 1 FPS/p16 trajectories (weights 0.1, 0.35, 0.5, 1.0, 2.0). The existing 0.35 and 0.5 settings both scored 4/5; higher or lower weights fell to 2–3/5. Turn weighting is therefore already near its useful optimum.
+
 ## Planned commands
 
 ```bash

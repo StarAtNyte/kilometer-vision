@@ -266,7 +266,8 @@ def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True
                            reflection_penalty: float = 0.04,
                            frechet_weight: float = 0.0,
                            chamfer_weight: float = 0.0,
-                           compactness_weight: float = 0.0) -> dict[str, float | str]:
+                           compactness_weight: float = 0.0,
+                           turn_weight: float = 0.35) -> dict[str, float | str]:
     """Compare ordered routes while enumerating traversal and axis conventions."""
     import numpy as np
     left = resample_polyline(left_points)
@@ -289,7 +290,7 @@ def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True
             frechet = discrete_frechet_distance(left, transformed)
             chamfer = symmetric_chamfer_distance(left, transformed)
             compactness = abs(math.log((route_compactness(left) + 1e-9) / (route_compactness(transformed) + 1e-9)))
-            score = point_score + 0.35 * turn_score + frechet_weight * frechet + chamfer_weight * chamfer + compactness_weight * compactness + (reflection_penalty if reflect else 0.0)
+            score = point_score + turn_weight * turn_score + frechet_weight * frechet + chamfer_weight * chamfer + compactness_weight * compactness + (reflection_penalty if reflect else 0.0)
             hypotheses.append((score, point_score, turn_score, frechet, chamfer, compactness, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
     score, point_score, turn_score, frechet, chamfer, compactness, hypothesis = min(hypotheses)
     return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "chamfer": float(chamfer), "compactness": float(compactness), "hypothesis": hypothesis}
@@ -366,7 +367,8 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
                                    frechet_weight: float = 0.0,
                                    marker_guided: bool = False,
                                    chamfer_weight: float = 0.0,
-                                   compactness_weight: float = 0.0) -> list[dict[str, Any]]:
+                                   compactness_weight: float = 0.0,
+                                   turn_weight: float = 0.35) -> list[dict[str, Any]]:
     """Score five map candidates against any time-ordered 2-D trajectory."""
     references = question.get("image_paths")
     if not isinstance(references, list) or len(references) != 5:
@@ -384,7 +386,7 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
             result = ordered_shape_distance(
                 trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty,
                 frechet_weight=frechet_weight, chamfer_weight=chamfer_weight,
-                compactness_weight=compactness_weight
+                compactness_weight=compactness_weight, turn_weight=turn_weight
             )
             result["candidate_path_points"] = len(path)
             result["marker_positions"] = markers

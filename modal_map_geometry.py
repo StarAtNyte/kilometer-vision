@@ -91,6 +91,16 @@ def evaluate(split: str = "validation") -> dict:
                 variant: min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
                 for variant, scores in dpvo_variants.items() if scores
             }
+            dpvo_turn_predictions = {}
+            dpvo_trace_path = ROOT / "experiments" / "dpvo-motion" / split / "fps1-focal0.9-w256-b256-p16" / f"{video_id}.json"
+            if dpvo_trace_path.exists():
+                payload = json.loads(dpvo_trace_path.read_text())
+                trace = payload.get(str(question_id), {}).get("trajectory_2d", [])
+                if trace:
+                    for weight in (0.1, 0.35, 0.5, 1.0, 2.0):
+                        scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0, turn_weight=weight)
+                        if scores:
+                            dpvo_turn_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             slam_predictions = {}
             slam_path = ROOT / "experiments" / "vggt-slam2" / f"{video_id}.json"
             if slam_path.exists():
@@ -142,6 +152,15 @@ def evaluate(split: str = "validation") -> dict:
                     )
                     if scores:
                         compact_weight_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
+            turn_weight_predictions = {}
+            if motion.get("steps"):
+                for weight in (0.1, 0.35, 0.5, 1.0, 2.0):
+                    scores = ordered_trace_candidate_scores(
+                        question, motion_polyline(motion.get("steps", [])), archive,
+                        reflection_penalty=0.0, turn_weight=weight
+                    )
+                    if scores:
+                        turn_weight_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -166,6 +185,7 @@ def evaluate(split: str = "validation") -> dict:
                     "vggt_consensus_prediction": vggt_consensus,
                     "dpvo_scores": dpvo_variants,
                     "dpvo_predictions": dpvo_predictions,
+                    "dpvo_turn_predictions": dpvo_turn_predictions,
                     "vggt_slam_predictions": slam_predictions,
                     "da3_predictions": da3_predictions,
                     "answer_id": answer_id,
@@ -175,6 +195,7 @@ def evaluate(split: str = "validation") -> dict:
                     "guided_correct": guided_prediction == answer_id if answer_id is not None else None,
                     "compact_correct": compact_prediction == answer_id if answer_id is not None else None,
                     "compact_weight_predictions": compact_weight_predictions,
+                    "turn_weight_predictions": turn_weight_predictions,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -202,10 +223,18 @@ def evaluate(split: str = "validation") -> dict:
             weight: sum(row["compact_weight_predictions"].get(weight) == row["answer_id"] for row in records)
             for weight in ("0.05", "0.1", "0.25", "0.5")
         },
+        "turn_weight_correct": {
+            weight: sum(row["turn_weight_predictions"].get(weight) == row["answer_id"] for row in records)
+            for weight in ("0.1", "0.35", "0.5", "1.0", "2.0")
+        },
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)
             for variant in ("fps0.5-focal0.9-w256-b256-p16", "fps1.5-focal0.9-w256-b256-p16", "fps1-focal0.75-w256-b256-p16", "fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16")
+        },
+        "dpvo_turn_correct": {
+            weight: sum(row["dpvo_turn_predictions"].get(weight) == row["answer_id"] for row in records)
+            for weight in ("0.1", "0.35", "0.5", "1.0", "2.0")
         },
         "vggt_slam_correct": {
             variant: sum(row["vggt_slam_correct"].get(variant) is True for row in records)
