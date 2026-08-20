@@ -91,6 +91,8 @@ As a stronger-model control, Qwen3.8-27B was run remotely on the nine 4MY route-
 
 The recent `ybrrraway/V2LO-7B` Video2Layout checkpoint was tested as an image-only map reader on the five labeled validation map questions, with randomized candidate display order and no video/answer access. It achieved 1/5 (raw answers C, E, B, D, B), substantially below the geometry/Gemini route and therefore is not an override. The run is preserved under `experiments/map-v2lo/validation.json`; the parser explicitly extracts the tagged answer rather than matching the `A` in `<answer>`.
 
+The same randomized candidate-panel control with `Qwen/Qwen3-VL-8B-Instruct` and the restored p8 DPVO trace scored 0/5 (C, B, B, C, B). This isolates the failure to the visual route/evidence representation rather than model size; the result is preserved under `experiments/map-qwen3-8b/validation.json` and is not used in production.
+
 ## Planned commands
 
 ```bash

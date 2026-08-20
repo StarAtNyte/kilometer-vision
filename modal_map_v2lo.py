@@ -26,7 +26,8 @@ app = modal.App("kilometervision-map-v2lo")
 
 
 @app.function(image=IMAGE, gpu="H200", volumes={"/data": VOLUME}, timeout=2 * 3600)
-def run(split: str = "validation"):
+def run(split: str = "validation", checkpoint: str = CHECKPOINT,
+        output_namespace: str = "map-v2lo"):
     import torch
     from PIL import Image
     from transformers import AutoModelForImageTextToText, AutoProcessor
@@ -34,9 +35,9 @@ def run(split: str = "validation"):
 
     VOLUME.reload()
     model = AutoModelForImageTextToText.from_pretrained(
-        CHECKPOINT, torch_dtype=torch.bfloat16, device_map="auto", low_cpu_mem_usage=True
+        checkpoint, torch_dtype=torch.bfloat16, device_map="auto", low_cpu_mem_usage=True
     )
-    processor = AutoProcessor.from_pretrained(CHECKPOINT)
+    processor = AutoProcessor.from_pretrained(checkpoint)
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     archive_path = ROOT / "manifests" / f"{split}_images.zip"
     records = []
@@ -79,13 +80,13 @@ def run(split: str = "validation"):
                 prediction = "ABCDE".index(letter) if letter else None
                 records.append({"video_id": video_id, "question_id": str(question_id),
                                 "prediction": prediction, "raw_text": raw, "display_order": order,
-                                "checkpoint": CHECKPOINT, "ground_truth_used_for_inference": False,
+                                "checkpoint": checkpoint, "ground_truth_used_for_inference": False,
                                 "answer_id": question.get("answer_id")})
                 del inputs, generated, images
                 torch.cuda.empty_cache()
-    result = {"split": split, "checkpoint": CHECKPOINT, "records": records,
+    result = {"split": split, "checkpoint": checkpoint, "records": records,
               "ground_truth_used_for_inference": False}
-    output = ROOT / "experiments" / "map-v2lo" / f"{split}.json"
+    output = ROOT / "experiments" / output_namespace / f"{split}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n")
     VOLUME.commit()
@@ -93,7 +94,8 @@ def run(split: str = "validation"):
 
 
 @app.local_entrypoint()
-def main(split: str = "validation"):
-    result = run.remote(split)
+def main(split: str = "validation", checkpoint: str = CHECKPOINT,
+         output_namespace: str = "map-v2lo"):
+    result = run.remote(split, checkpoint, output_namespace)
     print(json.dumps({"records": len(result["records"]),
                       "predictions": [r["prediction"] for r in result["records"]]}, indent=2))
