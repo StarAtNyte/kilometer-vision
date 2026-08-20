@@ -1,0 +1,22 @@
+{
+  "audit": {
+    "actual": 986,
+    "errors": [],
+    "expected": 986,
+    "valid": true
+  },
+  "changed_vs_fixed_local_baseline": 118,
+  "differences_vs_preserved_compass_artifact": 0,
+  "errors": [],
+  "missing": [],
+  "non_compass_changes": 0,
+  "records_ok": 146,
+  "sha256": "4adccee09cd10102bc4b754b9809efb3dacc0ea7f29290fb3fc682ff1ef7c3c6",
+  "evalai": {
+    "phase_id": 5354,
+    "private": true,
+    "score_top1": 0.25050709939148075,
+    "submission_id": 579590
+  },
+  "uploaded": true
+}

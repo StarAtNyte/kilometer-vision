@@ -1,0 +1,41 @@
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local agent/session state
+.pi-glla/
+.pi-subagents/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Downloaded media, datasets, and model weights
+data/
+videos/
+datasets/
+checkpoints/
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# OS/editor noise
+.DS_Store
+*.swp
+*~

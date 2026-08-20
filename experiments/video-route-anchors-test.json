@@ -1,0 +1,914 @@
+{
+  "ground_truth_used": false,
+  "records": {
+    "-xsX_SCGi4o": {
+      "description_chars": 94,
+      "route_anchor_candidates": [],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in NUREMBERG / Germany 🇩🇪- 4K 60fps (UHD)"
+    },
+    "0spzMyKrd8c": {
+      "description_chars": 1136,
+      "route_anchor_candidates": [
+        "Polish",
+        "Old",
+        "Warsaw",
+        "UKyT_a-raW4",
+        "Some",
+        "Christmas Market",
+        "Old Town Market",
+        "Around Old Town",
+        "Downtown",
+        "Palace",
+        "Culture"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in WARSAW   Poland   Downtown and Old Town   4K 60fps UHD"
+    },
+    "4MYTCny_FZs": {
+      "description_chars": 907,
+      "route_anchor_candidates": [
+        "Both Kadıköy",
+        "Üsküdar",
+        "Istanbul",
+        "C796Mh7kMM8",
+        "SNkdN97hXzw",
+        "Bosphorus",
+        "Anatolian",
+        "European",
+        "Kadikoy Square",
+        "Statue"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in ISTANBUL / Turkey 🇹🇷- Kadıköy Tour (Asian Side) - 4K 60fps (UHD)"
+    },
+    "8dRlTtH1scc": {
+      "description_chars": 882,
+      "route_anchor_candidates": [
+        "Art Nouveau"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BYDGOSZCZ   Poland 🇵🇱  4K 60fps UHD"
+    },
+    "9m3fojdkPjM": {
+      "description_chars": 1422,
+      "route_anchor_candidates": [
+        "Cathedral Church",
+        "Saint",
+        "Segura",
+        "Murcia",
+        "Jardín De",
+        "Back"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in MURCIA / Spain 🇪🇸- 4K 60fps (UHD)"
+    },
+    "BkALBcakj2s": {
+      "description_chars": 665,
+      "route_anchor_candidates": [
+        "Wroclaw",
+        "Poland",
+        "German",
+        "Ostrow",
+        "JipvpATmkgI"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in WROCLAW / Poland 🇵🇱- City Center to Ostrow Tumski - 4K 60fps (UHD)"
+    },
+    "E07rTPgIvn0": {
+      "description_chars": 955,
+      "route_anchor_candidates": [
+        "Rembrandtplein",
+        "Rembrandt",
+        "Amsterdam",
+        "Heading",
+        "North",
+        "Jewish Historical",
+        "Rembrandt House Museum",
+        "Niewmarket",
+        "Onwards",
+        "Binnenstad",
+        "An Amsterdam",
+        "Leidseplein",
+        "XcSzjSCIWV8"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in AMSTERDAM / Netherlands 🇳🇱- 4K 60fps (UHD)"
+    },
+    "G0fWvIxy88A": {
+      "description_chars": 1036,
+      "route_anchor_candidates": [
+        "Gothic",
+        "England",
+        "York",
+        "Exhibition Square",
+        "River Ouse",
+        "Selby Magistrates' Courthouse",
+        "Clifford's",
+        "Exhibition"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in YORK / England (UK) 🇬🇧- 4K 60fps (UHD)"
+    },
+    "Htw4yFOWghU": {
+      "description_chars": 1021,
+      "route_anchor_candidates": [
+        "Parish Church",
+        "Mirabell Palace",
+        "South",
+        "Salzach",
+        "Salzburg Cathedral",
+        "Mozart's"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in SALZBURG / Austria 🇦🇹- 4K 60fps (UHD)"
+    },
+    "JimzKXL9BZM": {
+      "description_chars": 1019,
+      "route_anchor_candidates": [
+        "With",
+        "Knights",
+        "St John",
+        "Sliema",
+        "St Paul's Pro-Cathedral",
+        "St George’s Square",
+        "Siege Bell War Memorial",
+        "Malta",
+        "Upper Barrakka Gardens",
+        "Valletta City Gate",
+        "Triton Fountain"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in VALLETTA   Malta ����  4K 60fps UHD 480p"
+    },
+    "Jr9x-RB4E1U": {
+      "description_chars": 921,
+      "route_anchor_candidates": [
+        "Sergels",
+        "Drottninggatan",
+        "Gamla",
+        "Stockholm Cathedral",
+        "Passing",
+        "Almarna",
+        "Stockholm City",
+        "Stockholm"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in STOCKHOLM / Sweden 🇸🇪- 4K 60fps (UHD)"
+    },
+    "LZW_eu7rFgw": {
+      "description_chars": 859,
+      "route_anchor_candidates": [
+        "Oxford",
+        "University College",
+        "Magdalen College",
+        "High Street",
+        "Because",
+        "Old",
+        "Matthew Arnold",
+        "Dreaming"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in OXFORD / England (UK) 🇬🇧- 4K 60fps (UHD)"
+    },
+    "NYgDp4wZ94I": {
+      "description_chars": 628,
+      "route_anchor_candidates": [
+        "Brno",
+        "Cabbage Market",
+        "Zelný",
+        "Old Town Hall",
+        "Liberty Square",
+        "Castle"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BRNO, Czech Republic 🇨🇿 - Summer Tour - 4K 60fps (UHD)"
+    },
+    "Q-JNbrnuVcw": {
+      "description_chars": 3554,
+      "route_anchor_candidates": [
+        "Harry",
+        "Romans",
+        "Ghosts",
+        "York",
+        "Come",
+        "Join",
+        "Together",
+        "England",
+        "London",
+        "Interested",
+        "You'll",
+        "York UK Walking",
+        "Thanks",
+        "Walkingtourguide",
+        "Original Walking",
+        "Start",
+        "Ending",
+        "HDwalk",
+        "HDwalking",
+        "HDtour"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Harry Potter, Vikings, Romans and Ghosts (The Best Walking Tour of York)"
+    },
+    "QSmepKM31iQ": {
+      "description_chars": 97,
+      "route_anchor_candidates": [],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in HEIDELBERG / Germany 🇩🇪- Autumn Evening - 4K 60fps (UHD)"
+    },
+    "Qrsh9Di_OAk": {
+      "description_chars": 666,
+      "route_anchor_candidates": [
+        "Toruń",
+        "Poland",
+        "Torun",
+        "Nicolaus",
+        "Stare",
+        "UNESCO",
+        "DDMFFaIXQ0A"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in TORUN / Poland 🇵🇱- Summer Tour - 4K 60fps (UHD)"
+    },
+    "UKyT_a-raW4": {
+      "description_chars": 1013,
+      "route_anchor_candidates": [
+        "Another",
+        "Palace",
+        "Culture",
+        "Science",
+        "Pałac Kultury",
+        "Soviet",
+        "Złote Tarasy Shopping",
+        "Warsaw Central Station",
+        "Warszawa",
+        "Chmielna Street",
+        "Nowy",
+        "Frédéric Chopin",
+        "Royal Route",
+        "Trakt",
+        "WWII",
+        "Warsaw's Old Town Market"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in WARSAW / Poland 🇵🇱- 4K 60fps (UHD)"
+    },
+    "VD-jgk6HKOg": {
+      "description_chars": 954,
+      "route_anchor_candidates": [
+        "Vienna",
+        "Austria",
+        "June",
+        "Peter's Catholic Church",
+        "South",
+        "Hofburg",
+        "Vienna State",
+        "Naschmarkt"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in VIENNA / Austria 🇦🇹- City Centre & Churches -  4K 60fps (UHD)"
+    },
+    "VIwTJ_P2EG4": {
+      "description_chars": 601,
+      "route_anchor_candidates": [
+        "Today",
+        "Vilnius",
+        "Gates",
+        "Heading",
+        "Town Hall",
+        "Gediminas' Tower",
+        "Gedimino",
+        "Town"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in VILNIUS Lithuania Around the Old Town - 4K 60fps (UHD) AUG 2022"
+    },
+    "Vgs_7ETwq3o": {
+      "description_chars": 777,
+      "route_anchor_candidates": [
+        "Palma's Portixol Harbour",
+        "F67dxXIs4So",
+        "First",
+        "Obelisco La Gaviota",
+        "Marítimo",
+        "Rigo",
+        "Ses",
+        "Mallorca's Cathedral",
+        "Plaza"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in PALMA DE MALLORCA / Spain 🇪🇸- Portixol to City - 4K 60fps (UHD)"
+    },
+    "WSDe_B5KPco": {
+      "description_chars": 1007,
+      "route_anchor_candidates": [
+        "Dortmund",
+        "Borussia Dortmund",
+        "Dortmund Central",
+        "German Football Museum",
+        "During",
+        "September"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in DORTMUND / Germany 🇩🇪 - 4K 60fps (UHD)"
+    },
+    "WmKNcI4atpA": {
+      "description_chars": 1115,
+      "route_anchor_candidates": [
+        "European",
+        "Belgrade",
+        "August",
+        "Kneza",
+        "Kalemegdan Park",
+        "Kale Meydan",
+        "Danube",
+        "Sava",
+        "National Assembly",
+        "New Palace",
+        "Nowy"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BELGRADE / Serbia 🇷🇸- 4K 60fps (UHD)"
+    },
+    "Xbp5_WA9Jb4": {
+      "description_chars": 1303,
+      "route_anchor_candidates": [
+        "Less",
+        "Florence",
+        "Milan",
+        "February",
+        "Milan Cathedral",
+        "Duomo",
+        "Right",
+        "Galleria Vittorio Emanuele",
+        "Milan Scala",
+        "Teatro",
+        "Arches",
+        "Ancient Porta Nuova",
+        "Archi",
+        "Porta"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Milan italy walking tour (4k ultra HD fps ) With captions"
+    },
+    "XvuKVP5fL7Y": {
+      "description_chars": 935,
+      "route_anchor_candidates": [
+        "Thanks",
+        "Northern",
+        "Gdansk",
+        "Polish Baltic Frédéric Chopin Philharmonic",
+        "Ołowianka",
+        "Olowianka",
+        "Gdansk Old Town",
+        "More",
+        "Poland",
+        "Gdynia"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in GDANSK / Poland 🇵🇱- Winter Evening - 4K 60fps (UHD)"
+    },
+    "Yy5fPzI4QKg": {
+      "description_chars": 1018,
+      "route_anchor_candidates": [
+        "Dortmund",
+        "Borussia Dortmund",
+        "Dortmund Central",
+        "German Football Museum",
+        "During",
+        "September"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in DORTMUND  Germany"
+    },
+    "_NmYvuEILw4": {
+      "description_chars": 2336,
+      "route_anchor_candidates": [
+        "With",
+        "Limmat",
+        "Lake",
+        "Tourists",
+        "Zurich Main Station",
+        "Swiss National",
+        "Fraumünster Church",
+        "Münsterbrücke",
+        "Grossmünster",
+        "Zurich Opera",
+        "Lake Zurich",
+        "Rämistrasse",
+        "Heading North",
+        "Limmatquai",
+        "Zurich Town",
+        "Zurich",
+        "It's",
+        "Bahnhofsstrasse",
+        "Old Town Around Lindenhof",
+        "Crossing",
+        "Exploring",
+        "Back",
+        "City Center",
+        "More",
+        "Passing",
+        "Along",
+        "Zurich Town Hall",
+        "Uphill",
+        "Lindenhof",
+        "Downhill",
+        "Zürich Hauptbahnhof"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "ZURICH, Switzerland 🇨🇭- 4K 60fps"
+    },
+    "_R6TkCETd1c": {
+      "description_chars": 443,
+      "route_anchor_candidates": [
+        "Italy",
+        "Vatican",
+        "Rome",
+        "Trevi"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in ROME / Italy 🇮🇹- Vatican to Trevi Fountain - 4K 60fps (UHD)"
+    },
+    "a4y7pJn4a-4": {
+      "description_chars": 661,
+      "route_anchor_candidates": [
+        "Prague",
+        "Christmas",
+        "Czech",
+        "Wenceslas",
+        "Continuing",
+        "Charles Bridge",
+        "Malá Strana",
+        "Down",
+        "December"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "PRAGUE, Czech Republic 🇨🇿 - Winter Walking Tour - 4K 60fps (UHD)"
+    },
+    "aUJl46bEWYo": {
+      "description_chars": 872,
+      "route_anchor_candidates": [
+        "Singapore",
+        "Chinatown",
+        "China Town Point",
+        "MRT",
+        "South",
+        "China",
+        "Mohammed Ali Lane",
+        "It's",
+        "Downtown",
+        "Marina Bay",
+        "Sands"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in SINGAPORE 🇸🇬- Chinatown to Marina Bay and Gardens - 4K 60fps (UHD)"
+    },
+    "astCIYQCW2c": {
+      "description_chars": 3545,
+      "route_anchor_candidates": [
+        "Oxford Walking Tour",
+        "England's",
+        "University",
+        "Oxford",
+        "Come",
+        "Join",
+        "Together",
+        "England",
+        "Interested",
+        "You'll",
+        "Oxford UK Walking",
+        "Thanks",
+        "Walkingtourguide",
+        "Original Walking",
+        "Start",
+        "Ending",
+        "HDwalk",
+        "HDwalking",
+        "HDtour"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Oxford Walking Tour (A relaxing stroll around England's oldest University town)"
+    },
+    "buBU7NrfyGM": {
+      "description_chars": 500,
+      "route_anchor_candidates": [
+        "Krumlov",
+        "Southern Bohemia",
+        "Czech",
+        "Cesky Krumlov",
+        "UNESCO World Heritage",
+        "With"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in CESKY KRUMLOV / Czech Republic 🇨🇿- 4K 60fps (UHD)"
+    },
+    "cECanw-2SQw": {
+      "description_chars": 1091,
+      "route_anchor_candidates": [
+        "Located",
+        "Augsburg",
+        "Augsburger Dom",
+        "Next",
+        "Hofgarten",
+        "South",
+        "Augsburger Zeughaus",
+        "Rathausplatz",
+        "Augsburg's Town",
+        "North-East"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in AUGSBURG / Germany 🇩🇪- Central City and Fuggerei - 4K 60fps (UHD)"
+    },
+    "cUUeK1ILHfk": {
+      "description_chars": 1543,
+      "route_anchor_candidates": [
+        "Dusseldorf",
+        "ISTANBUL",
+        "Kaulalampur",
+        "Journey From Buhlertal",
+        "For Using"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BERLIN / Germany Westside| 4K | 60fps (UHD) | Glamorous Vlogs"
+    },
+    "erZ_mObNqTE": {
+      "description_chars": 729,
+      "route_anchor_candidates": [
+        "One",
+        "Sofia",
+        "POPtravel",
+        "Ivan Vazov National",
+        "Saint Sofia Monument"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in SOFIA / Bulgaria 🇧🇬 - Parks and Summer - 4K 60fps (UHD)"
+    },
+    "fGX0Te6pFvk": {
+      "description_chars": 1037,
+      "route_anchor_candidates": [
+        "Venice",
+        "Venice Santa Lucia",
+        "Udine",
+        "Trieste",
+        "POPtravel Venice"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "VENICE,  Italy 🇮🇹 - Day Trip Walking Tour"
+    },
+    "fk8wrPYr3uU": {
+      "description_chars": 670,
+      "route_anchor_candidates": [
+        "With",
+        "UNESCO World Heritage List",
+        "Naschmarkt",
+        "Innenstadt",
+        "Vienna State Opera",
+        "Michaelerplatz",
+        "Hofburg",
+        "Museumsquartier",
+        "Stephen's"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in VIENNA / Austria 🇦🇹- 4K 60fps (UHD)"
+    },
+    "hUGcHvN4mME": {
+      "description_chars": 1203,
+      "route_anchor_candidates": [
+        "Bangkok",
+        "Asok",
+        "Sukhumvit",
+        "Golden Mount",
+        "Khaosan",
+        "Khaosan Road",
+        "Many"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "BANGKOK,Thailand 🇹🇭- Crossing the City - 4K 60fps (UHD)"
+    },
+    "hZyU9MD0QRM": {
+      "description_chars": 701,
+      "route_anchor_candidates": [
+        "Bratislava",
+        "Slovakia",
+        "Eventually",
+        "Castle",
+        "Opera House"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BRATISLAVA   Slovakia 🇸🇰  4K 60fps UHD"
+    },
+    "jeG62-yrc6I": {
+      "description_chars": 1158,
+      "route_anchor_candidates": [
+        "Often",
+        "Czech",
+        "Today",
+        "Lower Square",
+        "Dolní",
+        "Jupiter Fountain",
+        "Marian",
+        "Church",
+        "Saint Michael",
+        "Chrám",
+        "Saint Wenceslas Cathedral",
+        "Katedrála",
+        "Václava",
+        "Horní",
+        "Upper",
+        "Olomouc",
+        "Arion Fountain",
+        "Ariónova",
+        "Holy Trinity Column",
+        "Sloup Nejsvětější",
+        "Eventually"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in OLOMOUC / Czech Republic 🇨🇿- 4K 60fps (UHD)"
+    },
+    "jyxIRzlkO_g": {
+      "description_chars": 680,
+      "route_anchor_candidates": [
+        "Chiang Mai",
+        "Thailand",
+        "Wats",
+        "Buddhist",
+        "Thai",
+        "Lanna",
+        "Tha Phae Gate",
+        "North",
+        "Old",
+        "Osmo Pocket"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in CHIANG MAI / Thailand - 4K 60fps (UHD)"
+    },
+    "mA9lYWyXMYU": {
+      "description_chars": 907,
+      "route_anchor_candidates": [
+        "Both Kadıköy",
+        "Üsküdar",
+        "Istanbul",
+        "C796Mh7kMM8",
+        "SNkdN97hXzw",
+        "Bosphorus",
+        "Anatolian",
+        "European",
+        "Kadikoy Square",
+        "Statue"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "ISTANBUL, Turkey 🇹🇷 - Kadıköy Tour (Asian Side) - 4K 60fps (UHD)"
+    },
+    "nid-1jfNMrQ": {
+      "description_chars": 792,
+      "route_anchor_candidates": [
+        "Rothenburg",
+        "Tauber",
+        "German",
+        "Many",
+        "Bavaria",
+        "With"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in ROTHENBURG OB DER TAUBER / Germany 🇩🇪- 4K 60fps (UHD)"
+    },
+    "pqaO_lvwCPM": {
+      "description_chars": 746,
+      "route_anchor_candidates": [
+        "Monte",
+        "Further",
+        "Bay",
+        "Summer",
+        "Gdansk"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in SOPOT / Poland - Monte Cassino to Pier - 4K 60fps (UHD)"
+    },
+    "qkCiR1olRgc": {
+      "description_chars": 1025,
+      "route_anchor_candidates": [
+        "Gdańsk",
+        "Baltic",
+        "Poland",
+        "Sopot",
+        "Gdynia",
+        "Gdansk",
+        "Ołowianka",
+        "Town Hall",
+        "Neptun",
+        "Royal Way",
+        "Golden Gate",
+        "Złota",
+        "Due",
+        "Osmo Pocket"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in GDANSK / Poland 🇵🇱- Evening Tour in Fall - 4K 60fps (UHD)"
+    },
+    "rdp-vrJNB80": {
+      "description_chars": 863,
+      "route_anchor_candidates": [
+        "Market Square",
+        "Christmas",
+        "Then",
+        "Uspenski",
+        "Helsinki",
+        "Amos Rex",
+        "Finlandia Hall",
+        "Temppeliaukion",
+        "Not"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in HELSINKI   Finland   Downtown in Winter   4K 60fps UHD AUG 2022"
+    },
+    "rjCKER5DsYA": {
+      "description_chars": 958,
+      "route_anchor_candidates": [
+        "LIVERPOOL",
+        "Williamson Square",
+        "Liverpool Playhouse Theatre",
+        "Radio City Tower",
+        "First",
+        "St George's",
+        "Back",
+        "Heading",
+        "Liverpool Parish Church",
+        "Williamson"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "LIVERPOOL  Walking in LIVERPOOL / UK 🇬🇧- 4K 60fps (UHD)"
+    },
+    "shcBfFqWiHc": {
+      "description_chars": 1133,
+      "route_anchor_candidates": [
+        "Europe Square",
+        "Larnaca Municipal Art Gallery",
+        "Larnaka Historic Archives",
+        "First",
+        "Finikoudes",
+        "February",
+        "Medieval Fort",
+        "Church",
+        "Saint",
+        "Greek Orthodox",
+        "Archeological",
+        "Larnaca",
+        "Athens",
+        "Pierides Museum"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in LARNACA / Cyprus 🇨🇾- Winter Day in Cyprus - 4K 60fps (UHD)2022"
+    },
+    "udrqN2QArHo": {
+      "description_chars": 722,
+      "route_anchor_candidates": [
+        "Leipzig",
+        "Saxony",
+        "Germany",
+        "Dresden",
+        "Central Station",
+        "Mädler"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in LEIPZIG / Germany 🇩🇪- Central Station to Inner City -  4K 60fps (UHD)"
+    },
+    "vbS4LARP5E8": {
+      "description_chars": 448,
+      "route_anchor_candidates": [
+        "Art Nouveau"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in BYDGOSZCZ / Poland 🇵🇱- 4K 60fps (UHD)"
+    },
+    "vs7WqrbboaM": {
+      "description_chars": 1200,
+      "route_anchor_candidates": [
+        "Europe Square",
+        "Larnaca Municipal Art Gallery",
+        "Larnaka Historic Archives",
+        "First",
+        "Finikoudes",
+        "February",
+        "Medieval Fort",
+        "Church",
+        "Saint",
+        "Greek Orthodox",
+        "Archeological",
+        "Larnaca",
+        "Athens",
+        "Pierides Museum"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in LARNACA / Cyprus 🇨🇾- Winter Day in Cyprus - 4K 60fps (UHD)"
+    },
+    "wUMMgkmA6z0": {
+      "description_chars": 503,
+      "route_anchor_candidates": [
+        "LEIDEN",
+        "Netherlands"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in LEIDEN _ Netherlands 🇳🇱.💖💖💖"
+    },
+    "wtO26fd781o": {
+      "description_chars": 844,
+      "route_anchor_candidates": [
+        "Newcastle",
+        "Tyne"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in NEWCASTLE / England (UK) 🇬🇧- Newcastle upon Tyne - 4K 60fps (UHD)"
+    },
+    "xCikUWtQI7c": {
+      "description_chars": 1090,
+      "route_anchor_candidates": [
+        "Amsterdam",
+        "E07rTPgIvn0",
+        "June",
+        "Warmoesstraat",
+        "RL District",
+        "National Monument",
+        "Dam Square",
+        "Nieuwendijk",
+        "De Nieuwe",
+        "Binnenstad",
+        "South"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in AMSTERDAM   Netherlands 🇳🇱  City Centre   4K 60fps UHD"
+    },
+    "yLTycPjm0nk": {
+      "description_chars": 1274,
+      "route_anchor_candidates": [
+        "Petronas Twin",
+        "Chinatown",
+        "KLCC",
+        "Now",
+        "It's",
+        "Jalan Hang Tuah",
+        "Jalan Hang Jebat",
+        "Petaling"
+      ],
+      "source": "youtube_public_metadata",
+      "status": "ok",
+      "title": "Walking in KUALA LUMPUR / Malaysia 🇲🇾- City Centre to Chinatown - 4K 60fps (UHD)"
+    }
+  },
+  "schema_version": 1,
+  "split": "test"
+}

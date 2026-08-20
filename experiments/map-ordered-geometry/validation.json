@@ -1,0 +1,4383 @@
+{
+  "split": "validation",
+  "questions": 5,
+  "hu_correct": 1,
+  "ordered_correct": 1,
+  "vggt_consensus_correct": 3,
+  "dpvo_correct": {
+    "fps2-focal0.9-w256-b256-p8": 0,
+    "fps1-focal0.9-w256-b256-p16": 4
+  },
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "image_paths": [
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_a.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_b.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_c.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_d.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_e.png"
+      ],
+      "motion_status": "ok",
+      "accepted_steps": 257,
+      "net_yaw_degrees": 19.81715855297233,
+      "hu_scores": [
+        10.573179396376831,
+        10.118795750295565,
+        20.47630622746076,
+        19.08148700270939,
+        19.08148700270939
+      ],
+      "hu_prediction": 1,
+      "ordered_scores": [
+        {
+          "score": 0.06803609814846037,
+          "procrustes": 0.02881486635516089,
+          "turn_dtw": 0.11206066226656997,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              131.0,
+              315.0
+            ],
+            "S": [
+              269.0,
+              96.0
+            ]
+          }
+        },
+        {
+          "score": 0.0684861970798831,
+          "procrustes": 0.028840448052788795,
+          "turn_dtw": 0.11327356864884086,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 118,
+          "marker_positions": {
+            "E": [
+              156.0,
+              304.0
+            ],
+            "S": [
+              243.0,
+              106.0
+            ]
+          }
+        },
+        {
+          "score": 0.06015580249460391,
+          "procrustes": 0.02617666037713372,
+          "turn_dtw": 0.09708326319277198,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              153.0,
+              300.0
+            ],
+            "E": [
+              246.0,
+              111.0
+            ]
+          }
+        },
+        {
+          "score": 0.060177609484512416,
+          "procrustes": 0.02620034431721159,
+          "turn_dtw": 0.09707790047800237,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "S": [
+              166.0,
+              294.0
+            ],
+            "E": [
+              234.0,
+              116.0
+            ]
+          }
+        },
+        {
+          "score": 0.05833057483919693,
+          "procrustes": 0.025447787484086205,
+          "turn_dtw": 0.09395082101460207,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 100,
+          "marker_positions": {
+            "E": [
+              166.0,
+              294.0
+            ],
+            "S": [
+              234.0,
+              116.0
+            ]
+          }
+        }
+      ],
+      "endpoint_marker_features": [
+        [
+          {
+            "x": 216,
+            "y": 151,
+            "saturated_pixels": 156,
+            "red_pixels": 132,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              88,
+              57,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              11
+            ]
+          },
+          {
+            "x": 164,
+            "y": 261,
+            "saturated_pixels": 340,
+            "red_pixels": 139,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              114,
+              214,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              12
+            ]
+          }
+        ],
+        [
+          {
+            "x": 241,
+            "y": 138,
+            "saturated_pixels": 157,
+            "red_pixels": 135,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              93,
+              57,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              7
+            ]
+          },
+          {
+            "x": 189,
+            "y": 250,
+            "saturated_pixels": 340,
+            "red_pixels": 139,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              119,
+              212,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              9
+            ]
+          }
+        ],
+        [
+          {
+            "x": 165,
+            "y": 281,
+            "saturated_pixels": 350,
+            "red_pixels": 318,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              274,
+              56,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              20
+            ]
+          },
+          {
+            "x": 206,
+            "y": 180,
+            "saturated_pixels": 204,
+            "red_pixels": 98,
+            "green_pixels": 0,
+            "blue_pixels": 102,
+            "hue_histogram": [
+              71,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              102,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              27
+            ]
+          }
+        ],
+        [
+          {
+            "x": 178,
+            "y": 275,
+            "saturated_pixels": 347,
+            "red_pixels": 316,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              272,
+              55,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              20
+            ]
+          },
+          {
+            "x": 219,
+            "y": 174,
+            "saturated_pixels": 202,
+            "red_pixels": 95,
+            "green_pixels": 0,
+            "blue_pixels": 107,
+            "hue_histogram": [
+              68,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              101,
+              2,
+              4,
+              0,
+              0,
+              0,
+              0,
+              27
+            ]
+          }
+        ],
+        [
+          {
+            "x": 178,
+            "y": 275,
+            "saturated_pixels": 354,
+            "red_pixels": 323,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              280,
+              55,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              19
+            ]
+          },
+          {
+            "x": 219,
+            "y": 174,
+            "saturated_pixels": 202,
+            "red_pixels": 95,
+            "green_pixels": 0,
+            "blue_pixels": 107,
+            "hue_histogram": [
+              68,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              101,
+              2,
+              4,
+              0,
+              0,
+              0,
+              0,
+              27
+            ]
+          }
+        ]
+      ],
+      "candidate_sha256": [
+        "95807b842ca89bc911b31fe85f753b3baec57554cdf1d6450b12680cd8d3f420",
+        "8ebdc9044d0fdaaa38b365accd436ecc2baa48040d4b8aa11956feb0256e496a",
+        "4774e053079f4314f3771dd5bd43e4c2a27c9048eadb33416554dceaf21c26cd",
+        "6d9690d5056e42418d6515d6d31017e58dda8cac831f9495094332e5d47f4d9e",
+        "ad2fce5640c864663cd733394aee1e3be6b59d4adf84ef03b0d09c99f47abd31"
+      ],
+      "ordered_prediction": 4,
+      "vggt_scores": {
+        "global-frames30": [
+          {
+            "score": 0.3186242261665708,
+            "procrustes": 0.15043918638293713,
+            "turn_dtw": 0.4805286850960962,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                131.0,
+                315.0
+              ],
+              "S": [
+                269.0,
+                96.0
+              ]
+            }
+          },
+          {
+            "score": 0.3184688726259108,
+            "procrustes": 0.15045130604818713,
+            "turn_dtw": 0.4800501902220676,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                156.0,
+                304.0
+              ],
+              "S": [
+                243.0,
+                106.0
+              ]
+            }
+          },
+          {
+            "score": 0.32565725394849265,
+            "procrustes": 0.1487220324947849,
+            "turn_dtw": 0.5055292041534508,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                153.0,
+                300.0
+              ],
+              "E": [
+                246.0,
+                111.0
+              ]
+            }
+          },
+          {
+            "score": 0.32545135850720835,
+            "procrustes": 0.14880959725053247,
+            "turn_dtw": 0.5046907464476454,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                166.0,
+                294.0
+              ],
+              "E": [
+                234.0,
+                116.0
+              ]
+            }
+          },
+          {
+            "score": 0.32492853670176086,
+            "procrustes": 0.1493924145228064,
+            "turn_dtw": 0.5015317776541556,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "E": [
+                166.0,
+                294.0
+              ],
+              "S": [
+                234.0,
+                116.0
+              ]
+            }
+          }
+        ],
+        "global-frames60": [
+          {
+            "score": 0.33076721797266817,
+            "procrustes": 0.14937477370650362,
+            "turn_dtw": 0.518264126474756,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                131.0,
+                315.0
+              ],
+              "S": [
+                269.0,
+                96.0
+              ]
+            }
+          },
+          {
+            "score": 0.33024854383270236,
+            "procrustes": 0.1493970171940852,
+            "turn_dtw": 0.5167186475389062,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                156.0,
+                304.0
+              ],
+              "S": [
+                243.0,
+                106.0
+              ]
+            }
+          },
+          {
+            "score": 0.33342414665379067,
+            "procrustes": 0.15051108862830406,
+            "turn_dtw": 0.522608737215676,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                153.0,
+                300.0
+              ],
+              "E": [
+                246.0,
+                111.0
+              ]
+            }
+          },
+          {
+            "score": 0.33369347421043927,
+            "procrustes": 0.15054533621494318,
+            "turn_dtw": 0.5232803942728461,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                166.0,
+                294.0
+              ],
+              "E": [
+                234.0,
+                116.0
+              ]
+            }
+          },
+          {
+            "score": 0.3378621651685587,
+            "procrustes": 0.14967759396685765,
+            "turn_dtw": 0.5376702034334316,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "E": [
+                166.0,
+                294.0
+              ],
+              "S": [
+                234.0,
+                116.0
+              ]
+            }
+          }
+        ],
+        "chunk16-overlap8-frames120": [
+          {
+            "score": 0.09370623179140694,
+            "procrustes": 0.031157337945494936,
+            "turn_dtw": 0.1787111252740343,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                131.0,
+                315.0
+              ],
+              "S": [
+                269.0,
+                96.0
+              ]
+            }
+          },
+          {
+            "score": 0.09347031616213183,
+            "procrustes": 0.031063686499496534,
+            "turn_dtw": 0.178304656178958,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                156.0,
+                304.0
+              ],
+              "S": [
+                243.0,
+                106.0
+              ]
+            }
+          },
+          {
+            "score": 0.08628958081735699,
+            "procrustes": 0.030660521608086015,
+            "turn_dtw": 0.15894016916934564,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                153.0,
+                300.0
+              ],
+              "E": [
+                246.0,
+                111.0
+              ]
+            }
+          },
+          {
+            "score": 0.086166556210137,
+            "procrustes": 0.030647515090083823,
+            "turn_dtw": 0.15862583177158052,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                166.0,
+                294.0
+              ],
+              "E": [
+                234.0,
+                116.0
+              ]
+            }
+          },
+          {
+            "score": 0.08852825328516035,
+            "procrustes": 0.029930585257571213,
+            "turn_dtw": 0.16742190865025472,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "E": [
+                166.0,
+                294.0
+              ],
+              "S": [
+                234.0,
+                116.0
+              ]
+            }
+          }
+        ]
+      },
+      "vggt_predictions": {
+        "global-frames30": 1,
+        "global-frames60": 1,
+        "chunk16-overlap8-frames120": 3
+      },
+      "vggt_consensus_prediction": 1,
+      "dpvo_scores": {
+        "fps2-focal0.9-w256-b256-p8": [
+          {
+            "score": 0.0912232113357764,
+            "procrustes": 0.0262080546271144,
+            "turn_dtw": 0.18575759059617716,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                131.0,
+                315.0
+              ],
+              "S": [
+                269.0,
+                96.0
+              ]
+            }
+          },
+          {
+            "score": 0.09184615773851931,
+            "procrustes": 0.02626050331207488,
+            "turn_dtw": 0.18738758407555553,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                156.0,
+                304.0
+              ],
+              "S": [
+                243.0,
+                106.0
+              ]
+            }
+          },
+          {
+            "score": 0.08946669280239183,
+            "procrustes": 0.02627462527473463,
+            "turn_dtw": 0.18054876436473485,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                153.0,
+                300.0
+              ],
+              "E": [
+                246.0,
+                111.0
+              ]
+            }
+          },
+          {
+            "score": 0.08948140341463429,
+            "procrustes": 0.026259441049956776,
+            "turn_dtw": 0.1806341781847929,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                166.0,
+                294.0
+              ],
+              "E": [
+                234.0,
+                116.0
+              ]
+            }
+          },
+          {
+            "score": 0.08979999018875141,
+            "procrustes": 0.027804545867541577,
+            "turn_dtw": 0.17712984091774242,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "E": [
+                166.0,
+                294.0
+              ],
+              "S": [
+                234.0,
+                116.0
+              ]
+            }
+          }
+        ],
+        "fps1-focal0.9-w256-b256-p16": [
+          {
+            "score": 0.13177631872752088,
+            "procrustes": 0.07976675874921994,
+            "turn_dtw": 0.14859874279514557,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                131.0,
+                315.0
+              ],
+              "S": [
+                269.0,
+                96.0
+              ]
+            }
+          },
+          {
+            "score": 0.1312936128781715,
+            "procrustes": 0.07973885994361149,
+            "turn_dtw": 0.14729929409874296,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 118,
+            "marker_positions": {
+              "E": [
+                156.0,
+                304.0
+              ],
+              "S": [
+                243.0,
+                106.0
+              ]
+            }
+          },
+          {
+            "score": 0.11663824046965854,
+            "procrustes": 0.07473891084535654,
+            "turn_dtw": 0.11971237035514858,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                153.0,
+                300.0
+              ],
+              "E": [
+                246.0,
+                111.0
+              ]
+            }
+          },
+          {
+            "score": 0.11651581231229288,
+            "procrustes": 0.07482453701544331,
+            "turn_dtw": 0.11911792941957022,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "S": [
+                166.0,
+                294.0
+              ],
+              "E": [
+                234.0,
+                116.0
+              ]
+            }
+          },
+          {
+            "score": 0.11893624129038624,
+            "procrustes": 0.07608179750989799,
+            "turn_dtw": 0.12244126794425214,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 100,
+            "marker_positions": {
+              "E": [
+                166.0,
+                294.0
+              ],
+              "S": [
+                234.0,
+                116.0
+              ]
+            }
+          }
+        ]
+      },
+      "dpvo_predictions": {
+        "fps2-focal0.9-w256-b256-p8": 2,
+        "fps1-focal0.9-w256-b256-p16": 3
+      },
+      "answer_id": 3,
+      "hu_correct": false,
+      "ordered_correct": false,
+      "vggt_consensus_correct": false,
+      "dpvo_correct": {
+        "fps2-focal0.9-w256-b256-p8": false,
+        "fps1-focal0.9-w256-b256-p16": true
+      }
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "image_paths": [
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_a.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_b.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_c.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_d.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_e.png"
+      ],
+      "motion_status": "ok",
+      "accepted_steps": 207,
+      "net_yaw_degrees": -126.86945206378891,
+      "hu_scores": [
+        16.547598225743595,
+        21.248780535751372,
+        17.869010282111493,
+        16.832195817465674,
+        16.832195817465674
+      ],
+      "hu_prediction": 0,
+      "ordered_scores": [
+        {
+          "score": 0.14331800241097062,
+          "procrustes": 0.059422153703025324,
+          "turn_dtw": 0.2397024248798437,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 113,
+          "marker_positions": {
+            "S": [
+              216.0,
+              129.0
+            ],
+            "E": [
+              236.0,
+              260.0
+            ]
+          }
+        },
+        {
+          "score": 0.17259768192606317,
+          "procrustes": 0.07919297701640818,
+          "turn_dtw": 0.2668705854561571,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              164.0,
+              83.0
+            ],
+            "E": [
+              282.0,
+              326.0
+            ]
+          }
+        },
+        {
+          "score": 0.17312920134488158,
+          "procrustes": 0.07756051396911899,
+          "turn_dtw": 0.2730533925021788,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 190,
+          "marker_positions": {
+            "S": [
+              315.0,
+              245.0
+            ],
+            "E": [
+              250.0,
+              307.0
+            ]
+          }
+        },
+        {
+          "score": 0.16632137819878284,
+          "procrustes": 0.07865073018901868,
+          "turn_dtw": 0.25048756574218334,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "E": [
+              152.0,
+              227.0
+            ],
+            "S": [
+              315.0,
+              276.0
+            ]
+          }
+        },
+        {
+          "score": 0.17964313652743338,
+          "procrustes": 0.07956348772336115,
+          "turn_dtw": 0.2859418537259207,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 147,
+          "marker_positions": {
+            "S": [
+              152.0,
+              227.0
+            ],
+            "E": [
+              315.0,
+              276.0
+            ]
+          }
+        }
+      ],
+      "endpoint_marker_features": [
+        [
+          {
+            "x": 190,
+            "y": 172,
+            "saturated_pixels": 293,
+            "red_pixels": 190,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              72,
+              177,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              44
+            ]
+          },
+          {
+            "x": 236,
+            "y": 270,
+            "saturated_pixels": 266,
+            "red_pixels": 265,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              252,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              13
+            ]
+          }
+        ],
+        [
+          {
+            "x": 266,
+            "y": 321,
+            "saturated_pixels": 367,
+            "red_pixels": 333,
+            "green_pixels": 0,
+            "blue_pixels": 28,
+            "hue_histogram": [
+              240,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              29,
+              4,
+              0,
+              1,
+              93
+            ]
+          },
+          {
+            "x": 131,
+            "y": 132,
+            "saturated_pixels": 301,
+            "red_pixels": 161,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              60,
+              182,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              59
+            ]
+          }
+        ],
+        [
+          {
+            "x": 91,
+            "y": 111,
+            "saturated_pixels": 361,
+            "red_pixels": 141,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              33,
+              265,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              63
+            ]
+          },
+          {
+            "x": 234,
+            "y": 302,
+            "saturated_pixels": 367,
+            "red_pixels": 333,
+            "green_pixels": 0,
+            "blue_pixels": 28,
+            "hue_histogram": [
+              237,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              29,
+              4,
+              0,
+              1,
+              96
+            ]
+          }
+        ],
+        [
+          {
+            "x": 299,
+            "y": 272,
+            "saturated_pixels": 332,
+            "red_pixels": 331,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              280,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              51
+            ]
+          },
+          {
+            "x": 195,
+            "y": 150,
+            "saturated_pixels": 209,
+            "red_pixels": 161,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              73,
+              88,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              48
+            ]
+          }
+        ],
+        [
+          {
+            "x": 299,
+            "y": 272,
+            "saturated_pixels": 327,
+            "red_pixels": 326,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              275,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              51
+            ]
+          },
+          {
+            "x": 195,
+            "y": 150,
+            "saturated_pixels": 209,
+            "red_pixels": 161,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              73,
+              88,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              48
+            ]
+          }
+        ]
+      ],
+      "candidate_sha256": [
+        "281a35779822c31fbde35cf4df898cb1c2d8e34a2af7fc8d358d768eb4b63934",
+        "89aba18e06bebf85b0d85c0da42929d6c7286039afa56fee3675c39162c7da88",
+        "8fa61f9b8f0a3f978087c73a2aff90ce0f73124b0a4c95e0cc4c9d24c18bbe2c",
+        "42435d03e92ddaf6cfc8ae6b8624bfb738bbce0c0e30469c7d7d020e0c50fcd6",
+        "67fea105567ea27b17ef5412915ad550d532904ea07d873a8411c79435eba6b8"
+      ],
+      "ordered_prediction": 0,
+      "vggt_scores": {
+        "global-frames30": [
+          {
+            "score": 0.31470565818215573,
+            "procrustes": 0.15492710451013003,
+            "turn_dtw": 0.4565101533486449,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 113,
+            "marker_positions": {
+              "S": [
+                216.0,
+                129.0
+              ],
+              "E": [
+                236.0,
+                260.0
+              ]
+            }
+          },
+          {
+            "score": 0.3348174591311792,
+            "procrustes": 0.15984702821173946,
+            "turn_dtw": 0.499915516912685,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                164.0,
+                83.0
+              ],
+              "E": [
+                282.0,
+                326.0
+              ]
+            }
+          },
+          {
+            "score": 0.33450292055448994,
+            "procrustes": 0.15993275739939913,
+            "turn_dtw": 0.49877189472883093,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                315.0,
+                245.0
+              ],
+              "E": [
+                250.0,
+                307.0
+              ]
+            }
+          },
+          {
+            "score": 0.33721333988630164,
+            "procrustes": 0.16059955981093693,
+            "turn_dtw": 0.5046108002153277,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "E": [
+                152.0,
+                227.0
+              ],
+              "S": [
+                315.0,
+                276.0
+              ]
+            }
+          },
+          {
+            "score": 0.33725359148745365,
+            "procrustes": 0.1603895537760904,
+            "turn_dtw": 0.5053258220324665,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "S": [
+                152.0,
+                227.0
+              ],
+              "E": [
+                315.0,
+                276.0
+              ]
+            }
+          }
+        ],
+        "global-frames60": [
+          {
+            "score": 0.3734870660188063,
+            "procrustes": 0.16534369766107665,
+            "turn_dtw": 0.594695338164942,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 113,
+            "marker_positions": {
+              "S": [
+                216.0,
+                129.0
+              ],
+              "E": [
+                236.0,
+                260.0
+              ]
+            }
+          },
+          {
+            "score": 0.38685461179157693,
+            "procrustes": 0.17277318032259664,
+            "turn_dtw": 0.6116612327685151,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                164.0,
+                83.0
+              ],
+              "E": [
+                282.0,
+                326.0
+              ]
+            }
+          },
+          {
+            "score": 0.38858955541735224,
+            "procrustes": 0.17271611660073463,
+            "turn_dtw": 0.6167812537617646,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                315.0,
+                245.0
+              ],
+              "E": [
+                250.0,
+                307.0
+              ]
+            }
+          },
+          {
+            "score": 0.37155288472685644,
+            "procrustes": 0.17354051099359344,
+            "turn_dtw": 0.5657496392378942,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "E": [
+                152.0,
+                227.0
+              ],
+              "S": [
+                315.0,
+                276.0
+              ]
+            }
+          },
+          {
+            "score": 0.3898758554708585,
+            "procrustes": 0.17337728420639545,
+            "turn_dtw": 0.6185673464698945,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "S": [
+                152.0,
+                227.0
+              ],
+              "E": [
+                315.0,
+                276.0
+              ]
+            }
+          }
+        ],
+        "chunk16-overlap8-frames120": [
+          {
+            "score": 0.14848102953499817,
+            "procrustes": 0.04923777034776984,
+            "turn_dtw": 0.28355216910636666,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 113,
+            "marker_positions": {
+              "S": [
+                216.0,
+                129.0
+              ],
+              "E": [
+                236.0,
+                260.0
+              ]
+            }
+          },
+          {
+            "score": 0.15400823708982334,
+            "procrustes": 0.0631737749522664,
+            "turn_dtw": 0.2595270346787341,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                164.0,
+                83.0
+              ],
+              "E": [
+                282.0,
+                326.0
+              ]
+            }
+          },
+          {
+            "score": 0.15662102823070537,
+            "procrustes": 0.06409926691396536,
+            "turn_dtw": 0.26434788947640003,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                315.0,
+                245.0
+              ],
+              "E": [
+                250.0,
+                307.0
+              ]
+            }
+          },
+          {
+            "score": 0.1582581971155277,
+            "procrustes": 0.06518680313822744,
+            "turn_dtw": 0.2659182685065722,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "E": [
+                152.0,
+                227.0
+              ],
+              "S": [
+                315.0,
+                276.0
+              ]
+            }
+          },
+          {
+            "score": 0.15166640822305288,
+            "procrustes": 0.06382705815519399,
+            "turn_dtw": 0.250969571622454,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "S": [
+                152.0,
+                227.0
+              ],
+              "E": [
+                315.0,
+                276.0
+              ]
+            }
+          }
+        ]
+      },
+      "vggt_predictions": {
+        "global-frames30": 0,
+        "global-frames60": 3,
+        "chunk16-overlap8-frames120": 0
+      },
+      "vggt_consensus_prediction": 0,
+      "dpvo_scores": {
+        "fps2-focal0.9-w256-b256-p8": [
+          {
+            "score": 0.1763644432899672,
+            "procrustes": 0.10880389744633406,
+            "turn_dtw": 0.19303013098180902,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 113,
+            "marker_positions": {
+              "S": [
+                216.0,
+                129.0
+              ],
+              "E": [
+                236.0,
+                260.0
+              ]
+            }
+          },
+          {
+            "score": 0.2091091453142965,
+            "procrustes": 0.13291008494342724,
+            "turn_dtw": 0.2177116010596265,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                164.0,
+                83.0
+              ],
+              "E": [
+                282.0,
+                326.0
+              ]
+            }
+          },
+          {
+            "score": 0.20630814953691715,
+            "procrustes": 0.13342678849783682,
+            "turn_dtw": 0.20823246011165808,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                315.0,
+                245.0
+              ],
+              "E": [
+                250.0,
+                307.0
+              ]
+            }
+          },
+          {
+            "score": 0.20588699851530173,
+            "procrustes": 0.13411413480552742,
+            "turn_dtw": 0.20506532488506954,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "E": [
+                152.0,
+                227.0
+              ],
+              "S": [
+                315.0,
+                276.0
+              ]
+            }
+          },
+          {
+            "score": 0.2131341071013286,
+            "procrustes": 0.13257528463600277,
+            "turn_dtw": 0.23016806418664526,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "S": [
+                152.0,
+                227.0
+              ],
+              "E": [
+                315.0,
+                276.0
+              ]
+            }
+          }
+        ],
+        "fps1-focal0.9-w256-b256-p16": [
+          {
+            "score": 0.0834312207933296,
+            "procrustes": 0.027251974851558898,
+            "turn_dtw": 0.160512131262202,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 113,
+            "marker_positions": {
+              "S": [
+                216.0,
+                129.0
+              ],
+              "E": [
+                236.0,
+                260.0
+              ]
+            }
+          },
+          {
+            "score": 0.09384230419199963,
+            "procrustes": 0.03619867248155199,
+            "turn_dtw": 0.164696090601279,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                164.0,
+                83.0
+              ],
+              "E": [
+                282.0,
+                326.0
+              ]
+            }
+          },
+          {
+            "score": 0.09510206851388728,
+            "procrustes": 0.03806657494112486,
+            "turn_dtw": 0.1629585530650355,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 190,
+            "marker_positions": {
+              "S": [
+                315.0,
+                245.0
+              ],
+              "E": [
+                250.0,
+                307.0
+              ]
+            }
+          },
+          {
+            "score": 0.10013648891076685,
+            "procrustes": 0.03919998063170921,
+            "turn_dtw": 0.1741043093687361,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "E": [
+                152.0,
+                227.0
+              ],
+              "S": [
+                315.0,
+                276.0
+              ]
+            }
+          },
+          {
+            "score": 0.08175763357225724,
+            "procrustes": 0.03583261845158772,
+            "turn_dtw": 0.13121432891619864,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 147,
+            "marker_positions": {
+              "S": [
+                152.0,
+                227.0
+              ],
+              "E": [
+                315.0,
+                276.0
+              ]
+            }
+          }
+        ]
+      },
+      "dpvo_predictions": {
+        "fps2-focal0.9-w256-b256-p8": 0,
+        "fps1-focal0.9-w256-b256-p16": 4
+      },
+      "answer_id": 4,
+      "hu_correct": false,
+      "ordered_correct": false,
+      "vggt_consensus_correct": false,
+      "dpvo_correct": {
+        "fps2-focal0.9-w256-b256-p8": false,
+        "fps1-focal0.9-w256-b256-p16": true
+      }
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "image_paths": [
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_a.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_b.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_c.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_d.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_e.png"
+      ],
+      "motion_status": "ok",
+      "accepted_steps": 47,
+      "net_yaw_degrees": -48.94676214240047,
+      "hu_scores": [
+        11.872439017003916,
+        7.3483717751850195,
+        7.375893452429346,
+        7.375893452429346,
+        7.3483717751850195
+      ],
+      "hu_prediction": 1,
+      "ordered_scores": [
+        {
+          "score": 0.020845852790686646,
+          "procrustes": 0.007269222213617893,
+          "turn_dtw": 0.03879037307733929,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 80,
+          "marker_positions": {
+            "E": [
+              157.0,
+              170.0
+            ],
+            "S": [
+              241.0,
+              211.0
+            ]
+          }
+        },
+        {
+          "score": 0.05095781934538248,
+          "procrustes": 0.03443928957749389,
+          "turn_dtw": 0.04719579933682455,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "S": [
+              173.0,
+              100.0
+            ],
+            "E": [
+              235.0,
+              308.0
+            ]
+          }
+        },
+        {
+          "score": 0.058394344530455,
+          "procrustes": 0.03542348624746391,
+          "turn_dtw": 0.06563102366568885,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "E": [
+              176.0,
+              115.0
+            ],
+            "S": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.0484170755886387,
+          "procrustes": 0.03441644710914628,
+          "turn_dtw": 0.04000179565569264,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 202,
+          "marker_positions": {
+            "S": [
+              176.0,
+              115.0
+            ],
+            "E": [
+              238.0,
+              275.0
+            ]
+          }
+        },
+        {
+          "score": 0.05750595276933229,
+          "procrustes": 0.03511894014446561,
+          "turn_dtw": 0.0639628932139048,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 208,
+          "marker_positions": {
+            "E": [
+              173.0,
+              100.0
+            ],
+            "S": [
+              235.0,
+              308.0
+            ]
+          }
+        }
+      ],
+      "endpoint_marker_features": [
+        [
+          {
+            "x": 157,
+            "y": 180,
+            "saturated_pixels": 254,
+            "red_pixels": 254,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              215,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              39
+            ]
+          },
+          {
+            "x": 237,
+            "y": 223,
+            "saturated_pixels": 226,
+            "red_pixels": 226,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              169,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              57
+            ]
+          }
+        ],
+        [
+          {
+            "x": 173,
+            "y": 108,
+            "saturated_pixels": 281,
+            "red_pixels": 281,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              251,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              30
+            ]
+          },
+          {
+            "x": 235,
+            "y": 283,
+            "saturated_pixels": 332,
+            "red_pixels": 332,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              253,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              79
+            ]
+          }
+        ],
+        [
+          {
+            "x": 176,
+            "y": 123,
+            "saturated_pixels": 278,
+            "red_pixels": 278,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              256,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              22
+            ]
+          },
+          {
+            "x": 232,
+            "y": 287,
+            "saturated_pixels": 225,
+            "red_pixels": 225,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              157,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              68
+            ]
+          }
+        ],
+        [
+          {
+            "x": 176,
+            "y": 123,
+            "saturated_pixels": 280,
+            "red_pixels": 280,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              257,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              23
+            ]
+          },
+          {
+            "x": 232,
+            "y": 287,
+            "saturated_pixels": 225,
+            "red_pixels": 225,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              157,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              68
+            ]
+          }
+        ],
+        [
+          {
+            "x": 173,
+            "y": 108,
+            "saturated_pixels": 279,
+            "red_pixels": 279,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              250,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              29
+            ]
+          },
+          {
+            "x": 235,
+            "y": 283,
+            "saturated_pixels": 333,
+            "red_pixels": 333,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              251,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              82
+            ]
+          }
+        ]
+      ],
+      "candidate_sha256": [
+        "fca1d7ed703899e116568e3b23dcb8b4a3b3d85d846b4d3f0123186f605dc30f",
+        "fb6950637c098c0f4b06efe68b8a8590cca0582676e360aef3c26890045d98e5",
+        "96e09056bc458935f6a04c41698f4ac269801c8426b173053b22d46ea8a667e0",
+        "64c84aa5c9436144f03507b25fa871c756e941eb1f958559e06558b5a86f615d",
+        "b9bf62359bbc22093e5a33c1f43d199b2391c6905b409e6e5fe5083f08050a6b"
+      ],
+      "ordered_prediction": 0,
+      "vggt_scores": {
+        "global-frames30": [
+          {
+            "score": 0.03809004982422361,
+            "procrustes": 0.017173062939472978,
+            "turn_dtw": 0.05976281967071608,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 80,
+            "marker_positions": {
+              "E": [
+                157.0,
+                170.0
+              ],
+              "S": [
+                241.0,
+                211.0
+              ]
+            }
+          },
+          {
+            "score": 0.05873136720934518,
+            "procrustes": 0.033325261376561235,
+            "turn_dtw": 0.07258887380795413,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "S": [
+                173.0,
+                100.0
+              ],
+              "E": [
+                235.0,
+                308.0
+              ]
+            }
+          },
+          {
+            "score": 0.06505008641663394,
+            "procrustes": 0.03761930684946108,
+            "turn_dtw": 0.07837365590620816,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "E": [
+                176.0,
+                115.0
+              ],
+              "S": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.0630468502095786,
+            "procrustes": 0.032334436928307966,
+            "turn_dtw": 0.08774975223220183,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "S": [
+                176.0,
+                115.0
+              ],
+              "E": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.0654760459458779,
+            "procrustes": 0.037031659595420645,
+            "turn_dtw": 0.08126967528702073,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "E": [
+                173.0,
+                100.0
+              ],
+              "S": [
+                235.0,
+                308.0
+              ]
+            }
+          }
+        ],
+        "global-frames60": [
+          {
+            "score": 0.034889259476383425,
+            "procrustes": 0.014865446434762869,
+            "turn_dtw": 0.057210894404630175,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 80,
+            "marker_positions": {
+              "E": [
+                157.0,
+                170.0
+              ],
+              "S": [
+                241.0,
+                211.0
+              ]
+            }
+          },
+          {
+            "score": 0.05982766258318564,
+            "procrustes": 0.034242542897333125,
+            "turn_dtw": 0.07310034195957861,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "S": [
+                173.0,
+                100.0
+              ],
+              "E": [
+                235.0,
+                308.0
+              ]
+            }
+          },
+          {
+            "score": 0.06266219436329934,
+            "procrustes": 0.0380232857874298,
+            "turn_dtw": 0.07039688164534152,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "E": [
+                176.0,
+                115.0
+              ],
+              "S": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.06353330125064449,
+            "procrustes": 0.03349350172357429,
+            "turn_dtw": 0.08582799864877198,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "S": [
+                176.0,
+                115.0
+              ],
+              "E": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.06293441420872786,
+            "procrustes": 0.03749412793292968,
+            "turn_dtw": 0.07268653221656625,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "E": [
+                173.0,
+                100.0
+              ],
+              "S": [
+                235.0,
+                308.0
+              ]
+            }
+          }
+        ],
+        "chunk16-overlap8-frames120": [
+          {
+            "score": 0.04315628180777721,
+            "procrustes": 0.02109005345327868,
+            "turn_dtw": 0.06304636672713866,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 80,
+            "marker_positions": {
+              "E": [
+                157.0,
+                170.0
+              ],
+              "S": [
+                241.0,
+                211.0
+              ]
+            }
+          },
+          {
+            "score": 0.04608250773654893,
+            "procrustes": 0.029928967889094226,
+            "turn_dtw": 0.046152970992727714,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "S": [
+                173.0,
+                100.0
+              ],
+              "E": [
+                235.0,
+                308.0
+              ]
+            }
+          },
+          {
+            "score": 0.06657169198472362,
+            "procrustes": 0.03546551575384124,
+            "turn_dtw": 0.08887478923109253,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "E": [
+                176.0,
+                115.0
+              ],
+              "S": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.043629454244009026,
+            "procrustes": 0.028822028578804556,
+            "turn_dtw": 0.04230693047201278,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "S": [
+                176.0,
+                115.0
+              ],
+              "E": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.06631466919270429,
+            "procrustes": 0.034735706250775523,
+            "turn_dtw": 0.09022560840551076,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "E": [
+                173.0,
+                100.0
+              ],
+              "S": [
+                235.0,
+                308.0
+              ]
+            }
+          }
+        ]
+      },
+      "vggt_predictions": {
+        "global-frames30": 0,
+        "global-frames60": 0,
+        "chunk16-overlap8-frames120": 0
+      },
+      "vggt_consensus_prediction": 0,
+      "dpvo_scores": {
+        "fps2-focal0.9-w256-b256-p8": [
+          {
+            "score": 0.11419846285069524,
+            "procrustes": 0.049386842239220095,
+            "turn_dtw": 0.18517605888992902,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 80,
+            "marker_positions": {
+              "E": [
+                157.0,
+                170.0
+              ],
+              "S": [
+                241.0,
+                211.0
+              ]
+            }
+          },
+          {
+            "score": 0.08674608933890682,
+            "procrustes": 0.02938703378306831,
+            "turn_dtw": 0.16388301587382434,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "S": [
+                173.0,
+                100.0
+              ],
+              "E": [
+                235.0,
+                308.0
+              ]
+            }
+          },
+          {
+            "score": 0.09056666981043825,
+            "procrustes": 0.030475595503245547,
+            "turn_dtw": 0.1716887837348363,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "E": [
+                176.0,
+                115.0
+              ],
+              "S": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.08941793511122834,
+            "procrustes": 0.029546834970351023,
+            "turn_dtw": 0.17106028611679233,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "S": [
+                176.0,
+                115.0
+              ],
+              "E": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.09170913515950174,
+            "procrustes": 0.030051141394723584,
+            "turn_dtw": 0.17616569647079475,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "E": [
+                173.0,
+                100.0
+              ],
+              "S": [
+                235.0,
+                308.0
+              ]
+            }
+          }
+        ],
+        "fps1-focal0.9-w256-b256-p16": [
+          {
+            "score": 0.036788206214817654,
+            "procrustes": 0.015033096923067332,
+            "turn_dtw": 0.06215745511928663,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 80,
+            "marker_positions": {
+              "E": [
+                157.0,
+                170.0
+              ],
+              "S": [
+                241.0,
+                211.0
+              ]
+            }
+          },
+          {
+            "score": 0.05305568511690178,
+            "procrustes": 0.03605872817649204,
+            "turn_dtw": 0.0485627341154564,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "S": [
+                173.0,
+                100.0
+              ],
+              "E": [
+                235.0,
+                308.0
+              ]
+            }
+          },
+          {
+            "score": 0.059428092094685,
+            "procrustes": 0.040366376960787737,
+            "turn_dtw": 0.054462043239706465,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "E": [
+                176.0,
+                115.0
+              ],
+              "S": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.05082071133418689,
+            "procrustes": 0.03537449437433809,
+            "turn_dtw": 0.04413204845671087,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 202,
+            "marker_positions": {
+              "S": [
+                176.0,
+                115.0
+              ],
+              "E": [
+                238.0,
+                275.0
+              ]
+            }
+          },
+          {
+            "score": 0.057848278258629496,
+            "procrustes": 0.03975116282978678,
+            "turn_dtw": 0.051706044082407775,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 208,
+            "marker_positions": {
+              "E": [
+                173.0,
+                100.0
+              ],
+              "S": [
+                235.0,
+                308.0
+              ]
+            }
+          }
+        ]
+      },
+      "dpvo_predictions": {
+        "fps2-focal0.9-w256-b256-p8": 1,
+        "fps1-focal0.9-w256-b256-p16": 0
+      },
+      "answer_id": 0,
+      "hu_correct": false,
+      "ordered_correct": true,
+      "vggt_consensus_correct": true,
+      "dpvo_correct": {
+        "fps2-focal0.9-w256-b256-p8": false,
+        "fps1-focal0.9-w256-b256-p16": true
+      }
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "image_paths": [
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_a.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_b.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_c.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_d.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_e.png"
+      ],
+      "motion_status": "ok",
+      "accepted_steps": 134,
+      "net_yaw_degrees": -102.17293706708843,
+      "hu_scores": [
+        9.111808415021407,
+        17.05904829706051,
+        9.111808415021407,
+        9.876091283147153,
+        9.876091283147153
+      ],
+      "hu_prediction": 0,
+      "ordered_scores": [
+        {
+          "score": 0.15283233464438228,
+          "procrustes": 0.09963907250566555,
+          "turn_dtw": 0.15198074896776212,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "E": [
+              172.0,
+              110.0
+            ],
+            "S": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.13943786602482772,
+          "procrustes": 0.10295468945816122,
+          "turn_dtw": 0.10423764733333285,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 274,
+          "marker_positions": {
+            "S": [
+              189.0,
+              89.0
+            ],
+            "E": [
+              165.0,
+              320.0
+            ]
+          }
+        },
+        {
+          "score": 0.14321184142136684,
+          "procrustes": 0.09809372230380518,
+          "turn_dtw": 0.12890891176446187,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 169,
+          "marker_positions": {
+            "S": [
+              172.0,
+              110.0
+            ],
+            "E": [
+              225.0,
+              280.0
+            ]
+          }
+        },
+        {
+          "score": 0.13657346337558757,
+          "procrustes": 0.09900187462222548,
+          "turn_dtw": 0.10734739643817741,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "E": [
+              240.0,
+              108.0
+            ],
+            "S": [
+              159.0,
+              283.0
+            ]
+          }
+        },
+        {
+          "score": 0.14154328562061794,
+          "procrustes": 0.10014739886565795,
+          "turn_dtw": 0.11827396215702853,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 213,
+          "marker_positions": {
+            "S": [
+              240.0,
+              108.0
+            ],
+            "E": [
+              159.0,
+              283.0
+            ]
+          }
+        }
+      ],
+      "endpoint_marker_features": [
+        [
+          {
+            "x": 172,
+            "y": 120,
+            "saturated_pixels": 258,
+            "red_pixels": 257,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              237,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              20
+            ]
+          },
+          {
+            "x": 214,
+            "y": 262,
+            "saturated_pixels": 315,
+            "red_pixels": 315,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              280,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              35
+            ]
+          }
+        ],
+        [
+          {
+            "x": 178,
+            "y": 324,
+            "saturated_pixels": 322,
+            "red_pixels": 322,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              234,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              88
+            ]
+          },
+          {
+            "x": 189,
+            "y": 99,
+            "saturated_pixels": 254,
+            "red_pixels": 254,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              226,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              28
+            ]
+          }
+        ],
+        [
+          {
+            "x": 172,
+            "y": 120,
+            "saturated_pixels": 258,
+            "red_pixels": 257,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              237,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              20
+            ]
+          },
+          {
+            "x": 214,
+            "y": 262,
+            "saturated_pixels": 313,
+            "red_pixels": 313,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              278,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              35
+            ]
+          }
+        ],
+        [
+          {
+            "x": 173,
+            "y": 285,
+            "saturated_pixels": 326,
+            "red_pixels": 326,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              253,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              73
+            ]
+          },
+          {
+            "x": 240,
+            "y": 118,
+            "saturated_pixels": 257,
+            "red_pixels": 257,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              224,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              33
+            ]
+          }
+        ],
+        [
+          {
+            "x": 173,
+            "y": 285,
+            "saturated_pixels": 332,
+            "red_pixels": 332,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              259,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              73
+            ]
+          },
+          {
+            "x": 240,
+            "y": 118,
+            "saturated_pixels": 257,
+            "red_pixels": 257,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              224,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              33
+            ]
+          }
+        ]
+      ],
+      "candidate_sha256": [
+        "a114a025ffef0adfbe00e5866b00a4d4f2ebf7cf4e789068c86152d6d9e4d1b7",
+        "ce327f27bb2368902373d9fcbae010467077f8e3ea0c80553b982766190b44ab",
+        "0f3bfae6572b6581334983ab9869f090c5a74bec4b0a0e28ef434a1ff3658a36",
+        "be7f6ecaf45a0d61dbf6a7a5d5122ed15ca80f8fba25022d18d3b8d77f94371c",
+        "ed9bd5c4314d1999dd77702402bbe04692a534eb352cdcbf8974d3c02d62aca9"
+      ],
+      "ordered_prediction": 3,
+      "vggt_scores": {
+        "global-frames30": [
+          {
+            "score": 0.25989974640664865,
+            "procrustes": 0.1359957870597755,
+            "turn_dtw": 0.3540113124196376,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "E": [
+                172.0,
+                110.0
+              ],
+              "S": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.23309584441083178,
+            "procrustes": 0.1231770481628113,
+            "turn_dtw": 0.31405370356577283,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 274,
+            "marker_positions": {
+              "S": [
+                189.0,
+                89.0
+              ],
+              "E": [
+                165.0,
+                320.0
+              ]
+            }
+          },
+          {
+            "score": 0.2672137198340054,
+            "procrustes": 0.1344820825840067,
+            "turn_dtw": 0.3792332492857105,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "S": [
+                172.0,
+                110.0
+              ],
+              "E": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.25627965385403095,
+            "procrustes": 0.1356658532545335,
+            "turn_dtw": 0.344610858855707,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "E": [
+                240.0,
+                108.0
+              ],
+              "S": [
+                159.0,
+                283.0
+              ]
+            }
+          },
+          {
+            "score": 0.273973056649761,
+            "procrustes": 0.13678822183405562,
+            "turn_dtw": 0.39195667090201547,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "S": [
+                240.0,
+                108.0
+              ],
+              "E": [
+                159.0,
+                283.0
+              ]
+            }
+          }
+        ],
+        "global-frames60": [
+          {
+            "score": 0.3155033390160279,
+            "procrustes": 0.1511138441958727,
+            "turn_dtw": 0.46968427091472903,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "E": [
+                172.0,
+                110.0
+              ],
+              "S": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.3155696529803895,
+            "procrustes": 0.15728781065862574,
+            "turn_dtw": 0.4522338352050394,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 274,
+            "marker_positions": {
+              "S": [
+                189.0,
+                89.0
+              ],
+              "E": [
+                165.0,
+                320.0
+              ]
+            }
+          },
+          {
+            "score": 0.31763962553821856,
+            "procrustes": 0.15769168592793825,
+            "turn_dtw": 0.45699411317222954,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "S": [
+                172.0,
+                110.0
+              ],
+              "E": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.3347615640400301,
+            "procrustes": 0.1587484447382396,
+            "turn_dtw": 0.5028946265765444,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "E": [
+                240.0,
+                108.0
+              ],
+              "S": [
+                159.0,
+                283.0
+              ]
+            }
+          },
+          {
+            "score": 0.325116592130135,
+            "procrustes": 0.15118750910360326,
+            "turn_dtw": 0.4969402372186622,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "S": [
+                240.0,
+                108.0
+              ],
+              "E": [
+                159.0,
+                283.0
+              ]
+            }
+          }
+        ],
+        "chunk16-overlap8-frames120": [
+          {
+            "score": 0.11694670519217971,
+            "procrustes": 0.04856832784973704,
+            "turn_dtw": 0.1953667924069791,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "E": [
+                172.0,
+                110.0
+              ],
+              "S": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.13149383190089342,
+            "procrustes": 0.056699987582122906,
+            "turn_dtw": 0.2136966980536301,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 274,
+            "marker_positions": {
+              "S": [
+                189.0,
+                89.0
+              ],
+              "E": [
+                165.0,
+                320.0
+              ]
+            }
+          },
+          {
+            "score": 0.13255937979231192,
+            "procrustes": 0.05951423971324353,
+            "turn_dtw": 0.20870040022590972,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "S": [
+                172.0,
+                110.0
+              ],
+              "E": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.14598549341013567,
+            "procrustes": 0.059398126335036446,
+            "turn_dtw": 0.24739247735742634,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "E": [
+                240.0,
+                108.0
+              ],
+              "S": [
+                159.0,
+                283.0
+              ]
+            }
+          },
+          {
+            "score": 0.13474054227792504,
+            "procrustes": 0.05171861505193706,
+            "turn_dtw": 0.2372055063599656,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "S": [
+                240.0,
+                108.0
+              ],
+              "E": [
+                159.0,
+                283.0
+              ]
+            }
+          }
+        ]
+      },
+      "vggt_predictions": {
+        "global-frames30": 1,
+        "global-frames60": 0,
+        "chunk16-overlap8-frames120": 0
+      },
+      "vggt_consensus_prediction": 0,
+      "dpvo_scores": {
+        "fps2-focal0.9-w256-b256-p8": [
+          {
+            "score": 0.23599179081138527,
+            "procrustes": 0.10328073989477125,
+            "turn_dtw": 0.37917443119032584,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "E": [
+                172.0,
+                110.0
+              ],
+              "S": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.22346621350101387,
+            "procrustes": 0.09450700800382601,
+            "turn_dtw": 0.3684548728491081,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 274,
+            "marker_positions": {
+              "S": [
+                189.0,
+                89.0
+              ],
+              "E": [
+                165.0,
+                320.0
+              ]
+            }
+          },
+          {
+            "score": 0.233468411633791,
+            "procrustes": 0.09868938150403325,
+            "turn_dtw": 0.38508294322787934,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "S": [
+                172.0,
+                110.0
+              ],
+              "E": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.2285338191395485,
+            "procrustes": 0.0999441296113178,
+            "turn_dtw": 0.36739911293780203,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "E": [
+                240.0,
+                108.0
+              ],
+              "S": [
+                159.0,
+                283.0
+              ]
+            }
+          },
+          {
+            "score": 0.2332584897012857,
+            "procrustes": 0.10198112089014678,
+            "turn_dtw": 0.37507819660325414,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "S": [
+                240.0,
+                108.0
+              ],
+              "E": [
+                159.0,
+                283.0
+              ]
+            }
+          }
+        ],
+        "fps1-focal0.9-w256-b256-p16": [
+          {
+            "score": 0.20430063183189864,
+            "procrustes": 0.13561961564255084,
+            "turn_dtw": 0.196231474826708,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "E": [
+                172.0,
+                110.0
+              ],
+              "S": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.20835118543988063,
+            "procrustes": 0.14584669476771003,
+            "turn_dtw": 0.17858425906334455,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 274,
+            "marker_positions": {
+              "S": [
+                189.0,
+                89.0
+              ],
+              "E": [
+                165.0,
+                320.0
+              ]
+            }
+          },
+          {
+            "score": 0.22646068877936532,
+            "procrustes": 0.1577615714872723,
+            "turn_dtw": 0.19628319226312294,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 169,
+            "marker_positions": {
+              "S": [
+                172.0,
+                110.0
+              ],
+              "E": [
+                225.0,
+                280.0
+              ]
+            }
+          },
+          {
+            "score": 0.22623342411074066,
+            "procrustes": 0.1579234559518906,
+            "turn_dtw": 0.19517133759671437,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "E": [
+                240.0,
+                108.0
+              ],
+              "S": [
+                159.0,
+                283.0
+              ]
+            }
+          },
+          {
+            "score": 0.2076373892269291,
+            "procrustes": 0.13940975428711147,
+            "turn_dtw": 0.1949360998280504,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 213,
+            "marker_positions": {
+              "S": [
+                240.0,
+                108.0
+              ],
+              "E": [
+                159.0,
+                283.0
+              ]
+            }
+          }
+        ]
+      },
+      "dpvo_predictions": {
+        "fps2-focal0.9-w256-b256-p8": 1,
+        "fps1-focal0.9-w256-b256-p16": 0
+      },
+      "answer_id": 0,
+      "hu_correct": true,
+      "ordered_correct": false,
+      "vggt_consensus_correct": true,
+      "dpvo_correct": {
+        "fps2-focal0.9-w256-b256-p8": false,
+        "fps1-focal0.9-w256-b256-p16": true
+      }
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "image_paths": [
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_a.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_b.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_c.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_d.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_e.png"
+      ],
+      "motion_status": "ok",
+      "accepted_steps": 210,
+      "net_yaw_degrees": -151.594972473248,
+      "hu_scores": [
+        19.621971375917497,
+        19.621971375917497,
+        36.35448480077873,
+        16.750562588754768,
+        28.322098205680707
+      ],
+      "hu_prediction": 3,
+      "ordered_scores": [
+        {
+          "score": 0.04206910109585146,
+          "procrustes": 0.017269840163770995,
+          "turn_dtw": 0.07085503123451564,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              318.0,
+              291.0
+            ],
+            "E": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.033074188885958526,
+          "procrustes": 0.017248962976214144,
+          "turn_dtw": 0.04521493117069824,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "E": [
+              318.0,
+              291.0
+            ],
+            "S": [
+              80.0,
+              120.0
+            ]
+          }
+        },
+        {
+          "score": 0.035068905254754236,
+          "procrustes": 0.011528901945535226,
+          "turn_dtw": 0.06725715231205433,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 155,
+          "marker_positions": {
+            "S": [
+              150.0,
+              115.0
+            ],
+            "E": [
+              248.0,
+              293.0
+            ]
+          }
+        },
+        {
+          "score": 0.029115016781269955,
+          "procrustes": 0.011818644363414291,
+          "turn_dtw": 0.04941820690815904,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 290,
+          "marker_positions": {
+            "E": [
+              57.0,
+              31.0
+            ],
+            "S": [
+              342.0,
+              378.0
+            ]
+          }
+        },
+        {
+          "score": 0.041843329317310766,
+          "procrustes": 0.017416492765899627,
+          "turn_dtw": 0.0697909615754604,
+          "hypothesis": "forward-direct",
+          "candidate_path_points": 128,
+          "marker_positions": {
+            "S": [
+              273.0,
+              296.0
+            ],
+            "E": [
+              124.0,
+              115.0
+            ]
+          }
+        }
+      ],
+      "endpoint_marker_features": [
+        [
+          {
+            "x": 224,
+            "y": 152,
+            "saturated_pixels": 113,
+            "red_pixels": 113,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              13,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          },
+          {
+            "x": 304,
+            "y": 278,
+            "saturated_pixels": 326,
+            "red_pixels": 326,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              275,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              51
+            ]
+          }
+        ],
+        [
+          {
+            "x": 224,
+            "y": 152,
+            "saturated_pixels": 113,
+            "red_pixels": 113,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              13,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          },
+          {
+            "x": 304,
+            "y": 278,
+            "saturated_pixels": 318,
+            "red_pixels": 318,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              267,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              51
+            ]
+          }
+        ],
+        [
+          {
+            "x": 150,
+            "y": 125,
+            "saturated_pixels": 308,
+            "red_pixels": 248,
+            "green_pixels": 21,
+            "blue_pixels": 38,
+            "hue_histogram": [
+              220,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              18,
+              38,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              28
+            ]
+          },
+          {
+            "x": 245,
+            "y": 269,
+            "saturated_pixels": 313,
+            "red_pixels": 313,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              287,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              26
+            ]
+          }
+        ],
+        [
+          {
+            "x": 344,
+            "y": 353,
+            "saturated_pixels": 303,
+            "red_pixels": 303,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              271,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              32
+            ]
+          },
+          {
+            "x": 201,
+            "y": 63,
+            "saturated_pixels": 113,
+            "red_pixels": 113,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              15,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              98
+            ]
+          }
+        ],
+        [
+          {
+            "x": 259,
+            "y": 284,
+            "saturated_pixels": 330,
+            "red_pixels": 330,
+            "green_pixels": 0,
+            "blue_pixels": 0,
+            "hue_histogram": [
+              276,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              54
+            ]
+          },
+          {
+            "x": 124,
+            "y": 123,
+            "saturated_pixels": 318,
+            "red_pixels": 291,
+            "green_pixels": 5,
+            "blue_pixels": 22,
+            "hue_histogram": [
+              245,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              22,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              46
+            ]
+          }
+        ]
+      ],
+      "candidate_sha256": [
+        "e97dcfbabb1a0a112c80140ee5dfb7bbdcc6de0784204f327142681ded1aec1f",
+        "f1296920b6ec7b627c38713998c3f536899d7a7621f0e25ab2d845ea559a9b73",
+        "0e2c2ae598d189906d276f90a76491bd5c2b33d07b5894a3668f6fe8fc5bdb9d",
+        "c0e29004d54bcd4204be9cd73ce141a1d380e3b070d26cd0af4d43c4ca4b4e72",
+        "0203ba3f4ad1bf3e3b830b356ee33b2042ffe23d9f7c5fdc4bbaa6f65e7a2d38"
+      ],
+      "ordered_prediction": 3,
+      "vggt_scores": {
+        "global-frames30": [
+          {
+            "score": 0.26137837869486696,
+            "procrustes": 0.1551124331818913,
+            "turn_dtw": 0.3036169871799305,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                318.0,
+                291.0
+              ],
+              "E": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.2587479618400559,
+            "procrustes": 0.15517589823601405,
+            "turn_dtw": 0.2959201817258339,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "E": [
+                318.0,
+                291.0
+              ],
+              "S": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.25675984355088544,
+            "procrustes": 0.15335100303015434,
+            "turn_dtw": 0.29545383005923165,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 155,
+            "marker_positions": {
+              "S": [
+                150.0,
+                115.0
+              ],
+              "E": [
+                248.0,
+                293.0
+              ]
+            }
+          },
+          {
+            "score": 0.2627101237396231,
+            "procrustes": 0.15304467671695005,
+            "turn_dtw": 0.31332984863620883,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 290,
+            "marker_positions": {
+              "E": [
+                57.0,
+                31.0
+              ],
+              "S": [
+                342.0,
+                378.0
+              ]
+            }
+          },
+          {
+            "score": 0.2606589399815114,
+            "procrustes": 0.1550801158249196,
+            "turn_dtw": 0.30165378330454806,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                273.0,
+                296.0
+              ],
+              "E": [
+                124.0,
+                115.0
+              ]
+            }
+          }
+        ],
+        "global-frames60": [
+          {
+            "score": 0.2418129632213657,
+            "procrustes": 0.11861073693351175,
+            "turn_dtw": 0.3520063608224399,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                318.0,
+                291.0
+              ],
+              "E": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.23662280728230733,
+            "procrustes": 0.11861356124700005,
+            "turn_dtw": 0.3371692743865922,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "E": [
+                318.0,
+                291.0
+              ],
+              "S": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.22522148243547752,
+            "procrustes": 0.11667260199871235,
+            "turn_dtw": 0.31013965839075763,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 155,
+            "marker_positions": {
+              "S": [
+                150.0,
+                115.0
+              ],
+              "E": [
+                248.0,
+                293.0
+              ]
+            }
+          },
+          {
+            "score": 0.23150744727764372,
+            "procrustes": 0.11633538868165479,
+            "turn_dtw": 0.32906302455996844,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 290,
+            "marker_positions": {
+              "E": [
+                57.0,
+                31.0
+              ],
+              "S": [
+                342.0,
+                378.0
+              ]
+            }
+          },
+          {
+            "score": 0.24162776681537432,
+            "procrustes": 0.11860925142367573,
+            "turn_dtw": 0.3514814725477103,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                273.0,
+                296.0
+              ],
+              "E": [
+                124.0,
+                115.0
+              ]
+            }
+          }
+        ],
+        "chunk16-overlap8-frames120": [
+          {
+            "score": 0.02494596382463153,
+            "procrustes": 0.013404352969685689,
+            "turn_dtw": 0.032976031014130984,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                318.0,
+                291.0
+              ],
+              "E": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.027446411193965625,
+            "procrustes": 0.013489236246401524,
+            "turn_dtw": 0.03987764270732601,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "E": [
+                318.0,
+                291.0
+              ],
+              "S": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.02338267275708074,
+            "procrustes": 0.007059894082168136,
+            "turn_dtw": 0.046636510499750296,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 155,
+            "marker_positions": {
+              "S": [
+                150.0,
+                115.0
+              ],
+              "E": [
+                248.0,
+                293.0
+              ]
+            }
+          },
+          {
+            "score": 0.015982542190642456,
+            "procrustes": 0.005486302035238791,
+            "turn_dtw": 0.029989257586867615,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 290,
+            "marker_positions": {
+              "E": [
+                57.0,
+                31.0
+              ],
+              "S": [
+                342.0,
+                378.0
+              ]
+            }
+          },
+          {
+            "score": 0.024238574572145337,
+            "procrustes": 0.013562532652127484,
+            "turn_dtw": 0.030502976914336722,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                273.0,
+                296.0
+              ],
+              "E": [
+                124.0,
+                115.0
+              ]
+            }
+          }
+        ]
+      },
+      "vggt_predictions": {
+        "global-frames30": 2,
+        "global-frames60": 2,
+        "chunk16-overlap8-frames120": 3
+      },
+      "vggt_consensus_prediction": 2,
+      "dpvo_scores": {
+        "fps2-focal0.9-w256-b256-p8": [
+          {
+            "score": 0.024037419399876955,
+            "procrustes": 0.010909772015927298,
+            "turn_dtw": 0.03750756395414188,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                318.0,
+                291.0
+              ],
+              "E": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.02939715435534971,
+            "procrustes": 0.012899857745960053,
+            "turn_dtw": 0.047135133169684734,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "E": [
+                318.0,
+                291.0
+              ],
+              "S": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.0236493564352258,
+            "procrustes": 0.007409527788622022,
+            "turn_dtw": 0.04639951041886794,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 155,
+            "marker_positions": {
+              "S": [
+                150.0,
+                115.0
+              ],
+              "E": [
+                248.0,
+                293.0
+              ]
+            }
+          },
+          {
+            "score": 0.022813822694754224,
+            "procrustes": 0.009788805728620233,
+            "turn_dtw": 0.03721433418895426,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 290,
+            "marker_positions": {
+              "E": [
+                57.0,
+                31.0
+              ],
+              "S": [
+                342.0,
+                378.0
+              ]
+            }
+          },
+          {
+            "score": 0.02446730044290943,
+            "procrustes": 0.010979903376365235,
+            "turn_dtw": 0.03853542019012627,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                273.0,
+                296.0
+              ],
+              "E": [
+                124.0,
+                115.0
+              ]
+            }
+          }
+        ],
+        "fps1-focal0.9-w256-b256-p16": [
+          {
+            "score": 0.020210724092208615,
+            "procrustes": 0.011650706844259251,
+            "turn_dtw": 0.024457192136998183,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                318.0,
+                291.0
+              ],
+              "E": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.026732305059187784,
+            "procrustes": 0.013207787988267754,
+            "turn_dtw": 0.03864147734548581,
+            "hypothesis": "forward-reflect",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "E": [
+                318.0,
+                291.0
+              ],
+              "S": [
+                80.0,
+                120.0
+              ]
+            }
+          },
+          {
+            "score": 0.0253495551254586,
+            "procrustes": 0.007298120472497311,
+            "turn_dtw": 0.0515755275798894,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 155,
+            "marker_positions": {
+              "S": [
+                150.0,
+                115.0
+              ],
+              "E": [
+                248.0,
+                293.0
+              ]
+            }
+          },
+          {
+            "score": 0.01588645595253616,
+            "procrustes": 0.00656446648273878,
+            "turn_dtw": 0.026634255627992515,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 290,
+            "marker_positions": {
+              "E": [
+                57.0,
+                31.0
+              ],
+              "S": [
+                342.0,
+                378.0
+              ]
+            }
+          },
+          {
+            "score": 0.020481700351136813,
+            "procrustes": 0.011821499887871756,
+            "turn_dtw": 0.024743429895043013,
+            "hypothesis": "forward-direct",
+            "candidate_path_points": 128,
+            "marker_positions": {
+              "S": [
+                273.0,
+                296.0
+              ],
+              "E": [
+                124.0,
+                115.0
+              ]
+            }
+          }
+        ]
+      },
+      "dpvo_predictions": {
+        "fps2-focal0.9-w256-b256-p8": 3,
+        "fps1-focal0.9-w256-b256-p16": 3
+      },
+      "answer_id": 2,
+      "hu_correct": false,
+      "ordered_correct": false,
+      "vggt_consensus_correct": true,
+      "dpvo_correct": {
+        "fps2-focal0.9-w256-b256-p8": false,
+        "fps1-focal0.9-w256-b256-p16": false
+      }
+    }
+  ]
+}

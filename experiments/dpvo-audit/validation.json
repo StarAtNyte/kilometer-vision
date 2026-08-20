@@ -1,0 +1,414 @@
+{
+  "4MYTCny_FZs": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of the direction that the camera is facing throughout the given walking tour video. Given that the camera is pointing towards the North at the start, where is the camera pointing at the very end?",
+      "options": [
+        "East",
+        "South",
+        "West",
+        "Northwest",
+        "North"
+      ],
+      "answer_id": 1,
+      "answer": "South",
+      "video_url": "https://www.youtube.com/watch?v=4MYTCny_FZs",
+      "start_frame": 60712,
+      "end_frame": 61830,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2371,
+      "end_seconds": 2415
+    },
+    "1": {
+      "id": 1,
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "image_paths": [
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_a.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_b.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_c.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_d.png",
+        "4MYTCny_FZs_51490_58292_15_maps_map_trace_bytes_e.png"
+      ],
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_id": 3,
+      "answer": "D",
+      "video_url": "https://www.youtube.com/watch?v=4MYTCny_FZs",
+      "start_frame": 51490,
+      "end_frame": 58292,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2011,
+      "end_seconds": 2277
+    }
+  },
+  "mA9lYWyXMYU": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of the direction that the camera is facing throughout the given walking tour video. Given that the camera is pointing towards the North at the start, where is the camera pointing at the very end?",
+      "options": [
+        "South",
+        "Southeast",
+        "Northeast",
+        "Northwest",
+        "West"
+      ],
+      "answer_id": 2,
+      "answer": "Northeast",
+      "video_url": "https://www.youtube.com/watch?v=mA9lYWyXMYU",
+      "start_frame": 53032,
+      "end_frame": 55979,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2071,
+      "end_seconds": 2186
+    },
+    "1": {
+      "id": 1,
+      "question": "For this question, you need to keep track of the direction that the camera is facing throughout the given walking tour video. Given that the camera is pointing towards the North at the start, where is the camera pointing at the very end?",
+      "options": [
+        "South",
+        "Southeast",
+        "Northeast",
+        "Northwest",
+        "West"
+      ],
+      "answer_id": 2,
+      "answer": "Northeast",
+      "video_url": "https://www.youtube.com/watch?v=mA9lYWyXMYU",
+      "start_frame": 53032,
+      "end_frame": 55979,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2071,
+      "end_seconds": 2186
+    }
+  },
+  "aUJl46bEWYo": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of the direction that the camera is facing throughout the given walking tour video. Given that the camera is pointing towards the South at the start, where is the camera pointing at the very end?",
+      "options": [
+        "Southwest",
+        "Northwest",
+        "East",
+        "North",
+        "Southeast"
+      ],
+      "answer_id": 0,
+      "answer": "Southwest",
+      "video_url": "https://www.youtube.com/watch?v=aUJl46bEWYo",
+      "start_frame": 56570,
+      "end_frame": 58549,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2209,
+      "end_seconds": 2287
+    },
+    "1": {
+      "id": 1,
+      "question": "For this question, you need to keep track of where the user is in the real world throughout the walking tour video. Based on that, what is the line-of-sight distance between the start point and the end point of this tour?",
+      "options": [
+        "338m",
+        "1061m",
+        "839m",
+        "113m",
+        "638m"
+      ],
+      "answer_id": 3,
+      "answer": "113m",
+      "video_url": "https://www.youtube.com/watch?v=aUJl46bEWYo",
+      "start_frame": 13938,
+      "end_frame": 18941,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 544,
+      "end_seconds": 739
+    }
+  },
+  "G0fWvIxy88A": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of the direction that the camera is facing throughout the given walking tour video. Given that the camera is pointing towards the South at the start, where is the camera pointing at the very end?",
+      "options": [
+        "South",
+        "Southeast",
+        "West",
+        "Northwest",
+        "Northeast"
+      ],
+      "answer_id": 4,
+      "answer": "Northeast",
+      "video_url": "https://www.youtube.com/watch?v=G0fWvIxy88A",
+      "start_frame": 20196,
+      "end_frame": 23250,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 788,
+      "end_seconds": 908
+    },
+    "1": {
+      "id": 1,
+      "question": "For this question, you need to keep track of where the user is in the real world throughout the walking tour video. Based on that, what is the line-of-sight distance between the start point and the end point of this tour?",
+      "options": [
+        "1130m",
+        "423m",
+        "218m",
+        "Less than 5m",
+        "625m"
+      ],
+      "answer_id": 1,
+      "answer": "423m",
+      "video_url": "https://www.youtube.com/watch?v=G0fWvIxy88A",
+      "start_frame": 84703,
+      "end_frame": 96979,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 3308,
+      "end_seconds": 3788
+    },
+    "2": {
+      "id": 2,
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "image_paths": [
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_a.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_b.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_c.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_d.png",
+        "G0fWvIxy88A_65912_71399_37_maps_map_trace_bytes_e.png"
+      ],
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_id": 4,
+      "answer": "E",
+      "video_url": "https://www.youtube.com/watch?v=G0fWvIxy88A",
+      "start_frame": 65912,
+      "end_frame": 71399,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2574,
+      "end_seconds": 2789
+    }
+  },
+  "Xbp5_WA9Jb4": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of where the user is in the real world throughout the walking tour video. Based on that, what is the line-of-sight distance between the start point and the end point of this tour?",
+      "options": [
+        "920m",
+        "670m",
+        "1195m",
+        "122m",
+        "450m"
+      ],
+      "answer_id": 3,
+      "answer": "122m",
+      "video_url": "https://www.youtube.com/watch?v=Xbp5_WA9Jb4",
+      "start_frame": 39321,
+      "end_frame": 41210,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1535,
+      "end_seconds": 1609
+    }
+  },
+  "fk8wrPYr3uU": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of where the user is in the real world throughout the walking tour video. Based on that, what is the line-of-sight distance between the start point and the end point of this tour?",
+      "options": [
+        "Less than 5m",
+        "764m",
+        "1095m",
+        "220m",
+        "454m"
+      ],
+      "answer_id": 3,
+      "answer": "220m",
+      "video_url": "https://www.youtube.com/watch?v=fk8wrPYr3uU",
+      "start_frame": 45095,
+      "end_frame": 50886,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1761,
+      "end_seconds": 1987
+    }
+  },
+  "WSDe_B5KPco": {
+    "0": {
+      "id": 0,
+      "question": "For this question, you need to keep track of where the user is in the real world throughout the walking tour video. Based on that, what is the line-of-sight distance between the start point and the end point of this tour?",
+      "options": [
+        "407m",
+        "179m",
+        "1159m",
+        "631m",
+        "920m"
+      ],
+      "answer_id": 1,
+      "answer": "179m",
+      "video_url": "https://www.youtube.com/watch?v=WSDe_B5KPco",
+      "start_frame": 40499,
+      "end_frame": 43900,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1581,
+      "end_seconds": 1714
+    }
+  },
+  "Htw4yFOWghU": {
+    "0": {
+      "id": 0,
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "image_paths": [
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_a.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_b.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_c.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_d.png",
+        "Htw4yFOWghU_62434_63689_45_maps_no_labels_map_trace_bytes_e.png"
+      ],
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_id": 0,
+      "answer": "A",
+      "video_url": "https://www.youtube.com/watch?v=Htw4yFOWghU",
+      "start_frame": 62434,
+      "end_frame": 63689,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 2438,
+      "end_seconds": 2487
+    }
+  },
+  "UKyT_a-raW4": {
+    "0": {
+      "id": 0,
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "image_paths": [
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_a.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_b.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_c.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_d.png",
+        "UKyT_a-raW4_103554_107169_19_maps_map_trace_bytes_e.png"
+      ],
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_id": 0,
+      "answer": "A",
+      "video_url": "https://www.youtube.com/watch?v=UKyT_a-raW4",
+      "start_frame": 103554,
+      "end_frame": 107169,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 4045,
+      "end_seconds": 4186
+    }
+  },
+  "buBU7NrfyGM": {
+    "0": {
+      "id": 0,
+      "question": "Which of these maps correctly represent the path of the person in this video?",
+      "image_paths": [
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_a.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_b.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_c.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_d.png",
+        "buBU7NrfyGM_39955_45352_52_maps_map_trace_bytes_e.png"
+      ],
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_id": 2,
+      "answer": "C",
+      "video_url": "https://www.youtube.com/watch?v=buBU7NrfyGM",
+      "start_frame": 39955,
+      "end_frame": 45352,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1560,
+      "end_seconds": 1771
+    }
+  },
+  "astCIYQCW2c": {
+    "0": {
+      "id": 0,
+      "question": "Does the image show a location in the video, and if so, what is the straight-line distance between the camera location of the image and the camera location of the final video frame?",
+      "image_paths": [
+        "astCIYQCW2c_29842_45185_landmark_landmark_encoded_a.jpg"
+      ],
+      "options": [
+        "356 meters",
+        "138 meters",
+        "122 meters",
+        "60 meters",
+        "That place is not in the video"
+      ],
+      "answer_id": 4,
+      "answer": "That place is not in the video",
+      "video_url": "https://www.youtube.com/watch?v=astCIYQCW2c",
+      "start_frame": 29842,
+      "end_frame": 45185,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1165,
+      "end_seconds": 1765
+    }
+  },
+  "9m3fojdkPjM": {
+    "0": {
+      "id": 0,
+      "question": "Does the image show a location in the video, and if so, what is the straight-line distance between the camera location of the image and the camera location of the final video frame?",
+      "image_paths": [
+        "9m3fojdkPjM_10657_26017_landmark_landmark_encoded_a.jpg"
+      ],
+      "options": [
+        "184 meters",
+        "25 meters",
+        "145 meters",
+        "89 meters",
+        "That place is not in the video"
+      ],
+      "answer_id": 3,
+      "answer": "89 meters",
+      "video_url": "https://www.youtube.com/watch?v=9m3fojdkPjM",
+      "start_frame": 10657,
+      "end_frame": 26017,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 416,
+      "end_seconds": 1016
+    }
+  },
+  "8dRlTtH1scc": {
+    "0": {
+      "id": 0,
+      "question": "Does the image show a location in the video, and if so, what is the straight-line distance between the camera location of the image and the camera location of the final video frame?",
+      "image_paths": [
+        "8dRlTtH1scc_34164_49524_landmark_landmark_encoded_a.jpg"
+      ],
+      "options": [
+        "194 meters",
+        "218 meters",
+        "169 meters",
+        "82 meters",
+        "That place is not in the video"
+      ],
+      "answer_id": 1,
+      "answer": "218 meters",
+      "video_url": "https://www.youtube.com/watch?v=8dRlTtH1scc",
+      "start_frame": 34164,
+      "end_frame": 49524,
+      "image/original_frame_rate": 25.6,
+      "start_seconds": 1334,
+      "end_seconds": 1934
+    }
+  }
+}
