@@ -1,0 +1,23 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "ACE",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "C",
+    "E"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "observed_start": "Near M\u011bstsk\u00e9 divadlo on Horn\u00ed street facing east toward the intersection with Na Kov\u00e1rn\u011b",
+    "observed_end": "At the south-eastern end of Rooseveltova street overlooking the river and lower houses",
+    "reason": "The video starts at the western end near the theater (Horn\u00ed street by Semin\u00e1rn\u00ed zahrada) and proceeds south-east down Rooseveltova street without backtracking, terminating at the south-eastern end of Rooseveltova. Candidate C correctly places the start (S) near Semin\u00e1rn\u00ed zahrada and the end (E) at the south-east of Rooseveltova.",
+    "confidence": 0.99
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 2
+}

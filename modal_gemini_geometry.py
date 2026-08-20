@@ -60,6 +60,7 @@ def _parse_json_response(text: str) -> dict:
 @app.function(image=IMAGE, secrets=[SECRET], timeout=300)
 def list_models() -> dict:
     from google import genai
+    from google.genai import types
 
     # HttpOptions.timeout is milliseconds. Bound occasional server-side stalls
     # so a failed gate cannot consume the entire Modal function lifetime.
@@ -432,7 +433,7 @@ def run_independent_video_map_audit(video_id: str, key_index: int | None = None)
 
 @app.function(image=IMAGE, secrets=[SECRET, SECRET_POOL], volumes={"/data": VOLUME}, timeout=10*60)
 def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base",
-                       key_index: int | None = None) -> dict:
+                       key_index: int | None = None, model_name: str = MAP_MODEL) -> dict:
     """Resolve a close independent-score shortlist with endpoint-focused video evidence."""
     from google import genai
     from google.genai import types
@@ -474,7 +475,7 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
     client = genai.Client(api_key=_api_key(key_index),
                           http_options=types.HttpOptions(timeout=180_000))
     response = client.models.generate_content(
-        model=MAP_MODEL, contents=[types.Content(role="user", parts=parts)],
+        model=model_name, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level="low"),
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_HIGH,
@@ -485,13 +486,14 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
                 "reason":{"type":"string"}, "confidence":{"type":"number"}},
                 "required":["answer","observed_start","observed_end","reason","confidence"]}))
     parsed = _parse_json_response(response.text)
-    result = {"video_id": video_id, "question_id": str(question_id), "model": MAP_MODEL,
+    result = {"video_id": video_id, "question_id": str(question_id), "model": model_name,
               "pipeline": "endpoint-focused-video-map-duel", "identities": identities,
               "perturbation": perturbation, "display_order": chosen,
               "prediction": "ABCDE".index(parsed["answer"]), "response": parsed,
               "ground_truth_used_for_inference": False, "answer_id": question.get("answer_id")}
+    model_tag = re.sub(r"[^A-Za-z0-9]+", "", model_name)
     output = ROOT / "experiments" / "gemini-native-video-map" / \
-        f"{video_id}-duel-{identities}-{perturbation}.json"
+        f"{video_id}-duel-{identities}-{perturbation}-{model_tag}.json"
     output.write_text(json.dumps(result, indent=2) + "\n"); VOLUME.commit()
     return result
 
@@ -708,7 +710,8 @@ def run_gate(video_id: str = "G0fWvIxy88A", perturbation: str = "base",
 
 @app.local_entrypoint()
 def main(action: str = "list-models", video_id: str = "G0fWvIxy88A",
-         key_index: int = -1, identities: str = "BC") -> None:
+         key_index: int = -1, identities: str = "BC",
+         model: str = MAP_MODEL) -> None:
     if action == "list-models":
         result = list_models.remote()
     elif action == "inspect-pool":
@@ -737,7 +740,7 @@ def main(action: str = "list-models", video_id: str = "G0fWvIxy88A",
     elif action in {"duel", "duel-reverse"}:
         result = run_video_map_duel.remote(
             video_id, identities, "reverse" if action.endswith("reverse") else "base",
-            None if key_index < 0 else key_index)
+            None if key_index < 0 else key_index, model)
     elif action == "evidence":
         result = run_gate.remote(video_id=video_id, pipeline="evidence-only",
                                  key_index=None if key_index < 0 else key_index)

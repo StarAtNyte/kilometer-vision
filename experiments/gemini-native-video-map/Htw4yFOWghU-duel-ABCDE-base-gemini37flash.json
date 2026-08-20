@@ -1,0 +1,25 @@
+{
+  "video_id": "Htw4yFOWghU",
+  "question_id": "0",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "ABCDE",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 0,
+  "response": {
+    "answer": "A",
+    "observed_start": "Residenzplatz / entrance to Alter Markt facing Caf\u00e9 Tomaselli",
+    "observed_end": "Along Alter Markt just past the outdoor terrace of Caf\u00e9 Tomaselli",
+    "reason": "The video covers a short walk of under 50 seconds starting in the square, walking west-northwest toward Caf\u00e9 Tomaselli, and rounding past its outdoor seating facade. It does not turn north toward the Salzach river, matching candidate A's short single-segment trajectory.",
+    "confidence": 0.98
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

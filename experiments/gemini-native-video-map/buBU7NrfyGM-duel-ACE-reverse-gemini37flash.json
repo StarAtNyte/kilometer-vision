@@ -1,0 +1,23 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "ACE",
+  "perturbation": "reverse",
+  "display_order": [
+    "E",
+    "C",
+    "A"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "observed_start": "Near M\u011bstsk\u00e9 divadlo and Semin\u00e1rn\u00ed zahrada in \u010cesk\u00fd Krumlov, facing southeast toward the fork at Rooseveltova street.",
+    "observed_end": "Down southeast along Rooseveltova street, ending near the lower bend/riverside cottages.",
+    "reason": "The video starts at the junction near M\u011bstsk\u00e9 divadlo / Horn\u00ed and proceeds southeast down Rooseveltova street past various pensions to the southern end of the street. Only candidate C shows the start point S at the northern end and the end point E at the southern end.",
+    "confidence": 0.99
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 2
+}
