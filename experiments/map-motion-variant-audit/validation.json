@@ -1,0 +1,487 @@
+{
+  "split": "validation",
+  "summary": {
+    "fps5-focal0.9": {
+      "questions": 0,
+      "correct": 0
+    },
+    "fps5-focal0.9-w320-b512": {
+      "questions": 0,
+      "correct": 0
+    },
+    "fps5-focal0.9-w320-b256": {
+      "questions": 0,
+      "correct": 0
+    },
+    "fps5-focal0.9-w320-b64": {
+      "questions": 0,
+      "correct": 0
+    },
+    "fps2-focal0.9-w256-b256-p24": {
+      "questions": 1,
+      "correct": 1
+    },
+    "fps2-focal0.9-w256-b256-p8": {
+      "questions": 5,
+      "correct": 0
+    },
+    "fps1-focal0.9-w256-b256-p16": {
+      "questions": 5,
+      "correct": 4
+    },
+    "fps0.5-focal0.9-w256-b256-p16": {
+      "questions": 5,
+      "correct": 1
+    },
+    "fps1.5-focal0.9-w256-b256-p16": {
+      "questions": 5,
+      "correct": 0
+    },
+    "fps1-focal0.75-w256-b256-p32": {
+      "questions": 3,
+      "correct": 1
+    },
+    "fps1-focal0.75-w256-b256-p16": {
+      "questions": 5,
+      "correct": 0
+    }
+  },
+  "rows": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "fps2-focal0.9-w256-b256-p8",
+      "prediction": 2,
+      "ranking": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "margin": 1.4710612242452292e-05,
+      "answer_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "fps1-focal0.9-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        4,
+        1,
+        0
+      ],
+      "margin": 0.00012242815736565604,
+      "answer_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "fps0.5-focal0.9-w256-b256-p16",
+      "prediction": 4,
+      "ranking": [
+        4,
+        2,
+        3,
+        0,
+        1
+      ],
+      "margin": 0.002867557951683697,
+      "answer_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "fps1.5-focal0.9-w256-b256-p16",
+      "prediction": 4,
+      "ranking": [
+        4,
+        2,
+        3,
+        1,
+        0
+      ],
+      "margin": 0.0001508294682278158,
+      "answer_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "fps1-focal0.75-w256-b256-p16",
+      "prediction": 4,
+      "ranking": [
+        4,
+        3,
+        2,
+        0,
+        1
+      ],
+      "margin": 0.004039439301459211,
+      "answer_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "fps2-focal0.9-w256-b256-p8",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        2,
+        1,
+        4
+      ],
+      "margin": 0.029522555225334535,
+      "answer_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "fps1-focal0.9-w256-b256-p16",
+      "prediction": 4,
+      "ranking": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "margin": 0.001673587221072359,
+      "answer_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "fps0.5-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        2,
+        4
+      ],
+      "margin": 0.030766228853554123,
+      "answer_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "fps1.5-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        1,
+        2,
+        3
+      ],
+      "margin": 0.01648819890134473,
+      "answer_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "fps1-focal0.75-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        1,
+        2,
+        3
+      ],
+      "margin": 0.00909368175511377,
+      "answer_id": 4
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps2-focal0.9-w256-b256-p24",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        2,
+        4
+      ],
+      "margin": 0.027215848294472378,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps2-focal0.9-w256-b256-p8",
+      "prediction": 1,
+      "ranking": [
+        1,
+        3,
+        2,
+        4,
+        0
+      ],
+      "margin": 0.0026718457723215183,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps1-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "margin": 0.014032505119369237,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps0.5-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "margin": 0.004802638293279066,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps1.5-focal0.9-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        1,
+        0,
+        4,
+        2
+      ],
+      "margin": 0.0015666908312601882,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p32",
+      "prediction": 0,
+      "ranking": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "margin": 0.026258477565314735,
+      "answer_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        1,
+        0,
+        4,
+        2
+      ],
+      "margin": 0.0008386961610886007,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps2-focal0.9-w256-b256-p8",
+      "prediction": 1,
+      "ranking": [
+        1,
+        3,
+        4,
+        2,
+        0
+      ],
+      "margin": 0.005067605638534645,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps1-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "margin": 0.0033367573950304485,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps0.5-focal0.9-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        1,
+        0,
+        4
+      ],
+      "margin": 0.006511075337485517,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps1.5-focal0.9-w256-b256-p16",
+      "prediction": 4,
+      "ranking": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "margin": 0.0003061085539527719,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p32",
+      "prediction": 2,
+      "ranking": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "margin": 0.009619708635845658,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p16",
+      "prediction": 1,
+      "ranking": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "margin": 0.0017362709199483795,
+      "answer_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps2-focal0.9-w256-b256-p8",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        0,
+        4,
+        1
+      ],
+      "margin": 0.0008355337404715758,
+      "answer_id": 2
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps1-focal0.9-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "margin": 0.004324268139672457,
+      "answer_id": 2
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps0.5-focal0.9-w256-b256-p16",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        3,
+        1,
+        2
+      ],
+      "margin": 0.0002784416650757765,
+      "answer_id": 2
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps1.5-focal0.9-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        4,
+        0,
+        2,
+        1
+      ],
+      "margin": 0.0038587525657035326,
+      "answer_id": 2
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p32",
+      "prediction": 3,
+      "ranking": [
+        3,
+        4,
+        0,
+        2,
+        1
+      ],
+      "margin": 0.00644727138601691,
+      "answer_id": 2
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "fps1-focal0.75-w256-b256-p16",
+      "prediction": 3,
+      "ranking": [
+        3,
+        4,
+        0,
+        2,
+        1
+      ],
+      "margin": 0.0043928841983240825,
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}
