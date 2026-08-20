@@ -10,19 +10,18 @@ The August 11, 2026 organizer release currently reports 13 validation videos / 1
 
 ## Test leaderboard
 
-Current EvalAI test leaderboard plus our best private submission, checked **August 20, 2026**:
+Current EvalAI test leaderboard, checked **August 21, 2026**:
 
 | Position | Team / submission | Top-1 | Visibility |
 | ---: | --- | ---: | --- |
 | 1 | BoundedAccord | 0.454 | Public |
-| 2* | StarAtNyte — submission 579590 | **0.250507** | Private; projected position if made public |
 | 2 | StarAtNyte — submission 579438 | 0.245436 | Public |
 | 3 | Host_37595_Team | 0.196 | Public |
 
-`2*` is a comparison position, not an official EvalAI rank while submission 579590 remains private. It is the production baseline: 247/986 correct and three answers better than submission 579535 after the isolated compass change. Refresh the official public table with:
+The public table currently exposes three test entries. The top method is explicitly named `bounded-geometry-qwen-zero-shot`; it is the only demonstrated route near 0.5. Refresh the official public table with:
 
 ```bash
-evalai challenge 2707 leaderboard 7010
+python refresh_leaderboard.py
 ```
 
 ## Architecture
