@@ -42,7 +42,9 @@ Promote a lane only when it improves the relevant validation family without chan
 2. Preserve submission 579590 / SHA-256 `4adccee09cd10102bc4b754b9809efb3dacc0ea7f29290fb3fc682ff1ef7c3c6` as the production answer baseline; future artifacts must report family-isolated diffs against it.
 3. Do not use DPVO winner margin or same-trace resampling stability as a production gate; the validation false positive is confident and stable. Evaluate candidate-map scoring on an eligible external/synthetic route-to-map benchmark instead.
 4. **Completed reconnaissance:** public video metadata covers 54/54 test videos and yields route anchors for 52/54; candidate-map OCR covers all 284 image-map questions. Exact/fuzzy anchor overlap uniquely separates only 12/284 choices, so keyword-only map replacement is rejected.
-5. Next build label-free OSM localization: geocode multiple metadata anchors jointly, recover an ordered route corridor, and compare candidate routes/POIs against that corridor. Use OCR overlap only as supporting evidence. Continue the eligible train-only compass/landmark specialist lane independently; keep KilometerVision validation/test media sealed from fitting. Do not upload experimental artifacts automatically.
+5. **Completed/rejected as raw geometry:** multi-anchor geocoding recovered coherent route corridors, but official OSMLoc positions were highly sensitive to unknown focal length. Retain metadata/OSM as semantic candidate evidence only, not as a metric trajectory.
+6. **Completed/rejected:** official LoGeR failed the label-free 30-vs-60-frame route-stability gate on York. Do not score or tune a candidate-map override from this trace.
+7. Next evaluate semantic candidate evidence that does not require camera intrinsics: candidate-map POI/street extraction against jointly geocoded metadata anchors, with abstention unless a unique choice has multiple independent matches. Continue the eligible train-only compass/landmark specialist lane independently; keep KilometerVision validation/test media sealed from fitting. Do not upload experimental artifacts automatically.
 
 ## Map recovery plan
 
