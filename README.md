@@ -65,6 +65,8 @@ The existing ORB/essential-matrix motion lane was then revisited: its per-frame 
 
 Finally, DPVO's stored 3-D positions were projected directly on XY, XZ, and YZ axes instead of the current unconstrained PCA projection. The best direct-axis variant reached 3/5, below the PCA lane's 4/5, so vertical-axis contamination is not the dominant failure.
 
+PCA chirality was tested separately by adding reflection penalties from 0.005 through 0.08. Every nonzero penalty dropped DPVO to 2/5, confirming that the route maps do not provide a safe global mirror convention for these relative trajectories.
+
 ## Planned commands
 
 ```bash

@@ -113,6 +113,7 @@ def evaluate(split: str = "validation") -> dict:
                 for variant, scores in dpvo_variants.items() if scores
             }
             dpvo_turn_predictions = {}
+            dpvo_reflection_predictions = {}
             dpvo_trace_path = ROOT / "experiments" / "dpvo-motion" / split / "fps1-focal0.9-w256-b256-p16" / f"{video_id}.json"
             if dpvo_trace_path.exists():
                 payload = json.loads(dpvo_trace_path.read_text())
@@ -122,6 +123,10 @@ def evaluate(split: str = "validation") -> dict:
                         scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0, turn_weight=weight)
                         if scores:
                             dpvo_turn_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
+                    for penalty in (0.005, 0.01, 0.02, 0.04, 0.08):
+                        scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=penalty)
+                        if scores:
+                            dpvo_reflection_predictions[str(penalty)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             slam_predictions = {}
             slam_path = ROOT / "experiments" / "vggt-slam2" / f"{video_id}.json"
             if slam_path.exists():
@@ -221,6 +226,7 @@ def evaluate(split: str = "validation") -> dict:
                     "dpvo_pixel_predictions": dpvo_pixel_predictions,
                     "dpvo_projection_predictions": dpvo_projection_predictions,
                     "dpvo_turn_predictions": dpvo_turn_predictions,
+                    "dpvo_reflection_predictions": dpvo_reflection_predictions,
                     "vggt_slam_predictions": slam_predictions,
                     "da3_predictions": da3_predictions,
                     "answer_id": answer_id,
@@ -283,6 +289,10 @@ def evaluate(split: str = "validation") -> dict:
         "dpvo_turn_correct": {
             weight: sum(row["dpvo_turn_predictions"].get(weight) == row["answer_id"] for row in records)
             for weight in ("0.1", "0.35", "0.5", "1.0", "2.0")
+        },
+        "dpvo_reflection_correct": {
+            penalty: sum(row["dpvo_reflection_predictions"].get(penalty) == row["answer_id"] for row in records)
+            for penalty in ("0.005", "0.01", "0.02", "0.04", "0.08")
         },
         "vggt_slam_correct": {
             variant: sum(row["vggt_slam_correct"].get(variant) is True for row in records)
