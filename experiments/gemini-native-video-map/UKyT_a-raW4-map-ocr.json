@@ -1,0 +1,1209 @@
+{
+  "video_id": "UKyT_a-raW4",
+  "question_id": "0",
+  "records": [
+    {
+      "identity": "A",
+      "markers": {
+        "E": [
+          172.0,
+          110.0
+        ],
+        "S": [
+          225.0,
+          280.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "AN",
+          "confidence": 38.0,
+          "x": 0.1659,
+          "y": 0.1053
+        },
+        {
+          "text": "Literatury",
+          "confidence": 92.0,
+          "x": 0.4269,
+          "y": 0.1678
+        },
+        {
+          "text": "A.",
+          "confidence": 92.0,
+          "x": 0.28,
+          "y": 0.1975
+        },
+        {
+          "text": "Mickiewicza",
+          "confidence": 79.0,
+          "x": 0.4028,
+          "y": 0.1981
+        },
+        {
+          "text": "\u2014",
+          "confidence": 37.0,
+          "x": 0.5194,
+          "y": 0.1869
+        },
+        {
+          "text": "%",
+          "confidence": 91.0,
+          "x": 0.7397,
+          "y": 0.2731
+        },
+        {
+          "text": "Rynek",
+          "confidence": 92.0,
+          "x": 0.06,
+          "y": 0.3456
+        },
+        {
+          "text": "Starego",
+          "confidence": 92.0,
+          "x": 0.1728,
+          "y": 0.3431
+        },
+        {
+          "text": "(za)",
+          "confidence": 58.0,
+          "x": 0.5475,
+          "y": 0.3225
+        },
+        {
+          "text": "Gnojna",
+          "confidence": 91.0,
+          "x": 0.6397,
+          "y": 0.3312
+        },
+        {
+          "text": "Gora",
+          "confidence": 91.0,
+          "x": 0.7403,
+          "y": 0.3269
+        },
+        {
+          "text": "~~.Miasta",
+          "confidence": 25.0,
+          "x": 0.0878,
+          "y": 0.3781
+        },
+        {
+          "text": "NS",
+          "confidence": 55.0,
+          "x": 0.3831,
+          "y": 0.3697
+        },
+        {
+          "text": "@)",
+          "confidence": 66.0,
+          "x": 0.0362,
+          "y": 0.46
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 92.0,
+          "x": 0.1409,
+          "y": 0.4653
+        },
+        {
+          "text": "Swiat",
+          "confidence": 89.0,
+          "x": 0.2603,
+          "y": 0.4619
+        },
+        {
+          "text": "Iluzji",
+          "confidence": 47.0,
+          "x": 0.3478,
+          "y": 0.4681
+        },
+        {
+          "text": "Orns",
+          "confidence": 27.0,
+          "x": 0.4447,
+          "y": 0.7656
+        },
+        {
+          "text": "Archikatedralna",
+          "confidence": 90.0,
+          "x": 0.6744,
+          "y": 0.7681
+        },
+        {
+          "text": "Ww",
+          "confidence": 57.0,
+          "x": 0.4278,
+          "y": 0.8078
+        },
+        {
+          "text": "Or:",
+          "confidence": 53.0,
+          "x": 0.64,
+          "y": 0.8553
+        },
+        {
+          "text": "Hut",
+          "confidence": 95.0,
+          "x": 0.7566,
+          "y": 0.8528
+        },
+        {
+          "text": "W",
+          "confidence": 87.0,
+          "x": 0.5853,
+          "y": 0.8828
+        },
+        {
+          "text": "Warszawa",
+          "confidence": 95.0,
+          "x": 0.7159,
+          "y": 0.88
+        },
+        {
+          "text": "Zamek",
+          "confidence": 92.0,
+          "x": 0.8588,
+          "y": 0.8872
+        },
+        {
+          "text": "(A",
+          "confidence": 40.0,
+          "x": 0.5303,
+          "y": 0.9163
+        },
+        {
+          "text": "ZL...",
+          "confidence": 43.0,
+          "x": 0.6531,
+          "y": 0.9509
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "B",
+      "markers": {
+        "S": [
+          189.0,
+          89.0
+        ],
+        "E": [
+          165.0,
+          320.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "Muzeum",
+          "confidence": 91.0,
+          "x": 0.3184,
+          "y": 0.1103
+        },
+        {
+          "text": "Literatury",
+          "confidence": 91.0,
+          "x": 0.4697,
+          "y": 0.1153
+        },
+        {
+          "text": "@",
+          "confidence": 21.0,
+          "x": 0.2178,
+          "y": 0.1309
+        },
+        {
+          "text": "im.",
+          "confidence": 96.0,
+          "x": 0.2737,
+          "y": 0.145
+        },
+        {
+          "text": "A.",
+          "confidence": 93.0,
+          "x": 0.3225,
+          "y": 0.145
+        },
+        {
+          "text": "Mickiewicza",
+          "confidence": 87.0,
+          "x": 0.4572,
+          "y": 0.1459
+        },
+        {
+          "text": "\u2014",
+          "confidence": 34.0,
+          "x": 0.5566,
+          "y": 0.1459
+        },
+        {
+          "text": "co",
+          "confidence": 47.0,
+          "x": 0.5563,
+          "y": 0.2041
+        },
+        {
+          "text": "%",
+          "confidence": 91.0,
+          "x": 0.7822,
+          "y": 0.2206
+        },
+        {
+          "text": "(za)",
+          "confidence": 59.0,
+          "x": 0.59,
+          "y": 0.27
+        },
+        {
+          "text": "Gnojna",
+          "confidence": 90.0,
+          "x": 0.6822,
+          "y": 0.2787
+        },
+        {
+          "text": "Gora",
+          "confidence": 44.0,
+          "x": 0.7828,
+          "y": 0.2747
+        },
+        {
+          "text": "Rynek",
+          "confidence": 93.0,
+          "x": 0.1025,
+          "y": 0.2931
+        },
+        {
+          "text": "Stare",
+          "confidence": 96.0,
+          "x": 0.1956,
+          "y": 0.2906
+        },
+        {
+          "text": "se?",
+          "confidence": 32.0,
+          "x": 0.4322,
+          "y": 0.3113
+        },
+        {
+          "text": "Nea",
+          "confidence": 33.0,
+          "x": 0.0612,
+          "y": 0.3444
+        },
+        {
+          "text": "@)",
+          "confidence": 64.0,
+          "x": 0.0788,
+          "y": 0.4075
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 92.0,
+          "x": 0.1837,
+          "y": 0.4128
+        },
+        {
+          "text": "Swiat",
+          "confidence": 86.0,
+          "x": 0.3031,
+          "y": 0.4094
+        },
+        {
+          "text": "Iluzji",
+          "confidence": 58.0,
+          "x": 0.3903,
+          "y": 0.4156
+        },
+        {
+          "text": "No",
+          "confidence": 67.0,
+          "x": 0.0253,
+          "y": 0.6131
+        },
+        {
+          "text": "%",
+          "confidence": 23.0,
+          "x": 0.2959,
+          "y": 0.695
+        },
+        {
+          "text": "Bazyli",
+          "confidence": 92.0,
+          "x": 0.5038,
+          "y": 0.7125
+        },
+        {
+          "text": "Archikatedralna",
+          "confidence": 65.0,
+          "x": 0.7169,
+          "y": 0.7097
+        },
+        {
+          "text": "f\u00b0",
+          "confidence": 52.0,
+          "x": 0.0475,
+          "y": 0.7037
+        },
+        {
+          "text": "%",
+          "confidence": 86.0,
+          "x": 0.3247,
+          "y": 0.7334
+        },
+        {
+          "text": "szawie",
+          "confidence": 91.0,
+          "x": 0.6084,
+          "y": 0.7481
+        },
+        {
+          "text": "pw",
+          "confidence": 95.0,
+          "x": 0.6944,
+          "y": 0.7512
+        },
+        {
+          "text": "Pizza",
+          "confidence": 96.0,
+          "x": 0.72,
+          "y": 0.8031
+        },
+        {
+          "text": "Hut",
+          "confidence": 96.0,
+          "x": 0.7991,
+          "y": 0.8003
+        },
+        {
+          "text": "W",
+          "confidence": 90.0,
+          "x": 0.6278,
+          "y": 0.8306
+        },
+        {
+          "text": "Warszawa",
+          "confidence": 92.0,
+          "x": 0.7584,
+          "y": 0.8275
+        },
+        {
+          "text": "Zamek",
+          "confidence": 91.0,
+          "x": 0.9012,
+          "y": 0.8347
+        },
+        {
+          "text": "apmkowy",
+          "confidence": 42.0,
+          "x": 0.6653,
+          "y": 0.9375
+        },
+        {
+          "text": "2s",
+          "confidence": 65.0,
+          "x": 0.3509,
+          "y": 0.9806
+        },
+        {
+          "text": "NO",
+          "confidence": 93.0,
+          "x": 0.5781,
+          "y": 0.9819
+        },
+        {
+          "text": "Map",
+          "confidence": 95.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 95.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "C",
+      "markers": {
+        "S": [
+          172.0,
+          110.0
+        ],
+        "E": [
+          225.0,
+          280.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "AN",
+          "confidence": 38.0,
+          "x": 0.1659,
+          "y": 0.1053
+        },
+        {
+          "text": "Literatury",
+          "confidence": 92.0,
+          "x": 0.4269,
+          "y": 0.1678
+        },
+        {
+          "text": "A.",
+          "confidence": 92.0,
+          "x": 0.28,
+          "y": 0.1975
+        },
+        {
+          "text": "Mickiewicza",
+          "confidence": 79.0,
+          "x": 0.4028,
+          "y": 0.1981
+        },
+        {
+          "text": "\u2014",
+          "confidence": 37.0,
+          "x": 0.5194,
+          "y": 0.1869
+        },
+        {
+          "text": "%",
+          "confidence": 91.0,
+          "x": 0.7397,
+          "y": 0.2731
+        },
+        {
+          "text": "Rynek",
+          "confidence": 92.0,
+          "x": 0.06,
+          "y": 0.3456
+        },
+        {
+          "text": "Starego",
+          "confidence": 92.0,
+          "x": 0.1728,
+          "y": 0.3431
+        },
+        {
+          "text": "(za)",
+          "confidence": 58.0,
+          "x": 0.5475,
+          "y": 0.3225
+        },
+        {
+          "text": "Gnojna",
+          "confidence": 91.0,
+          "x": 0.6397,
+          "y": 0.3312
+        },
+        {
+          "text": "Gora",
+          "confidence": 91.0,
+          "x": 0.7403,
+          "y": 0.3269
+        },
+        {
+          "text": "~~.Miasta",
+          "confidence": 25.0,
+          "x": 0.0878,
+          "y": 0.3781
+        },
+        {
+          "text": "NS",
+          "confidence": 55.0,
+          "x": 0.3831,
+          "y": 0.3697
+        },
+        {
+          "text": "@)",
+          "confidence": 66.0,
+          "x": 0.0362,
+          "y": 0.46
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 92.0,
+          "x": 0.1409,
+          "y": 0.4653
+        },
+        {
+          "text": "Swiat",
+          "confidence": 89.0,
+          "x": 0.2603,
+          "y": 0.4619
+        },
+        {
+          "text": "Iluzji",
+          "confidence": 47.0,
+          "x": 0.3478,
+          "y": 0.4681
+        },
+        {
+          "text": "Orns",
+          "confidence": 27.0,
+          "x": 0.4447,
+          "y": 0.7656
+        },
+        {
+          "text": "Archikatedralna",
+          "confidence": 90.0,
+          "x": 0.6744,
+          "y": 0.7681
+        },
+        {
+          "text": "Ww",
+          "confidence": 57.0,
+          "x": 0.4278,
+          "y": 0.8078
+        },
+        {
+          "text": "Or:",
+          "confidence": 53.0,
+          "x": 0.64,
+          "y": 0.8553
+        },
+        {
+          "text": "Hut",
+          "confidence": 95.0,
+          "x": 0.7566,
+          "y": 0.8528
+        },
+        {
+          "text": "W",
+          "confidence": 87.0,
+          "x": 0.5853,
+          "y": 0.8828
+        },
+        {
+          "text": "Warszawa",
+          "confidence": 95.0,
+          "x": 0.7159,
+          "y": 0.88
+        },
+        {
+          "text": "Zamek",
+          "confidence": 92.0,
+          "x": 0.8588,
+          "y": 0.8872
+        },
+        {
+          "text": "(A",
+          "confidence": 40.0,
+          "x": 0.5303,
+          "y": 0.9163
+        },
+        {
+          "text": "ZL...",
+          "confidence": 43.0,
+          "x": 0.6531,
+          "y": 0.9509
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "D",
+      "markers": {
+        "E": [
+          240.0,
+          108.0
+        ],
+        "S": [
+          159.0,
+          283.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "y",
+          "confidence": 37.0,
+          "x": 0.1684,
+          "y": 0.015
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 91.0,
+          "x": 0.3034,
+          "y": 0.0144
+        },
+        {
+          "text": "Literatury",
+          "confidence": 91.0,
+          "x": 0.4547,
+          "y": 0.0187
+        },
+        {
+          "text": "Y",
+          "confidence": 79.0,
+          "x": 0.1972,
+          "y": 0.0444
+        },
+        {
+          "text": "@",
+          "confidence": 71.0,
+          "x": 0.1975,
+          "y": 0.0275
+        },
+        {
+          "text": "im.",
+          "confidence": 96.0,
+          "x": 0.2587,
+          "y": 0.05
+        },
+        {
+          "text": "A.",
+          "confidence": 93.0,
+          "x": 0.3075,
+          "y": 0.05
+        },
+        {
+          "text": "Mickiewicza",
+          "confidence": 90.0,
+          "x": 0.4303,
+          "y": 0.0481
+        },
+        {
+          "text": "%",
+          "confidence": 90.0,
+          "x": 0.7672,
+          "y": 0.1256
+        },
+        {
+          "text": "(za)",
+          "confidence": 65.0,
+          "x": 0.575,
+          "y": 0.175
+        },
+        {
+          "text": "Gnojna",
+          "confidence": 91.0,
+          "x": 0.6672,
+          "y": 0.1837
+        },
+        {
+          "text": "Gora",
+          "confidence": 47.0,
+          "x": 0.7678,
+          "y": 0.1797
+        },
+        {
+          "text": "Rynek",
+          "confidence": 92.0,
+          "x": 0.0875,
+          "y": 0.1963
+        },
+        {
+          "text": "Starego",
+          "confidence": 93.0,
+          "x": 0.2003,
+          "y": 0.1953
+        },
+        {
+          "text": "se?",
+          "confidence": 29.0,
+          "x": 0.4172,
+          "y": 0.2162
+        },
+        {
+          "text": "ee,",
+          "confidence": 26.0,
+          "x": 0.0488,
+          "y": 0.2272
+        },
+        {
+          "text": "Miasta",
+          "confidence": 91.0,
+          "x": 0.1512,
+          "y": 0.2328
+        },
+        {
+          "text": "\\",
+          "confidence": 65.0,
+          "x": 0.0228,
+          "y": 0.2634
+        },
+        {
+          "text": "@)",
+          "confidence": 68.0,
+          "x": 0.0641,
+          "y": 0.3128
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 91.0,
+          "x": 0.1688,
+          "y": 0.3216
+        },
+        {
+          "text": "Swiat",
+          "confidence": 92.0,
+          "x": 0.2881,
+          "y": 0.3144
+        },
+        {
+          "text": "Iluzji",
+          "confidence": 38.0,
+          "x": 0.3756,
+          "y": 0.3206
+        },
+        {
+          "text": "a",
+          "confidence": 72.0,
+          "x": 0.0178,
+          "y": 0.5253
+        },
+        {
+          "text": "\u201cty",
+          "confidence": 65.0,
+          "x": 0.0409,
+          "y": 0.5541
+        },
+        {
+          "text": "Bazyli",
+          "confidence": 92.0,
+          "x": 0.4888,
+          "y": 0.6175
+        },
+        {
+          "text": "f\u00b0",
+          "confidence": 32.0,
+          "x": 0.0403,
+          "y": 0.6019
+        },
+        {
+          "text": "%",
+          "confidence": 87.0,
+          "x": 0.3097,
+          "y": 0.6388
+        },
+        {
+          "text": "Archikatedralna",
+          "confidence": 88.0,
+          "x": 0.7019,
+          "y": 0.6206
+        },
+        {
+          "text": "szawie",
+          "confidence": 86.0,
+          "x": 0.5938,
+          "y": 0.6531
+        },
+        {
+          "text": "pw",
+          "confidence": 96.0,
+          "x": 0.6794,
+          "y": 0.6566
+        },
+        {
+          "text": "\u2018",
+          "confidence": 53.0,
+          "x": 0.6562,
+          "y": 0.7116
+        },
+        {
+          "text": "Pizza",
+          "confidence": 96.0,
+          "x": 0.705,
+          "y": 0.7084
+        },
+        {
+          "text": "Hut",
+          "confidence": 96.0,
+          "x": 0.7837,
+          "y": 0.7053
+        },
+        {
+          "text": "Y",
+          "confidence": 71.0,
+          "x": 0.6253,
+          "y": 0.7366
+        },
+        {
+          "text": "Warszawa",
+          "confidence": 93.0,
+          "x": 0.7428,
+          "y": 0.7381
+        },
+        {
+          "text": "Zamek",
+          "confidence": 92.0,
+          "x": 0.8862,
+          "y": 0.7397
+        },
+        {
+          "text": "apnkowy",
+          "confidence": 36.0,
+          "x": 0.6519,
+          "y": 0.8425
+        },
+        {
+          "text": "%",
+          "confidence": 23.0,
+          "x": 0.3172,
+          "y": 0.8612
+        },
+        {
+          "text": "%",
+          "confidence": 53.0,
+          "x": 0.3359,
+          "y": 0.8856
+        },
+        {
+          "text": "Google",
+          "confidence": 55.0,
+          "x": 0.0756,
+          "y": 0.9616
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "E",
+      "markers": {
+        "S": [
+          240.0,
+          108.0
+        ],
+        "E": [
+          159.0,
+          283.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "y",
+          "confidence": 37.0,
+          "x": 0.1684,
+          "y": 0.015
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 91.0,
+          "x": 0.3034,
+          "y": 0.0144
+        },
+        {
+          "text": "Literatury",
+          "confidence": 91.0,
+          "x": 0.4547,
+          "y": 0.0187
+        },
+        {
+          "text": "Y",
+          "confidence": 79.0,
+          "x": 0.1972,
+          "y": 0.0444
+        },
+        {
+          "text": "@",
+          "confidence": 71.0,
+          "x": 0.1975,
+          "y": 0.0275
+        },
+        {
+          "text": "im.",
+          "confidence": 96.0,
+          "x": 0.2587,
+          "y": 0.05
+        },
+        {
+          "text": "A.",
+          "confidence": 93.0,
+          "x": 0.3075,
+          "y": 0.05
+        },
+        {
+          "text": "Mickiewicza",
+          "confidence": 90.0,
+          "x": 0.4303,
+          "y": 0.0481
+        },
+        {
+          "text": "%",
+          "confidence": 90.0,
+          "x": 0.7672,
+          "y": 0.1256
+        },
+        {
+          "text": "(za)",
+          "confidence": 65.0,
+          "x": 0.575,
+          "y": 0.175
+        },
+        {
+          "text": "Gnojna",
+          "confidence": 91.0,
+          "x": 0.6672,
+          "y": 0.1837
+        },
+        {
+          "text": "Gora",
+          "confidence": 47.0,
+          "x": 0.7678,
+          "y": 0.1797
+        },
+        {
+          "text": "Rynek",
+          "confidence": 92.0,
+          "x": 0.0875,
+          "y": 0.1963
+        },
+        {
+          "text": "Starego",
+          "confidence": 93.0,
+          "x": 0.2003,
+          "y": 0.1953
+        },
+        {
+          "text": "se?",
+          "confidence": 29.0,
+          "x": 0.4172,
+          "y": 0.2162
+        },
+        {
+          "text": "ee,",
+          "confidence": 26.0,
+          "x": 0.0488,
+          "y": 0.2272
+        },
+        {
+          "text": "Miasta",
+          "confidence": 91.0,
+          "x": 0.1512,
+          "y": 0.2328
+        },
+        {
+          "text": "\\",
+          "confidence": 65.0,
+          "x": 0.0228,
+          "y": 0.2634
+        },
+        {
+          "text": "@)",
+          "confidence": 68.0,
+          "x": 0.0641,
+          "y": 0.3128
+        },
+        {
+          "text": "Muzeum",
+          "confidence": 91.0,
+          "x": 0.1688,
+          "y": 0.3216
+        },
+        {
+          "text": "Swiat",
+          "confidence": 92.0,
+          "x": 0.2881,
+          "y": 0.3144
+        },
+        {
+          "text": "Iluzji",
+          "confidence": 38.0,
+          "x": 0.3756,
+          "y": 0.3206
+        },
+        {
+          "text": "a",
+          "confidence": 72.0,
+          "x": 0.0178,
+          "y": 0.5253
+        },
+        {
+          "text": "\u201cty",
+          "confidence": 65.0,
+          "x": 0.0409,
+          "y": 0.5541
+        },
+        {
+          "text": "Bazyli",
+          "confidence": 92.0,
+          "x": 0.4888,
+          "y": 0.6175
+        },
+        {
+          "text": "f\u00b0",
+          "confidence": 32.0,
+          "x": 0.0403,
+          "y": 0.6019
+        },
+        {
+          "text": "%",
+          "confidence": 87.0,
+          "x": 0.3097,
+          "y": 0.6388
+        },
+        {
+          "text": "Archikatedralna",
+          "confidence": 83.0,
+          "x": 0.7019,
+          "y": 0.6206
+        },
+        {
+          "text": "szawie",
+          "confidence": 86.0,
+          "x": 0.5938,
+          "y": 0.6531
+        },
+        {
+          "text": "pw",
+          "confidence": 96.0,
+          "x": 0.6794,
+          "y": 0.6566
+        },
+        {
+          "text": "\u2018",
+          "confidence": 53.0,
+          "x": 0.6562,
+          "y": 0.7116
+        },
+        {
+          "text": "Pizza",
+          "confidence": 96.0,
+          "x": 0.705,
+          "y": 0.7084
+        },
+        {
+          "text": "Hut",
+          "confidence": 96.0,
+          "x": 0.7837,
+          "y": 0.7053
+        },
+        {
+          "text": "Y",
+          "confidence": 71.0,
+          "x": 0.6253,
+          "y": 0.7366
+        },
+        {
+          "text": "Warszawa",
+          "confidence": 93.0,
+          "x": 0.7428,
+          "y": 0.7381
+        },
+        {
+          "text": "Zamek",
+          "confidence": 92.0,
+          "x": 0.8862,
+          "y": 0.7397
+        },
+        {
+          "text": "apnkowy",
+          "confidence": 36.0,
+          "x": 0.6519,
+          "y": 0.8425
+        },
+        {
+          "text": "%",
+          "confidence": 23.0,
+          "x": 0.3172,
+          "y": 0.8612
+        },
+        {
+          "text": "%",
+          "confidence": 53.0,
+          "x": 0.3359,
+          "y": 0.8856
+        },
+        {
+          "text": "Google",
+          "confidence": 60.0,
+          "x": 0.0756,
+          "y": 0.9616
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    }
+  ]
+}

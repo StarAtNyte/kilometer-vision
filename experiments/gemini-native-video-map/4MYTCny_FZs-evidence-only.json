@@ -1,0 +1,18 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.5-flash",
+  "pipeline": "evidence-only",
+  "route_evidence": {
+    "ordered_route": "Kefeli Pasaj\u0131 arcade, Bahariye Street (General As\u0131m G\u00fcnd\u00fcz Caddesi), \u015eair Nefi Street, Kadife Street, Hac\u0131 \u015e\u00fckr\u00fc Street",
+    "start": "Kefeli Pasaj\u0131 arcade, Bahariye Street",
+    "end": "Hac\u0131 \u015e\u00fckr\u00fc Street near Kafkas Eczane",
+    "turns_topology": "Start in the arcade heading west towards Bahariye Street, turn left onto Bahariye Street heading southwest, turn left onto \u015eair Nefi Street heading southeast, turn left onto Kadife Street heading northeast, turn right onto Hac\u0131 \u015e\u00fckr\u00fc Street heading southeast, ending near Kafkas Eczane",
+    "uncertainty": "The brief turns around the Kad\u0131k\u00f6yl\u00fc Market corner could be simplified depending on exact sidewalk geometry, but follow the main street layout.",
+    "start_geocode_query": "Kefeli Pasaj\u0131, Cafera\u011fa, General As\u0131m G\u00fcnd\u00fcz Cd. No:31, 34710 Kad\u0131k\u00f6y/\u0130stanbul, Turkey",
+    "end_geocode_query": "Y\u00fcksek Eczanesi, Cafera\u011fa, Hac\u0131 \u015e\u00fckr\u00fc Sk. No:2, 34710 Kad\u0131k\u00f6y/\u0130stanbul, Turkey"
+  },
+  "clip_bytes": 7768622,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

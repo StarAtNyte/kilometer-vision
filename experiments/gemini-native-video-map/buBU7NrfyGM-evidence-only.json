@@ -1,0 +1,18 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "pipeline": "evidence-only",
+  "route_evidence": {
+    "ordered_route": "Lineck\u00e1 street (near M\u011bstsk\u00e9 divadlo \u010cesk\u00fd Krumlov) -> Hradebn\u00ed street -> Park\u00e1n street",
+    "start": "Lineck\u00e1 street, in front of M\u011bstsk\u00e9 divadlo \u010cesk\u00fd Krumlov",
+    "end": "Park\u00e1n street, near hotel parking garage",
+    "turns_topology": "Start on Lineck\u00e1 facing north towards the junction at Na Kov\u00e1rn\u011b pension -> Turn right onto Hradebn\u00ed -> Continue straight and slightly curve onto Park\u00e1n -> Follow Park\u00e1n down the hill towards the river side",
+    "uncertainty": "The transition from Hradebn\u00ed to Park\u00e1n street blends continuously down a narrow, sloping cobblestone path.",
+    "start_geocode_query": "M\u011bstsk\u00e9 divadlo \u010cesk\u00fd Krumlov, Lineck\u00e1, \u010cesk\u00fd Krumlov, Czech Republic",
+    "end_geocode_query": "Park\u00e1n 54, \u010cesk\u00fd Krumlov, Czech Republic"
+  },
+  "clip_bytes": 4933253,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 2
+}

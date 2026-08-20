@@ -1,0 +1,406 @@
+{
+  "split": "validation",
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "prediction": 4,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -2.125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -1.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -2.3125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -2.0,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -1.3125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2011.0,
+        2028.7333333333333,
+        2046.4666666666667,
+        2064.2,
+        2081.9333333333334,
+        2099.6666666666665,
+        2117.4,
+        2135.133333333333,
+        2152.866666666667,
+        2170.6,
+        2188.3333333333335,
+        2206.0666666666666,
+        2223.8,
+        2241.5333333333333,
+        2259.266666666667,
+        2277.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city_area\": \"Istanbul, Kad\u0131k\u00f6y (Inferred from 'KADIK\u00d6Y BELED\u0130YES\u0130' text in frame 13 and 'KARAK\u00d6Y SA\u011e' sign in frame 11)\",\n  \"landmarks\": [\n    \"Barbaros Emlak\",\n    \"Kefi Pasa\",\n    \"MNG Kargo\",\n    \"Dostlar\",\n    \"AKBANK\",\n    \"AK FRIN\",\n    \"Mola\",\n    \"Karak\u00f6y Sa\u011f\",\n    \"Kad\u0131k\u00f6y Belediyesi\",\n    \"Tad\u0131n C\u0131kar\",\n    \"Phyto\"\n  ],\n  \"start_surroundings\": \"Covered pedestrian arcade with commercial storefronts (Barbaros Emlak, Kefi Pasa) and a blue MNG Kargo van.\",\n  \"end_surroundings\": \"Open street corner with a pharmacy (Phyto) and outdoor cafe seating.\",\n  \"overall_compass_displacement\": \"Uncertain\",\n  \"elevation_change\": \"Uncertain\",\n  \"junction_turn_sequence\": [\n    \"Start in covered arcade\",\n    \"Exit arcade onto pedestrian street with fruit market\",\n    \"Pass 'Dostlar' establishment\",\n    \"Cross street near AKBANK/AK FRIN\",\n    \"Continue along pedestrian street with white van\",\n    \"Pass 'Mola' sign and cafe seating",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "prediction": 4,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -0.75,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": 1.1875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": 0.125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -1.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": 1.3125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2574.0,
+        2588.3333333333335,
+        2602.6666666666665,
+        2617.0,
+        2631.3333333333335,
+        2645.6666666666665,
+        2660.0,
+        2674.3333333333335,
+        2688.6666666666665,
+        2703.0,
+        2717.3333333333335,
+        2731.6666666666665,
+        2746.0,
+        2760.3333333333335,
+        2774.6666666666665,
+        2789.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"Bath\",\n  \"country\": \"UK\",\n  \"start_location\": {\n    \"description\": \"Narrow brick alleyway with a 'Museum' banner hanging overhead\",\n    \"landmarks\": [\"Museum banner\"]\n  },\n  \"end_location\": {\n    \"description\": \"Busy street with a white car and a black car, near a 'Wagamama' restaurant\",\n    \"landmarks\": [\"Wagamama\", \"White car\", \"Black car\"]\n  },\n  \"route_sequence\": [\n    \"Narrow brick alley\",\n    \"Pedestrianized street with shops (Evil Eye, Cornish Pasty)\",\n    \"Street with a silver car and 'Oxben' shop\",\n    \"Street with 'Azendi' shop\",\n    \"Street with 'Bath House' shop\",\n    \"Street with a garbage truck and 'Reiss' shop\",\n    \"Street with 'Thomas Baker' shop\",\n    \"Street with 'Wagamama' shop\"\n  ],\n  \"compass_displacement\": \"Uncertain\",\n  \"elevation_change\": \"Uncertain\",\n  \"junctions\": [\n    \"Exit from alley to main street\",\n    \"Turns along the pedestrianized route\",\n    \"Intersection with main road\"\n  ]\n}\n```",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 4
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "prediction": 3,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -1.3125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -0.375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -0.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -0.125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -1.0,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2438.0,
+        2441.266666666667,
+        2444.5333333333333,
+        2447.8,
+        2451.0666666666666,
+        2454.3333333333335,
+        2457.6,
+        2460.866666666667,
+        2464.133333333333,
+        2467.4,
+        2470.6666666666665,
+        2473.9333333333334,
+        2477.2,
+        2480.4666666666667,
+        2483.733333333333,
+        2487.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city_area\": \"Ljubljana, Slovenia (inferred from 'Cafe Tomasselli' and 'Kopitarna' signage)\",\n  \"landmarks\": [\n    \"Cafe Tomasselli\",\n    \"Kopitarna\",\n    \"Hochtief Construction Site\"\n  ],\n  \"start_surroundings\": \"Open paved public square with a large beige building on the left and a red market umbrella in the distance.\",\n  \"end_surroundings\": \"Narrow pedestrian street with a construction fence on the right and a row of shops (including 'HERMES') on the left.\",\n  \"compass_displacement\": \"Uncertain (likely North-East based on visual flow)\",\n  \"elevation_change\": \"Flat\",\n  \"turn_sequence\": [\n    \"Walk straight across the square\",\n    \"Turn right to enter the pedestrian street\",\n    \"Walk straight along the street\"\n  ]\n}\n```",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "prediction": 2,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -4.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -5.375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -3.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -5.75,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -5.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        4045.0,
+        4054.4,
+        4063.8,
+        4073.2,
+        4082.6,
+        4092.0,
+        4101.4,
+        4110.8,
+        4120.2,
+        4129.6,
+        4139.0,
+        4148.4,
+        4157.8,
+        4167.2,
+        4176.6,
+        4186.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city_area\": \"Prague, Mal\u00e1 Strana (Inferred from 'K\u00c1RNA' sign and architecture)\",\n  \"street_landmark_names\": [\n    \"K\u00c1RNA (Sign on building facade)\"\n  ],\n  \"start_surroundings\": \"Cobblestone square with pastel-colored buildings, specifically a yellow building with a 'K\u00c1RNA' sign.\",\n  \"end_surroundings\": \"Narrow cobblestone street with a white car stopped in the center and pedestrians on the left.\",\n  \"overall_compass_displacement\": \"Uncertain\",\n  \"elevation_change\": \"Net ascent (from street level to elevated terrace/overlook, then descent to street level).\",\n  \"ordered_junction_turn_sequence\": [\n    \"Start in square\",\n    \"Turn left into narrow street\",\n    \"Pass through arched gateway\",\n    \"Ascend to elevated terrace\",\n    \"View overlook/landscape\",\n    \"Descend from terrace\",\n    \"Enter narrow street\",\n    \"Continue straight to end point\"\n  ]\n}\n```",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 2,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -8.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -8.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -5.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -8.5,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -8.4375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        1560.0,
+        1574.0666666666666,
+        1588.1333333333334,
+        1602.2,
+        1616.2666666666667,
+        1630.3333333333333,
+        1644.4,
+        1658.4666666666667,
+        1672.5333333333333,
+        1686.6,
+        1700.6666666666667,
+        1714.7333333333333,
+        1728.8,
+        1742.8666666666668,
+        1756.9333333333334,
+        1771.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city_area\": \"Ceska Kamenice, Czech Republic (inferred from 'BARBAKAN' sign and architectural style)\",\n  \"landmarks\": [\n    \"Barbakan (sign visible in frame 1)\",\n    \"Hotel Garni (sign visible in frame 2)\",\n    \"Topinka (sign visible in frame 4)\",\n    \"Pension Anna (sign visible in frame 6)\",\n    \"Pension Pelan (sign visible in frame 8)\"\n  ],\n  \"start_surroundings\": \"Cobblestone town square with a white building featuring a stepped gable and a green metal canopy structure.\",\n  \"end_surroundings\": \"Residential street with a white Hyundai i20 parked next to a wooden fence and dense green trees.\",\n  \"compass_displacement\": \"South (inferred from the transition from the town center to a downhill residential area)\",\n  \"elevation_change\": \"Downhill (significant descent observed from frame 1 to frame 16)\",\n  \"turn_sequence\": [\n    \"Start in square, move forward past the 'Barbakan' sign.\",\n    \"Turn right into a narrow street with parked cars.\",\n    \"Continue straight past 'Topinka' and 'Pension Anna'.\",\n    \"Turn right at a junction near 'Pension Pelan' and a parking garage.\",\n    \"Descend a steep, narrow cobblestone path lined with stone walls and vegetation.\",",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}

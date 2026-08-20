@@ -1,0 +1,1389 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "records": [
+    {
+      "identity": "A",
+      "markers": {
+        "E": [
+          131.0,
+          315.0
+        ],
+        "S": [
+          269.0,
+          96.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "ellalzade",
+          "confidence": 48.0,
+          "x": 0.3625,
+          "y": 0.0747
+        },
+        {
+          "text": "Sk.",
+          "confidence": 68.0,
+          "x": 0.4634,
+          "y": 0.0925
+        },
+        {
+          "text": "C",
+          "confidence": 67.0,
+          "x": 0.9487,
+          "y": 0.0797
+        },
+        {
+          "text": "x",
+          "confidence": 44.0,
+          "x": 0.1309,
+          "y": 0.3178
+        },
+        {
+          "text": "Salt",
+          "confidence": 96.0,
+          "x": 0.6647,
+          "y": 0.3472
+        },
+        {
+          "text": "Fried,",
+          "confidence": 88.0,
+          "x": 0.7475,
+          "y": 0.3475
+        },
+        {
+          "text": "@",
+          "confidence": 67.0,
+          "x": 0.8178,
+          "y": 0.36
+        },
+        {
+          "text": "=",
+          "confidence": 32.0,
+          "x": 0.905,
+          "y": 0.3744
+        },
+        {
+          "text": "Caferaga",
+          "confidence": 93.0,
+          "x": 0.1378,
+          "y": 0.3828
+        },
+        {
+          "text": "Spor",
+          "confidence": 93.0,
+          "x": 0.2531,
+          "y": 0.3834
+        },
+        {
+          "text": "Salonu",
+          "confidence": 90.0,
+          "x": 0.3506,
+          "y": 0.3794
+        },
+        {
+          "text": "oO",
+          "confidence": 58.0,
+          "x": 0.4425,
+          "y": 0.3825
+        },
+        {
+          "text": "hicken",
+          "confidence": 91.0,
+          "x": 0.5984,
+          "y": 0.3822
+        },
+        {
+          "text": "Kadik\u00e9y",
+          "confidence": 52.0,
+          "x": 0.7206,
+          "y": 0.3856
+        },
+        {
+          "text": "serekli",
+          "confidence": 54.0,
+          "x": 0.0466,
+          "y": 0.4475
+        },
+        {
+          "text": "Seyler",
+          "confidence": 96.0,
+          "x": 0.1525,
+          "y": 0.4509
+        },
+        {
+          "text": "(4)",
+          "confidence": 35.0,
+          "x": 0.2362,
+          "y": 0.45
+        },
+        {
+          "text": "Bahariye",
+          "confidence": 92.0,
+          "x": 0.8762,
+          "y": 0.4628
+        },
+        {
+          "text": "@",
+          "confidence": 59.0,
+          "x": 0.9712,
+          "y": 0.4641
+        },
+        {
+          "text": "x",
+          "confidence": 41.0,
+          "x": 0.1888,
+          "y": 0.5075
+        },
+        {
+          "text": "(a)",
+          "confidence": 64.0,
+          "x": 0.2397,
+          "y": 0.5725
+        },
+        {
+          "text": "K\u00e9ostebek",
+          "confidence": 24.0,
+          "x": 0.3538,
+          "y": 0.5716
+        },
+        {
+          "text": "Viktor",
+          "confidence": 95.0,
+          "x": 0.0931,
+          "y": 0.675
+        },
+        {
+          "text": "Levi",
+          "confidence": 93.0,
+          "x": 0.1797,
+          "y": 0.6753
+        },
+        {
+          "text": "Sarap",
+          "confidence": 92.0,
+          "x": 0.265,
+          "y": 0.6787
+        },
+        {
+          "text": "Evi",
+          "confidence": 96.0,
+          "x": 0.3409,
+          "y": 0.675
+        },
+        {
+          "text": "Gi",
+          "confidence": 55.0,
+          "x": 0.5894,
+          "y": 0.6647
+        },
+        {
+          "text": "ij",
+          "confidence": 58.0,
+          "x": 0.6241,
+          "y": 0.6631
+        },
+        {
+          "text": "Sk",
+          "confidence": 54.0,
+          "x": 0.665,
+          "y": 0.6869
+        },
+        {
+          "text": "~",
+          "confidence": 83.0,
+          "x": 0.5044,
+          "y": 0.8491
+        },
+        {
+          "text": "GF",
+          "confidence": 37.0,
+          "x": 0.56,
+          "y": 0.8553
+        },
+        {
+          "text": "j",
+          "confidence": 43.0,
+          "x": 0.0634,
+          "y": 0.8866
+        },
+        {
+          "text": "K;",
+          "confidence": 52.0,
+          "x": 0.1409,
+          "y": 0.8456
+        },
+        {
+          "text": "Gn,",
+          "confidence": 75.0,
+          "x": 0.1778,
+          "y": 0.8647
+        },
+        {
+          "text": "%",
+          "confidence": 84.0,
+          "x": 0.2303,
+          "y": 0.8888
+        },
+        {
+          "text": "\u00a5",
+          "confidence": 66.0,
+          "x": 0.8966,
+          "y": 0.8997
+        },
+        {
+          "text": ">",
+          "confidence": 55.0,
+          "x": 0.5344,
+          "y": 0.9203
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0847,
+          "y": 0.9716
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.8222,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.8812,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.955,
+          "y": 0.98
+        }
+      ]
+    },
+    {
+      "identity": "B",
+      "markers": {
+        "E": [
+          156.0,
+          304.0
+        ],
+        "S": [
+          243.0,
+          106.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "@",
+          "confidence": 90.0,
+          "x": 0.0734,
+          "y": 0.0403
+        },
+        {
+          "text": "Ciya",
+          "confidence": 92.0,
+          "x": 0.1459,
+          "y": 0.0413
+        },
+        {
+          "text": "Sofrasi",
+          "confidence": 53.0,
+          "x": 0.2425,
+          "y": 0.0369
+        },
+        {
+          "text": "Tellalzade",
+          "confidence": 90.0,
+          "x": 0.4153,
+          "y": 0.0447
+        },
+        {
+          "text": "Sk.",
+          "confidence": 85.0,
+          "x": 0.5259,
+          "y": 0.065
+        },
+        {
+          "text": "ay,",
+          "confidence": 48.0,
+          "x": 0.0428,
+          "y": 0.1691
+        },
+        {
+          "text": "ary,",
+          "confidence": 54.0,
+          "x": 0.1141,
+          "y": 0.2188
+        },
+        {
+          "text": "x",
+          "confidence": 39.0,
+          "x": 0.1934,
+          "y": 0.2903
+        },
+        {
+          "text": "Salt",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.3197
+        },
+        {
+          "text": "Fried,",
+          "confidence": 89.0,
+          "x": 0.81,
+          "y": 0.3203
+        },
+        {
+          "text": "@",
+          "confidence": 30.0,
+          "x": 0.8822,
+          "y": 0.3325
+        },
+        {
+          "text": ".",
+          "confidence": 82.0,
+          "x": 0.9653,
+          "y": 0.3472
+        },
+        {
+          "text": "Caferaga",
+          "confidence": 92.0,
+          "x": 0.2003,
+          "y": 0.3553
+        },
+        {
+          "text": "Spor",
+          "confidence": 93.0,
+          "x": 0.3156,
+          "y": 0.3559
+        },
+        {
+          "text": "Salonu",
+          "confidence": 90.0,
+          "x": 0.4131,
+          "y": 0.3519
+        },
+        {
+          "text": "oO",
+          "confidence": 50.0,
+          "x": 0.505,
+          "y": 0.355
+        },
+        {
+          "text": "hicken",
+          "confidence": 91.0,
+          "x": 0.6609,
+          "y": 0.3547
+        },
+        {
+          "text": "Kadik\u00e9y",
+          "confidence": 60.0,
+          "x": 0.7831,
+          "y": 0.3581
+        },
+        {
+          "text": "1)",
+          "confidence": 40.0,
+          "x": 0.0297,
+          "y": 0.4378
+        },
+        {
+          "text": "Kadik\u00e9y",
+          "confidence": 74.0,
+          "x": 0.1278,
+          "y": 0.4381
+        },
+        {
+          "text": "Midyecisi",
+          "confidence": 90.0,
+          "x": 0.2722,
+          "y": 0.4381
+        },
+        {
+          "text": "x",
+          "confidence": 45.0,
+          "x": 0.2516,
+          "y": 0.48
+        },
+        {
+          "text": "(a)",
+          "confidence": 45.0,
+          "x": 0.3022,
+          "y": 0.545
+        },
+        {
+          "text": "K\u00e9stebek",
+          "confidence": 83.0,
+          "x": 0.4163,
+          "y": 0.5419
+        },
+        {
+          "text": "Viktor",
+          "confidence": 96.0,
+          "x": 0.1556,
+          "y": 0.6475
+        },
+        {
+          "text": "Levi",
+          "confidence": 92.0,
+          "x": 0.2425,
+          "y": 0.6478
+        },
+        {
+          "text": "Sarap",
+          "confidence": 92.0,
+          "x": 0.3275,
+          "y": 0.6509
+        },
+        {
+          "text": "Evi",
+          "confidence": 96.0,
+          "x": 0.4037,
+          "y": 0.6475
+        },
+        {
+          "text": "Sak,",
+          "confidence": 71.0,
+          "x": 0.5725,
+          "y": 0.6125
+        },
+        {
+          "text": "Sk",
+          "confidence": 89.0,
+          "x": 0.7272,
+          "y": 0.6594
+        },
+        {
+          "text": "/",
+          "confidence": 81.0,
+          "x": 0.1256,
+          "y": 0.8591
+        },
+        {
+          "text": "\u00e9",
+          "confidence": 78.0,
+          "x": 0.3488,
+          "y": 0.9
+        },
+        {
+          "text": ">",
+          "confidence": 60.0,
+          "x": 0.5869,
+          "y": 0.9159
+        },
+        {
+          "text": "&Se",
+          "confidence": 24.0,
+          "x": 0.0731,
+          "y": 0.9175
+        },
+        {
+          "text": "Ss",
+          "confidence": 31.0,
+          "x": 0.1156,
+          "y": 0.9241
+        },
+        {
+          "text": "Goog",
+          "confidence": 92.0,
+          "x": 0.0688,
+          "y": 0.9716
+        },
+        {
+          "text": "(eo",
+          "confidence": 28.0,
+          "x": 0.1428,
+          "y": 0.9603
+        },
+        {
+          "text": "a",
+          "confidence": 77.0,
+          "x": 0.1672,
+          "y": 0.9653
+        },
+        {
+          "text": "i)",
+          "confidence": 43.0,
+          "x": 0.1884,
+          "y": 0.9725
+        },
+        {
+          "text": "Map",
+          "confidence": 95.0,
+          "x": 0.8222,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.8809,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.955,
+          "y": 0.98
+        }
+      ]
+    },
+    {
+      "identity": "C",
+      "markers": {
+        "S": [
+          153.0,
+          300.0
+        ],
+        "E": [
+          246.0,
+          111.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "(|",
+          "confidence": 28.0,
+          "x": 0.0175,
+          "y": 0.0369
+        },
+        {
+          "text": "Kadik\u00e9y",
+          "confidence": 62.0,
+          "x": 0.1084,
+          "y": 0.0356
+        },
+        {
+          "text": "oO",
+          "confidence": 51.0,
+          "x": 0.0213,
+          "y": 0.1263
+        },
+        {
+          "text": "\u2014",
+          "confidence": 81.0,
+          "x": 0.0194,
+          "y": 0.1462
+        },
+        {
+          "text": "Cy",
+          "confidence": 69.0,
+          "x": 0.5613,
+          "y": 0.1647
+        },
+        {
+          "text": "=",
+          "confidence": 39.0,
+          "x": 0.6769,
+          "y": 0.1966
+        },
+        {
+          "text": "Ciya",
+          "confidence": 91.0,
+          "x": 0.0959,
+          "y": 0.1938
+        },
+        {
+          "text": "Sofrasi",
+          "confidence": 67.0,
+          "x": 0.1925,
+          "y": 0.1894
+        },
+        {
+          "text": "Tellalzade",
+          "confidence": 62.0,
+          "x": 0.4441,
+          "y": 0.2087
+        },
+        {
+          "text": "Sk.",
+          "confidence": 94.0,
+          "x": 0.545,
+          "y": 0.2291
+        },
+        {
+          "text": "O",
+          "confidence": 40.0,
+          "x": 0.795,
+          "y": 0.2119
+        },
+        {
+          "text": "Sal",
+          "confidence": 96.0,
+          "x": 0.5284,
+          "y": 0.3244
+        },
+        {
+          "text": "7",
+          "confidence": 74.0,
+          "x": 0.0619,
+          "y": 0.3366
+        },
+        {
+          "text": "Chicken",
+          "confidence": 96.0,
+          "x": 0.4569,
+          "y": 0.3597
+        },
+        {
+          "text": "dik\u00e9y",
+          "confidence": 47.0,
+          "x": 0.6103,
+          "y": 0.3631
+        },
+        {
+          "text": "ik\u00e9y",
+          "confidence": 38.0,
+          "x": 0.0338,
+          "y": 0.3931
+        },
+        {
+          "text": "Midyecisi",
+          "confidence": 91.0,
+          "x": 0.1519,
+          "y": 0.3931
+        },
+        {
+          "text": "@",
+          "confidence": 35.0,
+          "x": 0.2606,
+          "y": 0.3928
+        },
+        {
+          "text": ">",
+          "confidence": 40.0,
+          "x": 0.9163,
+          "y": 0.4213
+        },
+        {
+          "text": "K\u00e9stgbek",
+          "confidence": 80.0,
+          "x": 0.5116,
+          "y": 0.4444
+        },
+        {
+          "text": "Iz",
+          "confidence": 60.0,
+          "x": 0.5619,
+          "y": 0.5056
+        },
+        {
+          "text": "Guin;",
+          "confidence": 59.0,
+          "x": 0.6134,
+          "y": 0.5178
+        },
+        {
+          "text": "~*~",
+          "confidence": 62.0,
+          "x": 0.7869,
+          "y": 0.5891
+        },
+        {
+          "text": "a",
+          "confidence": 22.0,
+          "x": 0.2112,
+          "y": 0.6556
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.44,
+          "y": 0.7147
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.4875,
+          "y": 0.7147
+        },
+        {
+          "text": "Nata",
+          "confidence": 95.0,
+          "x": 0.5531,
+          "y": 0.7153
+        },
+        {
+          "text": "by,",
+          "confidence": 43.0,
+          "x": 0.2528,
+          "y": 0.7219
+        },
+        {
+          "text": "S",
+          "confidence": 55.0,
+          "x": 0.325,
+          "y": 0.7544
+        },
+        {
+          "text": "@",
+          "confidence": 86.0,
+          "x": 0.6212,
+          "y": 0.71
+        },
+        {
+          "text": "\u00a2-",
+          "confidence": 30.0,
+          "x": 0.7175,
+          "y": 0.7328
+        },
+        {
+          "text": "x",
+          "confidence": 70.0,
+          "x": 0.4113,
+          "y": 0.7997
+        },
+        {
+          "text": "Z",
+          "confidence": 73.0,
+          "x": 0.1659,
+          "y": 0.7825
+        },
+        {
+          "text": "Voy",
+          "confidence": 40.0,
+          "x": 0.2109,
+          "y": 0.8075
+        },
+        {
+          "text": "rf",
+          "confidence": 67.0,
+          "x": 0.2672,
+          "y": 0.8184
+        },
+        {
+          "text": "om",
+          "confidence": 35.0,
+          "x": 0.5225,
+          "y": 0.8456
+        },
+        {
+          "text": "x",
+          "confidence": 70.0,
+          "x": 0.5413,
+          "y": 0.8828
+        },
+        {
+          "text": "12",
+          "confidence": 47.0,
+          "x": 0.0216,
+          "y": 0.9053
+        },
+        {
+          "text": "Sa",
+          "confidence": 95.0,
+          "x": 0.0988,
+          "y": 0.9497
+        },
+        {
+          "text": "\u2014",
+          "confidence": 46.0,
+          "x": 0.86,
+          "y": 0.9484
+        },
+        {
+          "text": "Go",
+          "confidence": 96.0,
+          "x": 0.0453,
+          "y": 0.9666
+        },
+        {
+          "text": "og",
+          "confidence": 75.0,
+          "x": 0.0975,
+          "y": 0.9766
+        },
+        {
+          "text": "le",
+          "confidence": 61.0,
+          "x": 0.1372,
+          "y": 0.9681
+        },
+        {
+          "text": "Mem,",
+          "confidence": 23.0,
+          "x": 0.4175,
+          "y": 0.9169
+        },
+        {
+          "text": "Map",
+          "confidence": 91.0,
+          "x": 0.8216,
+          "y": 0.9775
+        },
+        {
+          "text": "data",
+          "confidence": 91.0,
+          "x": 0.8822,
+          "y": 0.9712
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.955,
+          "y": 0.98
+        }
+      ]
+    },
+    {
+      "identity": "D",
+      "markers": {
+        "S": [
+          166.0,
+          294.0
+        ],
+        "E": [
+          234.0,
+          116.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": ";",
+          "confidence": 58.0,
+          "x": 0.0075,
+          "y": 0.0531
+        },
+        {
+          "text": "(@)",
+          "confidence": 34.0,
+          "x": 0.0462,
+          "y": 0.0219
+        },
+        {
+          "text": "Kadikoy",
+          "confidence": 76.0,
+          "x": 0.1409,
+          "y": 0.0206
+        },
+        {
+          "text": "a)",
+          "confidence": 41.0,
+          "x": 0.035,
+          "y": 0.105
+        },
+        {
+          "text": "\u2014",
+          "confidence": 81.0,
+          "x": 0.0519,
+          "y": 0.1313
+        },
+        {
+          "text": "Cy",
+          "confidence": 92.0,
+          "x": 0.5934,
+          "y": 0.1497
+        },
+        {
+          "text": "Ciya",
+          "confidence": 90.0,
+          "x": 0.1284,
+          "y": 0.1787
+        },
+        {
+          "text": "Sofrasi",
+          "confidence": 36.0,
+          "x": 0.225,
+          "y": 0.1744
+        },
+        {
+          "text": "@",
+          "confidence": 69.0,
+          "x": 0.3191,
+          "y": 0.17
+        },
+        {
+          "text": "ws",
+          "confidence": 21.0,
+          "x": 0.32,
+          "y": 0.2006
+        },
+        {
+          "text": "Tellalzade",
+          "confidence": 61.0,
+          "x": 0.4766,
+          "y": 0.1938
+        },
+        {
+          "text": "Sk.",
+          "confidence": 73.0,
+          "x": 0.5775,
+          "y": 0.2141
+        },
+        {
+          "text": "7",
+          "confidence": 80.0,
+          "x": 0.0944,
+          "y": 0.3216
+        },
+        {
+          "text": "aw",
+          "confidence": 86.0,
+          "x": 0.5678,
+          "y": 0.3128
+        },
+        {
+          "text": "Fried",
+          "confidence": 93.0,
+          "x": 0.6453,
+          "y": 0.3094
+        },
+        {
+          "text": "Chicken",
+          "confidence": 96.0,
+          "x": 0.4894,
+          "y": 0.3447
+        },
+        {
+          "text": "dik\u00e9y",
+          "confidence": 76.0,
+          "x": 0.6428,
+          "y": 0.3481
+        },
+        {
+          "text": "@",
+          "confidence": 69.0,
+          "x": 0.7244,
+          "y": 0.3303
+        },
+        {
+          "text": "adik\u00e9y",
+          "confidence": 90.0,
+          "x": 0.05,
+          "y": 0.3781
+        },
+        {
+          "text": "Midyecisi",
+          "confidence": 92.0,
+          "x": 0.1844,
+          "y": 0.3781
+        },
+        {
+          "text": "@",
+          "confidence": 91.0,
+          "x": 0.2934,
+          "y": 0.3778
+        },
+        {
+          "text": "~~",
+          "confidence": 24.0,
+          "x": 0.9487,
+          "y": 0.4062
+        },
+        {
+          "text": "(4)",
+          "confidence": 66.0,
+          "x": 0.4309,
+          "y": 0.4328
+        },
+        {
+          "text": "K\u00e9stgbek",
+          "confidence": 51.0,
+          "x": 0.5441,
+          "y": 0.4294
+        },
+        {
+          "text": "a",
+          "confidence": 29.0,
+          "x": 0.2437,
+          "y": 0.6406
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.4725,
+          "y": 0.6997
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.52,
+          "y": 0.6997
+        },
+        {
+          "text": "Nata",
+          "confidence": 96.0,
+          "x": 0.5856,
+          "y": 0.7
+        },
+        {
+          "text": "@",
+          "confidence": 83.0,
+          "x": 0.6538,
+          "y": 0.695
+        },
+        {
+          "text": "~\u2014",
+          "confidence": 72.0,
+          "x": 0.7259,
+          "y": 0.7391
+        },
+        {
+          "text": "yy",
+          "confidence": 64.0,
+          "x": 0.2853,
+          "y": 0.7069
+        },
+        {
+          "text": "S",
+          "confidence": 77.0,
+          "x": 0.3575,
+          "y": 0.7394
+        },
+        {
+          "text": "Voy",
+          "confidence": 63.0,
+          "x": 0.2434,
+          "y": 0.7925
+        },
+        {
+          "text": "%",
+          "confidence": 64.0,
+          "x": 0.3016,
+          "y": 0.8206
+        },
+        {
+          "text": ">",
+          "confidence": 51.0,
+          "x": 0.555,
+          "y": 0.8306
+        },
+        {
+          "text": "Riz,",
+          "confidence": 53.0,
+          "x": 0.0475,
+          "y": 0.8897
+        },
+        {
+          "text": "Me",
+          "confidence": 66.0,
+          "x": 0.4394,
+          "y": 0.8919
+        },
+        {
+          "text": "Vt,",
+          "confidence": 23.0,
+          "x": 0.5181,
+          "y": 0.925
+        },
+        {
+          "text": "SK",
+          "confidence": 39.0,
+          "x": 0.5559,
+          "y": 0.9441
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0844,
+          "y": 0.9716
+        },
+        {
+          "text": "Sk.",
+          "confidence": 81.0,
+          "x": 0.1709,
+          "y": 0.9544
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.8219,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.8809,
+          "y": 0.9716
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.955,
+          "y": 0.98
+        }
+      ]
+    },
+    {
+      "identity": "E",
+      "markers": {
+        "E": [
+          166.0,
+          294.0
+        ],
+        "S": [
+          234.0,
+          116.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": ";",
+          "confidence": 58.0,
+          "x": 0.0075,
+          "y": 0.0531
+        },
+        {
+          "text": "(@)",
+          "confidence": 34.0,
+          "x": 0.0462,
+          "y": 0.0219
+        },
+        {
+          "text": "Kadikoy",
+          "confidence": 76.0,
+          "x": 0.1409,
+          "y": 0.0206
+        },
+        {
+          "text": "a)",
+          "confidence": 41.0,
+          "x": 0.035,
+          "y": 0.105
+        },
+        {
+          "text": "\u2014",
+          "confidence": 81.0,
+          "x": 0.0519,
+          "y": 0.1313
+        },
+        {
+          "text": "Cy",
+          "confidence": 92.0,
+          "x": 0.5934,
+          "y": 0.1497
+        },
+        {
+          "text": "Ciya",
+          "confidence": 90.0,
+          "x": 0.1284,
+          "y": 0.1787
+        },
+        {
+          "text": "Sofrasi",
+          "confidence": 36.0,
+          "x": 0.225,
+          "y": 0.1744
+        },
+        {
+          "text": "@",
+          "confidence": 69.0,
+          "x": 0.3191,
+          "y": 0.17
+        },
+        {
+          "text": "ws",
+          "confidence": 21.0,
+          "x": 0.32,
+          "y": 0.2006
+        },
+        {
+          "text": "Tellalzade",
+          "confidence": 61.0,
+          "x": 0.4766,
+          "y": 0.1938
+        },
+        {
+          "text": "Sk.",
+          "confidence": 73.0,
+          "x": 0.5775,
+          "y": 0.2141
+        },
+        {
+          "text": "7",
+          "confidence": 80.0,
+          "x": 0.0944,
+          "y": 0.3216
+        },
+        {
+          "text": "aw",
+          "confidence": 86.0,
+          "x": 0.5678,
+          "y": 0.3128
+        },
+        {
+          "text": "Fried",
+          "confidence": 93.0,
+          "x": 0.6453,
+          "y": 0.3094
+        },
+        {
+          "text": "Chicken",
+          "confidence": 96.0,
+          "x": 0.4894,
+          "y": 0.3447
+        },
+        {
+          "text": "dik\u00e9y",
+          "confidence": 76.0,
+          "x": 0.6428,
+          "y": 0.3481
+        },
+        {
+          "text": "@",
+          "confidence": 69.0,
+          "x": 0.7244,
+          "y": 0.3303
+        },
+        {
+          "text": "adik\u00e9y",
+          "confidence": 90.0,
+          "x": 0.05,
+          "y": 0.3781
+        },
+        {
+          "text": "Midyecisi",
+          "confidence": 92.0,
+          "x": 0.1844,
+          "y": 0.3781
+        },
+        {
+          "text": "@",
+          "confidence": 91.0,
+          "x": 0.2934,
+          "y": 0.3778
+        },
+        {
+          "text": "~~",
+          "confidence": 24.0,
+          "x": 0.9487,
+          "y": 0.4062
+        },
+        {
+          "text": "(4)",
+          "confidence": 66.0,
+          "x": 0.4309,
+          "y": 0.4328
+        },
+        {
+          "text": "K\u00e9stgbek",
+          "confidence": 51.0,
+          "x": 0.5441,
+          "y": 0.4294
+        },
+        {
+          "text": "a",
+          "confidence": 29.0,
+          "x": 0.2437,
+          "y": 0.6406
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.4725,
+          "y": 0.6997
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.52,
+          "y": 0.6997
+        },
+        {
+          "text": "Nata",
+          "confidence": 96.0,
+          "x": 0.5856,
+          "y": 0.7
+        },
+        {
+          "text": "@",
+          "confidence": 83.0,
+          "x": 0.6538,
+          "y": 0.695
+        },
+        {
+          "text": "~\u2014",
+          "confidence": 72.0,
+          "x": 0.7259,
+          "y": 0.7391
+        },
+        {
+          "text": "yy",
+          "confidence": 64.0,
+          "x": 0.2853,
+          "y": 0.7069
+        },
+        {
+          "text": "S",
+          "confidence": 77.0,
+          "x": 0.3575,
+          "y": 0.7394
+        },
+        {
+          "text": "Voy",
+          "confidence": 63.0,
+          "x": 0.2434,
+          "y": 0.7925
+        },
+        {
+          "text": "%",
+          "confidence": 64.0,
+          "x": 0.3016,
+          "y": 0.8206
+        },
+        {
+          "text": ">",
+          "confidence": 51.0,
+          "x": 0.555,
+          "y": 0.8306
+        },
+        {
+          "text": "Riz,",
+          "confidence": 53.0,
+          "x": 0.0475,
+          "y": 0.8897
+        },
+        {
+          "text": "Me",
+          "confidence": 66.0,
+          "x": 0.4394,
+          "y": 0.8919
+        },
+        {
+          "text": "Vt,",
+          "confidence": 23.0,
+          "x": 0.5181,
+          "y": 0.925
+        },
+        {
+          "text": "SK",
+          "confidence": 39.0,
+          "x": 0.5559,
+          "y": 0.9441
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0844,
+          "y": 0.9716
+        },
+        {
+          "text": "Sk.",
+          "confidence": 81.0,
+          "x": 0.1709,
+          "y": 0.9544
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.8219,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.8809,
+          "y": 0.9716
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.955,
+          "y": 0.98
+        }
+      ]
+    }
+  ]
+}

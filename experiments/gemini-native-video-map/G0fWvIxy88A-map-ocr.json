@@ -1,0 +1,1089 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "records": [
+    {
+      "identity": "A",
+      "markers": {
+        "S": [
+          216.0,
+          129.0
+        ],
+        "E": [
+          236.0,
+          260.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "ya",
+          "confidence": 72.0,
+          "x": 0.9547,
+          "y": 0.0675
+        },
+        {
+          "text": "se",
+          "confidence": 48.0,
+          "x": 0.8762,
+          "y": 0.1728
+        },
+        {
+          "text": "Guy",
+          "confidence": 96.0,
+          "x": 0.12,
+          "y": 0.2387
+        },
+        {
+          "text": "Fawkes",
+          "confidence": 95.0,
+          "x": 0.2188,
+          "y": 0.235
+        },
+        {
+          "text": "Inn",
+          "confidence": 95.0,
+          "x": 0.3106,
+          "y": 0.235
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 92.0,
+          "x": 0.3725,
+          "y": 0.23
+        },
+        {
+          "text": "wi\u201d",
+          "confidence": 59.0,
+          "x": 0.8319,
+          "y": 0.2044
+        },
+        {
+          "text": "Dean",
+          "confidence": 54.0,
+          "x": 0.9087,
+          "y": 0.2869
+        },
+        {
+          "text": "J",
+          "confidence": 42.0,
+          "x": 0.0584,
+          "y": 0.2944
+        },
+        {
+          "text": "@",
+          "confidence": 48.0,
+          "x": 0.2612,
+          "y": 0.4006
+        },
+        {
+          "text": ")",
+          "confidence": 32.0,
+          "x": 0.42,
+          "y": 0.4184
+        },
+        {
+          "text": "se",
+          "confidence": 96.0,
+          "x": 0.5431,
+          "y": 0.4109
+        },
+        {
+          "text": "Of",
+          "confidence": 95.0,
+          "x": 0.5919,
+          "y": 0.4066
+        },
+        {
+          "text": "The",
+          "confidence": 95.0,
+          "x": 0.6475,
+          "y": 0.41
+        },
+        {
+          "text": "Trembling",
+          "confidence": 96.0,
+          "x": 0.7506,
+          "y": 0.4131
+        },
+        {
+          "text": "adness",
+          "confidence": 91.0,
+          "x": 0.5472,
+          "y": 0.4425
+        },
+        {
+          "text": "//",
+          "confidence": 92.0,
+          "x": 0.6244,
+          "y": 0.4437
+        },
+        {
+          "text": "Stonegate...",
+          "confidence": 90.0,
+          "x": 0.7366,
+          "y": 0.4419
+        },
+        {
+          "text": "La",
+          "confidence": 96.0,
+          "x": 0.4966,
+          "y": 0.5078
+        },
+        {
+          "text": "Vecchia",
+          "confidence": 96.0,
+          "x": 0.5856,
+          "y": 0.5075
+        },
+        {
+          "text": "Scuola",
+          "confidence": 96.0,
+          "x": 0.7091,
+          "y": 0.5072
+        },
+        {
+          "text": "@",
+          "confidence": 50.0,
+          "x": 0.7997,
+          "y": 0.5106
+        },
+        {
+          "text": "y",
+          "confidence": 92.0,
+          "x": 0.6281,
+          "y": 0.5916
+        },
+        {
+          "text": "Hall",
+          "confidence": 96.0,
+          "x": 0.6763,
+          "y": 0.5847
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 93.0,
+          "x": 0.8166,
+          "y": 0.6144
+        },
+        {
+          "text": "%,",
+          "confidence": 70.0,
+          "x": 0.8384,
+          "y": 0.6419
+        },
+        {
+          "text": "AaA-",
+          "confidence": 29.0,
+          "x": 0.8625,
+          "y": 0.6597
+        },
+        {
+          "text": "KS",
+          "confidence": 28.0,
+          "x": 0.9003,
+          "y": 0.7209
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 57.0,
+          "x": 0.9328,
+          "y": 0.7528
+        },
+        {
+          "text": "Yi",
+          "confidence": 26.0,
+          "x": 0.6809,
+          "y": 0.7881
+        },
+        {
+          "text": "Caf\u00e9",
+          "confidence": 96.0,
+          "x": 0.3078,
+          "y": 0.8569
+        },
+        {
+          "text": "Tea",
+          "confidence": 96.0,
+          "x": 0.3809,
+          "y": 0.8578
+        },
+        {
+          "text": "Be",
+          "confidence": 35.0,
+          "x": 0.725,
+          "y": 0.8438
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 48.0,
+          "x": 0.7522,
+          "y": 0.8725
+        },
+        {
+          "text": "On.",
+          "confidence": 68.0,
+          "x": 0.1437,
+          "y": 0.8781
+        },
+        {
+          "text": "Rooms",
+          "confidence": 95.0,
+          "x": 0.2203,
+          "y": 0.8925
+        },
+        {
+          "text": "York",
+          "confidence": 95.0,
+          "x": 0.3191,
+          "y": 0.8922
+        },
+        {
+          "text": "&",
+          "confidence": 35.0,
+          "x": 0.9125,
+          "y": 0.89
+        },
+        {
+          "text": ">",
+          "confidence": 81.0,
+          "x": 0.8616,
+          "y": 0.9409
+        },
+        {
+          "text": "oogle",
+          "confidence": 89.0,
+          "x": 0.1016,
+          "y": 0.9725
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7225,
+          "y": 0.9781
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.785,
+          "y": 0.9781
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 94.0,
+          "x": 0.86,
+          "y": 0.9741
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "B",
+      "markers": {
+        "S": [
+          164.0,
+          83.0
+        ],
+        "E": [
+          282.0,
+          326.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "\u00a9",
+          "confidence": 90.0,
+          "x": 0.2425,
+          "y": 0.1175
+        },
+        {
+          "text": "Guy",
+          "confidence": 92.0,
+          "x": 0.3103,
+          "y": 0.1263
+        },
+        {
+          "text": "Fawkes.Inn",
+          "confidence": 54.0,
+          "x": 0.4369,
+          "y": 0.125
+        },
+        {
+          "text": "pe",
+          "confidence": 32.0,
+          "x": 0.805,
+          "y": 0.1734
+        },
+        {
+          "text": "@",
+          "confidence": 59.0,
+          "x": 0.1313,
+          "y": 0.2881
+        },
+        {
+          "text": "use",
+          "confidence": 96.0,
+          "x": 0.4034,
+          "y": 0.2984
+        },
+        {
+          "text": "Of",
+          "confidence": 96.0,
+          "x": 0.4606,
+          "y": 0.2944
+        },
+        {
+          "text": "The",
+          "confidence": 96.0,
+          "x": 0.5197,
+          "y": 0.3006
+        },
+        {
+          "text": "Trembling",
+          "confidence": 96.0,
+          "x": 0.6306,
+          "y": 0.2981
+        },
+        {
+          "text": "CY)",
+          "confidence": 36.0,
+          "x": 0.29,
+          "y": 0.3059
+        },
+        {
+          "text": "adness",
+          "confidence": 92.0,
+          "x": 0.4172,
+          "y": 0.3297
+        },
+        {
+          "text": "//",
+          "confidence": 92.0,
+          "x": 0.4944,
+          "y": 0.3312
+        },
+        {
+          "text": "Stonegate...",
+          "confidence": 96.0,
+          "x": 0.6066,
+          "y": 0.3337
+        },
+        {
+          "text": "%",
+          "confidence": 71.0,
+          "x": 0.5975,
+          "y": 0.3809
+        },
+        {
+          "text": "7",
+          "confidence": 22.0,
+          "x": 0.6191,
+          "y": 0.4069
+        },
+        {
+          "text": "Hall",
+          "confidence": 96.0,
+          "x": 0.5463,
+          "y": 0.4722
+        },
+        {
+          "text": "=*y",
+          "confidence": 58.0,
+          "x": 0.8856,
+          "y": 0.4637
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 96.0,
+          "x": 0.3725,
+          "y": 0.4797
+        },
+        {
+          "text": "Barley",
+          "confidence": 96.0,
+          "x": 0.4594,
+          "y": 0.4756
+        },
+        {
+          "text": "%e",
+          "confidence": 55.0,
+          "x": 0.6991,
+          "y": 0.5216
+        },
+        {
+          "text": "Turtle",
+          "confidence": 96.0,
+          "x": 0.0522,
+          "y": 0.6947
+        },
+        {
+          "text": "Bay",
+          "confidence": 96.0,
+          "x": 0.1363,
+          "y": 0.6987
+        },
+        {
+          "text": "York",
+          "confidence": 96.0,
+          "x": 0.2084,
+          "y": 0.6947
+        },
+        {
+          "text": "Yorks",
+          "confidence": 84.0,
+          "x": 0.5444,
+          "y": 0.785
+        },
+        {
+          "text": "C",
+          "confidence": 87.0,
+          "x": 0.6125,
+          "y": 0.7853
+        },
+        {
+          "text": "\u201c4,",
+          "confidence": 35.0,
+          "x": 0.1772,
+          "y": 0.8716
+        },
+        {
+          "text": "we",
+          "confidence": 37.0,
+          "x": 0.6553,
+          "y": 0.8984
+        },
+        {
+          "text": "\u2018eg",
+          "confidence": 22.0,
+          "x": 0.7672,
+          "y": 0.8988
+        },
+        {
+          "text": "RY)",
+          "confidence": 41.0,
+          "x": 0.8466,
+          "y": 0.94
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0841,
+          "y": 0.9716
+        },
+        {
+          "text": "VA",
+          "confidence": 50.0,
+          "x": 0.1891,
+          "y": 0.9587
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 77.0,
+          "x": 0.7859,
+          "y": 0.9738
+        },
+        {
+          "text": "\u00a9202",
+          "confidence": 67.0,
+          "x": 0.8547,
+          "y": 0.9738
+        },
+        {
+          "text": "5",
+          "confidence": 94.0,
+          "x": 0.8928,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "C",
+      "markers": {
+        "S": [
+          315.0,
+          245.0
+        ],
+        "E": [
+          250.0,
+          307.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "\u00a9",
+          "confidence": 92.0,
+          "x": 0.1625,
+          "y": 0.07
+        },
+        {
+          "text": "Guy",
+          "confidence": 90.0,
+          "x": 0.2303,
+          "y": 0.0788
+        },
+        {
+          "text": "Fawkes.In",
+          "confidence": 51.0,
+          "x": 0.345,
+          "y": 0.0769
+        },
+        {
+          "text": "@",
+          "confidence": 38.0,
+          "x": 0.0519,
+          "y": 0.2406
+        },
+        {
+          "text": "Huse",
+          "confidence": 58.0,
+          "x": 0.3316,
+          "y": 0.2478
+        },
+        {
+          "text": "O",
+          "confidence": 78.0,
+          "x": 0.3759,
+          "y": 0.2497
+        },
+        {
+          "text": "e",
+          "confidence": 93.0,
+          "x": 0.4544,
+          "y": 0.2509
+        },
+        {
+          "text": "Trembling",
+          "confidence": 96.0,
+          "x": 0.5506,
+          "y": 0.2506
+        },
+        {
+          "text": "@",
+          "confidence": 77.0,
+          "x": 0.21,
+          "y": 0.2587
+        },
+        {
+          "text": "adness",
+          "confidence": 91.0,
+          "x": 0.3372,
+          "y": 0.2822
+        },
+        {
+          "text": "//",
+          "confidence": 91.0,
+          "x": 0.4144,
+          "y": 0.2838
+        },
+        {
+          "text": "gnegate",
+          "confidence": 55.0,
+          "x": 0.5334,
+          "y": 0.2875
+        },
+        {
+          "text": "4",
+          "confidence": 88.0,
+          "x": 0.7991,
+          "y": 0.4134
+        },
+        {
+          "text": "(aa)",
+          "confidence": 30.0,
+          "x": 0.2928,
+          "y": 0.4203
+        },
+        {
+          "text": "Barley",
+          "confidence": 96.0,
+          "x": 0.3794,
+          "y": 0.4281
+        },
+        {
+          "text": "Hall",
+          "confidence": 95.0,
+          "x": 0.4662,
+          "y": 0.4247
+        },
+        {
+          "text": "York's",
+          "confidence": 67.0,
+          "x": 0.4644,
+          "y": 0.7375
+        },
+        {
+          "text": "C",
+          "confidence": 87.0,
+          "x": 0.5325,
+          "y": 0.7378
+        },
+        {
+          "text": "(i",
+          "confidence": 30.0,
+          "x": 0.5919,
+          "y": 0.7409
+        },
+        {
+          "text": "Story",
+          "confidence": 95.0,
+          "x": 0.7281,
+          "y": 0.7412
+        },
+        {
+          "text": "Za",
+          "confidence": 29.0,
+          "x": 0.9363,
+          "y": 0.8047
+        },
+        {
+          "text": "oy",
+          "confidence": 34.0,
+          "x": 0.5528,
+          "y": 0.8722
+        },
+        {
+          "text": "RS",
+          "confidence": 47.0,
+          "x": 0.7309,
+          "y": 0.9272
+        },
+        {
+          "text": "G\u00e9ogle",
+          "confidence": 76.0,
+          "x": 0.0841,
+          "y": 0.9684
+        },
+        {
+          "text": "<",
+          "confidence": 25.0,
+          "x": 0.5944,
+          "y": 0.9637
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7259,
+          "y": 0.9762
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.785,
+          "y": 0.9762
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.8575,
+          "y": 0.9728
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "D",
+      "markers": {
+        "E": [
+          152.0,
+          227.0
+        ],
+        "S": [
+          315.0,
+          276.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "Minster-y,",
+          "confidence": 27.0,
+          "x": 0.1756,
+          "y": 0.0838
+        },
+        {
+          "text": "oa",
+          "confidence": 40.0,
+          "x": 0.6716,
+          "y": 0.0866
+        },
+        {
+          "text": "whi\u201d",
+          "confidence": 41.0,
+          "x": 0.6219,
+          "y": 0.1219
+        },
+        {
+          "text": "Guy",
+          "confidence": 93.0,
+          "x": 0.2303,
+          "y": 0.1562
+        },
+        {
+          "text": "Fawkes./nn",
+          "confidence": 25.0,
+          "x": 0.3569,
+          "y": 0.1522
+        },
+        {
+          "text": "8",
+          "confidence": 48.0,
+          "x": 0.0516,
+          "y": 0.3181
+        },
+        {
+          "text": "Ouse",
+          "confidence": 33.0,
+          "x": 0.3316,
+          "y": 0.3253
+        },
+        {
+          "text": "O",
+          "confidence": 89.0,
+          "x": 0.3744,
+          "y": 0.3269
+        },
+        {
+          "text": "ye",
+          "confidence": 83.0,
+          "x": 0.4559,
+          "y": 0.3341
+        },
+        {
+          "text": "Trembling",
+          "confidence": 95.0,
+          "x": 0.5506,
+          "y": 0.3281
+        },
+        {
+          "text": "@",
+          "confidence": 68.0,
+          "x": 0.21,
+          "y": 0.3362
+        },
+        {
+          "text": "adness",
+          "confidence": 90.0,
+          "x": 0.3372,
+          "y": 0.3597
+        },
+        {
+          "text": "//",
+          "confidence": 90.0,
+          "x": 0.4144,
+          "y": 0.3613
+        },
+        {
+          "text": "gnegate",
+          "confidence": 44.0,
+          "x": 0.5334,
+          "y": 0.365
+        },
+        {
+          "text": "y",
+          "confidence": 93.0,
+          "x": 0.4184,
+          "y": 0.5094
+        },
+        {
+          "text": "Hall",
+          "confidence": 94.0,
+          "x": 0.4662,
+          "y": 0.5022
+        },
+        {
+          "text": "York's",
+          "confidence": 79.0,
+          "x": 0.4644,
+          "y": 0.8256
+        },
+        {
+          "text": "Chocolate",
+          "confidence": 96.0,
+          "x": 0.6,
+          "y": 0.8169
+        },
+        {
+          "text": "Story",
+          "confidence": 26.0,
+          "x": 0.7316,
+          "y": 0.8103
+        },
+        {
+          "text": "Ny,",
+          "confidence": 44.0,
+          "x": 0.0831,
+          "y": 0.8906
+        },
+        {
+          "text": ">",
+          "confidence": 61.0,
+          "x": 0.6334,
+          "y": 0.8759
+        },
+        {
+          "text": "%,",
+          "confidence": 39.0,
+          "x": 0.9341,
+          "y": 0.8788
+        },
+        {
+          "text": "%,",
+          "confidence": 71.0,
+          "x": 0.1334,
+          "y": 0.9272
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0841,
+          "y": 0.9719
+        },
+        {
+          "text": "we",
+          "confidence": 28.0,
+          "x": 0.2166,
+          "y": 0.9656
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9809
+        }
+      ]
+    },
+    {
+      "identity": "E",
+      "markers": {
+        "S": [
+          152.0,
+          227.0
+        ],
+        "E": [
+          315.0,
+          276.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "Minster-y,",
+          "confidence": 27.0,
+          "x": 0.1756,
+          "y": 0.0838
+        },
+        {
+          "text": "oa",
+          "confidence": 40.0,
+          "x": 0.6716,
+          "y": 0.0866
+        },
+        {
+          "text": "whi\u201d",
+          "confidence": 41.0,
+          "x": 0.6219,
+          "y": 0.1219
+        },
+        {
+          "text": "Guy",
+          "confidence": 93.0,
+          "x": 0.2303,
+          "y": 0.1562
+        },
+        {
+          "text": "Fawkes./nn",
+          "confidence": 25.0,
+          "x": 0.3569,
+          "y": 0.1522
+        },
+        {
+          "text": "8",
+          "confidence": 38.0,
+          "x": 0.0516,
+          "y": 0.3181
+        },
+        {
+          "text": "Ouse",
+          "confidence": 30.0,
+          "x": 0.3316,
+          "y": 0.3253
+        },
+        {
+          "text": "O",
+          "confidence": 89.0,
+          "x": 0.3744,
+          "y": 0.3269
+        },
+        {
+          "text": "ye",
+          "confidence": 78.0,
+          "x": 0.4559,
+          "y": 0.3341
+        },
+        {
+          "text": "Trembling",
+          "confidence": 95.0,
+          "x": 0.5506,
+          "y": 0.3281
+        },
+        {
+          "text": "@",
+          "confidence": 72.0,
+          "x": 0.21,
+          "y": 0.3362
+        },
+        {
+          "text": "adness",
+          "confidence": 90.0,
+          "x": 0.3372,
+          "y": 0.3597
+        },
+        {
+          "text": "//",
+          "confidence": 90.0,
+          "x": 0.4144,
+          "y": 0.3613
+        },
+        {
+          "text": "gnegate",
+          "confidence": 57.0,
+          "x": 0.5334,
+          "y": 0.365
+        },
+        {
+          "text": "y",
+          "confidence": 93.0,
+          "x": 0.4184,
+          "y": 0.5094
+        },
+        {
+          "text": "Hall",
+          "confidence": 94.0,
+          "x": 0.4662,
+          "y": 0.5022
+        },
+        {
+          "text": "York's",
+          "confidence": 79.0,
+          "x": 0.4644,
+          "y": 0.8256
+        },
+        {
+          "text": "Chocolate",
+          "confidence": 96.0,
+          "x": 0.6,
+          "y": 0.8169
+        },
+        {
+          "text": "Story",
+          "confidence": 43.0,
+          "x": 0.7316,
+          "y": 0.8103
+        },
+        {
+          "text": "Ny,",
+          "confidence": 44.0,
+          "x": 0.0831,
+          "y": 0.8906
+        },
+        {
+          "text": ">",
+          "confidence": 61.0,
+          "x": 0.6334,
+          "y": 0.8759
+        },
+        {
+          "text": "%,",
+          "confidence": 39.0,
+          "x": 0.9341,
+          "y": 0.8788
+        },
+        {
+          "text": "%,",
+          "confidence": 71.0,
+          "x": 0.1334,
+          "y": 0.9272
+        },
+        {
+          "text": "8",
+          "confidence": 51.0,
+          "x": 0.715,
+          "y": 0.9031
+        },
+        {
+          "text": "Google",
+          "confidence": 95.0,
+          "x": 0.0841,
+          "y": 0.9719
+        },
+        {
+          "text": "we",
+          "confidence": 28.0,
+          "x": 0.2166,
+          "y": 0.9656
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 96.0,
+          "x": 0.7859,
+          "y": 0.98
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9513,
+          "y": 0.9809
+        }
+      ]
+    }
+  ]
+}

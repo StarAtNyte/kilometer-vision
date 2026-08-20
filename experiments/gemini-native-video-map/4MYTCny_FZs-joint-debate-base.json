@@ -1,0 +1,31 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.5-flash",
+  "pipeline": "joint-debate",
+  "route_evidence": {
+    "ordered_route": "The video starts at the north-eastern end of a main street, specifically walking down Sak\u0131z Sk. (passing landmarks such as Viktor Levi \u015earap Evi), continuing straight down the street as it transitions, and ends walking southwards towards Dr. Esat I\u015f\u0131k Cd. where an pharmacy (Eczane Y\u00fcksek) is visible on the right-hand corner. This matches route E.",
+    "start": "Nailbey Sk. / Sak\u0131z Sk. intersection",
+    "end": "Dr. Esat I\u015f\u0131k Cd. / Bademalt\u0131 Sk. intersection near Eczane Y\u00fcksek",
+    "turns_topology": "straight",
+    "uncertainty": "low"
+  },
+  "provisional_answer": "E",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "reason": "The route starts at the north-eastern end of Sak\u0131z Sk. (near Nailbey Sk.) and goes southwards to the intersection of Dr. Esat I\u0151\u0131k Cd. and Bademalt\u0131 Sk. Candidate map E correctly positions the start point (S) at the north-eastern end near Serasker Cd. and the end point (E) near Dr. Esat I\u0151\u0131k Cd. and Bademalt\u0131 Sk.",
+    "confidence": 5
+  },
+  "clip_bytes": 13047081,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

@@ -1,0 +1,76 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.6-flash",
+  "pipeline": "candidate-hidden-evidence-highres-map-audit",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "geometry": {
+    "A": {
+      "E": [
+        0.3275,
+        0.7875
+      ],
+      "S": [
+        0.6725,
+        0.24
+      ]
+    },
+    "B": {
+      "E": [
+        0.39,
+        0.76
+      ],
+      "S": [
+        0.6075,
+        0.265
+      ]
+    },
+    "C": {
+      "S": [
+        0.3825,
+        0.75
+      ],
+      "E": [
+        0.615,
+        0.2775
+      ]
+    },
+    "D": {
+      "S": [
+        0.415,
+        0.735
+      ],
+      "E": [
+        0.585,
+        0.29
+      ]
+    },
+    "E": {
+      "E": [
+        0.415,
+        0.735
+      ],
+      "S": [
+        0.585,
+        0.29
+      ]
+    }
+  },
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "start_pin_location": "Bahariye Street (General As\u0131m G\u00fcnd\u00fcz Caddesi) near Kefeli Pasaj\u0131 arcade, near Sak\u0131z Sk. junction",
+    "end_pin_location": "Hac\u0131 \u015e\u00fckr\u00fc Street / \u015eair Nefi Street area near Moda da Nata / Y\u00fcksek Eczanesi",
+    "reason": "Candidate E correctly traces the route from Bahariye Street near Kefeli Pasaj\u0131 (S pin) southwest along General As\u0131m G\u00fcnd\u00fcz Cd. (Bahariye Street) / \u015eair Nefi Sk. down to Hac\u0131 \u015e\u00fckr\u00fc Sk. (E pin). Candidate D has the route reversed (S and E flipped). Candidates A, B, and C map a different street sequence (Sak\u0131z Sk.). Thus, Candidate E matches both the ordered turns and correct travel direction.",
+    "confidence": 0.95
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

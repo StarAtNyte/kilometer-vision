@@ -1,0 +1,1293 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "records": [
+    {
+      "identity": "A",
+      "markers": {
+        "S": [
+          318.0,
+          291.0
+        ],
+        "E": [
+          80.0,
+          120.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "RK",
+          "confidence": 40.0,
+          "x": 0.9712,
+          "y": 0.0616
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 88.0,
+          "x": 0.3425,
+          "y": 0.1625
+        },
+        {
+          "text": "LH",
+          "confidence": 96.0,
+          "x": 0.4019,
+          "y": 0.1675
+        },
+        {
+          "text": "Hotel",
+          "confidence": 93.0,
+          "x": 0.4744,
+          "y": 0.1672
+        },
+        {
+          "text": "Mlyn",
+          "confidence": 85.0,
+          "x": 0.5631,
+          "y": 0.1709
+        },
+        {
+          "text": "Old",
+          "confidence": 96.0,
+          "x": 0.6356,
+          "y": 0.1669
+        },
+        {
+          "text": "Town",
+          "confidence": 95.0,
+          "x": 0.7137,
+          "y": 0.1678
+        },
+        {
+          "text": "eminarni",
+          "confidence": 90.0,
+          "x": 0.3031,
+          "y": 0.2578
+        },
+        {
+          "text": "zahrada",
+          "confidence": 91.0,
+          "x": 0.4428,
+          "y": 0.2547
+        },
+        {
+          "text": "Malecek",
+          "confidence": 75.0,
+          "x": 0.6016,
+          "y": 0.3172
+        },
+        {
+          "text": "Rafting",
+          "confidence": 96.0,
+          "x": 0.7306,
+          "y": 0.315
+        },
+        {
+          "text": "Ujcovna",
+          "confidence": 54.0,
+          "x": 0.6331,
+          "y": 0.35
+        },
+        {
+          "text": "lodi,",
+          "confidence": 92.0,
+          "x": 0.7347,
+          "y": 0.3491
+        },
+        {
+          "text": "raftd",
+          "confidence": 75.0,
+          "x": 0.8113,
+          "y": 0.3466
+        },
+        {
+          "text": "a...",
+          "confidence": 84.0,
+          "x": 0.8766,
+          "y": 0.3509
+        },
+        {
+          "text": "Kaplicks",
+          "confidence": 40.0,
+          "x": 0.6859,
+          "y": 0.4006
+        },
+        {
+          "text": "Kapiic\u2122",
+          "confidence": 34.0,
+          "x": 0.8806,
+          "y": 0.4113
+        },
+        {
+          "text": "MySi",
+          "confidence": 51.0,
+          "x": 0.3319,
+          "y": 0.4344
+        },
+        {
+          "text": "dira",
+          "confidence": 51.0,
+          "x": 0.4019,
+          "y": 0.43
+        },
+        {
+          "text": "(Cesky",
+          "confidence": 96.0,
+          "x": 0.3622,
+          "y": 0.4669
+        },
+        {
+          "text": "Potravi",
+          "confidence": 92.0,
+          "x": 0.5444,
+          "y": 0.485
+        },
+        {
+          "text": "Krumlov)",
+          "confidence": 75.0,
+          "x": 0.3613,
+          "y": 0.5016
+        },
+        {
+          "text": "COOP",
+          "confidence": 94.0,
+          "x": 0.6913,
+          "y": 0.485
+        },
+        {
+          "text": "coke",
+          "confidence": 37.0,
+          "x": 0.1869,
+          "y": 0.6038
+        },
+        {
+          "text": "eo",
+          "confidence": 41.0,
+          "x": 0.1547,
+          "y": 0.62
+        },
+        {
+          "text": "Oe",
+          "confidence": 49.0,
+          "x": 0.5312,
+          "y": 0.7375
+        },
+        {
+          "text": "Mestsky",
+          "confidence": 42.0,
+          "x": 0.2988,
+          "y": 0.7981
+        },
+        {
+          "text": "park",
+          "confidence": 96.0,
+          "x": 0.4072,
+          "y": 0.7978
+        },
+        {
+          "text": "Z",
+          "confidence": 89.0,
+          "x": 0.5819,
+          "y": 0.805
+        },
+        {
+          "text": "Cesky",
+          "confidence": 95.0,
+          "x": 0.2672,
+          "y": 0.8331
+        },
+        {
+          "text": "Krumlov",
+          "confidence": 95.0,
+          "x": 0.3878,
+          "y": 0.83
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0844,
+          "y": 0.9716
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9516,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "B",
+      "markers": {
+        "E": [
+          318.0,
+          291.0
+        ],
+        "S": [
+          80.0,
+          120.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "RK",
+          "confidence": 40.0,
+          "x": 0.9712,
+          "y": 0.0616
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 88.0,
+          "x": 0.3425,
+          "y": 0.1625
+        },
+        {
+          "text": "LH",
+          "confidence": 96.0,
+          "x": 0.4019,
+          "y": 0.1675
+        },
+        {
+          "text": "Hotel",
+          "confidence": 93.0,
+          "x": 0.4744,
+          "y": 0.1672
+        },
+        {
+          "text": "Mlyn",
+          "confidence": 85.0,
+          "x": 0.5631,
+          "y": 0.1709
+        },
+        {
+          "text": "Old",
+          "confidence": 96.0,
+          "x": 0.6356,
+          "y": 0.1669
+        },
+        {
+          "text": "Town",
+          "confidence": 95.0,
+          "x": 0.7137,
+          "y": 0.1678
+        },
+        {
+          "text": "eminarni",
+          "confidence": 90.0,
+          "x": 0.3031,
+          "y": 0.2578
+        },
+        {
+          "text": "zahrada",
+          "confidence": 91.0,
+          "x": 0.4428,
+          "y": 0.2547
+        },
+        {
+          "text": "Malecek",
+          "confidence": 75.0,
+          "x": 0.6016,
+          "y": 0.3172
+        },
+        {
+          "text": "Rafting",
+          "confidence": 96.0,
+          "x": 0.7306,
+          "y": 0.315
+        },
+        {
+          "text": "Ujcovna",
+          "confidence": 54.0,
+          "x": 0.6331,
+          "y": 0.35
+        },
+        {
+          "text": "lodi,",
+          "confidence": 92.0,
+          "x": 0.7347,
+          "y": 0.3491
+        },
+        {
+          "text": "raftd",
+          "confidence": 75.0,
+          "x": 0.8113,
+          "y": 0.3466
+        },
+        {
+          "text": "a...",
+          "confidence": 84.0,
+          "x": 0.8766,
+          "y": 0.3509
+        },
+        {
+          "text": "Kaplicks",
+          "confidence": 40.0,
+          "x": 0.6859,
+          "y": 0.4006
+        },
+        {
+          "text": "Kapiic\u2122",
+          "confidence": 34.0,
+          "x": 0.8806,
+          "y": 0.4113
+        },
+        {
+          "text": "MySi",
+          "confidence": 51.0,
+          "x": 0.3319,
+          "y": 0.4344
+        },
+        {
+          "text": "dira",
+          "confidence": 51.0,
+          "x": 0.4019,
+          "y": 0.43
+        },
+        {
+          "text": "(Cesky",
+          "confidence": 96.0,
+          "x": 0.3622,
+          "y": 0.4669
+        },
+        {
+          "text": "Potravi",
+          "confidence": 92.0,
+          "x": 0.5444,
+          "y": 0.485
+        },
+        {
+          "text": "Krumlov)",
+          "confidence": 75.0,
+          "x": 0.3613,
+          "y": 0.5016
+        },
+        {
+          "text": "COOP",
+          "confidence": 94.0,
+          "x": 0.6913,
+          "y": 0.485
+        },
+        {
+          "text": "coke",
+          "confidence": 37.0,
+          "x": 0.1869,
+          "y": 0.6038
+        },
+        {
+          "text": "eo",
+          "confidence": 41.0,
+          "x": 0.1547,
+          "y": 0.62
+        },
+        {
+          "text": "Oe",
+          "confidence": 49.0,
+          "x": 0.5312,
+          "y": 0.7375
+        },
+        {
+          "text": "Mestsky",
+          "confidence": 42.0,
+          "x": 0.2988,
+          "y": 0.7981
+        },
+        {
+          "text": "park",
+          "confidence": 96.0,
+          "x": 0.4072,
+          "y": 0.7978
+        },
+        {
+          "text": "Z",
+          "confidence": 89.0,
+          "x": 0.5819,
+          "y": 0.805
+        },
+        {
+          "text": "Cesky",
+          "confidence": 95.0,
+          "x": 0.2672,
+          "y": 0.8331
+        },
+        {
+          "text": "Krumlov",
+          "confidence": 95.0,
+          "x": 0.3878,
+          "y": 0.83
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0844,
+          "y": 0.9716
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9516,
+          "y": 0.9825
+        }
+      ]
+    },
+    {
+      "identity": "C",
+      "markers": {
+        "S": [
+          150.0,
+          115.0
+        ],
+        "E": [
+          248.0,
+          293.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "\u00a9",
+          "confidence": 88.0,
+          "x": 0.0725,
+          "y": 0.0625
+        },
+        {
+          "text": "/Lazebnicky",
+          "confidence": 79.0,
+          "x": 0.1928,
+          "y": 0.0706
+        },
+        {
+          "text": "most",
+          "confidence": 96.0,
+          "x": 0.3328,
+          "y": 0.0688
+        },
+        {
+          "text": "Autobusov\u00e9",
+          "confidence": 81.0,
+          "x": 0.6128,
+          "y": 0.0938
+        },
+        {
+          "text": "ndarazl",
+          "confidence": 22.0,
+          "x": 0.7731,
+          "y": 0.0741
+        },
+        {
+          "text": "4",
+          "confidence": 73.0,
+          "x": 0.66,
+          "y": 0.0406
+        },
+        {
+          "text": "he",
+          "confidence": 78.0,
+          "x": 0.77,
+          "y": 0.0556
+        },
+        {
+          "text": ">\\",
+          "confidence": 76.0,
+          "x": 0.9294,
+          "y": 0.0731
+        },
+        {
+          "text": "C)",
+          "confidence": 50.0,
+          "x": 0.8662,
+          "y": 0.0922
+        },
+        {
+          "text": "vyhlidka",
+          "confidence": 85.0,
+          "x": 0.555,
+          "y": 0.2106
+        },
+        {
+          "text": "o",
+          "confidence": 27.0,
+          "x": 0.6866,
+          "y": 0.1984
+        },
+        {
+          "text": "ni",
+          "confidence": 92.0,
+          "x": 0.4334,
+          "y": 0.2791
+        },
+        {
+          "text": "zahrada",
+          "confidence": 92.0,
+          "x": 0.5181,
+          "y": 0.2794
+        },
+        {
+          "text": "9",
+          "confidence": 59.0,
+          "x": 0.095,
+          "y": 0.2728
+        },
+        {
+          "text": "Os:",
+          "confidence": 47.0,
+          "x": 0.2753,
+          "y": 0.2828
+        },
+        {
+          "text": "~*~",
+          "confidence": 43.0,
+          "x": 0.7616,
+          "y": 0.3053
+        },
+        {
+          "text": "i",
+          "confidence": 41.0,
+          "x": 0.8734,
+          "y": 0.3172
+        },
+        {
+          "text": "a)",
+          "confidence": 33.0,
+          "x": 0.0762,
+          "y": 0.36
+        },
+        {
+          "text": "Kostel",
+          "confidence": 90.0,
+          "x": 0.1641,
+          "y": 0.3647
+        },
+        {
+          "text": "svat\u00e9ho",
+          "confidence": 91.0,
+          "x": 0.2844,
+          "y": 0.3647
+        },
+        {
+          "text": "Vita",
+          "confidence": 95.0,
+          "x": 0.3844,
+          "y": 0.3644
+        },
+        {
+          "text": "|",
+          "confidence": 76.0,
+          "x": 0.5231,
+          "y": 0.3572
+        },
+        {
+          "text": "|",
+          "confidence": 91.0,
+          "x": 0.5706,
+          "y": 0.3578
+        },
+        {
+          "text": "hotel",
+          "confidence": 96.0,
+          "x": 0.7669,
+          "y": 0.3678
+        },
+        {
+          "text": "Villa",
+          "confidence": 96.0,
+          "x": 0.6481,
+          "y": 0.4088
+        },
+        {
+          "text": "Beatika",
+          "confidence": 92.0,
+          "x": 0.7497,
+          "y": 0.4163
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 74.0,
+          "x": 0.8459,
+          "y": 0.3741
+        },
+        {
+          "text": "Opror",
+          "confidence": 27.0,
+          "x": 0.8006,
+          "y": 0.5625
+        },
+        {
+          "text": "Br\u00e9na",
+          "confidence": 88.0,
+          "x": 0.9447,
+          "y": 0.5641
+        },
+        {
+          "text": "Lineckg.",
+          "confidence": 22.0,
+          "x": 0.0556,
+          "y": 0.6391
+        },
+        {
+          "text": ",Museum",
+          "confidence": 27.0,
+          "x": 0.2559,
+          "y": 0.6244
+        },
+        {
+          "text": "Fotoatelier",
+          "confidence": 93.0,
+          "x": 0.2719,
+          "y": 0.6647
+        },
+        {
+          "text": "Seidel",
+          "confidence": 96.0,
+          "x": 0.4109,
+          "y": 0.6559
+        },
+        {
+          "text": "gow",
+          "confidence": 65.0,
+          "x": 0.94,
+          "y": 0.6409
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 62.0,
+          "x": 0.1519,
+          "y": 0.6434
+        },
+        {
+          "text": "\\",
+          "confidence": 29.0,
+          "x": 0.6703,
+          "y": 0.6684
+        },
+        {
+          "text": "\\",
+          "confidence": 72.0,
+          "x": 0.6972,
+          "y": 0.6641
+        },
+        {
+          "text": "nov?",
+          "confidence": 40.0,
+          "x": 0.8747,
+          "y": 0.6716
+        },
+        {
+          "text": "\\",
+          "confidence": 28.0,
+          "x": 0.68,
+          "y": 0.6987
+        },
+        {
+          "text": "\\",
+          "confidence": 69.0,
+          "x": 0.7072,
+          "y": 0.6966
+        },
+        {
+          "text": "|",
+          "confidence": 71.0,
+          "x": 0.6841,
+          "y": 0.7338
+        },
+        {
+          "text": "|",
+          "confidence": 80.0,
+          "x": 0.7109,
+          "y": 0.7306
+        },
+        {
+          "text": "-Horska",
+          "confidence": 89.0,
+          "x": 0.0866,
+          "y": 0.7622
+        },
+        {
+          "text": "/",
+          "confidence": 68.0,
+          "x": 0.6653,
+          "y": 0.8294
+        },
+        {
+          "text": "\u00a3&",
+          "confidence": 45.0,
+          "x": 0.6994,
+          "y": 0.8278
+        },
+        {
+          "text": "sy",
+          "confidence": 51.0,
+          "x": 0.6763,
+          "y": 0.8756
+        },
+        {
+          "text": "%",
+          "confidence": 85.0,
+          "x": 0.9631,
+          "y": 0.8644
+        },
+        {
+          "text": "ogle",
+          "confidence": 91.0,
+          "x": 0.1128,
+          "y": 0.9728
+        },
+        {
+          "text": "Map",
+          "confidence": 24.0,
+          "x": 0.8178,
+          "y": 0.9831
+        },
+        {
+          "text": "data",
+          "confidence": 24.0,
+          "x": 0.88,
+          "y": 0.9831
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 95.0,
+          "x": 0.9547,
+          "y": 0.9797
+        }
+      ]
+    },
+    {
+      "identity": "D",
+      "markers": {
+        "E": [
+          57.0,
+          31.0
+        ],
+        "S": [
+          342.0,
+          378.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "eminarni",
+          "confidence": 90.0,
+          "x": 0.2466,
+          "y": 0.0322
+        },
+        {
+          "text": "zahrada",
+          "confidence": 91.0,
+          "x": 0.3853,
+          "y": 0.0322
+        },
+        {
+          "text": "Malecek",
+          "confidence": 61.0,
+          "x": 0.5441,
+          "y": 0.0897
+        },
+        {
+          "text": "Rafting",
+          "confidence": 95.0,
+          "x": 0.6731,
+          "y": 0.0925
+        },
+        {
+          "text": "Horni",
+          "confidence": 91.0,
+          "x": 0.0753,
+          "y": 0.1194
+        },
+        {
+          "text": "Ujcovna",
+          "confidence": 42.0,
+          "x": 0.5756,
+          "y": 0.1275
+        },
+        {
+          "text": "lodi,",
+          "confidence": 88.0,
+          "x": 0.6772,
+          "y": 0.1266
+        },
+        {
+          "text": "raftd",
+          "confidence": 81.0,
+          "x": 0.7538,
+          "y": 0.1241
+        },
+        {
+          "text": "a...",
+          "confidence": 85.0,
+          "x": 0.8191,
+          "y": 0.1284
+        },
+        {
+          "text": "Kaplicks",
+          "confidence": 46.0,
+          "x": 0.6284,
+          "y": 0.1781
+        },
+        {
+          "text": "Si",
+          "confidence": 67.0,
+          "x": 0.2963,
+          "y": 0.2075
+        },
+        {
+          "text": "dira",
+          "confidence": 67.0,
+          "x": 0.3444,
+          "y": 0.2075
+        },
+        {
+          "text": "x",
+          "confidence": 67.0,
+          "x": 0.2766,
+          "y": 0.2288
+        },
+        {
+          "text": "esky",
+          "confidence": 96.0,
+          "x": 0.3206,
+          "y": 0.2453
+        },
+        {
+          "text": "Krumlov)",
+          "confidence": 67.0,
+          "x": 0.3038,
+          "y": 0.2791
+        },
+        {
+          "text": "Potravi",
+          "confidence": 90.0,
+          "x": 0.4869,
+          "y": 0.2628
+        },
+        {
+          "text": "COOP",
+          "confidence": 96.0,
+          "x": 0.6338,
+          "y": 0.2628
+        },
+        {
+          "text": "ok",
+          "confidence": 43.0,
+          "x": 0.1237,
+          "y": 0.3841
+        },
+        {
+          "text": "928)",
+          "confidence": 47.0,
+          "x": 0.1766,
+          "y": 0.3659
+        },
+        {
+          "text": "A",
+          "confidence": 29.0,
+          "x": 0.4734,
+          "y": 0.515
+        },
+        {
+          "text": "fa",
+          "confidence": 24.0,
+          "x": 0.5763,
+          "y": 0.5272
+        },
+        {
+          "text": "%",
+          "confidence": 91.0,
+          "x": 0.5944,
+          "y": 0.555
+        },
+        {
+          "text": "M\u00e9stsky",
+          "confidence": 58.0,
+          "x": 0.2375,
+          "y": 0.5756
+        },
+        {
+          "text": "park",
+          "confidence": 97.0,
+          "x": 0.3497,
+          "y": 0.5753
+        },
+        {
+          "text": "Cesky",
+          "confidence": 96.0,
+          "x": 0.2097,
+          "y": 0.6106
+        },
+        {
+          "text": "Krumlov",
+          "confidence": 95.0,
+          "x": 0.3303,
+          "y": 0.6075
+        },
+        {
+          "text": "yineck\u00ae",
+          "confidence": 24.0,
+          "x": 0.1475,
+          "y": 0.6778
+        },
+        {
+          "text": "\u201cines",
+          "confidence": 42.0,
+          "x": 0.0953,
+          "y": 0.8869
+        },
+        {
+          "text": "he",
+          "confidence": 61.0,
+          "x": 0.1494,
+          "y": 0.905
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.0847,
+          "y": 0.9716
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9822
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.9797
+        },
+        {
+          "text": "Google",
+          "confidence": 95.0,
+          "x": 0.9519,
+          "y": 0.9828
+        }
+      ]
+    },
+    {
+      "identity": "E",
+      "markers": {
+        "S": [
+          273.0,
+          296.0
+        ],
+        "E": [
+          124.0,
+          115.0
+        ]
+      },
+      "tokens": [
+        {
+          "text": "Vk",
+          "confidence": 76.0,
+          "x": 0.1956,
+          "y": 0.0534
+        },
+        {
+          "text": "oO",
+          "confidence": 38.0,
+          "x": 0.6272,
+          "y": 0.0694
+        },
+        {
+          "text": "Vyhlidka",
+          "confidence": 83.0,
+          "x": 0.7731,
+          "y": 0.1281
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 95.0,
+          "x": 0.8803,
+          "y": 0.1281
+        },
+        {
+          "text": "\u00a9",
+          "confidence": 89.0,
+          "x": 0.23,
+          "y": 0.175
+        },
+        {
+          "text": "LH",
+          "confidence": 96.0,
+          "x": 0.2894,
+          "y": 0.18
+        },
+        {
+          "text": "Hotel",
+          "confidence": 93.0,
+          "x": 0.3619,
+          "y": 0.1797
+        },
+        {
+          "text": "Mlyn",
+          "confidence": 84.0,
+          "x": 0.4506,
+          "y": 0.1834
+        },
+        {
+          "text": "Old",
+          "confidence": 96.0,
+          "x": 0.5231,
+          "y": 0.1794
+        },
+        {
+          "text": "Town",
+          "confidence": 95.0,
+          "x": 0.6012,
+          "y": 0.1803
+        },
+        {
+          "text": "da",
+          "confidence": 96.0,
+          "x": 0.3738,
+          "y": 0.2672
+        },
+        {
+          "text": "4)",
+          "confidence": 43.0,
+          "x": 0.0666,
+          "y": 0.2628
+        },
+        {
+          "text": "Seminarni",
+          "confidence": 92.0,
+          "x": 0.1803,
+          "y": 0.2712
+        },
+        {
+          "text": "Hom",
+          "confidence": 74.0,
+          "x": 0.0694,
+          "y": 0.3528
+        },
+        {
+          "text": ")",
+          "confidence": 63.0,
+          "x": 0.4113,
+          "y": 0.3544
+        },
+        {
+          "text": "Malecek",
+          "confidence": 91.0,
+          "x": 0.495,
+          "y": 0.3297
+        },
+        {
+          "text": "Rafting",
+          "confidence": 96.0,
+          "x": 0.6181,
+          "y": 0.3278
+        },
+        {
+          "text": "Ujcovna",
+          "confidence": 32.0,
+          "x": 0.5206,
+          "y": 0.3625
+        },
+        {
+          "text": "lodi,",
+          "confidence": 89.0,
+          "x": 0.6222,
+          "y": 0.3616
+        },
+        {
+          "text": "raftd",
+          "confidence": 79.0,
+          "x": 0.6987,
+          "y": 0.3591
+        },
+        {
+          "text": "a...",
+          "confidence": 83.0,
+          "x": 0.7641,
+          "y": 0.3634
+        },
+        {
+          "text": "Kaplicks",
+          "confidence": 48.0,
+          "x": 0.5737,
+          "y": 0.4131
+        },
+        {
+          "text": "MySi",
+          "confidence": 73.0,
+          "x": 0.2194,
+          "y": 0.4469
+        },
+        {
+          "text": "dira",
+          "confidence": 73.0,
+          "x": 0.2894,
+          "y": 0.4425
+        },
+        {
+          "text": "Kap\\",
+          "confidence": 86.0,
+          "x": 0.7391,
+          "y": 0.4353
+        },
+        {
+          "text": "ior?",
+          "confidence": 51.0,
+          "x": 0.7991,
+          "y": 0.4175
+        },
+        {
+          "text": "(Cesky",
+          "confidence": 96.0,
+          "x": 0.2497,
+          "y": 0.4794
+        },
+        {
+          "text": "Krumlov)",
+          "confidence": 51.0,
+          "x": 0.2487,
+          "y": 0.5141
+        },
+        {
+          "text": "Potravi",
+          "confidence": 90.0,
+          "x": 0.4319,
+          "y": 0.4978
+        },
+        {
+          "text": "COOP",
+          "confidence": 95.0,
+          "x": 0.5784,
+          "y": 0.4978
+        },
+        {
+          "text": "Q",
+          "confidence": 37.0,
+          "x": 0.6656,
+          "y": 0.5006
+        },
+        {
+          "text": "oKe",
+          "confidence": 21.0,
+          "x": 0.0991,
+          "y": 0.6103
+        },
+        {
+          "text": "Whe?",
+          "confidence": 44.0,
+          "x": 0.04,
+          "y": 0.6334
+        },
+        {
+          "text": "A",
+          "confidence": 33.0,
+          "x": 0.4184,
+          "y": 0.75
+        },
+        {
+          "text": "Me\u00e9stsky",
+          "confidence": 64.0,
+          "x": 0.1862,
+          "y": 0.8106
+        },
+        {
+          "text": "park",
+          "confidence": 96.0,
+          "x": 0.295,
+          "y": 0.8103
+        },
+        {
+          "text": "Z",
+          "confidence": 89.0,
+          "x": 0.4694,
+          "y": 0.8175
+        },
+        {
+          "text": "Cesky",
+          "confidence": 96.0,
+          "x": 0.1547,
+          "y": 0.8456
+        },
+        {
+          "text": "Krumlov",
+          "confidence": 96.0,
+          "x": 0.2753,
+          "y": 0.8425
+        },
+        {
+          "text": "yaneck*",
+          "confidence": 40.0,
+          "x": 0.0925,
+          "y": 0.9153
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.085,
+          "y": 0.9712
+        },
+        {
+          "text": "Map",
+          "confidence": 96.0,
+          "x": 0.7272,
+          "y": 0.9825
+        },
+        {
+          "text": "data",
+          "confidence": 95.0,
+          "x": 0.7859,
+          "y": 0.9803
+        },
+        {
+          "text": "\u00a92025",
+          "confidence": 96.0,
+          "x": 0.86,
+          "y": 0.98
+        },
+        {
+          "text": "Google",
+          "confidence": 96.0,
+          "x": 0.9516,
+          "y": 0.9825
+        }
+      ]
+    }
+  ]
+}

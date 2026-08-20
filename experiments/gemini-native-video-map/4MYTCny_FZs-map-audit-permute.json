@@ -1,0 +1,76 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.6-flash",
+  "pipeline": "candidate-hidden-evidence-highres-map-audit",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "geometry": {
+    "C": {
+      "S": [
+        0.3825,
+        0.75
+      ],
+      "E": [
+        0.615,
+        0.2775
+      ]
+    },
+    "D": {
+      "S": [
+        0.415,
+        0.735
+      ],
+      "E": [
+        0.585,
+        0.29
+      ]
+    },
+    "E": {
+      "E": [
+        0.415,
+        0.735
+      ],
+      "S": [
+        0.585,
+        0.29
+      ]
+    },
+    "A": {
+      "E": [
+        0.3275,
+        0.7875
+      ],
+      "S": [
+        0.6725,
+        0.24
+      ]
+    },
+    "B": {
+      "E": [
+        0.39,
+        0.76
+      ],
+      "S": [
+        0.6075,
+        0.265
+      ]
+    }
+  },
+  "prediction": 0,
+  "response": {
+    "answer": "A",
+    "start_pin_location": "Kefeli Pasaj\u0131 arcade on Bahariye Street (General As\u0131m G\u00fcnd\u00fcz Caddesi)",
+    "end_pin_location": "Hac\u0131 \u015e\u00fckr\u00fc Street near Kadife Street",
+    "reason": "Candidate identity A correctly depicts the route starting inside Kefeli Pasaj\u0131 arcade heading west towards Bahariye Street/Sak\u0131z Sokak, turning southwest/south down Sak\u0131z Sokak, and following the turns down to Hac\u0131 \u015e\u00fckr\u00fc Street with correct Start (S) and End (E) pin orientations.",
+    "confidence": 0.98
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

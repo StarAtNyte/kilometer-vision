@@ -1,0 +1,18 @@
+{
+  "video_id": "UKyT_a-raW4",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "pipeline": "evidence-only",
+  "route_evidence": {
+    "ordered_route": "Kanonia square, Jezuicka, Celna, Gnojna G\u00f3ra lookout, Brzozowa, Kamienne Schodki steps, Celna, Jezuicka",
+    "start": "Kanonia square",
+    "end": "Jezuicka near Celna",
+    "turns_topology": "Walk straight along Kanonia/Jezuicka, turn right into Celna, pass under the arch to Gnojna G\u00f3ra, turn left at the lookout, continue onto Brzozowa, make a sharp right-turn loop to overlook the river view, then turn left/backwards onto Brzozowa, go straight up to Celna/Kamienne Schodki, and turn right back onto Jezuicka.",
+    "uncertainty": "The exact transition around Kamienne Schodki and the final stretch on Jezuicka are dimly lit, but the landmarks are highly distinct.",
+    "start_geocode_query": "Kanonia, Warsaw, Poland",
+    "end_geocode_query": "Jezuicka, Warsaw, Poland"
+  },
+  "clip_bytes": 1493308,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

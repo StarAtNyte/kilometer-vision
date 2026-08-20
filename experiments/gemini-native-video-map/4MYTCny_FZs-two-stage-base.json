@@ -1,0 +1,31 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.5-flash",
+  "pipeline": "two-stage",
+  "route_evidence": {
+    "ordered_route": "Kefeli Pasaj\u0131 (Bahariye Cd. No:111) sidewalk, right onto Kad\u0131k\u00f6yl\u00fc Market alley, left onto Leylek Yuvas\u0131 Sk. / Bademalt\u0131 Sk., straight past Oyun At\u00f6lyesi, past Migros Jet, past Kaptan Emlak, right at Akbank / Ak F\u0131r\u0131n intersection onto Dr. Esat I\u015f\u0131k Cd., continue straight past a cat drinking from a pipe, left onto Leylek Sk., past Viktor Levi, past Fil Kad\u0131k\u00f6y and doremusic, cross Dr. Esat I\u015f\u0131k Cd. intersection, walk on the pedestrianized Bademalt\u0131 Sk., past Kad\u0131k\u00f6y Belediyesi Cafera\u011fa Spor Salonu stairs, straight past Mathilda Coctail Bar, straight towards Eczane Y\u00fcksek.",
+    "start": "Kefeli Pasaj\u0131 sidewalk (Bahariye Cd. No:111)",
+    "end": "Eczane Y\u00fcksek corner (intersection near Bademalt\u0131 Sk. / Moda Cd.)",
+    "turns_topology": "Right turn from Bahariye Cd. corridor onto Kad\u0131k\u00f6yl\u00fc Market street, left turn onto Leylek Yuvas\u0131 Sk. / Bademalt\u0131 Sk., right turn onto Dr. Esat I\u015f\u0131k Cd., left turn onto Leylek Sk., continuing straight onto Bademalt\u0131 Sk. past the Cafera\u011fa Spor Salonu stairs, then continuing straight past several cafes to Eczane Y\u00fcksek.",
+    "uncertainty": "Slight camera tilt down to film a cat around 01:51-01:55, which briefly obscures the street overview."
+  },
+  "provisional_answer": null,
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "reason": "The route description shows a walk starting from Bahariye Cd. / Kefeli Pasaj\u0131 near 'Salt Fried Chicken Kad\u0131k\u00f6y' at the north (marked as S on the map) and heading southwards through Sak\u0131z Sk., turning and ending near Bademalt\u0131 Sk. / Leylek Sk. intersection (marked as E on the map). Comparing candidates C, D, and E, Candidate E correctly positions the start pin 'S' at the northeast (near Salt Fried Chicken/Bahariye Cd.) and the end pin 'E' at the southwest (near Bademalt\u0131 Sk.), matching the direction of the walking route.",
+    "confidence": 9579.0
+  },
+  "clip_bytes": 7768622,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

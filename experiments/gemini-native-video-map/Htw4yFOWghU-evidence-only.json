@@ -1,0 +1,18 @@
+{
+  "video_id": "Htw4yFOWghU",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "pipeline": "evidence-only",
+  "route_evidence": {
+    "ordered_route": "Residenzplatz, Alter Markt, Cafe Tomaselli, Alter Markt",
+    "start": "Residenzplatz facing west towards Alter Markt, Salzburg, Austria",
+    "end": "Alter Markt next to Cafe Tomaselli, Salzburg, Austria",
+    "turns_topology": "Straight from Residenzplatz onto Alter Markt, slight right, then sharp right to face Cafe Tomaselli, continuing onto Alter Markt facing northeast.",
+    "uncertainty": "None, clear prominent landmarks and street names are visible.",
+    "start_geocode_query": "Residenzplatz, Salzburg, Austria",
+    "end_geocode_query": "Cafe Tomaselli, Alter Markt 9, 5020 Salzburg, Austria"
+  },
+  "clip_bytes": 1156201,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

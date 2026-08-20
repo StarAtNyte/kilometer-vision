@@ -1,0 +1,18 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "model": "gemini-3.5-flash",
+  "pipeline": "evidence-only",
+  "route_evidence": {
+    "ordered_route": "Finkle Street (snickelway off) -> Barley Hall Courtyard -> Coffee Yard (snickelway) -> Stonegate -> Low Petergate -> Colliergate -> King's Square -> Goodramgate",
+    "start": "Finkle Street snickelway entry next to 12 Finkle St",
+    "end": "Goodramgate near the Golden Slipper pub",
+    "turns_topology": "Start heading southeast in the narrow passageway off Finkle Street. Turn right, then left to enter the Barley Hall courtyard. Exit the courtyard southeast through Coffee Yard snickelway to Stonegate. Turn left onto Stonegate heading northeast. Turn right onto Low Petergate heading southeast. Turn left onto Colliergate heading northeast. Continue straight across King's Square onto Goodramgate heading northeast.",
+    "uncertainty": "No significant routing uncertainty. The snickelway names are historical local terms.",
+    "start_geocode_query": "Finkle Street, York, England",
+    "end_geocode_query": "Goodramgate, York, England"
+  },
+  "clip_bytes": 5250223,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 4
+}

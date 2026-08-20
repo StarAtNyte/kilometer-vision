@@ -1,0 +1,60 @@
+{
+  "split": "validation",
+  "records": [
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 4,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "score": 92,
+          "raw_text": "{\"score\": 92, \"evidence\": \"The video frames show a continuous walk down a steep, narrow cobblestone street (Rovensket\u00e9\u0159evova) starting from the upper town area (near Hotel Ml\u00fdn) and descending towards the river. The sequence of buildings, the specific pink building on the right (frames 9-10), and the final view of the riverbank and parking area (frame 16) align perfectly with the red route on the map, which traces this exact descent from the S marker to the E marker.\"}"
+        },
+        {
+          "candidate_index": 1,
+          "score": 92,
+          "raw_text": "{\"score\": 92, \"evidence\": \"The video frames show a continuous walk starting from a main street (likely Horn\u00ed street near the start marker S) and proceeding downhill through a series of narrow, winding cobblestone alleys. The sequence of buildings, the steep descent, and the final arrival at a lower residential area with a white car (frame 16) align perfectly with the red route on the map, which descends from the upper town (S) to the lower town (E) along the riverbank.\"}"
+        },
+        {
+          "candidate_index": 2,
+          "score": 92,
+          "raw_text": "{\"score\": 92, \"evidence\": \"The visual sequence in the video frames perfectly matches the route on the map. The walk begins near the Vltava river (Frame 1), proceeds down a cobblestone street (Frames 2-8), passes a distinctive pink building on the right (Frames 9-10), and continues through a narrow, descending alleyway (Frames 11-14) to reach the final residential area (Frames 15-16). The landmarks, building colors, and the topography of the descent align precisely with the S-to-E path shown on the map.\"}"
+        },
+        {
+          "candidate_index": 3,
+          "score": 92,
+          "raw_text": "{\"score\": 92, \"evidence\": \"The video frames show a continuous walk through the streets of \u010cesk\u00fd Krumlov, starting from the lower town area (near the river, indicated by the start point S on the map) and moving uphill through narrow, cobblestone streets (e.g., T\u00f6pink, Pension Anna) towards the upper town. The sequence of buildings, street names visible in the frames (like 'T\u00f6pink' in frame 4), and the general topography (moving from the river valley up to the castle/upper town area) align perfectly with the highlighted route on the map from S to E. The endpoint E is in the upper town, which matches the final frames showing the walk reaching a higher elevation with views of the town below"
+        },
+        {
+          "candidate_index": 4,
+          "score": 92,
+          "raw_text": "{\"score\": 92, \"evidence\": \"The video frames show a continuous walk down a steep, narrow cobblestone street (likely Hrad\u010dansk\u00e1 or a similar alley in \u010cesk\u00fd Krumlov) starting from a higher elevation and descending towards the river. The sequence of buildings (pink, yellow, white) and the final view of the riverbank and parking area align perfectly with the map's route from S (top right) to E (bottom left, near the river). The topology of the descent and the final destination near the water match the map exactly.\"}"
+        }
+      ],
+      "timestamps": [
+        1560.0,
+        1574.0666666666666,
+        1588.1333333333334,
+        1602.2,
+        1616.2666666666667,
+        1630.3333333333333,
+        1644.4,
+        1658.4666666666667,
+        1672.5333333333333,
+        1686.6,
+        1700.6666666666667,
+        1714.7333333333333,
+        1728.8,
+        1742.8666666666668,
+        1756.9333333333334,
+        1771.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}

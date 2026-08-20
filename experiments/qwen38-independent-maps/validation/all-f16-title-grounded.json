@@ -1,0 +1,411 @@
+{
+  "split": "validation",
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "prediction": 3,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -0.1875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -0.875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -0.4375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": 1.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": 0.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2011.0,
+        2028.7333333333333,
+        2046.4666666666667,
+        2064.2,
+        2081.9333333333334,
+        2099.6666666666665,
+        2117.4,
+        2135.133333333333,
+        2152.866666666667,
+        2170.6,
+        2188.3333333333335,
+        2206.0666666666666,
+        2223.8,
+        2241.5333333333333,
+        2259.266666666667,
+        2277.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"Istanbul\",\n  \"area\": \"Kad\u0131k\u00f6y\",\n  \"start_surrondings\": \"Covered pedestrian arcade with commercial storefronts (signs: 'BARBAROS EMLAK', 'KEFE PASA', 'MNG kargo' van visible).\",\n  \"end_surrondings\": \"Open street corner with a pharmacy (sign: 'PHYTQ') and outdoor caf\u00e9 seating.\",\n  \"landmarks\": [\n    \"AKBANK\",\n    \"AK FRIN\",\n    \"MOLAS\",\n    \"KARDE\u015eLER\",\n    \"TATTOO\",\n    \"MATHILDE\",\n    \"FARGO\",\n    \"TADIN \u00c7I\u011eAR\"\n  ],\n  \"street_names\": [\n    \"Makarna\",\n    \"Limonata\",\n    \"Ahvali\",\n    \"F\u0131st\u0131k\"\n  ],\n  \"junction_sequence\": [\n    \"Exit covered arcade onto pedestrian street\",\n    \"Pass fruit market and 'Dostlar' entrance\",\n    \"Cross street near 'AKBANK' and 'AK FRIN'\",\n    \"Continue along pedestrian zone past 'MOLAS' and 'KARDE\u015eLER'\",\n    \"Pass directional signpost (Makarna, Limonata, etc.)\",\n    \"Walk past 'MATHILDE' and 'FARGO' stores\",",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "public_video_title": "Walking in ISTANBUL / Turkey \ud83c\uddf9\ud83c\uddf7- Kad\u0131k\u00f6y Tour (Asian Side) - 4K 60fps (UHD)",
+      "answer_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "prediction": 4,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -2.0625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -0.875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -0.75,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -2.125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -0.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2574.0,
+        2588.3333333333335,
+        2602.6666666666665,
+        2617.0,
+        2631.3333333333335,
+        2645.6666666666665,
+        2660.0,
+        2674.3333333333335,
+        2688.6666666666665,
+        2703.0,
+        2717.3333333333335,
+        2731.6666666666665,
+        2746.0,
+        2760.3333333333335,
+        2774.6666666666665,
+        2789.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"York\",\n  \"country\": \"England\",\n  \"start_location\": {\n    \"description\": \"Narrow brick alleyway with a 'Museum' banner hanging overhead\",\n    \"landmarks\": [\"Museum entrance (name partially obscured)\"]\n  },\n  \"end_location\": {\n    \"description\": \"Busy street with a white car and a black Audi, near a 'Wagamama' restaurant\",\n    \"landmarks\": [\"Wagamama\", \"White building with red trim\"]\n  },\n  \"route_sequence\": [\n    \"Exit narrow alleyway\",\n    \"Pass 'Evil Eye' Gin Shop and 'Cavendish Jewellers'\",\n    \"Walk down pedestrianized street (passing 'Bath House' and 'Bath House' sign)\",\n    \"Pass 'Oxbow' jeweller and a silver car\",\n    \"Pass 'Azemdi' shop\",\n    \"Pass 'The York City Rooms' (white portico)\",\n    \"Pass 'Bath House' shop (window text: 'MADE IN THE NORTH OF ENGLAND')\",\n    \"Pass 'Fresh Fish Restaurant' and 'Reiss' store\",\n    \"Reach intersection with 'Thomas Baker' shop\",\n    \"Continue past 'Wagamama'\"\n  ],\n  \"compass_displacement\": \"Uncertain (likely North/North-East based on typical York city center layout, but not directly observable)\",",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "public_video_title": "Walking in YORK / England (UK) \ud83c\uddec\ud83c\udde7- 4K 60fps (UHD)",
+      "answer_id": 4
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "prediction": 3,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": 0.0625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": 0.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": 1.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": 1.25,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": 0.625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        2438.0,
+        2441.266666666667,
+        2444.5333333333333,
+        2447.8,
+        2451.0666666666666,
+        2454.3333333333335,
+        2457.6,
+        2460.866666666667,
+        2464.133333333333,
+        2467.4,
+        2470.6666666666665,
+        2473.9333333333334,
+        2477.2,
+        2480.4666666666667,
+        2483.733333333333,
+        2487.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"Salzburg\",\n  \"country\": \"Austria\",\n  \"area\": \"Old Town (Altstadt)\",\n  \"landmarks\": [\n    \"Caf\u00e9 Tomaselli\",\n    \"Kaffeisenbahn\"\n  ],\n  \"start_surroundings\": \"Open paved square with a large beige building on the left and a cafe on the right.\",\n  \"end_surroundings\": \"Narrow pedestrian street with shops (e.g., 'HERMES') and a construction fence on the right.\",\n  \"compass_displacement\": \"Uncertain (likely Northward based on typical Old Town layout, but not directly observable)\",\n  \"elevation_change\": \"Flat\",\n  \"junction_sequence\": [\n    \"Start in a large open square\",\n    \"Pass a red market umbrella and art stalls\",\n    \"Turn right to enter a narrow pedestrian street\",\n    \"Walk past the terrace of Caf\u00e9 Tomaselli\",\n    \"Continue along the street past a construction site\"\n  ]\n}\n```",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "public_video_title": "Walking in SALZBURG / Austria \ud83c\udde6\ud83c\uddf9- 4K 60fps (UHD)",
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "prediction": 3,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -3.0625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -2.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -2.6875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -1.875,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -2.125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        4045.0,
+        4054.4,
+        4063.8,
+        4073.2,
+        4082.6,
+        4092.0,
+        4101.4,
+        4110.8,
+        4120.2,
+        4129.6,
+        4139.0,
+        4148.4,
+        4157.8,
+        4167.2,
+        4176.6,
+        4186.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"Warsaw\",\n  \"country\": \"Poland\",\n  \"area\": \"Old Town (Stare Miasto)\",\n  \"landmarks\": [\n    \"Castle Square (Plac Zamkowy)\",\n    \"Royal Castle (Zamek Kr\u00f3lewski)\",\n    \"Castle Garden (Ogr\u00f3d Zamkowy)\",\n    \"Statue of the Wounded Gaul (Ranny Gal)\"\n  ],\n  \"start_surroundings\": \"Castle Square, facing the corner of the Royal Castle and adjacent buildings (yellow facade with 'KANA' sign).\",\n  \"end_surroundings\": \"Narrow cobblestone street (likely D\u0142uga or Mariacka) leading towards the Old Town Market Square, with a white car parked on the right.\",\n  \"elevation_change\": \"Ascent from street level to the elevated Castle Garden terrace, followed by a descent back to street level.\",\n  \"compass_displacement\": \"Uncertain (likely North-West to South-East relative to the Castle)\",\n  \"route_sequence\": [\n    \"Start at Castle Square\",\n    \"Turn left into a narrow alley\",\n    \"Pass through a dark arched passage\",\n    \"Ascend stairs to the Castle Garden terrace\",\n    \"View the 'Wounded Gaul' statue\",\n    \"Descend from the terrace\",\n    \"Enter a narrow cobblestone street\"\n  ]\n}\n```",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "public_video_title": "Walking in WARSAW / Poland \ud83c\uddf5\ud83c\uddf1- 4K 60fps (UHD)",
+      "answer_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 2,
+      "audits": [
+        {
+          "candidate_index": 0,
+          "yes_no_logit_margin": -4.4375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "yes_no_logit_margin": -3.8125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "yes_no_logit_margin": -3.3125,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 3,
+          "yes_no_logit_margin": -3.375,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        },
+        {
+          "candidate_index": 4,
+          "yes_no_logit_margin": -3.5625,
+          "yes_token_ids": [
+            13602
+          ],
+          "no_token_ids": [
+            8725
+          ]
+        }
+      ],
+      "timestamps": [
+        1560.0,
+        1574.0666666666666,
+        1588.1333333333334,
+        1602.2,
+        1616.2666666666667,
+        1630.3333333333333,
+        1644.4,
+        1658.4666666666667,
+        1672.5333333333333,
+        1686.6,
+        1700.6666666666667,
+        1714.7333333333333,
+        1728.8,
+        1742.8666666666668,
+        1756.9333333333334,
+        1771.0
+      ],
+      "checkpoint": "Qwen/Qwen3.8-27B",
+      "route_evidence": "```json\n{\n  \"city\": \"\u010cesk\u00fd Krumlov\",\n  \"country\": \"Czech Republic\",\n  \"start_surroundings\": \"Cobblestoned town square featuring a white building with a stepped gable (labeled 'NA ROZHRN\u00cd') and a vertical sign for 'BARBAK\u00c1N'.\",\n  \"end_surroundings\": \"Residential street corner with a white Hyundai i20 parked next to a wooden fence and dense green trees.\",\n  \"landmarks\": [\n    \"Barbak\u00e1n (sign)\",\n    \"Na Rozhrn\u00ed (building)\",\n    \"Topinka (building)\",\n    \"Pension Anna (building)\",\n    \"Pension Pelik\u00e1n (building)\"\n  ],\n  \"route_sequence\": [\n    \"Start in the square near the Barbak\u00e1n sign.\",\n    \"Turn right onto a narrow cobblestone street lined with parked cars.\",\n    \"Pass the 'Topinka' building on the right.\",\n    \"Continue past a pink building and a 'Pension Anna' on the left.\",\n    \"Pass a 'Pension Pelik\u00e1n' on the left and a parking garage entrance on the right.\",\n    \"Turn right into a steep, narrow alleyway.\",\n    \"Descend the alley past a pink building and overgrown vegetation.\",\n    \"Continue down a stone-paved path past a light green building.\",\n    \"Reach a lower residential area with white houses and a silver station wagon",
+      "frame_count": 16,
+      "ground_truth_used_for_inference": false,
+      "public_video_title": "Walking in CESKY KRUMLOV / Czech Republic \ud83c\udde8\ud83c\uddff- 4K 60fps (UHD)",
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}
