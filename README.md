@@ -96,6 +96,8 @@ As a map-raster ablation, `route_path_full_guided` retained the red S/E pin bodi
 
 SpatialAxiom-9B (a 2026 spatial/embodied-reasoning VLM) was probed on the Czech validation map with eight ordered frames and all five candidates. It recovered useful road/landmark descriptions, but direct map selection entered a repetitive A-versus-D comparison and failed to emit a final answer even with 1,024 output tokens. It is therefore retained as a possible candidate-blind evidence extractor, not an answer solver; no production prediction changed. The remote probe is `modal_spatialaxiom_map_probe.py`.
 
+The follow-up candidate-blind prompt produced literal placeholder fields (`[City Name]`, `[Street/Landmark Name]`) rather than evidence, so that route-record path is also rejected for now.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.

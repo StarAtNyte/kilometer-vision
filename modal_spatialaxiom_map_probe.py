@@ -14,7 +14,7 @@ def _source(vid):
   if p.suffix.lower() in {'.mp4','.mkv','.mov','.avi','.webm'} and '.partial' not in p.stem:return p
  raise FileNotFoundError(vid)
 @A.function(image=I,gpu='H100',memory=32768,volumes={'/data':V},timeout=60*60)
-def run(video_id='buBU7NrfyGM',question_id='0',split='validation',frame_count=8):
+def run(video_id='buBU7NrfyGM',question_id='0',split='validation',frame_count=8,candidate_blind=False):
  import cv2, torch
  from PIL import Image
  try:
@@ -32,16 +32,21 @@ def run(video_id='buBU7NrfyGM',question_id='0',split='validation',frame_count=8)
  cap.release()
  parts=[]
  for i,im in enumerate(frames): parts += [{'type':'text','text':f'Ordered walking frame {i+1}/{len(frames)}:'},{'type':'image','image':im}]
- with zipfile.ZipFile(ROOT/'manifests'/f'{split}_images.zip') as z:
-  names=z.namelist()
-  for i,ref in enumerate(q['image_paths']):
-   hit=[x for x in names if Path(x).name==Path(str(ref)).name]
-   im=Image.open(io.BytesIO(z.read(hit[0]))).convert('RGB').resize((448,448))
-   parts += [{'type':'text','text':f'Candidate map {"ABCDE"[i]}:'},{'type':'image','image':im}]
- prompt=('Which candidate map (A-E) matches the walking route? The red route runs from S to E. '
-         'Use the ordered video frames, route topology, endpoint direction, turns, and bends. '
-         'Ignore map scale and absolute orientation. Your FIRST line must be exactly ANSWER: A, '
-         'ANSWER: B, ANSWER: C, ANSWER: D, or ANSWER: E. Then give at most two short sentences.')
+ if not candidate_blind:
+  with zipfile.ZipFile(ROOT/'manifests'/f'{split}_images.zip') as z:
+   names=z.namelist()
+   for i,ref in enumerate(q['image_paths']):
+    hit=[x for x in names if Path(x).name==Path(str(ref)).name]
+    im=Image.open(io.BytesIO(z.read(hit[0]))).convert('RGB').resize((448,448))
+    parts += [{'type':'text','text':f'Candidate map {"ABCDE"[i]}:'},{'type':'image','image':im}]
+  prompt=('Which candidate map (A-E) matches the walking route? The red route runs from S to E. '
+          'Use the ordered video frames, route topology, endpoint direction, turns, and bends. '
+          'Ignore map scale and absolute orientation. Your FIRST line must be exactly ANSWER: A, '
+          'ANSWER: B, ANSWER: C, ANSWER: D, or ANSWER: E. Then give at most two short sentences.')
+ else:
+  prompt=('Extract a candidate-blind route record from these ordered walking frames. Report only visible '
+          'city/area, readable street or landmark names, start and end surroundings, route sequence, '
+          'turns, and compass displacement. Do not guess. Use compact bullet points and stop after 200 tokens.')
  parts.append({'type':'text','text':prompt})
  messages=[{'role':'user','content':parts}]
  inputs=proc.apply_chat_template(messages,add_generation_prompt=True,tokenize=True,return_dict=True,return_tensors='pt',enable_thinking=False).to(model.device)
@@ -50,4 +55,4 @@ def run(video_id='buBU7NrfyGM',question_id='0',split='validation',frame_count=8)
  result={'video_id':video_id,'question_id':str(question_id),'model':CHECKPOINT,'frame_count':frame_count,'raw_text':text,'ground_truth_used_for_inference':False}
  outp=ROOT/'experiments'/'spatialaxiom-map-probe'/f'{split}-{video_id}-{question_id}-f{frame_count}.json'; outp.parent.mkdir(parents=True,exist_ok=True); outp.write_text(json.dumps(result,indent=2)+'\n'); V.commit(); return result
 @A.local_entrypoint()
-def main(video_id: str='buBU7NrfyGM',question_id: str='0',split: str='validation',frame_count: int=8): print(json.dumps(run.remote(video_id,question_id,split,frame_count),indent=2))
+def main(video_id: str='buBU7NrfyGM',question_id: str='0',split: str='validation',frame_count: int=8,candidate_blind: bool=False): print(json.dumps(run.remote(video_id,question_id,split,frame_count,candidate_blind),indent=2))
