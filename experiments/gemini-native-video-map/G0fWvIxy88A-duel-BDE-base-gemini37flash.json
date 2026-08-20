@@ -1,0 +1,23 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "BDE",
+  "perturbation": "base",
+  "display_order": [
+    "B",
+    "D",
+    "E"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "observed_start": "Alleyway near Barley Hall / Coffee Yard",
+    "observed_end": "Low Petergate towards Church Street / King's Square near Boots and Wagamama",
+    "reason": "The video starts in the alleyway leading from Barley Hall out onto Stonegate (passing Evil Eye and Cavendish Jewellers), turns right to follow Stonegate up to Low Petergate at Ogden Jewellers, turns right onto Low Petergate, and walks all the way down to King's Square / Church Street near Boots and Wagamama. This matches map E perfectly in direction and route.",
+    "confidence": 0.99
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 4
+}

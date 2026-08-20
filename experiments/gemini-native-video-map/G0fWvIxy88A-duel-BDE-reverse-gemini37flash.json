@@ -1,0 +1,23 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "BDE",
+  "perturbation": "reverse",
+  "display_order": [
+    "E",
+    "D",
+    "B"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "observed_start": "Alleyway leading from Barley Hall / Coffee Yard towards Stonegate",
+    "observed_end": "Low Petergate at the intersection with Colliergate and Goodramgate (near Boots and Wagamama)",
+    "reason": "The video starts at the Barley Hall passage/courtyard, walks northwest onto Stonegate, turns right onto Low Petergate (past Ogden Jewellers), and follows Low Petergate southeast all the way to the junction at Colliergate/Church Street. This precisely matches the route and direction shown in Candidate E.",
+    "confidence": 0.99
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 4
+}

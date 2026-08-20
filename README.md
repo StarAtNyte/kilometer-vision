@@ -75,7 +75,7 @@ For the two cases where the gate can change a decision, reversing candidate disp
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.
 
-The Gemini model inventory exposes `gemini-3.7-flash`, so the duel runner now accepts an explicit model without overwriting 3.6 artifacts. Initial 3.7 checks are encouraging: it selected the corrected Czech map C in both normal and reversed display order at 0.99, selected the previously difficult Salzburg map A (correct) at 0.98 where 3.6 selected C, and selected the Warsaw map A (correct) at 0.99. The Salzburg and Warsaw reversed calls encountered provider failures (503 and malformed/truncated JSON), so 3.7 is recorded as a promising candidate rather than promoted into the production gate until order-consistency checks are completed.
+The Gemini model inventory exposes `gemini-3.7-flash`, so the duel runner now accepts an explicit model without overwriting 3.6 artifacts. Initial 3.7 checks are encouraging: it selected the corrected Czech map C in both normal and reversed display order at 0.99, selected the York map E (the other 3.6 gate correction) in both orders at 0.99, selected the Salzburg map A (correct) at 0.98 where 3.6 selected C, and selected the Warsaw map A (correct) at 0.99. The Salzburg and Warsaw reversed calls encountered provider failures (503 and malformed/truncated JSON), so 3.7 is recorded as a promising candidate rather than promoted into the production gate until those order-consistency checks are completed.
 
 ## Planned commands
 
