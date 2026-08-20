@@ -76,6 +76,7 @@ def evaluate(split: str = "validation") -> dict:
                 vggt_consensus = min(range(5), key=rank_sums.__getitem__)
             dpvo_variants = {}
             dpvo_pixel_predictions = {}
+            dpvo_projection_predictions = {}
             for variant in ("fps0.5-focal0.9-w256-b256-p16", "fps1.5-focal0.9-w256-b256-p16", "fps1-focal0.75-w256-b256-p16", "fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16"):
                 path = ROOT / "experiments" / "dpvo-motion" / split / variant / f"{video_id}.json"
                 if not path.exists():
@@ -96,6 +97,17 @@ def evaluate(split: str = "validation") -> dict:
                             pixel_scores.append(mask_chamfer_distance(trace_mask, route_mask(images.read(matches[0]))) if len(matches) == 1 else float("inf"))
                     if pixel_scores:
                         dpvo_pixel_predictions[variant] = min(range(len(pixel_scores)), key=pixel_scores.__getitem__)
+                    positions = payload.get(str(question_id), {}).get("positions_3d", [])
+                    if len(positions) >= 2:
+                        import numpy as np
+                        values = np.asarray(positions, dtype="float64")
+                        for axes in ((0, 1), (0, 2), (1, 2)):
+                            raw = values[:, axes]
+                            raw -= raw.mean(axis=0)
+                            projection = raw.tolist()
+                            scores = ordered_trace_candidate_scores(question, projection, archive, reflection_penalty=0.0)
+                            if scores:
+                                dpvo_projection_predictions[f"{variant}-axes{axes[0]}{axes[1]}"] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             dpvo_predictions = {
                 variant: min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
                 for variant, scores in dpvo_variants.items() if scores
@@ -207,6 +219,7 @@ def evaluate(split: str = "validation") -> dict:
                     "dpvo_scores": dpvo_variants,
                     "dpvo_predictions": dpvo_predictions,
                     "dpvo_pixel_predictions": dpvo_pixel_predictions,
+                    "dpvo_projection_predictions": dpvo_projection_predictions,
                     "dpvo_turn_predictions": dpvo_turn_predictions,
                     "vggt_slam_predictions": slam_predictions,
                     "da3_predictions": da3_predictions,
@@ -262,6 +275,10 @@ def evaluate(split: str = "validation") -> dict:
         "dpvo_pixel_correct": {
             variant: sum(row["dpvo_pixel_predictions"].get(variant) == row["answer_id"] for row in records)
             for variant in sorted({variant for row in records for variant in row["dpvo_pixel_predictions"]})
+        },
+        "dpvo_projection_correct": {
+            variant: sum(row["dpvo_projection_predictions"].get(variant) == row["answer_id"] for row in records)
+            for variant in sorted({variant for row in records for variant in row["dpvo_projection_predictions"]})
         },
         "dpvo_turn_correct": {
             weight: sum(row["dpvo_turn_predictions"].get(weight) == row["answer_id"] for row in records)

@@ -63,6 +63,8 @@ A final representation check compared the DPVO trace mask directly against each 
 
 The existing ORB/essential-matrix motion lane was then revisited: its per-frame translation directions were integrated with accumulated yaw under all four camera-axis sign conventions. Every convention scored only 1/5. This confirms that raw monocular translation direction is too unstable for the pedestrian route and should not override DPVO.
 
+Finally, DPVO's stored 3-D positions were projected directly on XY, XZ, and YZ axes instead of the current unconstrained PCA projection. The best direct-axis variant reached 3/5, below the PCA lane's 4/5, so vertical-axis contamination is not the dominant failure.
+
 ## Planned commands
 
 ```bash
