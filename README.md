@@ -51,6 +51,8 @@ A Fréchet weight sweep (0.1, 0.25, 0.5, 1.0) found 0.25–1.0 tied at 4/10 on t
 
 Upstream DPVO sweeps were also run remotely: 0.5 FPS scored 1/5, 1.5 FPS scored 0/5, focal scale 0.75 scored 0/5, and the existing 1 FPS/focal 0.9/p16 configuration remained 4/5. A p32 trial exceeded GPU memory on long clips and was not usable. This makes the existing DPVO lane the evidence-backed motion baseline; further gains require loop closure or better visual-motion estimation rather than sampling tweaks.
 
+The official VGGT-SLAM 2.0 runner was then tested remotely on the long `G0fWvIxy88A` validation window. It produced 60 keyframes but no loop-closure events and scored 0/1 on that map question. This is a negative loop-closure result, not a reason to replace DPVO.
+
 ## Planned commands
 
 ```bash

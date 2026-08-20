@@ -91,6 +91,20 @@ def evaluate(split: str = "validation") -> dict:
                 variant: min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
                 for variant, scores in dpvo_variants.items() if scores
             }
+            slam_predictions = {}
+            slam_path = ROOT / "experiments" / "vggt-slam2" / f"{video_id}.json"
+            if slam_path.exists():
+                import numpy as np
+                slam_payload = json.loads(slam_path.read_text())
+                for variant, payload in slam_payload.get("variants", {}).items():
+                    values = np.asarray([row["translation"] for row in payload.get("poses", [])], dtype="float64")
+                    if len(values) >= 2:
+                        values -= values.mean(axis=0)
+                        _, _, axes = np.linalg.svd(values, full_matrices=False)
+                        trace = (values @ axes[:2].T).tolist()
+                        scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0)
+                        if scores:
+                            slam_predictions[variant] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             frechet_scores = ordered_trace_candidate_scores(
                 question, motion_polyline(motion.get("steps", [])), archive,
                 reflection_penalty=0.0, frechet_weight=0.25
@@ -125,6 +139,7 @@ def evaluate(split: str = "validation") -> dict:
                     "vggt_consensus_prediction": vggt_consensus,
                     "dpvo_scores": dpvo_variants,
                     "dpvo_predictions": dpvo_predictions,
+                    "vggt_slam_predictions": slam_predictions,
                     "answer_id": answer_id,
                     "hu_correct": hu_prediction == answer_id if answer_id is not None else None,
                     "ordered_correct": ordered_prediction == answer_id if answer_id is not None else None,
@@ -134,6 +149,10 @@ def evaluate(split: str = "validation") -> dict:
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
                         for variant, prediction in dpvo_predictions.items()
+                    },
+                    "vggt_slam_correct": {
+                        variant: prediction == answer_id if answer_id is not None else None
+                        for variant, prediction in slam_predictions.items()
                     },
                 }
             )
@@ -148,6 +167,10 @@ def evaluate(split: str = "validation") -> dict:
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)
             for variant in ("fps0.5-focal0.9-w256-b256-p16", "fps1.5-focal0.9-w256-b256-p16", "fps1-focal0.75-w256-b256-p16", "fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16")
+        },
+        "vggt_slam_correct": {
+            variant: sum(row["vggt_slam_correct"].get(variant) is True for row in records)
+            for variant in sorted({variant for row in records for variant in row["vggt_slam_correct"]})
         },
         "records": records,
     }
