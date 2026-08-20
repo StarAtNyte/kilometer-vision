@@ -435,6 +435,7 @@ def run_independent_video_map_audit(video_id: str, key_index: int | None = None)
 def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base",
                        key_index: int | None = None, model_name: str = MAP_MODEL) -> dict:
     """Resolve a close independent-score shortlist with endpoint-focused video evidence."""
+    import time
     from google import genai
     from google.genai import types
     from PIL import Image
@@ -474,17 +475,26 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
                   types.Part.from_bytes(data=buffer.getvalue(), mime_type="image/png")]
     client = genai.Client(api_key=_api_key(key_index),
                           http_options=types.HttpOptions(timeout=180_000))
-    response = client.models.generate_content(
-        model=model_name, contents=[types.Content(role="user", parts=parts)],
-        config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(thinking_level="low"),
-            media_resolution=types.MediaResolution.MEDIA_RESOLUTION_HIGH,
-            max_output_tokens=1000, response_mime_type="application/json",
-            response_schema={"type":"object", "properties":{
-                "answer":{"type":"string", "enum":list(identities)},
-                "observed_start":{"type":"string"}, "observed_end":{"type":"string"},
-                "reason":{"type":"string"}, "confidence":{"type":"number"}},
-                "required":["answer","observed_start","observed_end","reason","confidence"]}))
+    generation_config = types.GenerateContentConfig(
+        thinking_config=types.ThinkingConfig(thinking_level="low"),
+        media_resolution=types.MediaResolution.MEDIA_RESOLUTION_HIGH,
+        max_output_tokens=1000, response_mime_type="application/json",
+        response_schema={"type":"object", "properties":{
+            "answer":{"type":"string", "enum":list(identities)},
+            "observed_start":{"type":"string"}, "observed_end":{"type":"string"},
+            "reason":{"type":"string"}, "confidence":{"type":"number"}},
+            "required":["answer","observed_start","observed_end","reason","confidence"]})
+    response = None
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=model_name, contents=[types.Content(role="user", parts=parts)],
+                config=generation_config)
+            break
+        except Exception as error:
+            if getattr(error, "code", None) != 503 or attempt == 2:
+                raise
+            time.sleep(2 ** (attempt + 1))
     parsed = _parse_json_response(response.text)
     result = {"video_id": video_id, "question_id": str(question_id), "model": model_name,
               "pipeline": "endpoint-focused-video-map-duel", "identities": identities,

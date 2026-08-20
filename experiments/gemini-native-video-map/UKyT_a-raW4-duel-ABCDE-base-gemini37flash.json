@@ -1,0 +1,25 @@
+{
+  "video_id": "UKyT_a-raW4",
+  "question_id": "0",
+  "model": "gemini-3.7-flash",
+  "pipeline": "endpoint-focused-video-map-duel",
+  "identities": "ABCDE",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 0,
+  "response": {
+    "answer": "A",
+    "observed_start": "Kanonia square behind St. John's Archcathedral in Warsaw Old Town",
+    "observed_end": "Ulica Brzozowa approaching the intersection with Ulica Celna",
+    "reason": "The video starts at Kanonia square, follows the alleyway northeast through the covered arch on Dawna street out towards the Gnojna G\u00f3ra viewpoint (passing the statue), and then turns northwest onto Brzozowa street, ending near the junction with Celna street.",
+    "confidence": 0.99
+  },
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}
