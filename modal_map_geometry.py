@@ -8,7 +8,7 @@ import zipfile
 
 import modal
 
-from map_solver import endpoint_marker_features, mask_chamfer_distance, motion_polyline, ordered_candidate_scores, ordered_trace_candidate_scores, polyline_mask, route_mask, score_candidates, skeleton_diameter_path
+from map_solver import endpoint_marker_features, mask_chamfer_distance, motion_polyline, motion_translation_polyline, ordered_candidate_scores, ordered_trace_candidate_scores, polyline_mask, route_mask, score_candidates, skeleton_diameter_path
 from question_planner import classify_question_facets
 
 
@@ -170,6 +170,18 @@ def evaluate(split: str = "validation") -> dict:
                     )
                     if scores:
                         turn_weight_predictions[str(weight)] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
+            translation_predictions = {}
+            translation_path = ROOT / "motion" / split / "map" / f"{video_id}.json"
+            if translation_path.exists():
+                motion_rows = json.loads(translation_path.read_text())
+                steps = motion_rows.get(str(question_id), {}).get("steps", [])
+                for forward_sign in (1.0, -1.0):
+                    for lateral_sign in (1.0, -1.0):
+                        trace = motion_translation_polyline(steps, forward_sign, lateral_sign)
+                        scores = ordered_trace_candidate_scores(question, trace, archive, reflection_penalty=0.0) if len(trace) > 1 else []
+                        if scores:
+                            key = f"f{forward_sign:g}-l{lateral_sign:g}"
+                            translation_predictions[key] = min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -206,6 +218,7 @@ def evaluate(split: str = "validation") -> dict:
                     "compact_correct": compact_prediction == answer_id if answer_id is not None else None,
                     "compact_weight_predictions": compact_weight_predictions,
                     "turn_weight_predictions": turn_weight_predictions,
+                    "translation_predictions": translation_predictions,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -236,6 +249,10 @@ def evaluate(split: str = "validation") -> dict:
         "turn_weight_correct": {
             weight: sum(row["turn_weight_predictions"].get(weight) == row["answer_id"] for row in records)
             for weight in ("0.1", "0.35", "0.5", "1.0", "2.0")
+        },
+        "translation_correct": {
+            variant: sum(row["translation_predictions"].get(variant) == row["answer_id"] for row in records)
+            for variant in sorted({variant for row in records for variant in row["translation_predictions"]})
         },
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {

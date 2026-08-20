@@ -61,6 +61,8 @@ The curvature term was then swept on the actual DPVO 1 FPS/p16 trajectories (wei
 
 A final representation check compared the DPVO trace mask directly against each candidate's red-route mask using symmetric pixel Chamfer distance. It scored only 1/5 for the DPVO 1 FPS lane, confirming that raster noise and map rendering artifacts make pixel-space matching worse than the ordered skeleton scorer.
 
+The existing ORB/essential-matrix motion lane was then revisited: its per-frame translation directions were integrated with accumulated yaw under all four camera-axis sign conventions. Every convention scored only 1/5. This confirms that raw monocular translation direction is too unstable for the pedestrian route and should not override DPVO.
+
 ## Planned commands
 
 ```bash

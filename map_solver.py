@@ -25,6 +25,26 @@ def motion_polyline(steps: Sequence[Mapping[str, Any]]) -> list[tuple[float, flo
     return points
 
 
+def motion_translation_polyline(steps: Sequence[Mapping[str, Any]], forward_sign: float = 1.0,
+                                lateral_sign: float = 1.0) -> list[tuple[float, float]]:
+    """Integrate optical-flow translation directions with accumulated yaw."""
+    heading = 0.0; x = y = 0.0; points = [(x, y)]
+    for step in steps:
+        if not step.get("accepted") or step.get("yaw_delta_degrees") is None:
+            continue
+        direction = step.get("translation_direction")
+        if not isinstance(direction, Sequence) or len(direction) < 3:
+            continue
+        delta = max(-30.0, min(30.0, float(step["yaw_delta_degrees"])))
+        heading += math.radians(delta)
+        lateral = lateral_sign * float(direction[0])
+        forward = forward_sign * float(direction[2])
+        x += lateral * math.cos(heading) + forward * math.sin(heading)
+        y += -lateral * math.sin(heading) + forward * math.cos(heading)
+        points.append((x, y))
+    return points
+
+
 def _skeleton(mask):
     import cv2
     import numpy as np
