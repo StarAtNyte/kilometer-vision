@@ -131,6 +131,37 @@ def skeleton_diameter_path(mask) -> list[tuple[float, float]]:
     return [(float(col), float(row)) for row, col in ordered]
 
 
+def skeleton_path_between_markers(mask, markers: Mapping[str, tuple[float, float]]) -> list[tuple[float, float]]:
+    """Recover the shortest skeleton path between S and E marker-nearest pixels."""
+    import numpy as np
+    nodes = {tuple(map(int, row)) for row in np.argwhere(mask > 0)}
+    if len(nodes) < 2 or not {"S", "E"}.issubset(markers):
+        return []
+    def nearest(marker):
+        x, y = marker
+        return min(nodes, key=lambda node: (node[1] - x) ** 2 + (node[0] - y) ** 2)
+    start, target = nearest(markers["S"]), nearest(markers["E"])
+    queue = deque([start]); parent = {start: None}
+    while queue:
+        node = queue.popleft()
+        if node == target:
+            break
+        row, col = node
+        for dr in (-1, 0, 1):
+            for dc in (-1, 0, 1):
+                other = (row + dr, col + dc)
+                if (dr or dc) and other in nodes and other not in parent:
+                    parent[other] = node
+                    queue.append(other)
+    if target not in parent:
+        return []
+    path = [target]
+    while path[-1] != start:
+        path.append(parent[path[-1]])
+    path.reverse()
+    return [(float(col), float(row)) for row, col in path]
+
+
 def resample_polyline(points: Sequence[tuple[float, float]], count: int = 64):
     import numpy as np
 
@@ -272,7 +303,7 @@ def route_marker_positions(image_bytes: bytes) -> dict[str, tuple[float, float]]
     return positions if set(positions) == {"S", "E"} else {}
 
 
-def route_path(image_bytes: bytes, pin_radius: int = 15) -> list[tuple[float, float]]:
+def route_path(image_bytes: bytes, pin_radius: int = 15, marker_guided: bool = False) -> list[tuple[float, float]]:
     """Extract the ordered route centreline after removing S/E pin bodies."""
     import cv2
     import numpy as np
@@ -287,7 +318,9 @@ def route_path(image_bytes: bytes, pin_radius: int = 15) -> list[tuple[float, fl
     for x, tip_y in markers.values():
         cv2.circle(red, (int(round(x)), int(round(tip_y - 11))), pin_radius, 0, -1)
     red = cv2.morphologyEx(red, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
-    return orient_path_from_start(skeleton_diameter_path(_skeleton(red)), markers)
+    skeleton = _skeleton(red)
+    guided = skeleton_path_between_markers(skeleton, markers) if marker_guided else []
+    return guided or orient_path_from_start(skeleton_diameter_path(skeleton), markers)
 
 
 def orient_path_from_start(path: Sequence[tuple[float, float]], markers: Mapping[str, tuple[float, float]]):
@@ -305,7 +338,8 @@ def ordered_candidate_scores(question: Mapping[str, Any], motion: Mapping[str, A
 
 def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_path: Path,
                                    reflection_penalty: float = 0.04,
-                                   frechet_weight: float = 0.0) -> list[dict[str, Any]]:
+                                   frechet_weight: float = 0.0,
+                                   marker_guided: bool = False) -> list[dict[str, Any]]:
     """Score five map candidates against any time-ordered 2-D trajectory."""
     references = question.get("image_paths")
     if not isinstance(references, list) or len(references) != 5:
@@ -317,7 +351,7 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
             matches = [name for name in members if Path(name).name == Path(str(reference)).name]
             image_bytes = archive.read(matches[0]) if len(matches) == 1 else b""
             markers = route_marker_positions(image_bytes) if image_bytes else {}
-            path = route_path(image_bytes) if image_bytes else []
+            path = route_path(image_bytes, marker_guided=marker_guided) if image_bytes else []
             if markers:
                 path = orient_path_from_start(path, markers)
             result = ordered_shape_distance(

@@ -96,6 +96,11 @@ def evaluate(split: str = "validation") -> dict:
                 reflection_penalty=0.0, frechet_weight=0.25
             ) if motion.get("steps") else []
             frechet_prediction = min(range(len(frechet_scores)), key=lambda index: float(frechet_scores[index]["score"])) if frechet_scores else None
+            guided_scores = ordered_trace_candidate_scores(
+                question, motion_polyline(motion.get("steps", [])), archive,
+                reflection_penalty=0.0, frechet_weight=0.25, marker_guided=True
+            ) if motion.get("steps") else []
+            guided_prediction = min(range(len(guided_scores)), key=lambda index: float(guided_scores[index]["score"])) if guided_scores else None
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -124,6 +129,7 @@ def evaluate(split: str = "validation") -> dict:
                     "hu_correct": hu_prediction == answer_id if answer_id is not None else None,
                     "ordered_correct": ordered_prediction == answer_id if answer_id is not None else None,
                     "frechet_correct": frechet_prediction == answer_id if answer_id is not None else None,
+                    "guided_correct": guided_prediction == answer_id if answer_id is not None else None,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -137,6 +143,7 @@ def evaluate(split: str = "validation") -> dict:
         "hu_correct": sum(row["hu_correct"] is True for row in records),
         "ordered_correct": sum(row["ordered_correct"] is True for row in records),
         "frechet_correct": sum(row["frechet_correct"] is True for row in records),
+        "guided_correct": sum(row["guided_correct"] is True for row in records),
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)

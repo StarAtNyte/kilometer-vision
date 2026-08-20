@@ -96,6 +96,11 @@ def run_remote() -> dict:
         order = sorted(range(len(scores)), key=lambda index: scores[index]["score"])
         frechet_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25)
         frechet_order = sorted(range(len(frechet_scores)), key=lambda index: frechet_scores[index]["score"])
+        guided_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25, marker_guided=True)
+        guided_order = sorted(range(len(guided_scores)), key=lambda index: guided_scores[index]["score"])
+        base_rank = {index: rank for rank, index in enumerate(order)}
+        frechet_rank = {index: rank for rank, index in enumerate(frechet_order)}
+        fusion_order = sorted(range(len(scores)), key=lambda index: base_rank[index] + frechet_rank[index])
         variant_records.append({
             "session": session,
             "candidate_names": list(candidates),
@@ -106,6 +111,9 @@ def run_remote() -> dict:
             "truth_rank": order.index(0) + 1,
             "frechet_truth_rank": frechet_order.index(0) + 1,
             "frechet_order": [list(candidates)[index] for index in frechet_order],
+            "fusion_order": [list(candidates)[index] for index in fusion_order],
+            "fusion_truth_rank": fusion_order.index(0) + 1,
+            "guided_truth_rank": guided_order.index(0) + 1,
         })
       records.append({
           "line_width": line_width, "pin_radius": pin_radius,
@@ -114,6 +122,8 @@ def run_remote() -> dict:
               "sessions": len(variant_records),
               "truth_top1": sum(row["truth_rank"] == 1 for row in variant_records),
               "frechet_truth_top1": sum(row["frechet_truth_rank"] == 1 for row in variant_records),
+              "fusion_truth_top1": sum(row["fusion_truth_rank"] == 1 for row in variant_records),
+              "guided_truth_top1": sum(row["guided_truth_rank"] == 1 for row in variant_records),
               "marker_pairs": sum(all(set(item) == {"S", "E"} for item in row["markers"]) for row in variant_records),
           },
       })

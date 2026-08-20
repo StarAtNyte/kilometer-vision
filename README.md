@@ -45,6 +45,8 @@ The rendered five-map follow-up (`modal_egowalk_synthetic_maps.py`) found a rema
 
 The next research-backed ablation adds an opt-in discrete Fréchet term to the ordered scorer. It improved the thin-route synthetic gate from 2/10 to 4/10 (and reached 4/10 across all tested rendering variants), but remained 1/5 on the tiny KilometerVision validation map set. The default scorer therefore remains unchanged; Fréchet is evidence for further work, not a submission replacement.
 
+An S/E-guided skeleton shortest-path variant was also tested. It matched the Fréchet result externally (4/10) and remained 1/5 on validation; rank fusion did not improve it. The production path therefore stays on the proven DPVO fps1/p16 lane while these alternatives remain explicit ablations.
+
 ## Planned commands
 
 ```bash
