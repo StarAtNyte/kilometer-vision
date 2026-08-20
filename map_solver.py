@@ -164,6 +164,27 @@ def procrustes_distance(left, right) -> float:
     return float(np.sqrt(np.mean(np.sum((a - b @ rotation) ** 2, axis=1))))
 
 
+def discrete_frechet_distance(left, right) -> float:
+    """Discrete Fréchet distance between normalized ordered polylines."""
+    import numpy as np
+    a, b = _normalise(left), _normalise(right)
+    if not len(a) or not len(b):
+        return float("inf")
+    table = np.full((len(a), len(b)), float("inf"), dtype="float64")
+    for i in range(len(a)):
+        for j in range(len(b)):
+            distance = float(np.linalg.norm(a[i] - b[j]))
+            if i == 0 and j == 0:
+                table[i, j] = distance
+            elif i == 0:
+                table[i, j] = max(table[i, j - 1], distance)
+            elif j == 0:
+                table[i, j] = max(table[i - 1, j], distance)
+            else:
+                table[i, j] = max(min(table[i - 1, j], table[i - 1, j - 1], table[i, j - 1]), distance)
+    return float(table[-1, -1])
+
+
 def curvature_sequence(points, stride: int = 4) -> list[float]:
     import numpy as np
     values = np.asarray(points, dtype="float64")
@@ -190,7 +211,8 @@ def dtw_distance(left: Sequence[float], right: Sequence[float]) -> float:
 
 
 def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True,
-                           reflection_penalty: float = 0.04) -> dict[str, float | str]:
+                           reflection_penalty: float = 0.04,
+                           frechet_weight: float = 0.0) -> dict[str, float | str]:
     """Compare ordered routes while enumerating traversal and axis conventions."""
     import numpy as np
     left = resample_polyline(left_points)
@@ -210,10 +232,11 @@ def ordered_shape_distance(left_points, right_points, allow_reverse: bool = True
                 for stride in (2, 4, 8)
             ]
             turn_score = float(np.mean(turn_scores))
-            score = point_score + 0.35 * turn_score + (reflection_penalty if reflect else 0.0)
-            hypotheses.append((score, point_score, turn_score, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
-    score, point_score, turn_score, hypothesis = min(hypotheses)
-    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "hypothesis": hypothesis}
+            frechet = discrete_frechet_distance(left, transformed)
+            score = point_score + 0.35 * turn_score + frechet_weight * frechet + (reflection_penalty if reflect else 0.0)
+            hypotheses.append((score, point_score, turn_score, frechet, f"{'reverse' if reverse else 'forward'}-{'reflect' if reflect else 'direct'}"))
+    score, point_score, turn_score, frechet, hypothesis = min(hypotheses)
+    return {"score": float(score), "procrustes": float(point_score), "turn_dtw": float(turn_score), "frechet": float(frechet), "hypothesis": hypothesis}
 
 
 def route_marker_positions(image_bytes: bytes) -> dict[str, tuple[float, float]]:
@@ -281,7 +304,8 @@ def ordered_candidate_scores(question: Mapping[str, Any], motion: Mapping[str, A
 
 
 def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_path: Path,
-                                   reflection_penalty: float = 0.04) -> list[dict[str, Any]]:
+                                   reflection_penalty: float = 0.04,
+                                   frechet_weight: float = 0.0) -> list[dict[str, Any]]:
     """Score five map candidates against any time-ordered 2-D trajectory."""
     references = question.get("image_paths")
     if not isinstance(references, list) or len(references) != 5:
@@ -297,7 +321,8 @@ def ordered_trace_candidate_scores(question: Mapping[str, Any], trace, archive_p
             if markers:
                 path = orient_path_from_start(path, markers)
             result = ordered_shape_distance(
-                trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty
+                trace, path, allow_reverse=not bool(markers), reflection_penalty=reflection_penalty,
+                frechet_weight=frechet_weight
             )
             result["candidate_path_points"] = len(path)
             result["marker_positions"] = markers

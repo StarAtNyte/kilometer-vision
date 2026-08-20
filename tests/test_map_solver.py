@@ -4,10 +4,15 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-from map_solver import motion_polyline, ordered_shape_distance, ordered_trace_candidate_scores, resample_polyline
+from map_solver import discrete_frechet_distance, motion_polyline, ordered_shape_distance, ordered_trace_candidate_scores, resample_polyline
 
 
 class MapSolverTests(unittest.TestCase):
+    def test_discrete_frechet_preserves_order(self):
+        route = [(0, 0), (1, 0), (1, 2), (3, 2)]
+        self.assertAlmostEqual(discrete_frechet_distance(route, route), 0.0)
+        self.assertGreater(discrete_frechet_distance(route, list(reversed(route))), 0.1)
+
     def test_motion_polyline_integrates_turns_and_ignores_rejections(self):
         points = motion_polyline([
             {"accepted": True, "yaw_delta_degrees": 0},

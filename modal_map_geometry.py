@@ -8,7 +8,7 @@ import zipfile
 
 import modal
 
-from map_solver import endpoint_marker_features, ordered_candidate_scores, ordered_trace_candidate_scores, route_mask, score_candidates, skeleton_diameter_path
+from map_solver import endpoint_marker_features, motion_polyline, ordered_candidate_scores, ordered_trace_candidate_scores, route_mask, score_candidates, skeleton_diameter_path
 from question_planner import classify_question_facets
 
 
@@ -91,6 +91,11 @@ def evaluate(split: str = "validation") -> dict:
                 variant: min(range(len(scores)), key=lambda index: float(scores[index]["score"]))
                 for variant, scores in dpvo_variants.items() if scores
             }
+            frechet_scores = ordered_trace_candidate_scores(
+                question, motion_polyline(motion.get("steps", [])), archive,
+                reflection_penalty=0.0, frechet_weight=0.25
+            ) if motion.get("steps") else []
+            frechet_prediction = min(range(len(frechet_scores)), key=lambda index: float(frechet_scores[index]["score"])) if frechet_scores else None
             answer_id = question.get("answer_id")
             records.append(
                 {
@@ -108,6 +113,8 @@ def evaluate(split: str = "validation") -> dict:
                     "endpoint_marker_features": marker_features,
                     "candidate_sha256": candidate_sha256,
                     "ordered_prediction": ordered_prediction,
+                    "frechet_scores": frechet_scores,
+                    "frechet_prediction": frechet_prediction,
                     "vggt_scores": vggt_variants,
                     "vggt_predictions": vggt_predictions,
                     "vggt_consensus_prediction": vggt_consensus,
@@ -116,6 +123,7 @@ def evaluate(split: str = "validation") -> dict:
                     "answer_id": answer_id,
                     "hu_correct": hu_prediction == answer_id if answer_id is not None else None,
                     "ordered_correct": ordered_prediction == answer_id if answer_id is not None else None,
+                    "frechet_correct": frechet_prediction == answer_id if answer_id is not None else None,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
                         variant: prediction == answer_id if answer_id is not None else None
@@ -128,6 +136,7 @@ def evaluate(split: str = "validation") -> dict:
         "questions": len(records),
         "hu_correct": sum(row["hu_correct"] is True for row in records),
         "ordered_correct": sum(row["ordered_correct"] is True for row in records),
+        "frechet_correct": sum(row["frechet_correct"] is True for row in records),
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)

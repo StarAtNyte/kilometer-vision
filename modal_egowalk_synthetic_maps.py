@@ -94,6 +94,8 @@ def run_remote() -> dict:
         question = _write_archive(archive_path, payloads)
         scores = ordered_trace_candidate_scores(question, truth, archive_path)
         order = sorted(range(len(scores)), key=lambda index: scores[index]["score"])
+        frechet_scores = ordered_trace_candidate_scores(question, truth, archive_path, frechet_weight=0.25)
+        frechet_order = sorted(range(len(frechet_scores)), key=lambda index: frechet_scores[index]["score"])
         variant_records.append({
             "session": session,
             "candidate_names": list(candidates),
@@ -102,6 +104,8 @@ def run_remote() -> dict:
             "markers": [item["marker_positions"] for item in scores],
             "order": [list(candidates)[index] for index in order],
             "truth_rank": order.index(0) + 1,
+            "frechet_truth_rank": frechet_order.index(0) + 1,
+            "frechet_order": [list(candidates)[index] for index in frechet_order],
         })
       records.append({
           "line_width": line_width, "pin_radius": pin_radius,
@@ -109,6 +113,7 @@ def run_remote() -> dict:
           "summary": {
               "sessions": len(variant_records),
               "truth_top1": sum(row["truth_rank"] == 1 for row in variant_records),
+              "frechet_truth_top1": sum(row["frechet_truth_rank"] == 1 for row in variant_records),
               "marker_pairs": sum(all(set(item) == {"S", "E"} for item in row["markers"]) for row in variant_records),
           },
       })

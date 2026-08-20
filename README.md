@@ -43,6 +43,8 @@ Two label-independent checks now isolate geometry from KilometerVision. A six-ex
 
 The rendered five-map follow-up (`modal_egowalk_synthetic_maps.py`) found a remaining image-extraction issue: S/E markers were recovered on 8/10 sessions, but the synthetic raster route was not consistently ranked top-1. This is a useful negative gate—the next work is to make marker/route extraction robust before trusting visual motion or submitting a new map system. All external-video/model work runs on Modal; the local machine is limited to lightweight tests and repository operations.
 
+The next research-backed ablation adds an opt-in discrete Fréchet term to the ordered scorer. It improved the thin-route synthetic gate from 2/10 to 4/10 (and reached 4/10 across all tested rendering variants), but remained 1/5 on the tiny KilometerVision validation map set. The default scorer therefore remains unchanged; Fréchet is evidence for further work, not a submission replacement.
+
 ## Planned commands
 
 ```bash
