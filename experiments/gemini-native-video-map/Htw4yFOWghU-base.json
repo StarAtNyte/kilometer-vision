@@ -1,0 +1,22 @@
+{
+  "video_id": "Htw4yFOWghU",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "reason": "The video starts in the open square (Alter Markt) and walks towards Cafe Tomaselli, entering the street next to it before turning right to walk along the cafe's outdoor seating. This corresponds to starting at the square (S at the bottom-right) and moving northwest, then turning north towards the river (E at the top), which is correctly represented by Candidate C.",
+    "confidence": 0.9
+  },
+  "clip_bytes": 1868475,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

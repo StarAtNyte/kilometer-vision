@@ -1,0 +1,22 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.5-flash",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "reason": "The video shows a walk starting from Dr. Esat I\u015f\u0131k Cd. (near Oyun At\u00f6lyesi and Migros) and heading north along Sak\u0131z Sk., passing Zapata Burger and ending at the corner of Tellalzade Sk. near Y\u00fcksek Eczanesi. This matches Candidate C, where the start point S is at the south end and the end point E is at the north end, extending past Salt Fried Chicken Kad\u0131k\u00f6y.",
+    "confidence": 0.95
+  },
+  "clip_bytes": 13047081,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

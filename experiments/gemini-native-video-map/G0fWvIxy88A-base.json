@@ -1,0 +1,22 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "model": "gemini-3.5-flash",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "reason": "The video starts at Barley Hall (S), goes through the courtyard and alleyway to Stonegate, turns right onto Stonegate, then turns right onto Low Petergate, walking all the way down to the intersection near Church Street/Colliergate (E). This matches the route shown in Candidate E.",
+    "confidence": 5
+  },
+  "clip_bytes": 8614603,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 4
+}

@@ -1,0 +1,22 @@
+{
+  "video_id": "4MYTCny_FZs",
+  "question_id": "1",
+  "model": "gemini-3.5-flash",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "reason": "The video starts at the covered arcade on Dr. Esat I\u015f\u0131k Cd. (near Bademalt\u0131 Sk.) and proceeds north-east along Sak\u0131z Sk., passing Viktor Levi \u015earap Evi, Cafera\u011fa Spor Salonu, and ending at the intersection with Nailbey Sk. in front of Y\u00fcksek Eczanesi (near Salt Fried Chicken Kad\u0131k\u00f6y). This corresponds to a path starting at S (bottom-left) and ending at E (top-right) at the intersection, which is correctly represented by Candidate C.",
+    "confidence": 0.95
+  },
+  "clip_bytes": 13047081,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 3
+}

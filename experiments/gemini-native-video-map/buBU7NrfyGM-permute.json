@@ -1,0 +1,22 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "prediction": 1,
+  "response": {
+    "answer": "B",
+    "reason": "The video starts on Horn\u00ed street near the Semin\u00e1rn\u00ed zahrada (M\u011bstsk\u00e9 divadlo on the left) and proceeds down Rooseveltova street, continuing all the way to the bottom near the Vltava river. This corresponds to a route starting at S (Horn\u00ed) and ending at E (Rooseveltova near the bottom), which is correctly represented by Map B.",
+    "confidence": 95
+  },
+  "clip_bytes": 7980646,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 2
+}

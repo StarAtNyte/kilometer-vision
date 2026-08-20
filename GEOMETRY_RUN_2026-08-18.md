@@ -32,6 +32,22 @@ DA3-LARGE pose coordinates are relative and each bounded inference window has it
 
 No validation/test answer labels were used for training, tuning, prompting, or manual labeling. The test submission contains only required prediction fields.
 
+## Follow-up experiment — TrajLoc and VGGT-SLAM 2.0
+
+- TrajLoc: official checkpoint `MVRL/TrajLoc/trajloc_full.pth`; 81 overlapping zoom-16 Esri mosaics around the metadata-derived York center; two interleaved seven-frame queries and an Istanbul negative control.
+- Result: all four queries selected the same tile. York-even cosine was 0.7720 while Istanbul-even was 0.7771. Rejected as non-localizing in this gallery.
+- VGGT-SLAM 2.0: upstream commit `35327ac28b7d193df9ccc39ba6346052bb6f1207`, official VGGT fork and SALAD checkpoint; exact 215-second York map window at 1 and 2 FPS.
+- Result: 60 and 84 optimized poses, zero loop closures, timestamp-matched normalized path disparity 0.2203, turn correlation -0.0669, endpoint/path ratios 0.0504 and 0.0936. Rejected for density instability.
+- Both gates were answer-blind and generated no challenge choices.
+
+## Follow-up experiment — Gemini native-video map reasoning
+
+- Model: `gemini-3.5-flash`; `gemini-3.1-pro-preview` was discoverable but the configured project had zero quota for it.
+- Input: exact question window at 4 FPS plus labelled DPVO/candidate panel and all five original candidate maps.
+- Result over five validation map questions: base 2/5, CDEAB-permuted 1/5, identity agreement 4/5, stable-and-correct 1/5.
+- The model frequently extracted precise street/landmark sequences but confused exact route endpoints among similar maps. It is rejected as a test-time override.
+- A candidate-hidden two-stage route-extraction/map-selection follow-up stalled twice and produced no accepted artifact.
+
 ## Follow-up experiment — relative-yaw compass lane
 
 The submission layer now extracts a bounded relative yaw delta from DA3 extrinsic rotations and uses it only when the question supplies an initial compass anchor (for example, “starting facing north”). The result is a weak posterior over the endpoint direction; neighboring directions absorb residual uncertainty. Options are normalized from phrases such as `the east`, rather than requiring exact option strings. Questions without an explicit anchor continue through the prior fallback path, so unknown geometry cannot invent north.

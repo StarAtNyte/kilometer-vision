@@ -31,6 +31,10 @@ See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped ro
 
 The strongest geometry-conditioned VLM ablation is available in `modal_bounded_geometry_qwen.py`: Qwen3-VL-32B sees motion-aware exact-window frames, relative-depth views, the DPVO trace, and normalized ordered S→E candidate routes. It is experimental only. On the five validation map questions it scored 1/5 and failed a map-cell layout-invariance control, so it does not feed production or any submission.
 
+Two newer answer-blind feasibility lanes are also rejected from production. `modal_trajloc_feasibility.py` ran the released TrajLoc checkpoint against an 81-cell York satellite gallery, but York and an Istanbul negative retrieved the identical top tile (the negative even had the higher best score). `modal_vggt_slam2.py` ran official VGGT-SLAM 2.0 on the same York map window at 1/2 FPS; it retained 60/84 optimized poses, found zero loop closures, and failed cross-density stability (normalized disparity 0.220, turn correlation -0.067). These are recorded failure modes, not option scorers.
+
+`modal_gemini_geometry.py` tests the stronger native-video route-reasoning hypothesis. Gemini 3.1 Pro was unavailable because the configured API project has zero quota for that model, so the frozen gate used Gemini 3.5 Flash. Across all five validation map questions, the joint full-video/panel/original-map prompt scored 2/5 in base order and 1/5 after a CDEAB display permutation. It preserved candidate identity on 4/5 questions but was both stable and correct on only York (1/5). The model often named the correct streets and landmarks while choosing the wrong near-identical map, so it is not used in production. A candidate-hidden two-stage follow-up stalled reproducibly and yielded no accepted result.
+
 ## Planned commands
 
 ```bash

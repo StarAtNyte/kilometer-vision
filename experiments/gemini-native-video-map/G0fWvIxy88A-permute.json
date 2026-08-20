@@ -1,0 +1,22 @@
+{
+  "video_id": "G0fWvIxy88A",
+  "question_id": "2",
+  "model": "gemini-3.5-flash",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "prediction": 4,
+  "response": {
+    "answer": "E",
+    "reason": "The video starts in the courtyard of Barley Hall (S), exits onto Stonegate, turns right to walk northeast along Stonegate, and then turns right at the corner of Ogden jewellers onto Low Petergate. The person then walks southeast along Low Petergate, passing La Vecchia Scuola, and ends at the junction near Colliergate (E). This matches the route shown in Candidate E.",
+    "confidence": 1
+  },
+  "clip_bytes": 8614599,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 4
+}

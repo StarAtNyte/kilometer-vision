@@ -1,0 +1,22 @@
+{
+  "video_id": "buBU7NrfyGM",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 1,
+  "response": {
+    "answer": "B",
+    "reason": "The video starts on Horn\u00ed street, passing the M\u011bstsk\u00e9 divadlo (Municipal Theater) on the left and Barbakan on the right. The person then walks east and turns southeast onto Rooseveltova street, passing landmarks such as Penzion Na Kov\u00e1rn\u011b, Topinka, Pension Teddy, and Pension Anna, before continuing downhill towards the Vltava river. This movement from Horn\u00ed street (northwest) to Rooseveltova street (southeast) is correctly represented by Candidate B, where the start point (S) is on Horn\u00ed street and the end point (E) is on Rooseveltova street.",
+    "confidence": 5
+  },
+  "clip_bytes": 7980646,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 2
+}

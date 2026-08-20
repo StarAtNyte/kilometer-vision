@@ -1,0 +1,22 @@
+{
+  "video_id": "Htw4yFOWghU",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "prediction": 2,
+  "response": {
+    "answer": "C",
+    "reason": "The video starts in Residenzplatz (S) and proceeds northwest through Goldgasse, exiting into Alter Markt where the person turns right to end near Cafe Tomaselli (E). This corresponds to Candidate C, where the start point S is at the intersection of Residenzplatz and Goldgasse.",
+    "confidence": 5
+  },
+  "clip_bytes": 1868475,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

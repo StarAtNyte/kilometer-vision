@@ -1,0 +1,22 @@
+{
+  "video_id": "UKyT_a-raW4",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "base",
+  "display_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "prediction": 0,
+  "response": {
+    "answer": "A",
+    "reason": "The video starts at Kanonia street (near the cathedral, marked as 'S' at the bottom of Candidate A), passes through the narrow archway of Dawna street, reaches the Gnojna G\u00f3ra viewpoint with the statue, and then continues down Celna street to end near Jezuicka street (marked as 'E' at the top of Candidate A). This matches the route and direction of Candidate A.",
+    "confidence": 5
+  },
+  "clip_bytes": 2114347,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

@@ -1,0 +1,22 @@
+{
+  "video_id": "UKyT_a-raW4",
+  "question_id": "0",
+  "model": "gemini-3.5-flash",
+  "perturbation": "permute",
+  "display_order": [
+    "C",
+    "D",
+    "E",
+    "A",
+    "B"
+  ],
+  "prediction": 1,
+  "response": {
+    "answer": "B",
+    "reason": "The video starts at Kanonia square (bottom-right), goes through the archway on Dawna street (up-left), reaches the Gnojna G\u00f3ra viewpoint (top-right), doubles back along Celna street (up-left), and finally turns left onto Jezuicka street (down-left) to end near \u015awi\u0119toja\u0144ska street (bottom-left). Candidate B correctly represents this sequence of streets and turns, starting at the top-left and ending at the bottom-left.",
+    "confidence": 5
+  },
+  "clip_bytes": 2114347,
+  "ground_truth_used_for_inference": false,
+  "answer_id": 0
+}

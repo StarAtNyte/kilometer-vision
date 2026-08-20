@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.5-flash",
+  "pipeline": "joint-native-video-plus-dpvo-panel-plus-original-maps",
+  "validation_map_questions": 5,
+  "base_correct": 2,
+  "base_accuracy": 0.4,
+  "permutation_correct": 1,
+  "permutation_accuracy": 0.2,
+  "identity_agreement": 4,
+  "identity_agreement_rate": 0.8,
+  "stable_and_correct": 1,
+  "stable_and_correct_rate": 0.2,
+  "production_decision": "reject",
+  "notes": [
+    "Gemini 3.1 Pro was exposed by the API but the configured project had zero request and input-token quota.",
+    "Gemini 3.5 Flash often recovered precise ordered street and landmark evidence, but selected the wrong near-identical candidate map.",
+    "A candidate-hidden two-stage extraction/selection follow-up was terminated twice after reproducible server-side stalls and produced no accepted prediction."
+  ]
+}
