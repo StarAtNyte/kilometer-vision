@@ -34,6 +34,7 @@ def triage(split: str = "test") -> dict:
             for question_id, question in questions.items():
                 if "map" not in classify_question_facets(question):
                     continue
+                image_candidate = len(question.get("image_paths", [])) == 5
                 motion = motions.get(str(question_id), {})
                 trace = motion.get("trajectory_2d", [])
                 if not trace and motion.get("steps"):
@@ -49,12 +50,16 @@ def triage(split: str = "test") -> dict:
                     "second_score": values[1] if len(values) > 1 else None,
                     "margin": values[1] - values[0] if len(values) > 1 else None,
                     "motion_available": bool(trace),
+                    "image_candidate": image_candidate,
                 })
     summary = {
-        "split": split, "questions": len(rows), "rows_with_motion": sum(r["motion_available"] for r in rows),
-        "margin_lt_0.005": sum(r["margin"] is not None and r["margin"] < 0.005 for r in rows),
-        "margin_lt_0.01": sum(r["margin"] is not None and r["margin"] < 0.01 for r in rows),
-        "margin_lt_0.02": sum(r["margin"] is not None and r["margin"] < 0.02 for r in rows),
+        "split": split, "questions": len(rows),
+        "image_candidate_questions": sum(r["image_candidate"] for r in rows),
+        "route_instruction_questions": sum(not r["image_candidate"] for r in rows),
+        "rows_with_motion": sum(r["motion_available"] for r in rows),
+        "margin_lt_0.005": sum(r["image_candidate"] and r["margin"] is not None and r["margin"] < 0.005 for r in rows),
+        "margin_lt_0.01": sum(r["image_candidate"] and r["margin"] is not None and r["margin"] < 0.01 for r in rows),
+        "margin_lt_0.02": sum(r["image_candidate"] and r["margin"] is not None and r["margin"] < 0.02 for r in rows),
         "rows": rows,
     }
     output = ROOT / "experiments" / "map-triage" / f"{split}.json"

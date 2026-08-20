@@ -79,7 +79,7 @@ The Gemini model inventory exposes `gemini-3.7-flash`, so the duel runner now ac
 
 The evaluator now prefers a complete Gemini 3.7 base/reverse artifact pair over 3.6, while falling back to 3.6 and then DPVO when the pair is incomplete. Re-running the full remote map evaluator with this preference remains 5/5; the two actual overrides are both 3.7-backed, and the incomplete Salzburg/Warsaw pairs do not override their already-correct DPVO predictions.
 
-A lightweight remote triage of the 431 test map questions found 284 with a usable DPVO ordered-map ranking; 130 of those have a top-two margin below 0.005, while 147 have no usable ordered score at all. Thus a test-time Gemini intervention would affect roughly 277 maps rather than only a few borderline cases. This is a measurement for planning, not a test-label-informed change.
+A lightweight remote triage of the 431 test map-family questions found 284 image-candidate map questions and 147 text route-instruction questions. All 284 image questions have a DPVO ordered-map ranking; 130 have a top-two margin below 0.005. The 147 text questions are a separate route-instruction bottleneck, not failed image-map extraction. This is a measurement for planning, not a test-label-informed change.
 
 ## Planned commands
 
