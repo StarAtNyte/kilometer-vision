@@ -100,6 +100,8 @@ The follow-up candidate-blind prompt produced literal placeholder fields (`[City
 
 LoGeR (Junyi42/LoGeR) was then run as an independent learned-motion lane. At 30 frames it scored 2/5 on the five validation maps, but a label-independent consensus rule—switch p16 only when LoGeR agrees with the existing endpoint-focused Gemini gate—reached 5/5 (the switch occurs only on buBU). On held-out fGX map probes, LoGeR agreed with p16 on q39 (C) and q40 (E), while diverging on q38 to A with an extremely small map margin (`3.7e-05`). This supports using LoGeR as a confidence/consensus signal, not as a standalone override; no submission changed. Artifacts/runners: `modal_loger_motion.py`, `modal_score_loger_map.py`, and `modal_loger_fusion_audit.py`.
 
+The held-out q38 tie was checked with the split-aware Gemini 3.7 duel runner: normal display order selected C (matching p16), while the reversed call returned malformed/empty JSON and was rejected. Thus the gate does not switch the low-margin LoGeR A prediction. The split-aware extension is retained in `modal_gemini_geometry.py`; test labels were never read.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.

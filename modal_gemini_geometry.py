@@ -449,7 +449,8 @@ def run_independent_video_map_audit(video_id: str, key_index: int | None = None)
 
 @app.function(image=IMAGE, secrets=[SECRET, SECRET_POOL], volumes={"/data": VOLUME}, timeout=10*60)
 def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base",
-                       key_index: int | None = None, model_name: str = MAP_MODEL) -> dict:
+                       key_index: int | None = None, model_name: str = MAP_MODEL,
+                       split: str = "validation", target_question: str = "__all__") -> dict:
     """Resolve a close independent-score shortlist with endpoint-focused video evidence."""
     import time
     from google import genai
@@ -457,10 +458,11 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
     from PIL import Image
 
     VOLUME.reload()
-    manifest = json.loads((ROOT / "manifests" / "validation.json").read_text())
+    manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     question_id, question = next((qid, row) for qid, row in manifest[video_id].items()
                                  if "map" in classify_question_facets(row)
-                                 and len(row.get("image_paths", [])) == 5)
+                                 and len(row.get("image_paths", [])) == 5
+                                 and (target_question == "__all__" or str(qid) == str(target_question)))
     chosen = list(identities)
     if perturbation == "reverse":
         chosen.reverse()
@@ -473,7 +475,7 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
                         "-preset", "veryfast", "-movflags", "+faststart", str(clip)],
                        check=True, timeout=600)
         clip_bytes = clip.read_bytes()
-    with zipfile.ZipFile(ROOT / "manifests" / "validation_images.zip") as archive:
+    with zipfile.ZipFile(ROOT / "manifests" / f"{split}_images.zip") as archive:
         by_identity = {letter: _archive_bytes(archive, reference)
                        for letter, reference in zip("ABCDE", question["image_paths"])}
     parts = [types.Part.from_text(text=(
@@ -518,8 +520,10 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
               "prediction": "ABCDE".index(parsed["answer"]), "response": parsed,
               "ground_truth_used_for_inference": False, "answer_id": question.get("answer_id")}
     model_tag = re.sub(r"[^A-Za-z0-9]+", "", model_name)
-    output = ROOT / "experiments" / "gemini-native-video-map" / \
-        f"{video_id}-duel-{identities}-{perturbation}-{model_tag}.json"
+    output_name = (f"{video_id}-duel-{identities}-{perturbation}-{model_tag}.json"
+                   if split == "validation" else
+                   f"{split}-{video_id}-duel-{identities}-{perturbation}-{model_tag}.json")
+    output = ROOT / "experiments" / "gemini-native-video-map" / output_name
     output.write_text(json.dumps(result, indent=2) + "\n"); VOLUME.commit()
     return result
 
@@ -737,7 +741,8 @@ def run_gate(video_id: str = "G0fWvIxy88A", perturbation: str = "base",
 @app.local_entrypoint()
 def main(action: str = "list-models", video_id: str = "G0fWvIxy88A",
          key_index: int = -1, identities: str = "BC",
-         model: str = MAP_MODEL) -> None:
+         model: str = MAP_MODEL, split: str = "validation",
+         target_question: str = "__all__") -> None:
     if action == "list-models":
         result = list_models.remote()
     elif action == "inspect-pool":
@@ -766,7 +771,7 @@ def main(action: str = "list-models", video_id: str = "G0fWvIxy88A",
     elif action in {"duel", "duel-reverse"}:
         result = run_video_map_duel.remote(
             video_id, identities, "reverse" if action.endswith("reverse") else "base",
-            None if key_index < 0 else key_index, model)
+            None if key_index < 0 else key_index, model, split, target_question)
     elif action == "evidence":
         result = run_gate.remote(video_id=video_id, pipeline="evidence-only",
                                  key_index=None if key_index < 0 else key_index)
