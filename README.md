@@ -59,6 +59,8 @@ Finally, map-conditioned calibration was tested using the scale-invariant route 
 
 The curvature term was then swept on the actual DPVO 1 FPS/p16 trajectories (weights 0.1, 0.35, 0.5, 1.0, 2.0). The existing 0.35 and 0.5 settings both scored 4/5; higher or lower weights fell to 2–3/5. Turn weighting is therefore already near its useful optimum.
 
+A final representation check compared the DPVO trace mask directly against each candidate's red-route mask using symmetric pixel Chamfer distance. It scored only 1/5 for the DPVO 1 FPS lane, confirming that raster noise and map rendering artifacts make pixel-space matching worse than the ordered skeleton scorer.
+
 ## Planned commands
 
 ```bash

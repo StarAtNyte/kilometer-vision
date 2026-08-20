@@ -52,6 +52,21 @@ def route_mask(image_bytes: bytes):
     return _skeleton(red)
 
 
+def mask_chamfer_distance(left_mask, right_mask) -> float:
+    """Symmetric foreground distance between two route masks."""
+    import cv2
+    import numpy as np
+    left = (left_mask > 0).astype("uint8")
+    right = (right_mask > 0).astype("uint8")
+    if left.shape != right.shape:
+        right = cv2.resize(right, (left.shape[1], left.shape[0]), interpolation=cv2.INTER_NEAREST)
+    if not left.any() or not right.any():
+        return float("inf")
+    distance_left = cv2.distanceTransform((1 - left) * 255, cv2.DIST_L2, 3)
+    distance_right = cv2.distanceTransform((1 - right) * 255, cv2.DIST_L2, 3)
+    return float((distance_left[right > 0].mean() + distance_right[left > 0].mean()) / (2.0 * max(left.shape)))
+
+
 def polyline_mask(points: Sequence[tuple[float, float]], size: int = 256):
     import cv2
     import numpy as np
