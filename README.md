@@ -24,6 +24,8 @@ The public table currently exposes three test entries. The top method is explici
 python refresh_leaderboard.py
 ```
 
+The original `gpudashboard0` Modal workspace was recovered after a profile mix-up. It still contains the shared source videos and p16 DPVO traces. A p16-only audit now covers 284 image-map test questions across 25 videos; 130 have a top-two margin below 0.005 and 95 below 0.003. The ranking artifact is `experiments/map-geometry-light/test.json`. This is unlabeled test evidence and is used only to target selective verification.
+
 ## Architecture
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
