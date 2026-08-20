@@ -75,7 +75,7 @@ def evaluate(split: str = "validation") -> dict:
                         rank_sums[index] += rank
                 vggt_consensus = min(range(5), key=rank_sums.__getitem__)
             dpvo_variants = {}
-            for variant in ("fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16"):
+            for variant in ("fps0.5-focal0.9-w256-b256-p16", "fps1.5-focal0.9-w256-b256-p16", "fps1-focal0.75-w256-b256-p16", "fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16"):
                 path = ROOT / "experiments" / "dpvo-motion" / split / variant / f"{video_id}.json"
                 if not path.exists():
                     continue
@@ -147,7 +147,7 @@ def evaluate(split: str = "validation") -> dict:
         "vggt_consensus_correct": sum(row["vggt_consensus_correct"] is True for row in records),
         "dpvo_correct": {
             variant: sum(row["dpvo_correct"].get(variant) is True for row in records)
-            for variant in ("fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16")
+            for variant in ("fps0.5-focal0.9-w256-b256-p16", "fps1.5-focal0.9-w256-b256-p16", "fps1-focal0.75-w256-b256-p16", "fps2-focal0.9-w256-b256-p8", "fps1-focal0.9-w256-b256-p16")
         },
         "records": records,
     }
