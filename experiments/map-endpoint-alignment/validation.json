@@ -1,0 +1,236 @@
+{
+  "split": "validation",
+  "summary": {
+    "anchored-direct": {
+      "questions": 5,
+      "correct": 3
+    },
+    "anchored-mirror": {
+      "questions": 5,
+      "correct": 2
+    }
+  },
+  "rows": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "anchored-direct",
+      "prediction": 4,
+      "ranking": [
+        4,
+        1,
+        3,
+        2,
+        0
+      ],
+      "scores": [
+        0.38367726000501895,
+        0.3813752160268572,
+        0.38332809741866625,
+        0.38298690161809457,
+        0.32331694498773494
+      ],
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "variant": "anchored-mirror",
+      "prediction": 3,
+      "ranking": [
+        3,
+        2,
+        0,
+        1,
+        4
+      ],
+      "scores": [
+        0.32687415546329635,
+        0.3289767778502549,
+        0.3197899375359655,
+        0.3196789291496114,
+        0.37849214216588173
+      ],
+      "answer_id": 3,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "anchored-direct",
+      "prediction": 1,
+      "ranking": [
+        1,
+        4,
+        2,
+        3,
+        0
+      ],
+      "scores": [
+        0.4153252806431984,
+        0.2948390977331339,
+        0.3068178918992011,
+        0.31012896689323705,
+        0.29529127392610877
+      ],
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "variant": "anchored-mirror",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "scores": [
+        0.26414578233573205,
+        0.3064919585572497,
+        0.3045829364862991,
+        0.3257466268409071,
+        0.2737660562770665
+      ],
+      "answer_id": 4,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "anchored-direct",
+      "prediction": 0,
+      "ranking": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "scores": [
+        0.09543302095918492,
+        0.2855528018750047,
+        0.2063381948966265,
+        0.316672304155653,
+        0.1750729937278451
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "variant": "anchored-mirror",
+      "prediction": 0,
+      "ranking": [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      "scores": [
+        0.14325779292130517,
+        0.15387918426263297,
+        0.3238904701695271,
+        0.1769204096313704,
+        0.294035616045495
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "anchored-direct",
+      "prediction": 0,
+      "ranking": [
+        0,
+        1,
+        4,
+        3,
+        2
+      ],
+      "scores": [
+        2.1451500281463463,
+        2.1620567129145267,
+        2.218414122425643,
+        2.208609876169878,
+        2.1713545492708444
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "variant": "anchored-mirror",
+      "prediction": 4,
+      "ranking": [
+        4,
+        1,
+        0,
+        3,
+        2
+      ],
+      "scores": [
+        2.179778109297311,
+        2.176440056905684,
+        2.2330205592533776,
+        2.1987100299965556,
+        2.144621665316257
+      ],
+      "answer_id": 0,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "anchored-direct",
+      "prediction": 2,
+      "ranking": [
+        2,
+        0,
+        4,
+        3,
+        1
+      ],
+      "scores": [
+        0.06830629606314448,
+        0.12179476973692321,
+        0.05680494842302907,
+        0.12087756683123439,
+        0.07042325815487492
+      ],
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "variant": "anchored-mirror",
+      "prediction": 3,
+      "ranking": [
+        3,
+        1,
+        4,
+        0,
+        2
+      ],
+      "scores": [
+        0.12024911873796966,
+        0.08311698043069912,
+        0.1535485259619276,
+        0.07262190056903703,
+        0.11776648689586756
+      ],
+      "answer_id": 2,
+      "ground_truth_used_for_inference": false
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}
