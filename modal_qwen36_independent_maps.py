@@ -77,7 +77,7 @@ def _score(text: str) -> int | None:
 
 @app.function(image=IMAGE, gpu="H200", memory=65536, volumes={"/data": VOLUME}, timeout=6 * 3600)
 def run(split: str = "validation", video_id: str = "__all__", frame_count: int = 16,
-        extract_map_ocr: bool = False):
+        extract_map_ocr: bool = False, target_question: str = "__all__"):
     os.environ["HF_HOME"] = str(ROOT / "checkpoints" / "huggingface")
     import torch
     from PIL import Image
@@ -101,6 +101,8 @@ def run(split: str = "validation", video_id: str = "__all__", frame_count: int =
                 continue
             for question_id, question in questions.items():
                 if "map" not in classify_question_facets(question) or len(question.get("image_paths", [])) != 5:
+                    continue
+                if target_question != "__all__" and str(question_id) != str(target_question):
                     continue
                 start = float(question.get("start_seconds", 0))
                 end = float(question.get("end_seconds", start))
@@ -231,8 +233,8 @@ def run(split: str = "validation", video_id: str = "__all__", frame_count: int =
 
 @app.local_entrypoint()
 def main(split: str = "validation", video_id: str = "__all__", frame_count: int = 16,
-         extract_map_ocr: bool = False):
-    result = run.remote(split, video_id, frame_count, extract_map_ocr)
+         extract_map_ocr: bool = False, target_question: str = "__all__"):
+    result = run.remote(split, video_id, frame_count, extract_map_ocr, target_question)
     print(json.dumps({"records": len(result["records"]), "results": [
         {"video_id": row["video_id"], "prediction": row["prediction"],
          "answer_id": row.get("answer_id"),

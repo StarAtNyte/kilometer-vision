@@ -90,6 +90,8 @@ The targeted VGGT-1B probe was completed remotely on `fGX0Te6pFvk` after moving 
 
 The missing Gemini 3.7 Istanbul validation duel was then completed with identities C/D/E in both display orders. It returned C at 0.95 in the normal order and E at 0.99 in reverse order; both are wrong (the organizer answer is D), so the order-consistency gate correctly refuses to override p16. One call emitted malformed JSON; `_parse_json_response` now recovers only an explicit A–E answer and confidence, never inferring from geometry. This confirms the validated 5/5 gate is conservative rather than a claim that Gemini 3.7 solves the case directly.
 
+Qwen3.8 was tested as a selective semantic override on a held-out near-tie (`fGX0Te6pFvk`, q39, p16 margin 0.00026). With 16 evenly spaced frames it selected B; with 32 frames it selected D. The frame-count flip confirms the same instability seen on validation and rejects a Qwen3.8 override, even though title-grounded Qwen3.8 happened to fix the single buBU validation miss. The runner now supports `--target-question` for bounded probes; no production artifact was changed.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.
