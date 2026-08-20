@@ -214,21 +214,31 @@ def evaluate(split: str = "validation") -> dict:
             gemini_duel_prediction = None
             gemini_duel_confidence = None
             gemini_duel_path = None
+            gemini_duel_model = None
             gemini_reverse_prediction = None
             gemini_reverse_confidence = None
-            for identity_set in ("ABCDE", "ACE"):
-                candidate_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{identity_set}-base.json"
-                if candidate_path.exists():
-                    payload = json.loads(candidate_path.read_text())
-                    if str(payload.get("question_id")) == str(question_id):
-                        answer_letter = payload.get("response", {}).get("answer")
-                        if isinstance(answer_letter, str) and len(answer_letter) == 1 and answer_letter in identity_set:
-                            gemini_duel_prediction = ord(answer_letter.upper()) - ord("A")
-                            gemini_duel_confidence = float(payload.get("response", {}).get("confidence", 0.0))
-                            gemini_duel_path = identity_set
-                            break
+            # Prefer the stronger 3.7 pair when both artifacts exist; retain the
+            # validated 3.6 artifact naming as a fallback for older records.
+            model_artifact_tags = (("gemini-3.7-flash", "-gemini37flash"),
+                                   ("gemini-3.6-flash", ""))
+            for model_name, model_tag in model_artifact_tags:
+                if gemini_duel_path:
+                    break
+                for identity_set in ("ABCDE", "ACE"):
+                    candidate_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{identity_set}-base{model_tag}.json"
+                    if candidate_path.exists():
+                        payload = json.loads(candidate_path.read_text())
+                        if str(payload.get("question_id")) == str(question_id):
+                            answer_letter = payload.get("response", {}).get("answer")
+                            if isinstance(answer_letter, str) and len(answer_letter) == 1 and answer_letter in identity_set:
+                                gemini_duel_prediction = ord(answer_letter.upper()) - ord("A")
+                                gemini_duel_confidence = float(payload.get("response", {}).get("confidence", 0.0))
+                                gemini_duel_path = identity_set
+                                gemini_duel_model = model_name
+                                gemini_duel_tag = model_tag
+                                break
             if gemini_duel_path:
-                reverse_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{gemini_duel_path}-reverse.json"
+                reverse_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{gemini_duel_path}-reverse{gemini_duel_tag}.json"
                 if reverse_path.exists():
                     reverse_payload = json.loads(reverse_path.read_text())
                     answer_letter = reverse_payload.get("response", {}).get("answer")
@@ -296,6 +306,7 @@ def evaluate(split: str = "validation") -> dict:
                     "gemini_duel_prediction": gemini_duel_prediction,
                     "gemini_duel_confidence": gemini_duel_confidence,
                     "gemini_duel_identity_set": gemini_duel_path,
+                    "gemini_duel_model": gemini_duel_model,
                     "gemini_reverse_prediction": gemini_reverse_prediction,
                     "gemini_reverse_confidence": gemini_reverse_confidence,
                     "gemini_gated_prediction": gemini_gated_prediction,

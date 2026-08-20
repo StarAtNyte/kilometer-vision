@@ -77,6 +77,8 @@ Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three 
 
 The Gemini model inventory exposes `gemini-3.7-flash`, so the duel runner now accepts an explicit model without overwriting 3.6 artifacts. Initial 3.7 checks are encouraging: it selected the corrected Czech map C in both normal and reversed display order at 0.99, selected the York map E (the other 3.6 gate correction) in both orders at 0.99, selected the Salzburg map A (correct) at 0.98 where 3.6 selected C, and selected the Warsaw map A (correct) at 0.99. The Salzburg and Warsaw reversed calls encountered provider failures (503 and malformed/truncated JSON), so 3.7 is recorded as a promising candidate rather than promoted into the production gate until those order-consistency checks are completed.
 
+The evaluator now prefers a complete Gemini 3.7 base/reverse artifact pair over 3.6, while falling back to 3.6 and then DPVO when the pair is incomplete. Re-running the full remote map evaluator with this preference remains 5/5; the two actual overrides are both 3.7-backed, and the incomplete Salzburg/Warsaw pairs do not override their already-correct DPVO predictions.
+
 ## Planned commands
 
 ```bash
