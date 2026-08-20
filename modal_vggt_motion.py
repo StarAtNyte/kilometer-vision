@@ -103,7 +103,7 @@ def _merge_chunks(chunks: list[list[list[float]]], overlap: int) -> list[list[fl
     return merged.tolist()
 
 
-@app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="A100-80GB", memory=32768,
+@app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="H100", memory=65536,
               timeout=6 * 60 * 60)
 def run_vggt(split: str = "validation", max_frames: int = 60,
              chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> dict[str, Any]:
