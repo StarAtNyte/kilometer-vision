@@ -1,0 +1,112 @@
+{
+  "split": "validation",
+  "perturbation": "base",
+  "records": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "prediction": 2,
+      "raw_text": "C",
+      "selected_timestamps": [
+        2011.0,
+        2064.0,
+        2117.0,
+        2170.0,
+        2185.0,
+        2205.0,
+        2223.0,
+        2276.0
+      ],
+      "perturbation": "base",
+      "checkpoint": "Qwen/Qwen3-VL-32B-Instruct",
+      "depth_checkpoint": "depth-anything/Depth-Anything-V2-Large-hf",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "prediction": 0,
+      "raw_text": "A",
+      "selected_timestamps": [
+        2574.0,
+        2604.0,
+        2617.0,
+        2660.0,
+        2702.0,
+        2719.0,
+        2745.0,
+        2788.0
+      ],
+      "perturbation": "base",
+      "checkpoint": "Qwen/Qwen3-VL-32B-Instruct",
+      "depth_checkpoint": "depth-anything/Depth-Anything-V2-Large-hf",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 4
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "selected_timestamps": [
+        2438.0,
+        2448.0,
+        2457.0,
+        2467.0,
+        2476.0,
+        2480.0,
+        2483.0,
+        2486.0
+      ],
+      "perturbation": "base",
+      "checkpoint": "Qwen/Qwen3-VL-32B-Instruct",
+      "depth_checkpoint": "depth-anything/Depth-Anything-V2-Large-hf",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "selected_timestamps": [
+        4045.0,
+        4073.0,
+        4101.0,
+        4111.0,
+        4129.0,
+        4137.0,
+        4157.0,
+        4185.0
+      ],
+      "perturbation": "base",
+      "checkpoint": "Qwen/Qwen3-VL-32B-Instruct",
+      "depth_checkpoint": "depth-anything/Depth-Anything-V2-Large-hf",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "prediction": 2,
+      "raw_text": "C",
+      "selected_timestamps": [
+        1560.0,
+        1602.0,
+        1616.0,
+        1644.0,
+        1686.0,
+        1728.0,
+        1742.0,
+        1770.0
+      ],
+      "perturbation": "base",
+      "checkpoint": "Qwen/Qwen3-VL-32B-Instruct",
+      "depth_checkpoint": "depth-anything/Depth-Anything-V2-Large-hf",
+      "ground_truth_used_for_inference": false,
+      "answer_id": 2
+    }
+  ],
+  "ground_truth_used_for_inference": false
+}

@@ -29,6 +29,8 @@ evalai challenge 2707 leaderboard 7010
 
 See [`RESEARCH.md`](RESEARCH.md). The implementation will build a timestamped route-state lattice with visual place retrieval, OCR, local geometric matching, camera-motion/heading estimates, uncertain trajectory, candidate-map normalization, and specialist option scoring. A VLM is a verifier, not the sole spatial memory.
 
+The strongest geometry-conditioned VLM ablation is available in `modal_bounded_geometry_qwen.py`: Qwen3-VL-32B sees motion-aware exact-window frames, relative-depth views, the DPVO trace, and normalized ordered S→E candidate routes. It is experimental only. On the five validation map questions it scored 1/5 and failed a map-cell layout-invariance control, so it does not feed production or any submission.
+
 ## Planned commands
 
 ```bash
