@@ -92,6 +92,8 @@ The missing Gemini 3.7 Istanbul validation duel was then completed with identiti
 
 Qwen3.8 was tested as a selective semantic override on a held-out near-tie (`fGX0Te6pFvk`, q39, p16 margin 0.00026). With 16 evenly spaced frames it selected B; with 32 frames it selected D. The frame-count flip confirms the same instability seen on validation and rejects a Qwen3.8 override, even though title-grounded Qwen3.8 happened to fix the single buBU validation miss. The runner now supports `--target-question` for bounded probes; no production artifact was changed.
 
+As a map-raster ablation, `route_path_full_guided` retained the red S/E pin bodies and solved a skeleton graph path between the detected tips. On all five validation maps it selected candidate A (2/5), because the shortest path followed pin geometry rather than the route stroke. This confirms that pin removal before graph extraction is necessary; the variant is preserved in `modal_map_extraction_variant.py` and is rejected from production.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.

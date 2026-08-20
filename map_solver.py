@@ -384,6 +384,30 @@ def route_path(image_bytes: bytes, pin_radius: int = 15, marker_guided: bool = F
     return guided or orient_path_from_start(skeleton_diameter_path(skeleton), markers)
 
 
+def route_path_full_guided(image_bytes: bytes) -> list[tuple[float, float]]:
+    """Follow the full red graph from the detected S tip to E tip.
+
+    Unlike ``route_path(..., marker_guided=True)``, this keeps the pin bodies
+    connected while solving the graph path. It is an ablation for thin or
+    broken route strokes; the production extractor remains unchanged.
+    """
+    import cv2
+    import numpy as np
+    image = cv2.imdecode(np.frombuffer(image_bytes, dtype=np.uint8), cv2.IMREAD_COLOR)
+    if image is None:
+        return []
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    red = cv2.bitwise_or(cv2.inRange(hsv, (0, 90, 110), (12, 255, 255)),
+                        cv2.inRange(hsv, (168, 90, 110), (180, 255, 255)))
+    red = cv2.morphologyEx(red, cv2.MORPH_CLOSE,
+                           cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
+    markers = route_marker_positions(image_bytes)
+    if not markers:
+        return []
+    path = skeleton_path_between_markers(_skeleton(red), markers)
+    return orient_path_from_start(path, markers) if path else []
+
+
 def orient_path_from_start(path: Sequence[tuple[float, float]], markers: Mapping[str, tuple[float, float]]):
     if len(path) < 2 or "S" not in markers:
         return list(path)
@@ -471,4 +495,4 @@ def score_candidates(question: Mapping[str, Any], motion: Mapping[str, Any], arc
     return scores
 
 
-__all__ = ["motion_polyline", "route_mask", "route_path", "polyline_mask", "shape_distance", "score_candidates", "skeleton_diameter_path", "resample_polyline", "procrustes_distance", "curvature_sequence", "dtw_distance", "ordered_shape_distance", "ordered_candidate_scores", "ordered_trace_candidate_scores", "endpoint_marker_features", "route_marker_positions", "orient_path_from_start"]
+__all__ = ["motion_polyline", "route_mask", "route_path", "route_path_full_guided", "polyline_mask", "shape_distance", "score_candidates", "skeleton_diameter_path", "resample_polyline", "procrustes_distance", "curvature_sequence", "dtw_distance", "ordered_shape_distance", "ordered_candidate_scores", "ordered_trace_candidate_scores", "endpoint_marker_features", "route_marker_positions", "orient_path_from_start"]
