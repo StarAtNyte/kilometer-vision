@@ -71,6 +71,8 @@ Candidate-map Tesseract OCR was also scored by label richness, with outlier thre
 
 The first positive semantic result is an endpoint-focused Gemini 3.6 Flash duel gate. On all five validation map questions, it preserves the DPVO 1 FPS/p16 answer unless DPVO's top-two margin is below 0.005 and Gemini's endpoint-focused duel confidence is at least 0.98. That gate changes only the ambiguous Czech case (D→C) and reaches 5/5 versus DPVO's 4/5. This is promising but still validation-sized and API-dependent; it remains an experiment until tested on held-out/public data.
 
+For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
+
 ## Planned commands
 
 ```bash

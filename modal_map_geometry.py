@@ -214,6 +214,8 @@ def evaluate(split: str = "validation") -> dict:
             gemini_duel_prediction = None
             gemini_duel_confidence = None
             gemini_duel_path = None
+            gemini_reverse_prediction = None
+            gemini_reverse_confidence = None
             for identity_set in ("ABCDE", "ACE"):
                 candidate_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{identity_set}-base.json"
                 if candidate_path.exists():
@@ -225,12 +227,23 @@ def evaluate(split: str = "validation") -> dict:
                             gemini_duel_confidence = float(payload.get("response", {}).get("confidence", 0.0))
                             gemini_duel_path = identity_set
                             break
+            if gemini_duel_path:
+                reverse_path = ROOT / "experiments" / "gemini-native-video-map" / f"{video_id}-duel-{gemini_duel_path}-reverse.json"
+                if reverse_path.exists():
+                    reverse_payload = json.loads(reverse_path.read_text())
+                    answer_letter = reverse_payload.get("response", {}).get("answer")
+                    if isinstance(answer_letter, str) and len(answer_letter) == 1 and answer_letter in gemini_duel_path:
+                        gemini_reverse_prediction = ord(answer_letter.upper()) - ord("A")
+                        gemini_reverse_confidence = float(reverse_payload.get("response", {}).get("confidence", 0.0))
             gemini_gated_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
             if gemini_duel_prediction is not None and gemini_gated_prediction is not None:
                 base_scores = dpvo_variants.get("fps1-focal0.9-w256-b256-p16", [])
                 ordered_scores = sorted(float(item["score"]) for item in base_scores)
                 margin = ordered_scores[1] - ordered_scores[0] if len(ordered_scores) > 1 else float("inf")
-                if gemini_duel_confidence >= 0.98 and margin < 0.005:
+                if (gemini_reverse_prediction == gemini_duel_prediction
+                        and gemini_duel_confidence >= 0.98
+                        and gemini_reverse_confidence >= 0.98
+                        and margin < 0.005):
                     gemini_gated_prediction = gemini_duel_prediction
             answer_id = question.get("answer_id")
             records.append(
@@ -275,6 +288,8 @@ def evaluate(split: str = "validation") -> dict:
                     "gemini_duel_prediction": gemini_duel_prediction,
                     "gemini_duel_confidence": gemini_duel_confidence,
                     "gemini_duel_identity_set": gemini_duel_path,
+                    "gemini_reverse_prediction": gemini_reverse_prediction,
+                    "gemini_reverse_confidence": gemini_reverse_confidence,
                     "gemini_gated_prediction": gemini_gated_prediction,
                     "vggt_consensus_correct": vggt_consensus == answer_id if answer_id is not None else None,
                     "dpvo_correct": {
