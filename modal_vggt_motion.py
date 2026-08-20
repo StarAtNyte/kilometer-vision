@@ -106,7 +106,7 @@ def _merge_chunks(chunks: list[list[list[float]]], overlap: int) -> list[list[fl
 @app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="A100-80GB", memory=32768,
               timeout=6 * 60 * 60)
 def run_vggt(split: str = "validation", max_frames: int = 60,
-             chunk_size: int = 0, overlap: int = 8) -> dict[str, Any]:
+             chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> dict[str, Any]:
     import torch
     from vggt.models.vggt import VGGT
     from vggt.utils.load_fn import load_and_preprocess_images
@@ -119,6 +119,8 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
     model = VGGT.from_pretrained("facebook/VGGT-1B").to(device).eval()
     summaries = []
     for video_id, questions in manifest.items():
+        if target_video != "__all__" and video_id != target_video:
+            continue
         source = _source(video_id)
         records = {}
         for question_id, question in questions.items():
@@ -178,6 +180,6 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
 
 @app.local_entrypoint()
 def main(split: str = "validation", max_frames: int = 60,
-         chunk_size: int = 0, overlap: int = 8) -> None:
-    result = run_vggt.remote(split, max_frames, chunk_size, overlap)
+         chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> None:
+    result = run_vggt.remote(split, max_frames, chunk_size, overlap, target_video)
     print(json.dumps(result, indent=2))
