@@ -127,9 +127,20 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
         if target_video != "__all__" and video_id != target_video:
             continue
         source = _source(video_id)
+        variant = f"chunk{chunk_size}-overlap{overlap}-frames{max_frames}" if chunk_size else f"global-frames{max_frames}"
+        output = ROOT / "experiments" / "vggt-motion" / split / variant / f"{video_id}.json"
         records = {}
+        if output.exists():
+            try:
+                cached = json.loads(output.read_text())
+                if isinstance(cached, dict):
+                    records.update(cached)
+            except (OSError, ValueError):
+                pass
         for question_id, question in questions.items():
             if target_question != "__all__" and str(question_id) != str(target_question):
+                continue
+            if str(question_id) in records and records[str(question_id)].get("status") == "ok":
                 continue
             if "map" not in classify_question_facets(question):
                 continue
@@ -174,8 +185,6 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
                     "status": f"error:{type(error).__name__}", "error": str(error),
                     "start_seconds": start, "end_seconds": end,
                 }
-            variant = f"chunk{chunk_size}-overlap{overlap}-frames{max_frames}" if chunk_size else f"global-frames{max_frames}"
-            output = ROOT / "experiments" / "vggt-motion" / split / variant / f"{video_id}.json"
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(json.dumps(records, indent=2) + "\n")
             VOLUME.commit()
