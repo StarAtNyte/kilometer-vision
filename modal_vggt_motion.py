@@ -119,9 +119,9 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     device = "cuda"
     dtype = torch.bfloat16
-    model = VGGT.from_pretrained(
-        "facebook/VGGT-1B", cache_dir=os.environ["HF_HOME"]
-    ).to(device).eval()
+    # Load the 5GB model lazily. Resumed jobs with all requested windows already
+    # cached should finish without paying model startup or GPU time.
+    model = None
     summaries = []
     for video_id, questions in manifest.items():
         if target_video != "__all__" and video_id != target_video:
@@ -150,6 +150,10 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
                 records[str(question_id)] = {"status": "missing_video_or_window"}
                 continue
             try:
+                if model is None:
+                    model = VGGT.from_pretrained(
+                        "facebook/VGGT-1B", cache_dir=os.environ["HF_HOME"]
+                    ).to(device).eval()
                 with tempfile.TemporaryDirectory() as temporary:
                     paths = _extract(source, start, end, max_frames, Path(temporary))
                     images = load_and_preprocess_images([str(path) for path in paths]).to(device)
