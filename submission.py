@@ -365,6 +365,13 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
         text = " ".join([str(question.get("question", "")), *(str(option) for option in options)]).lower()
         return _geometry_fallback_index(video_id, question_id, len(options), geometry) if any(token in text for token in ("left", "right", "turn", "straight", "visited", "before", "again")) else _fallback_index(video_id, question_id, len(options))
     if category == "landmark" and root is not None and split and question.get("image_paths"):
+        if _experiment_enabled("dino_landmark") and "landmark_presence" in classify_question_facets(question):
+            dino_record = _dino_landmark_record(video_id, question_id, root, split)
+            if dino_record is not None:
+                dino_present, _ = _dino_landmark_match(dino_record)
+                selected = _landmark_presence_index(options, dino_present)
+                if selected is not None:
+                    return selected
         manifest = root / "frames" / f"{video_id}.json"
         archive = root / "manifests" / f"{split}_images.zip"
         if manifest.exists() and archive.exists():
