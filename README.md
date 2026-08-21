@@ -38,6 +38,8 @@ Marker-guided S→E extraction plus a Fréchet term fixes buBU under a validatio
 
 Red-route pin-mask cleanup was swept at radii 8, 10, 12, 15, 18, 22, and 26. Validation peaks at 4/5 for radii 8, 12, and 15; radii 10/22/26 fall to 2/5. On test, radius 15 is exactly identical to the production ranking, while radius 8 changes 54/284 and radius 12 changes 69/284 with no labels to justify those changes. The default radius 15 is retained. See `experiments/map-pin-radius-sweep/`.
 
+A follow-up thin-stroke continuity sweep tested 3×3 through 11×11 morphological closing after pin removal, with pin radii 12, 15, and 18. The 3×3 baseline remained best at 4/5; larger kernels fell as low as 1/5, and marker-guided versus diameter extraction was identical on this set. Reconnecting red pixels therefore does not address the remaining route/motion mismatch. The validation-only runner is `modal_map_morphology_sweep.py`; no production predictions changed.
+
 A visual forensic render of the remaining buBU validation failure shows the yaw-integrated trace as a broad shallow arc while every candidate is a mostly vertical route; raw DPVO XZ positions produce a long diagonal but still select the same wrong candidate. This confirms that the missing signal is scene-to-map localization or better motion estimation, not red-line extraction. The comparison panels are retained in `experiments/map-forensics/`.
 
 ## Architecture
