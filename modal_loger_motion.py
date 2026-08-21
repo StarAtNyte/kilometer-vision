@@ -77,6 +77,7 @@ def run_loger(split: str = "validation", only_video_id: str = "G0fWvIxy88A",
 
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     records = []
+    trajectory_cache = {}
     for video_id, questions in manifest.items():
         if only_video_id and video_id != only_video_id:
             continue
@@ -86,37 +87,45 @@ def run_loger(split: str = "validation", only_video_id: str = "G0fWvIxy88A",
             if target_question != "__all__" and str(question_id) not in {item.strip() for item in str(target_question).split(",")}:
                 continue
             start = float(question["start_seconds"]); end = float(question["end_seconds"])
-            with tempfile.TemporaryDirectory() as tmp:
-                pattern = Path(tmp) / "%06d.jpg"
-                fps = max(1e-6, (frame_count - 1) / max(end - start, 1e-6))
-                subprocess.run([
-                    "ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start),
-                    "-t", str(end-start), "-i", str(_source(video_id)),
-                    "-vf", f"fps={fps},scale=504:280", "-frames:v", str(frame_count),
-                    "-q:v", "3", str(pattern),
-                ], check=True, timeout=max(300, int(end-start)*2))
-                paths = sorted(Path(tmp).glob("*.jpg"))
-                images = np.stack([
-                    cv2.cvtColor(cv2.imread(str(path)), cv2.COLOR_BGR2RGB)
-                    for path in paths
-                ])
-            images_tensor = torch.from_numpy(images).permute(0, 3, 1, 2).float().div_(255)
-            started = time.time()
-            with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-                prediction = model(
-                    images_tensor[None], window_size=32, overlap_size=3,
-                    reset_every=0, num_iterations=1, sim3=False, se3=False,
-                    turn_off_ttt=False, turn_off_swa=False,
-                )
-            poses = prediction["camera_poses"][0].detach().float().cpu().numpy()
-            positions = poses[:, :3, 3]
-            timestamps = np.linspace(start, end, len(positions)).tolist()
+            cache_key = (video_id, round(start, 3), round(end, 3), int(frame_count))
+            if cache_key not in trajectory_cache:
+                with tempfile.TemporaryDirectory() as tmp:
+                    pattern = Path(tmp) / "%06d.jpg"
+                    fps = max(1e-6, (frame_count - 1) / max(end - start, 1e-6))
+                    subprocess.run([
+                        "ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start),
+                        "-t", str(end-start), "-i", str(_source(video_id)),
+                        "-vf", f"fps={fps},scale=504:280", "-frames:v", str(frame_count),
+                        "-q:v", "3", str(pattern),
+                    ], check=True, timeout=max(300, int(end-start)*2))
+                    paths = sorted(Path(tmp).glob("*.jpg"))
+                    images = np.stack([
+                        cv2.cvtColor(cv2.imread(str(path)), cv2.COLOR_BGR2RGB)
+                        for path in paths
+                    ])
+                images_tensor = torch.from_numpy(images).permute(0, 3, 1, 2).float().div_(255)
+                started = time.time()
+                with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
+                    prediction = model(
+                        images_tensor[None], window_size=32, overlap_size=3,
+                        reset_every=0, num_iterations=1, sim3=False, se3=False,
+                        turn_off_ttt=False, turn_off_swa=False,
+                    )
+                poses = prediction["camera_poses"][0].detach().float().cpu().numpy()
+                positions = poses[:, :3, 3]
+                timestamps = np.linspace(start, end, len(positions)).tolist()
+                trajectory_cache[cache_key] = {
+                    "timestamps": timestamps, "positions": positions.tolist(),
+                    "ground_trace": _ground_projection(positions),
+                    "frame_count": len(positions), "runtime_seconds": time.time() - started,
+                }
+            trajectory = trajectory_cache[cache_key]
             records.append({
                 "video_id": video_id, "question_id": str(question_id),
                 "start_seconds": start, "end_seconds": end,
-                "timestamps": timestamps, "positions": positions.tolist(),
-                "ground_trace": _ground_projection(positions),
-                "frame_count": len(positions), "runtime_seconds": time.time() - started,
+                "timestamps": trajectory["timestamps"], "positions": trajectory["positions"],
+                "ground_trace": trajectory["ground_trace"],
+                "frame_count": trajectory["frame_count"], "runtime_seconds": trajectory["runtime_seconds"],
                 "model": "Junyi42/LoGeR", "checkpoint_bytes": checkpoint.stat().st_size,
                 "answer_id": question.get("answer_id"),
             })

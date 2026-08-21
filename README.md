@@ -104,6 +104,8 @@ The held-out q38 tie was checked with the split-aware Gemini 3.7 duel runner: no
 
 Additional held-out fGX checks were stable where the models already agreed: q39 Gemini 3.7 selected E at confidence 0.99 in both normal and reversed orders, matching p16/LoGeR. q40 selected E at 0.99 in normal order; its reversed call hit a Modal transport failure and is therefore treated as unverified. The order-consistency gate remains conservative by design.
 
+The LoGeR runner now caches trajectories by `(video, start, end, frame_count)`. A cached five-video validation rerun reproduced the prior 2/5 learned-motion score. The full fGX test video still contains enough distinct windows that a broad run exceeded the bounded GPU window; no partial test artifact was accepted.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.
