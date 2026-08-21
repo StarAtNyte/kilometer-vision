@@ -1286,17 +1286,19 @@ if modal is not None:  # pragma: no cover - Modal decorators are tested remotely
     def modal_action(
         action: str = "bootstrap", split: str = "", source_root: str = str(SHARED_VIDEO_ROOT),
         sample_fps: float = DEFAULT_FRAME_FPS, max_frames: int = DEFAULT_MAX_FRAMES,
-        frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "",
+        frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "", straight_line: bool = False,
     ) -> dict[str, Any]:
+        if straight_line:
+            os.environ["KILOMETERVISION_ENABLE_STRAIGHT_LINE"] = "1"
         return run_action(action, split or None, root=DATA_ROOT, source_root=source_root, sample_fps=sample_fps, max_frames=max_frames, frame_width=frame_width, video_ids=[video_id] if video_id else None)
 
     @app.local_entrypoint()
     def main(
         action: str = "bootstrap", split: str = "", source_root: str = str(SHARED_VIDEO_ROOT),
         sample_fps: float = DEFAULT_FRAME_FPS, max_frames: int = DEFAULT_MAX_FRAMES,
-        frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "",
+        frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "", straight_line: bool = False,
     ) -> None:
-        result = modal_action.remote(action, split, source_root, sample_fps, max_frames, frame_width, video_id)
+        result = modal_action.remote(action, split, source_root, sample_fps, max_frames, frame_width, video_id, straight_line)
         print(json.dumps(result, indent=2, sort_keys=True))
 def _local_cli() -> None:  # pragma: no cover - CLI wrapper only
     parser = argparse.ArgumentParser(description=__doc__)
@@ -1308,7 +1310,10 @@ def _local_cli() -> None:  # pragma: no cover - CLI wrapper only
     parser.add_argument("--max-frames", type=int, default=DEFAULT_MAX_FRAMES)
     parser.add_argument("--frame-width", type=int, default=DEFAULT_FRAME_WIDTH)
     parser.add_argument("--video-id", action="append", dest="video_ids", default=None)
+    parser.add_argument("--straight-line", action="store_true", help="enable the opt-in straight-line distance probe")
     args = parser.parse_args()
+    if args.straight_line:
+        os.environ["KILOMETERVISION_ENABLE_STRAIGHT_LINE"] = "1"
     print(json.dumps(run_action(args.action, args.split, root=args.root, source_root=args.source_root, sample_fps=args.sample_fps, max_frames=args.max_frames, frame_width=args.frame_width, video_ids=args.video_ids), indent=2, sort_keys=True))
 
 

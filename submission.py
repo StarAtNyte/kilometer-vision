@@ -235,6 +235,31 @@ def _geometry_distance_estimate(estimate_m: float, geometry: Mapping[str, Any]) 
     return estimate_m * multiplier, max(8.0, estimate_m * (0.25 + 0.2 * (1.0 - confidence)))
 
 
+def _is_straight_line_distance(question: Mapping[str, Any]) -> bool:
+    """Detect the metric requested by the question, without using its answer."""
+    text = str(question.get("question", "")).lower()
+    return any(cue in text for cue in ("straight-line", "straight line", "line-of-sight", "line of sight"))
+
+
+def _straight_line_prior(estimate_m: float, geometry: Mapping[str, Any]) -> tuple[float, float]:
+    """Convert a route-length prior into a conservative endpoint-distance prior.
+
+    Elapsed walking time is a route-length proxy.  It is systematically too large
+    for the explicit straight-line/line-of-sight questions.  Relative VO can provide
+    a weak directness cue, but cannot provide metric scale, so the correction is
+    deliberately bounded and uncertainty is widened.  This is an experiment lane,
+    not a claim that monocular geometry is metric.
+    """
+    directness = 0.70
+    if geometry.get("available") and geometry.get("path_length_relative", 0.0) > 0:
+        ratio = float(geometry.get("closure_ratio", 1.0))
+        if math.isfinite(ratio):
+            # Keep noisy full-video closure from collapsing a local question.
+            directness = max(0.55, min(0.85, 0.55 + 0.20 * max(0.0, min(1.0, ratio))))
+    corrected = estimate_m * directness
+    return corrected, max(15.0, estimate_m * 0.40)
+
+
 def select_option(video_id: str, question_id: str, question: Mapping[str, Any], *, root: Path | None = None, split: str | None = None) -> int:
     """Return a safe fallback option; specialist hooks can replace this function."""
     options = question.get("options")
@@ -278,6 +303,8 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
                     duration = float(question.get("end_seconds", 0.0) or 0.0)
                     estimate_m = abs(duration - float(match["timestamp_seconds"])) * 1.25
         adjusted_estimate, uncertainty = _geometry_distance_estimate(estimate_m, geometry)
+        if _experiment_enabled("straight_line") and _is_straight_line_distance(question):
+            adjusted_estimate, uncertainty = _straight_line_prior(adjusted_estimate, geometry)
         return choose(score_distance(options, adjusted_estimate, uncertainty))
     if category == "compass":
         posterior = _heading_posterior(question, geometry)

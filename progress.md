@@ -93,3 +93,9 @@ Latest external gate (2026-08-21): reran the EgoWalk oracle-trajectory synthetic
 - Semantic embeddings, OCR, map vectorization, and calibrated metric scale are not yet active by default.
 - DA3 pose-axis convention and per-window alignment require external validation.
 - Modal Volume and EvalAI credentials/runtime are external to this local checkout.
+## 2026-08-22 — explicit straight-line distance probe
+
+- The distance specialist previously converted elapsed walking time directly to meters for every distance question, including hybrid prompts that explicitly ask for **straight-line** or **line-of-sight** distance. This conflates route length with endpoint displacement.
+- Added an opt-in, label-independent correction in `submission.py` (`KILOMETERVISION_ENABLE_STRAIGHT_LINE=1`): a bounded 0.55–0.85 directness prior (0.70 absent relative-geometry evidence) and widened uncertainty. It never reads answer fields or fits a validation coefficient.
+- A remote validation prediction with the flag changed only two answers versus the same current baseline, both hybrid distance questions, and improved **8/18 → 10/18**; compass and map decisions were unchanged. Because validation has only eight distance/hybrid rows, this is a promising falsification result, not a calibrated claim.
+- Generated and audited a separate test candidate `submissions/test_submission_straight_line_probe_2026-08-22.json`: 986/986 valid, 72 straight-line rows changed relative to the preserved compass anchor. It is not submitted yet; the remote test volume was regenerated independently of the historical anchor, so the candidate remains an ablation pending review.
