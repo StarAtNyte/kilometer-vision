@@ -408,6 +408,42 @@ def route_path_full_guided(image_bytes: bytes) -> list[tuple[float, float]]:
     return orient_path_from_start(path, markers) if path else []
 
 
+def route_path_connected_component(image_bytes: bytes) -> list[tuple[float, float]]:
+    """Trace the red connected route component, preserving S-to-E order.
+
+    This is a conservative ablation based on the WalkBack extractor: select
+    the saturated-red component nearest both detected pins, then skeletonize
+    and solve the shortest path between pin-nearest pixels. It avoids choosing
+    a route branch by graph diameter when the overlay is thin or has labels.
+    """
+    import cv2
+    import numpy as np
+    image = cv2.imdecode(np.frombuffer(image_bytes, dtype=np.uint8), cv2.IMREAD_COLOR)
+    if image is None:
+        return []
+    markers = route_marker_positions(image_bytes)
+    if set(markers) != {"S", "E"}:
+        return []
+    rgb = image[:, :, ::-1].astype(np.int16)
+    target = np.array([233, 66, 52], dtype=np.int16)
+    red = (np.linalg.norm(rgb - target, axis=2) < 65.0).astype(np.uint8)
+    count, labels, stats, _ = cv2.connectedComponentsWithStats(red, 8)
+    best, best_score = None, float("inf")
+    for i in range(1, count):
+        if int(stats[i, cv2.CC_STAT_AREA]) < 100:
+            continue
+        yy, xx = np.nonzero(labels == i)
+        if not len(xx):
+            continue
+        score = min((xx-markers["S"][0])**2 + (yy-markers["S"][1])**2) + min((xx-markers["E"][0])**2 + (yy-markers["E"][1])**2)
+        if score < best_score:
+            best, best_score = i, float(score)
+    if best is None or best_score > 1800.0:
+        return []
+    path = skeleton_path_between_markers(_skeleton((labels == best).astype(np.uint8)), markers)
+    return orient_path_from_start(path, markers) if path else []
+
+
 def orient_path_from_start(path: Sequence[tuple[float, float]], markers: Mapping[str, tuple[float, float]]):
     if len(path) < 2 or "S" not in markers:
         return list(path)
@@ -495,4 +531,4 @@ def score_candidates(question: Mapping[str, Any], motion: Mapping[str, Any], arc
     return scores
 
 
-__all__ = ["motion_polyline", "route_mask", "route_path", "route_path_full_guided", "polyline_mask", "shape_distance", "score_candidates", "skeleton_diameter_path", "resample_polyline", "procrustes_distance", "curvature_sequence", "dtw_distance", "ordered_shape_distance", "ordered_candidate_scores", "ordered_trace_candidate_scores", "endpoint_marker_features", "route_marker_positions", "orient_path_from_start"]
+__all__ = ["motion_polyline", "route_mask", "route_path", "route_path_full_guided", "route_path_connected_component", "polyline_mask", "shape_distance", "score_candidates", "skeleton_diameter_path", "resample_polyline", "procrustes_distance", "curvature_sequence", "dtw_distance", "ordered_shape_distance", "ordered_candidate_scores", "ordered_trace_candidate_scores", "endpoint_marker_features", "route_marker_positions", "orient_path_from_start"]
