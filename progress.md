@@ -2,6 +2,8 @@
 
 Updated: 2026-08-20
 
+Latest external gate (2026-08-21): reran the EgoWalk oracle-trajectory synthetic five-choice map benchmark. The plain ordered scorer achieved 2/10; adding discrete Fréchet, marker-guided extraction, or chamfer terms reached 4/10 at best (all four rendering variants). This confirms ordered S→E geometry is useful but not yet a reliable map-ranking solution; no test map predictions or submission were changed.
+
 ## Completed
 
 - Official DA3-Streaming was evaluated on the sealed York map window at fixed 1 FPS and 2 FPS densities using upstream commit `3d835ec`, `DA3NESTED-GIANT-LARGE-1.1`, 60-frame chunks/30-frame overlap, dense Sim(3) alignment, and SALAD loop detection. Both runs completed (215 and 430 poses) and found zero loop closures. The predeclared label-independent density-stability gate failed: smoothed pedestrian-path Procrustes disparity **0.1008**, turn-signature correlation **0.1656**, and endpoint/path ratio **0.1527 vs 0.4132**. The 1 FPS log also contained a severe adjacent-chunk residual outlier (4.45 versus roughly 0.18–0.62 elsewhere). Smoothing camera-centre gait wobble did not restore topology. Candidate correctness was not consulted after the failed gate; DA3-Streaming is rejected as a map override in this configuration.
