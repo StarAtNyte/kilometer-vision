@@ -33,12 +33,13 @@ DPVO_VARIANT = "fps1-focal0.9-w256-b256-p16"
 
 IMAGE = (
     modal.Image.from_registry("nvidia/cuda:12.6.3-devel-ubuntu22.04", add_python="3.11")
-    .apt_install("ffmpeg")
+    .apt_install("ffmpeg", "git")
     .pip_install(
-        "torch==2.7.1", "torchvision==0.22.1", "transformers>=4.57,<5",
+        "torch==2.7.1", "torchvision==0.22.1",
         "accelerate", "qwen-vl-utils==0.0.14", "pillow", "opencv-python-headless",
         "numpy==1.26.4",
     )
+    .pip_install("git+https://github.com/huggingface/transformers.git")
     .add_local_python_source("map_solver", "question_planner")
 )
 app = modal.App("kilometervision-bounded-geometry-qwen")
@@ -151,7 +152,7 @@ def _candidate_paths(question, archive):
 
 
 @app.function(image=IMAGE, gpu="H200", memory=65536, volumes={"/data": VOLUME}, timeout=6*3600)
-def run(split: str = "validation", video_id: str = "__all__", perturbation: str = "base"):
+def run(split: str = "validation", video_id: str = "__all__", perturbation: str = "base", checkpoint: str = CHECKPOINT):
     os.environ["HF_HOME"] = str(ROOT / "checkpoints" / "huggingface")
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor, pipeline
@@ -159,7 +160,7 @@ def run(split: str = "validation", video_id: str = "__all__", perturbation: str 
 
     VOLUME.reload()
     model = AutoModelForImageTextToText.from_pretrained(
-        CHECKPOINT, torch_dtype=torch.bfloat16, device_map="auto", low_cpu_mem_usage=True,
+        checkpoint, torch_dtype=torch.bfloat16, device_map="auto", low_cpu_mem_usage=True,
         cache_dir=os.environ["HF_HOME"],
     )
     processor = AutoProcessor.from_pretrained(CHECKPOINT, cache_dir=os.environ["HF_HOME"])
@@ -220,7 +221,10 @@ def run(split: str = "validation", video_id: str = "__all__", perturbation: str 
                                 {"type":"image","image":image}]
                 content.append({"type":"text","text":prompt})
                 messages = [{"role":"user","content":content}]
-                rendered = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+                rendered = processor.apply_chat_template(
+                    messages, tokenize=False, add_generation_prompt=True,
+                    enable_thinking=False, preserve_thinking=False,
+                )
                 image_inputs, video_inputs = process_vision_info(messages)
                 inputs = processor(text=[rendered], images=image_inputs, videos=video_inputs,
                                    padding=True, return_tensors="pt").to(model.device)
@@ -231,7 +235,7 @@ def run(split: str = "validation", video_id: str = "__all__", perturbation: str 
                 prediction = "ABCDE".index(letter) if letter else None
                 records.append({"video_id":target, "question_id":str(question_id), "prediction":prediction,
                                 "raw_text":answer, "selected_timestamps":absolute_timestamps,
-                                "perturbation":perturbation, "checkpoint":CHECKPOINT,
+                                "perturbation":perturbation, "checkpoint":checkpoint,
                                 "depth_checkpoint":DEPTH_CHECKPOINT, "ground_truth_used_for_inference":False,
                                 "answer_id":question.get("answer_id")})
                 del inputs, generated, rgb, depths; torch.cuda.empty_cache()
@@ -243,7 +247,7 @@ def run(split: str = "validation", video_id: str = "__all__", perturbation: str 
 
 
 @app.local_entrypoint()
-def main(split: str = "validation", video_id: str = "__all__", perturbation: str = "base"):
-    result = run.remote(split, video_id, perturbation)
+def main(split: str = "validation", video_id: str = "__all__", perturbation: str = "base", checkpoint: str = CHECKPOINT):
+    result = run.remote(split, video_id, perturbation, checkpoint)
     print(json.dumps({"split":split, "perturbation":perturbation, "records":len(result["records"]),
                       "predictions":[row["prediction"] for row in result["records"]]}, indent=2))
