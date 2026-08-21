@@ -134,6 +134,8 @@ The recent `ybrrraway/V2LO-7B` Video2Layout checkpoint was tested as an image-on
 
 The same randomized candidate-panel control with `Qwen/Qwen3-VL-8B-Instruct` and the restored p8 DPVO trace scored 0/5 (C, B, B, C, B). This isolates the failure to the visual route/evidence representation rather than model size; the result is preserved under `experiments/map-qwen3-8b/validation.json` and is not used in production.
 
+The WalkBack-style connected-component red-route extractor was audited as another map ablation. It traces the saturated-red component nearest both S/E pins before solving the ordered path, but scored 2/5 on validation versus 4/5 for the current DPVO/full-guided extractor. It is retained only as `route_path_connected_component`; no production predictions or submission changed.
+
 To recover the lost p16 traces, `modal_fetch_source_video.py` attempted to rehydrate the official validation source remotely. Both standard and Android yt-dlp clients were rejected by YouTube's bot/sign-in gate; the Hugging Face Walking_Tours repository contains metadata/images and YouTube links, not the videos themselves. No source media or labels were modified.
 
 ## Planned commands
