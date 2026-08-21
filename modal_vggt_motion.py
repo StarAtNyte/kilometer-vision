@@ -117,6 +117,7 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
 
     VOLUME.reload()
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
+    print(f"VGGT_START split={split} target_video={target_video} target_question={target_question}", flush=True)
     device = "cuda"
     dtype = torch.bfloat16
     # Load the 5GB model lazily. Resumed jobs with all requested windows already
@@ -127,6 +128,7 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
         if target_video != "__all__" and video_id != target_video:
             continue
         source = _source(video_id)
+        print(f"VGGT_VIDEO video={video_id} source={source}", flush=True)
         variant = f"chunk{chunk_size}-overlap{overlap}-frames{max_frames}" if chunk_size else f"global-frames{max_frames}"
         output = ROOT / "experiments" / "vggt-motion" / split / variant / f"{video_id}.json"
         records = {}
@@ -151,11 +153,14 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
                 continue
             try:
                 if model is None:
+                    print(f"VGGT_MODEL_LOAD video={video_id} question={question_id}", flush=True)
                     model = VGGT.from_pretrained(
                         "facebook/VGGT-1B", cache_dir=os.environ["HF_HOME"]
                     ).to(device).eval()
+                    print("VGGT_MODEL_READY", flush=True)
                 with tempfile.TemporaryDirectory() as temporary:
                     paths = _extract(source, start, end, max_frames, Path(temporary))
+                    print(f"VGGT_FRAMES video={video_id} question={question_id} count={len(paths)}", flush=True)
                     images = load_and_preprocess_images([str(path) for path in paths]).to(device)
                     if chunk_size > overlap and len(images) > chunk_size:
                         chunks = []
@@ -192,6 +197,7 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(json.dumps(records, indent=2) + "\n")
             VOLUME.commit()
+            print(f"VGGT_CHECKPOINT video={video_id} question={question_id} status={records[str(question_id)].get('status')}", flush=True)
         if records:
             summaries.append({"video_id": video_id, "records": records})
     return {"split": split, "max_frames": max_frames, "chunk_size": chunk_size or None,
