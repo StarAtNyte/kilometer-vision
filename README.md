@@ -102,6 +102,8 @@ LoGeR (Junyi42/LoGeR) was then run as an independent learned-motion lane. At 30 
 
 The held-out q38 tie was checked with the split-aware Gemini 3.7 duel runner: normal display order selected C (matching p16), while the reversed call returned malformed/empty JSON and was rejected. Thus the gate does not switch the low-margin LoGeR A prediction. The split-aware extension is retained in `modal_gemini_geometry.py`; test labels were never read.
 
+Additional held-out fGX checks were stable where the models already agreed: q39 Gemini 3.7 selected E at confidence 0.99 in both normal and reversed orders, matching p16/LoGeR. q40 selected E at 0.99 in normal order; its reversed call hit a Modal transport failure and is therefore treated as unverified. The order-consistency gate remains conservative by design.
+
 For the two cases where the gate can change a decision, reversing candidate display order produced the same Gemini answer and 0.99 confidence (Czech C; York E). The evaluator now requires base/reversed agreement before overriding DPVO. This reduces order-prompt risk, but does not remove the small-validation limitation.
 
 Qwen3.8-27B was also rerun remotely at 32 uniformly sampled frames on the three cases where its earlier 16-frame independent-map audit failed. It reached 1/3 (G0 correct; Htw and UK still wrong), so temporal oversampling did not resolve its route/map mismatch and it is not used as an override.
