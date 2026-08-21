@@ -52,9 +52,14 @@ def run_dino(split: str='validation',video_id: str='__all__',step_seconds: float
     from question_planner import classify_question_facets
     manifest=json.loads((ROOT/'manifests'/f'{split}.json').read_text());targets=sorted(manifest) if video_id=='__all__' else [video_id]
     processor=AutoImageProcessor.from_pretrained(checkpoint);model=AutoModel.from_pretrained(checkpoint,torch_dtype=torch.bfloat16).to('cuda').eval()
-    verifier_path=ROOT/'models'/'landmark-verifier'/'mms-vpr-dinov2-pair-verifier.pt'
-    verifier=torch.nn.Sequential(torch.nn.Linear(3072,512),torch.nn.GELU(),torch.nn.Dropout(0.1),torch.nn.Linear(512,1)).to('cuda')
-    verifier.load_state_dict(torch.load(verifier_path,map_location='cuda',weights_only=True));verifier.eval()
+    # The supervised MMS-VPR pair head is optional and is deliberately not
+    # required for the frozen, label-free patch retrieval gate.  Its checkpoint
+    # is absent on fresh volumes and its challenge-transfer audit was negative.
+    verifier = None
+    verifier_path = ROOT/'models'/'landmark-verifier'/'mms-vpr-dinov2-pair-verifier.pt'
+    if verifier_path.exists():
+        verifier=torch.nn.Sequential(torch.nn.Linear(3072,512),torch.nn.GELU(),torch.nn.Dropout(0.1),torch.nn.Linear(512,1)).to('cuda')
+        verifier.load_state_dict(torch.load(verifier_path,map_location='cuda',weights_only=True));verifier.eval()
     def encode(images):
         inputs=processor(images=images,return_tensors='pt').to('cuda')
         with torch.no_grad(): patches=model(**inputs).last_hidden_state[:,1:].float()
@@ -94,7 +99,7 @@ def run_dino(split: str='validation',video_id: str='__all__',step_seconds: float
                 reranked=[]
                 for timestamp,global_similarity in ranked[:10]:
                     candidate_image=by_time[timestamp];candidate_patches=patch_features([candidate_image])[0];patch_score,mutual_ratio=local_score(reference_patches,candidate_patches)
-                    pair_probability=verifier_probability(ref_feature,encode([candidate_image]))
+                    pair_probability=verifier_probability(ref_feature,encode([candidate_image])) if verifier is not None else None
                     reranked.append({'timestamp_seconds':timestamp,'similarity':global_similarity,'patch_local_similarity':patch_score,'mutual_patch_ratio':mutual_ratio,'external_pair_probability':pair_probability})
             values=sorted(score for _,score in scored);reranked.sort(key=lambda row:(row['patch_local_similarity'],row['mutual_patch_ratio']),reverse=True)
             records[str(key)]={'status':'ok','checkpoint':checkpoint,'pooling':'fixed_signed_gem_p3','local_reranking':'bidirectional_top10pct_patch_similarity','external_verifier':'MMS-VPR class-disjoint pair head; frozen threshold 0.5','step_seconds':step_seconds,'frames':len(scored),'top_matches':reranked,'global_top_matches':[{'timestamp_seconds':t,'similarity':s} for t,s in ranked[:10]],'similarity_median':values[len(values)//2] if values else None}

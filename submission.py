@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path
 from typing import Any, Callable, Mapping
 
-from question_planner import classify_question, compile_options
+from question_planner import classify_question, classify_question_facets, compile_options
 from specialists import choose, score_compass, score_distance
 from landmark_matcher import match_reference
 from motion_solver import compass_option_index
@@ -128,6 +128,36 @@ def _vlm_choice(record: Mapping[str, Any] | None) -> int | None:
         return None
     index = record.get("selected_index")
     return index if isinstance(index, int) else None
+
+
+def _dino_landmark_record(video_id: str, question_id: str, root: Path | None, split: str | None) -> Mapping[str, Any] | None:
+    """Read a frozen DINO patch-retrieval record, if a run has materialized one."""
+    if root is None or not split:
+        return None
+    path = root / "experiments" / "landmark-dinov2" / split / f"{video_id}.json"
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        record = payload.get(str(question_id)) if isinstance(payload, Mapping) else None
+        return record if isinstance(record, Mapping) and record.get("status") == "ok" else None
+    except (OSError, ValueError, TypeError):
+        return None
+
+
+def _dino_landmark_match(record: Mapping[str, Any] | None) -> tuple[bool, float | None]:
+    """Apply an external-only, conservative present/absent gate."""
+    if record is None:
+        return False, None
+    matches = record.get("top_matches")
+    if not isinstance(matches, list) or not matches or not isinstance(matches[0], Mapping):
+        return False, None
+    top = matches[0]
+    patch = float(top.get("patch_local_similarity", 0.0) or 0.0)
+    mutual = float(top.get("mutual_patch_ratio", 0.0) or 0.0)
+    present = patch >= 0.90 and mutual >= 0.40
+    timestamp = top.get("timestamp_seconds")
+    return present, float(timestamp) if timestamp is not None else None
 
 
 def _motion_record(video_id: str, question_id: str, root: Path | None, split: str | None,
@@ -294,7 +324,20 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
         start = float(question.get("start_seconds", 0.0) or 0.0)
         end = float(question.get("end_seconds", start) or start)
         estimate_m = max(0.0, end - start) * 1.25
-        if root is not None and split and question.get("image_paths"):
+        dino_record = None
+        dino_present = False
+        dino_timestamp = None
+        if (_experiment_enabled("dino_landmark") and "landmark_presence" in classify_question_facets(question)
+                and question.get("image_paths")):
+            dino_record = _dino_landmark_record(video_id, question_id, root, split)
+            dino_present, dino_timestamp = _dino_landmark_match(dino_record)
+            if dino_record is not None and not dino_present:
+                selected = _landmark_presence_index(options, False)
+                if selected is not None:
+                    return selected
+            if dino_present and dino_timestamp is not None:
+                estimate_m = abs(float(question.get("end_seconds", 0.0) or 0.0) - dino_timestamp) * 1.25
+        if root is not None and split and question.get("image_paths") and not dino_present:
             manifest = root / "frames" / f"{video_id}.json"
             archive = root / "manifests" / f"{split}_images.zip"
             if manifest.exists() and archive.exists():
