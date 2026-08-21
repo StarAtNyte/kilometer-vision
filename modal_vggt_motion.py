@@ -103,21 +103,25 @@ def _merge_chunks(chunks: list[list[list[float]]], overlap: int) -> list[list[fl
     return merged.tolist()
 
 
-@app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="H100", memory=65536,
+@app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="T4", memory=16384,
               timeout=6 * 60 * 60)
 def run_vggt(split: str = "validation", max_frames: int = 60,
              chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__",
              target_question: str = "__all__") -> dict[str, Any]:
     os.environ.setdefault("HF_HOME", str(ROOT / "checkpoints" / "huggingface"))
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+    VOLUME.reload()
+    manifest_path = ROOT / "manifests" / f"{split}.json"
+    if not manifest_path.exists():
+        raise FileNotFoundError(
+            f"{manifest_path} is absent on the active Modal volume; upload/sync challenge data first"
+        )
+    manifest = json.loads(manifest_path.read_text())
+    print(f"VGGT_START split={split} target_video={target_video} target_question={target_question}", flush=True)
     import torch
     from vggt.models.vggt import VGGT
     from vggt.utils.load_fn import load_and_preprocess_images
     from vggt.utils.pose_enc import pose_encoding_to_extri_intri
-
-    VOLUME.reload()
-    manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
-    print(f"VGGT_START split={split} target_video={target_video} target_question={target_question}", flush=True)
     device = "cuda"
     dtype = torch.bfloat16
     # Load the 5GB model lazily. Resumed jobs with all requested windows already
