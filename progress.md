@@ -82,6 +82,8 @@ Latest external gate (2026-08-21): reran the EgoWalk oracle-trajectory synthetic
 
 ## Risks / blockers
 
+- Controlled cross-profile VGGT probe (2026-08-21): `whitestjohn0` was provisioned with the public validation/test metadata and image archives, but its challenge volume lacked videos and a complete checkpoint. One 1.5-GiB `4MYTCny_FZs` video was copied from the existing `gpudashboard0` volume. The same 12-frame q26 run reached VGGT but failed on a T4 OOM (14.6 GiB usable). Under `baptinjean`, the video and complete VGGT-1B weights were provisioned and the identical A100-40GB run completed successfully (`11` frames, window `2011–2277s`). The ordered map probe predicted option `4` with scores `0.21733` vs `0.22176` (very low margin); this agrees with the old DPVO map prediction for q26 and disagrees with the route-retry candidate. This is a feasibility result only, not evidence for a submission-wide replacement. No test submission was made.
+
 - Semantic embeddings, OCR, map vectorization, and calibrated metric scale are not yet active by default.
 - DA3 pose-axis convention and per-window alignment require external validation.
 - Modal Volume and EvalAI credentials/runtime are external to this local checkout.
