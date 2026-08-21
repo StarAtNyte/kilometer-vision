@@ -106,7 +106,8 @@ def _merge_chunks(chunks: list[list[list[float]]], overlap: int) -> list[list[fl
 @app.function(image=IMAGE, volumes={"/data": VOLUME}, gpu="H100", memory=65536,
               timeout=6 * 60 * 60)
 def run_vggt(split: str = "validation", max_frames: int = 60,
-             chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> dict[str, Any]:
+             chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__",
+             target_question: str = "__all__") -> dict[str, Any]:
     os.environ.setdefault("HF_HOME", str(ROOT / "checkpoints" / "huggingface"))
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     import torch
@@ -128,6 +129,8 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
         source = _source(video_id)
         records = {}
         for question_id, question in questions.items():
+            if target_question != "__all__" and str(question_id) != str(target_question):
+                continue
             if "map" not in classify_question_facets(question):
                 continue
             start = float(question.get("start_seconds", 0.0))
@@ -184,6 +187,7 @@ def run_vggt(split: str = "validation", max_frames: int = 60,
 
 @app.local_entrypoint()
 def main(split: str = "validation", max_frames: int = 60,
-         chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__") -> None:
-    result = run_vggt.remote(split, max_frames, chunk_size, overlap, target_video)
+         chunk_size: int = 0, overlap: int = 8, target_video: str = "__all__",
+         target_question: str = "__all__") -> None:
+    result = run_vggt.remote(split, max_frames, chunk_size, overlap, target_video, target_question)
     print(json.dumps(result, indent=2))
