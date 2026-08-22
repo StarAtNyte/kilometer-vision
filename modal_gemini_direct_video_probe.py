@@ -15,7 +15,9 @@ import modal
 ROOT = Path("/data/2707-kilometer-vision")
 SOURCE_ROOT = Path("/data/shared/walking-tours")
 VOLUME = modal.Volume.from_name("perception-test-2026-data", create_if_missing=True)
-SECRET = modal.Secret.from_name("gemini-api-keys")
+# The singular secret is the active key in the current profile; the pooled
+# secret exists but has no exposed variable names in this account.
+SECRET = modal.Secret.from_name("gemini-api-key")
 MODEL = "gemini-3.5-flash"
 VIDEO_SUFFIXES = {".mp4", ".mkv", ".mov", ".webm", ".avi", ".m4v"}
 IMAGE = (modal.Image.debian_slim(python_version="3.11")
@@ -117,9 +119,13 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             time.sleep(2)
             uploaded = client.files.get(name=uploaded.name)
         parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
+    map_hint = ("For a map question, first infer the ordered route from the video: starting position, "
+                "ending position, major turns, and relative route shape. Then compare those four facts "
+                "against every candidate map; do not use the candidate's screen position as evidence.\n"
+                if question.get('image_paths') else "")
     prompt = ("Answer the question from the walking-tour video. Reason silently, then return only the "
               "single option letter A, B, C, D, or E as the final response. Do not infer from option position alone.\n"
-              f"Question: {question['question']}\nOptions (these letters match the printed candidate labels):\n" +
+              + map_hint + f"Question: {question['question']}\nOptions (these letters match the printed candidate labels):\n" +
               "\n".join(f"{'ABCDE'[i]}. {option}" for i, option in enumerate(question.get("options", []))))
     archive_path = ROOT / "manifests" / f"{split}_images.zip"
     candidate_images = []
@@ -144,7 +150,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         model=model, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
-            media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_MEDIUM if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
+            media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_HIGH if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
             response_mime_type="text/x.enum",
             response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
             # Thinking-mode responses need room for the hidden chain plus the

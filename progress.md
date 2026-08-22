@@ -2,6 +2,12 @@
 
 Updated: 2026-08-20
 
+## 2026-08-22 — Gemini high-resolution exact-window control
+
+- Found the active Gemini credential under Modal secret `gemini-api-key` (the pooled `gemini-api-keys` secret exposes no supported variable in this profile). No key material is stored locally.
+- A like-for-like `gemini-3.5-flash` silent exact-window MP4 probe at 2 FPS/512 px with high media resolution and an explicit ordered-route map rubric answered the known compass control correctly (**B**) and the known map control correctly (**D**). The same map call under the earlier medium-resolution/generic prompt answered **B**, so this is a real contract improvement rather than a checkpoint swap.
+- A full-route 48-frame storyboard still answered the compass control **A** (gold B), and one additional G0 map API call timed out; the improvement is not yet validated across the five maps. The other validation videos are absent from the current `baptinjean` volume, so no broad run or test merge was attempted.
+
 ## 2026-08-22 — SpatioLM depth/camera-ray probe
 
 - Tested `xiaomi-research/SpatioLM-Understanding-InternVL3.5`, a genuinely different spatial model with explicit pseudo-depth and camera-ray supervision, on a Modal A100. The authors' required `transformers==4.56.1`/`torch==2.6.0` stack was pinned after a newer-Transformers config incompatibility.
