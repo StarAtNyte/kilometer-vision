@@ -478,11 +478,17 @@ def run_video_map_duel(video_id: str, identities: str, perturbation: str = "base
     with zipfile.ZipFile(ROOT / "manifests" / f"{split}_images.zip") as archive:
         by_identity = {letter: _archive_bytes(archive, reference)
                        for letter, reference in zip("ABCDE", question["image_paths"])}
+    # Gemini otherwise assumes 1 FPS for inline video, silently discarding half
+    # the exact-window motion evidence. Preserve the encoded sampling rate.
+    video_part = types.Part(
+        inline_data=types.Blob(data=clip_bytes, mime_type="video/mp4"),
+        video_metadata=types.VideoMetadata(fps=2.0),
+    )
     parts = [types.Part.from_text(text=(
         "Resolve this close shortlist using the complete ordered walking video. Concentrate on the first "
         "and last locations, exact S/E placement and travel direction, then ordered turns and route "
         "extent. Brief head pans are not body turns. Candidate identity labels are stable; return identity, "
-        "not display slot.")), types.Part.from_bytes(data=clip_bytes, mime_type="video/mp4")]
+        "not display slot.")), video_part]
     for identity in chosen:
         raw = by_identity[identity]
         with Image.open(io.BytesIO(raw)) as candidate_image:
