@@ -19,6 +19,7 @@ Updated: 2026-08-20
 - Corrected-FPS exact-window compass controls are now **3/3**: 4MY **B**, mA9 **C**, aUJ **A** (all match gold). This is the first reproducible, model-independent gain over our motion compass lane and is a serious candidate for a Gemini compass specialist. The corrected compact map control remained wrong (A vs D); after resizing candidate maps to model scale, exact-window map returned C vs D without context overflow, so map selection remains unresolved.
 - A corrected-FPS distance control (`G0fWvIxy88A`, q1) returned **C** versus gold **B**, so Gemini is not yet a general distance replacement. A landmark control was unavailable due a transient 503; no production merge or submission was attempted.
 - Exposed model selection for the Gemini probe and attempted one `gemini-3.6-flash` corrected-FPS map control; the provider returned 503 before generation. The runner remains ready, but no additional inference is justified while the endpoint is overloaded.
+- Added greedy decoding (`temperature=0`) and re-tested maps. 4MY became stable/correct (**D twice**), but Htw was stably wrong (**C vs A**) and buBU was wrong (**B vs C**, also a known DPVO failure). A simple Gemini/DPVO consensus gate therefore shows no validation gain on these three controls; Gemini remains a compass specialist only.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 

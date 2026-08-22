@@ -233,6 +233,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         model=model, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
+            temperature=0.0,
             media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_HIGH if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
             response_mime_type="text/x.enum",
             response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
