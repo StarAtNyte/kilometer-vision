@@ -31,6 +31,16 @@ def run(video_id='4MYTCny_FZs',question_id='0',split='validation',fps=1.0,max_fr
     subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-ss',str(start),'-i',str(source),'-t',str(max(1,end-start)),'-an','-vf','scale=512:-2','-c:v','libx264','-preset','ultrafast','-pix_fmt','yuv420p','-y',str(clip)],check=True,timeout=300)
     media=[{'type':'video','video':str(clip)}]
     if q.get('image_paths'):
+        # Add the answer-blind DPVO ordered S->E trace as a compact geometry cue.
+        motion_path=ROOT/'experiments'/'dpvo-motion'/'validation'/'fps1-focal0.9-w256-b256-p16'/f'{video_id}.json'
+        if motion_path.exists():
+            import PIL.Image, PIL.ImageDraw
+            payload=json.loads(motion_path.read_text()); trace=payload.get(str(question_id),{}).get('trajectory_2d',[])
+            if len(trace)>=2:
+                pts=[(float(x),float(y)) for x,y in trace]; lo=[min(p[i] for p in pts) for i in (0,1)]; hi=[max(p[i] for p in pts) for i in (0,1)]
+                sx=max(hi[0]-lo[0],1e-6); sy=max(hi[1]-lo[1],1e-6); norm=[(32+448*(x-lo[0])/sx,32+448*(y-lo[1])/sy) for x,y in pts]
+                panel=PIL.Image.new('RGB',(512,512),'white'); d=PIL.ImageDraw.Draw(panel); d.line(norm,fill='red',width=5); d.ellipse((norm[0][0]-8,norm[0][1]-8,norm[0][0]+8,norm[0][1]+8),fill='green'); d.ellipse((norm[-1][0]-8,norm[-1][1]-8,norm[-1][0]+8,norm[-1][1]+8),fill='blue'); d.text((8,8),'VIDEO ROUTE: green S -> blue E',fill='black')
+                panel_path=Path(td if 'td' in locals() else tempfile.gettempdir())/f'route-panel-{video_id}-{question_id}.png'; panel.save(panel_path); media.append({'type':'image','image':str(panel_path)})
         with zipfile.ZipFile(ROOT/'manifests'/f'{split}_images.zip') as z, tempfile.TemporaryDirectory() as td:
             members=z.namelist()
             for i,ref in enumerate(q['image_paths']):
