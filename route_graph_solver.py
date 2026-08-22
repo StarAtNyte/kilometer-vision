@@ -89,6 +89,16 @@ def rank_question(question: dict, city: str, cache: dict, delay: float) -> dict:
     return {"prediction": prediction, "scores": scores, "city": city}
 
 
+def city_context(title: str) -> str:
+    """Extract a compact geocoder context from varied YouTube title formats."""
+    match = re.search(r"\bin\s+([^/,\-]+)", title, flags=re.I)
+    if match:
+        city = match.group(1).strip()
+        country = re.search(r"/\s*([^🇦🇫-]+)", title)
+        return f"{city}, {country.group(1).strip()}" if country else city
+    return title.split(",", 1)[0].strip()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
@@ -106,7 +116,7 @@ def main() -> None:
     for video_id in sorted(wanted & set(manifest)):
         metadata = anchors.get(video_id, {})
         title = metadata.get("title", "")
-        city = title.split(",", 1)[0].replace("🇮🇹", "").replace("🇩🇪", "").strip()
+        city = re.sub(r"[^\w ,.-]", "", city_context(title), flags=re.UNICODE).strip()
         if not city:
             continue
         for question_id, question in manifest[video_id].items():
