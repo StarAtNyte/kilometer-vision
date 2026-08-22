@@ -67,13 +67,29 @@ def geocode(query: str, cache: dict[str, list[list[float]]], delay: float) -> li
     return cache[query]
 
 
+def geocode_name(name: str, city: str, cache: dict[str, list[list[float]]], delay: float) -> list[list[float]]:
+    """Try common OCR/Google-Directions abbreviations before giving up."""
+    variants = [name]
+    for source, target in ((" Sk", " Sokak"), (" Cd", " Caddesi"),
+                           (" Sk.", " Sokak"), (" Cd.", " Caddesi"),
+                           (" Sq", " Square")):
+        if source in name:
+            variants.append(name.replace(source, target))
+    variants.append(name.replace(".", ""))
+    for variant in dict.fromkeys(variants):
+        points = geocode(f"{variant}, {city}", cache, delay)
+        if points:
+            return points
+    return []
+
+
 def rank_question(question: dict, city: str, cache: dict, delay: float) -> dict:
     sequences = [option_names(str(option)) for option in question.get("options", [])]
     locations: dict[str, list[list[float]]] = {}
     for sequence in sequences:
         for name in sequence:
             if name not in locations:
-                locations[name] = geocode(f"{name}, {city}", cache, delay)
+                locations[name] = geocode_name(name, city, cache, delay)
     scores = []
     for sequence in sequences:
         pairs = []
