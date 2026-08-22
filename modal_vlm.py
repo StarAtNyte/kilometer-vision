@@ -133,6 +133,15 @@ def _select_timestamps(question: dict[str, Any], duration: float | None, max_fra
     return [window_start + step * index for index in range(max_frames)]
 
 
+def _select_full_route_timestamps(duration: float | None, max_frames: int) -> list[float]:
+    """Sample the complete source route for map identity, not local QA."""
+    if not duration or duration <= 0 or max_frames <= 0:
+        return []
+    if max_frames == 1:
+        return [0.0]
+    return [duration * index / (max_frames - 1) for index in range(max_frames)]
+
+
 def _extract_frame(source: Path, timestamp: float, width: int):
     from PIL import Image
 
@@ -238,6 +247,7 @@ def run_vlm_solver(
     max_frames: int = MAX_QUESTION_FRAMES,
     category_filter: str = "",
     output_namespace: str = "vlm",
+    full_context_maps: bool = False,
 ) -> dict[str, Any]:
     import torch
     from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
@@ -277,7 +287,14 @@ def run_vlm_solver(
             category = classify_question(question)
             if category_filter and category != category_filter:
                 continue
-            frame_images = _question_frame_images(question, source_video, duration, max_frames)
+            if full_context_maps and category == "map":
+                frame_images = []
+                for timestamp in _select_full_route_timestamps(duration, max_frames):
+                    image = _extract_frame(source_video, timestamp, FRAME_WIDTH)
+                    if image is not None:
+                        frame_images.append((timestamp, image))
+            else:
+                frame_images = _question_frame_images(question, source_video, duration, max_frames)
             reference_images = _reference_images(question, ROOT, split)
             # The pre-built frame manifest only ever covers the first ~590 seconds
             # (see module docstring); reuse it purely as a best-effort OCR text source
@@ -314,5 +331,5 @@ def run_vlm_solver(
 
 
 @app.local_entrypoint()
-def main(video_id: str, checkpoint: str = DEFAULT_CHECKPOINT, split: str = "test", max_frames: int = MAX_QUESTION_FRAMES, category_filter: str = "", output_namespace: str = "vlm") -> None:
-    print(json.dumps(run_vlm_solver.remote(video_id, checkpoint, split, max_frames, category_filter, output_namespace), indent=2))
+def main(video_id: str, checkpoint: str = DEFAULT_CHECKPOINT, split: str = "test", max_frames: int = MAX_QUESTION_FRAMES, category_filter: str = "", output_namespace: str = "vlm", full_context_maps: bool = False) -> None:
+    print(json.dumps(run_vlm_solver.remote(video_id, checkpoint, split, max_frames, category_filter, output_namespace, full_context_maps), indent=2))
