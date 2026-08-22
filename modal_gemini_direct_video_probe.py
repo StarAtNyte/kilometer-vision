@@ -127,6 +127,8 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
             media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_MEDIUM if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
+            response_mime_type="text/x.enum",
+            response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
             # Thinking-mode responses need room for the hidden chain plus the
             # final choice; 128 tokens routinely truncates before the answer.
             max_output_tokens=1024))
