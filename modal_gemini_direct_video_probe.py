@@ -61,6 +61,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     work.mkdir(parents=True, exist_ok=True)
     clip = work / f"{split}-{video_id}-{question_id}.mp4"
     storyboard = []
+    storyboard_clip = None
     if full_video:
         probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                 "-of", "default=noprint_wrappers=1:nokey=1", str(source)],
@@ -78,15 +79,32 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
                                 "-q:v", "3", "-y", str(frame)], check=True, timeout=120)
                 if frame.exists():
                     storyboard.append((timestamp, frame.read_bytes()))
+            if storyboard:
+                # Re-encode the sparse chronological frames as a tiny silent
+                # video. Gemini's temporal encoder can then see order/motion,
+                # while avoiding a full-source transcode/upload.
+                storyboard_clip = Path(tempfile.mktemp(prefix="kv-storyboard-", suffix=".mp4"))
+                subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error",
+                                "-framerate", "2", "-i", str(Path(frame_dir) / "%03d.jpg"),
+                                "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+                                "-preset", "ultrafast", "-y", str(storyboard_clip)],
+                               check=True, timeout=180)
     else:
         clip_start = float(question.get("start_seconds", 0.0)); clip_end = float(question.get("end_seconds", 60.0))
         _clip(source, clip_start, clip_end, clip, fps=fps, scale=scale)
     client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
-    if storyboard:
-        parts = [types.Part.from_text(text=f"Full-route storyboard: {len(storyboard)} frames in chronological order.")]
-        for timestamp, raw in storyboard:
-            parts.append(types.Part.from_text(text=f"FRAME t={timestamp:.1f}s"))
-            parts.append(types.Part.from_bytes(data=raw, mime_type="image/jpeg"))
+    if storyboard_clip is not None:
+        uploaded = client.files.upload(file=str(storyboard_clip), config={"mime_type": "video/mp4"})
+        for _ in range(60):
+            state = getattr(uploaded, "state", None)
+            name = getattr(state, "name", str(state))
+            if "ACTIVE" in name:
+                break
+            if "FAILED" in name:
+                raise RuntimeError(f"Gemini storyboard processing failed: {name}")
+            time.sleep(2)
+            uploaded = client.files.get(name=uploaded.name)
+        parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
     else:
         uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
         for _ in range(60):
