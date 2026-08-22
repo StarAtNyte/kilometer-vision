@@ -193,6 +193,52 @@ def _gemini_choice(video_id: str, question_id: str, root: Path | None, split: st
     return "ABCDE".index(raw) if raw in set("ABCDE") else None
 
 
+def _gemini_duel_choice(video_id: str, question_id: str, root: Path | None,
+                        split: str | None, *, min_confidence: float = 0.99) -> int | None:
+    """Use an order-invariant endpoint duel only when both calls agree.
+
+    The duel is deliberately stricter than a generic VLM answer: it requires a
+    complete base/reversed pair, identical candidate identity, and high reported
+    confidence. Missing or malformed records are a no-op. This keeps the lane
+    answer-blind and opt-in while making the successful semantic gate reusable
+    for future held-out/test artifacts.
+    """
+    if root is None or not split:
+        return None
+    directory = root / "experiments" / "gemini-native-video-map"
+    model_tags = ("gemini37flash", "gemini36flash", "gemini35flash")
+    records = []
+    prefix = f"{split}-{video_id}-duel-" if split != "validation" else f"{video_id}-duel-"
+    try:
+        for path in directory.glob(f"{prefix}*-base-*.json"):
+            reverse = directory / path.name.replace("-base-", "-reverse-")
+            if not reverse.exists():
+                continue
+            base = json.loads(path.read_text(encoding="utf-8"))
+            rev = json.loads(reverse.read_text(encoding="utf-8"))
+            if base.get("prediction") is None or rev.get("prediction") is None:
+                continue
+            if base.get("prediction") != rev.get("prediction"):
+                continue
+            bresp, rresp = base.get("response", {}), rev.get("response", {})
+            if not isinstance(bresp, Mapping) or not isinstance(rresp, Mapping):
+                continue
+            confidence = min(float(bresp.get("confidence", 0.0)),
+                             float(rresp.get("confidence", 0.0)))
+            if confidence < min_confidence:
+                continue
+            records.append((model_tags.index(next((tag for tag in model_tags
+                              if tag in path.name), model_tags[-1])),
+                            int(base["prediction"])))
+    except (OSError, ValueError, TypeError, KeyError):
+        return None
+    if not records:
+        return None
+    # Prefer the strongest available model; ties are already order invariant.
+    records.sort(key=lambda item: item[0])
+    return records[0][1]
+
+
 def _dpvo_map_choice(video_id: str, question_id: str, question: Mapping[str, Any],
                      root: Path | None, split: str | None) -> int | None:
     """Match a DPVO ground-plane trajectory to the five candidate route maps."""
@@ -323,6 +369,10 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
             motion_index = compass_option_index(question, float(yaw))
             if motion_index is not None:
                 return motion_index
+    if category == "map" and _experiment_enabled("gemini_duel_map"):
+        duel_index = _gemini_duel_choice(video_id, question_id, root, split)
+        if duel_index is not None:
+            return duel_index
     if category == "map" and _experiment_enabled("dpvo"):
         dpvo_index = _dpvo_map_choice(video_id, question_id, question, root, split)
         if dpvo_index is not None:
