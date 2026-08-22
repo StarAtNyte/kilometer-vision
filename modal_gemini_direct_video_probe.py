@@ -107,7 +107,9 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
             media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_MEDIUM if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
-            max_output_tokens=128))
+            # Thinking-mode responses need room for the hidden chain plus the
+            # final choice; 128 tokens routinely truncates before the answer.
+            max_output_tokens=1024))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
               "raw_response": response.text, "ground_truth_used_for_inference": False}
     output = ROOT / "experiments" / "gemini-direct-video" / f"{split}-{video_id}-{question_id}.json"
