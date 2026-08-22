@@ -248,5 +248,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, sampled_full, prepare_only), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, model, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, sampled_full, prepare_only), indent=2))
