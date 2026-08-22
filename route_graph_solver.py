@@ -12,6 +12,7 @@ import math
 import re
 import time
 import unicodedata
+from difflib import SequenceMatcher
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -83,13 +84,61 @@ def geocode_name(name: str, city: str, cache: dict[str, list[list[float]]], dela
     return []
 
 
-def rank_question(question: dict, city: str, cache: dict, delay: float) -> dict:
+def _norm_street(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().lower()
+    value = value.replace(" sk", " sokak").replace(" cd", " caddesi")
+    return re.sub(r"[^a-z0-9]", "", value)
+
+
+def overpass_inventory(area: str, cache: dict, delay: float) -> dict[str, list[list[float]]]:
+    key = f"overpass:{area}"
+    if key in cache:
+        return cache[key]
+    query = f'[out:json][timeout:60];area["name"="{area}"][boundary=administrative]->.a;way[highway][name](area.a);out center tags;'
+    endpoints = ("https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter")
+    result: dict[str, list[list[float]]] = {}
+    for endpoint in endpoints:
+        try:
+            url = endpoint + "?" + urlencode({"data": query})
+            request = Request(url, headers={"User-Agent": "KilometerVision academic route-graph audit"})
+            with urlopen(request, timeout=120) as response:
+                payload = json.loads(response.read().decode())
+            for element in payload.get("elements", []):
+                name = element.get("tags", {}).get("name")
+                center = element.get("center")
+                if name and center:
+                    result.setdefault(name, []).append([float(center["lat"]), float(center["lon"])])
+            if result:
+                break
+        except Exception:
+            continue
+    cache[key] = result
+    time.sleep(delay)
+    return result
+
+
+def fuzzy_inventory_points(name: str, inventory: dict[str, list[list[float]]]) -> list[list[float]]:
+    needle = _norm_street(name)
+    ranked = sorted(((SequenceMatcher(None, needle, _norm_street(candidate)).ratio(), points)
+                     for candidate, points in inventory.items()), key=lambda item: item[0], reverse=True)
+    points: list[list[float]] = []
+    for score, values in ranked[:5]:
+        if score < 0.55:
+            break
+        points.extend(values)
+    return points
+
+
+def rank_question(question: dict, city: str, cache: dict, delay: float,
+                  inventory: dict[str, list[list[float]]] | None = None) -> dict:
     sequences = [option_names(str(option)) for option in question.get("options", [])]
     locations: dict[str, list[list[float]]] = {}
     for sequence in sequences:
         for name in sequence:
             if name not in locations:
                 locations[name] = geocode_name(name, city, cache, delay)
+                if not locations[name] and inventory:
+                    locations[name] = fuzzy_inventory_points(name, inventory)
     scores = []
     for sequence in sequences:
         pairs = []
@@ -115,6 +164,11 @@ def city_context(title: str) -> str:
     return title.split(",", 1)[0].strip()
 
 
+def area_context(title: str, city: str) -> str:
+    match = re.search(r"-\s*([^\-]+?)\s+Tour", title, flags=re.I)
+    return match.group(1).strip() if match and len(match.group(1).strip()) <= 40 else city.split(",", 1)[0].strip()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
@@ -135,15 +189,17 @@ def main() -> None:
         city = re.sub(r"[^\w ,.-]", "", city_context(title), flags=re.UNICODE).strip()
         if not city:
             continue
+        area = area_context(title, city)
+        inventory = overpass_inventory(area, cache, args.delay)
         for question_id, question in manifest[video_id].items():
             if not any(re.search(r"\b(?:head|turn|continue|slight)\b", str(option), re.I) for option in question.get("options", [])):
                 continue
-            result = rank_question(question, city, cache, args.delay)
+            result = rank_question(question, city, cache, args.delay, inventory)
             records.append({"video_id": video_id, "question_id": str(question_id), **result})
             args.cache.parent.mkdir(parents=True, exist_ok=True)
             args.cache.write_text(json.dumps(cache, indent=2) + "\n")
         print(video_id, len([row for row in records if row["video_id"] == video_id]))
-    payload = {"method": "nominatim ordered street adjacency", "ground_truth_used": False, "records": records}
+    payload = {"method": "overpass fuzzy ordered street adjacency", "ground_truth_used": False, "records": records}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2) + "\n")
     print(json.dumps({"questions": len(records), "videos": len({row['video_id'] for row in records})}))
