@@ -45,12 +45,25 @@ def _clip(source: Path, start: float, end: float, target: Path, fps: float = 0.5
     duration = max(1.0, end - start)
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start),
                     "-i", str(source), "-t", str(duration), "-an", "-vf", f"fps={fps},scale={scale}:-2",
-                    "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-y", str(target)],
+                   "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-y", str(target)],
                    check=True, timeout=max(120, int(duration * 3)))
 
 
+def _silent_full_source(source: Path, target: Path) -> None:
+    """Remove audio while preserving the original video timestamps/frames.
+
+    The leading public method is explicitly described as using silent GCS clips;
+    this is distinct from our sparse storyboard approximation. Stream-copying
+    avoids a multi-minute full-tour re-encode and preserves the model's native
+    temporal sampling opportunity.
+    """
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(source),
+                    "-map", "0:v:0", "-an", "-c:v", "copy", "-y", str(target)],
+                   check=True, timeout=300)
+
+
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False) -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, prepare_only: bool = False) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -64,7 +77,10 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     clip = work / f"{split}-{video_id}-{question_id}.mp4"
     storyboard = []
     storyboard_clip = None
-    if full_video:
+    if full_source:
+        clip_start, clip_end = 0.0, 0.0
+        _silent_full_source(source, clip)
+    elif full_video:
         probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                 "-of", "default=noprint_wrappers=1:nokey=1", str(source)],
                                check=True, capture_output=True, text=True)
@@ -94,6 +110,12 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     else:
         clip_start = float(question.get("start_seconds", 0.0)); clip_end = float(question.get("end_seconds", 60.0))
         _clip(source, clip_start, clip_end, clip, fps=fps, scale=scale)
+    if prepare_only:
+        result = {"video_id": video_id, "question_id": str(question_id), "clip": str(clip),
+                  "bytes": clip.stat().st_size, "full_source": full_source,
+                  "full_video": full_video, "ground_truth_used_for_inference": False}
+        print(json.dumps(result, indent=2))
+        return result
     client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
     if storyboard_clip is not None:
         uploaded = client.files.upload(file=str(storyboard_clip), config={"mime_type": "video/mp4"})
@@ -177,5 +199,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, prepare_only: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, prepare_only), indent=2))

@@ -6,6 +6,7 @@ Updated: 2026-08-20
 
 - Added an opt-in two-stage Gemini contract to `modal_gemini_direct_video_probe.py`: the first call writes an answer-blind route certificate (turn order, crossings, endpoint displacement), and the second call compares that frozen certificate with the candidate maps. This isolates route perception from option selection and is retained for the next quota window.
 - The first controlled map probe (`4MYTCny_FZs`, q1, 512 px/2 fps/high thinking) was stopped by the provider's hard free-tier limit (`429`, 20 requests/project/model) before the second-stage answer. No prediction or submission changed; further Gemini calls are paused to avoid spend.
+- Implemented and prepared the missing leader-style media path: a full-source silent MP4 made by audio removal with `-c:v copy`, rather than the prior 24-frame storyboard or question-window re-encode. The known 4MY source remux completed without inference at **1.55 GB**, confirming the path is technically viable; one single direct call is reserved for the next quota reset.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
