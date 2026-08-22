@@ -62,7 +62,7 @@ def _silent_full_source(source: Path, target: Path) -> None:
                    check=True, timeout=300)
 
 
-def _sampled_full_source(source: Path, target: Path, fps: float = 1.0, scale: int = 512) -> None:
+def _sampled_full_source(source: Path, target: Path, fps: float = 0.1, scale: int = 512) -> None:
     """Encode the whole tour at a bounded temporal/spatial rate, silently."""
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(source),
                     "-an", "-vf", f"fps={fps},scale={scale}:-2", "-c:v", "libx264",
@@ -110,14 +110,14 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     source = _source(video_id)
     work = ROOT / "experiments" / "gemini-direct-video" / "clips"
     work.mkdir(parents=True, exist_ok=True)
-    media_tag = "sampled-full" if sampled_full else "full-source" if full_source else "window"
+    media_tag = "sampled-full-0p1" if sampled_full else "full-source" if full_source else "window"
     clip = work / f"{split}-{video_id}-{question_id}-{media_tag}.mp4"
     storyboard = []
     storyboard_clip = None
     if sampled_full:
         clip_start, clip_end = 0.0, 0.0
         if not clip.exists():
-            _sampled_full_source(source, clip, fps=1.0, scale=scale)
+            _sampled_full_source(source, clip, fps=0.1, scale=scale)
     elif full_source:
         clip_start, clip_end = 0.0, 0.0
         if not clip.exists():

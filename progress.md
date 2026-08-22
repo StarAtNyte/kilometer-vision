@@ -10,7 +10,7 @@ Updated: 2026-08-20
 - The first full-source direct call then uploaded successfully but Gemini returned **503 UNAVAILABLE** during generation (high demand), so it produced no answer and cannot be scored. This is an infrastructure failure, not evidence against the method; do not retry repeatedly or merge anything.
 - Added persistent Gemini File caching keyed by split/video/question. A future retry can reuse the already-processed full-source upload after a transient 503 instead of paying the 1.55-GB upload cost again; no credentials or remote file IDs are committed.
 - A controlled low-thinking retry confirmed the full-source file-indexing bottleneck: the 1.55-GB upload remained PROCESSING beyond the old 120-second poll and produced no model request. Extended activation polling to 12 minutes; no answer or submission was produced.
-- Added a bounded full-tour encoding variant at **1 FPS/512 px**, preserving chronological coverage while reducing the 4MY clip from 1.55 GB to **126 MB**. Prepare-only validation completed successfully; this is now the only media variant worth one controlled Gemini inference because it avoids the raw-source indexing bottleneck.
+- Added a bounded full-tour encoding variant at **0.1 FPS/512 px** (one frame per ~10 seconds), preserving chronological coverage while staying below Gemini's context limit. The earlier 1 FPS/512 px artifact was 126 MB but was rejected at inference for exceeding **1,048,576 input tokens**; it is not a model-quality negative.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
