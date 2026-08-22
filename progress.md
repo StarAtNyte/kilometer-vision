@@ -2,6 +2,12 @@
 
 Updated: 2026-08-20
 
+## 2026-08-22 — SpatioLM depth/camera-ray probe
+
+- Tested `xiaomi-research/SpatioLM-Understanding-InternVL3.5`, a genuinely different spatial model with explicit pseudo-depth and camera-ray supervision, on a Modal A100. The authors' required `transformers==4.56.1`/`torch==2.6.0` stack was pinned after a newer-Transformers config incompatibility.
+- Two fixed validation probes were run without exposing labels: compass `4MYTCny_FZs/0` (gold **B**) → **A**, and map `4MYTCny_FZs/1` (gold **D**) → **B**. It therefore did not recover either accumulated heading or candidate-map choice; no production or submission change is justified.
+- The probe remains useful as a reproducible feasibility script (`modal_spatiolm_probe.py`), but broad inference is not cost-effective until a stronger route representation is supplied to the model.
+
 Latest external gate (2026-08-21): reran the EgoWalk oracle-trajectory synthetic five-choice map benchmark. The plain ordered scorer achieved 2/10; adding discrete Fréchet, marker-guided extraction, or chamfer terms reached 4/10 at best (all four rendering variants). This confirms ordered S→E geometry is useful but not yet a reliable map-ranking solution; no test map predictions or submission were changed.
 
 ## Completed
