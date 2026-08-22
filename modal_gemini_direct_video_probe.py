@@ -5,6 +5,7 @@ import io
 import json
 import os
 import subprocess
+import tempfile
 import time
 import zipfile
 from pathlib import Path
@@ -47,7 +48,7 @@ def _clip(source: Path, start: float, end: float, target: Path, fps: float = 0.5
 
 
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320) -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -59,26 +60,45 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     work = ROOT / "experiments" / "gemini-direct-video" / "clips"
     work.mkdir(parents=True, exist_ok=True)
     clip = work / f"{split}-{video_id}-{question_id}.mp4"
+    storyboard = []
     if full_video:
         probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                 "-of", "default=noprint_wrappers=1:nokey=1", str(source)],
                                check=True, capture_output=True, text=True)
         clip_start, clip_end = 0.0, float(probe.stdout.strip())
+        # Seek directly to sparse timestamps. This preserves full-route context
+        # without decoding/materializing a multi-gigabyte source clip.
+        count = max(4, min(int(context_frames), 48))
+        with tempfile.TemporaryDirectory() as frame_dir:
+            for index in range(count):
+                timestamp = clip_start + (clip_end - clip_start) * index / max(1, count - 1)
+                frame = Path(frame_dir) / f"{index:03d}.jpg"
+                subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(timestamp),
+                                "-i", str(source), "-frames:v", "1", "-vf", f"scale={scale}:-2",
+                                "-q:v", "3", "-y", str(frame)], check=True, timeout=120)
+                if frame.exists():
+                    storyboard.append((timestamp, frame.read_bytes()))
     else:
         clip_start = float(question.get("start_seconds", 0.0)); clip_end = float(question.get("end_seconds", 60.0))
-    _clip(source, clip_start, clip_end, clip, fps=fps, scale=scale)
+        _clip(source, clip_start, clip_end, clip, fps=fps, scale=scale)
     client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
-    uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
-    for _ in range(60):
-        state = getattr(uploaded, "state", None)
-        name = getattr(state, "name", str(state))
-        if "ACTIVE" in name:
-            break
-        if "FAILED" in name:
-            raise RuntimeError(f"Gemini file processing failed: {name}")
-        time.sleep(2)
-        uploaded = client.files.get(name=uploaded.name)
-    parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
+    if storyboard:
+        parts = [types.Part.from_text(text=f"Full-route storyboard: {len(storyboard)} frames in chronological order.")]
+        for timestamp, raw in storyboard:
+            parts.append(types.Part.from_text(text=f"FRAME t={timestamp:.1f}s"))
+            parts.append(types.Part.from_bytes(data=raw, mime_type="image/jpeg"))
+    else:
+        uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
+        for _ in range(60):
+            state = getattr(uploaded, "state", None)
+            name = getattr(state, "name", str(state))
+            if "ACTIVE" in name:
+                break
+            if "FAILED" in name:
+                raise RuntimeError(f"Gemini file processing failed: {name}")
+            time.sleep(2)
+            uploaded = client.files.get(name=uploaded.name)
+        parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
     prompt = ("Answer the question from the walking-tour video. Reason silently, then return only the "
               "single option letter A, B, C, D, or E as the final response. Do not infer from option position alone.\n"
               f"Question: {question['question']}\nOptions (these letters match the printed candidate labels):\n" +
@@ -119,5 +139,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames), indent=2))
