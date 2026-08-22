@@ -10,17 +10,22 @@ The August 11, 2026 organizer release currently reports 13 validation videos / 1
 
 ## Test leaderboard
 
-Current EvalAI test leaderboard, checked **August 22, 2026**:
+Current EvalAI test leaderboard, checked **August 23, 2026**:
 
 | Position | Team / submission | Top-1 | Visibility |
 | ---: | --- | ---: | --- |
-| 1 | BoundedAccord | 0.454361 | Public |
-| 2 | StarAtNyte — submission 579438 | 0.245436 | Public |
-| 3 | Host_37595_Team | 0.195740 | Public |
+| 1 | amanupg — submission 579757 | 0.516227 | Public |
+| 2 | BoundedAccord | 0.454361 | Public |
+| 3 | Math Nath | 0.388438 | Public |
+| 4 | ZeroOne | 0.382353 | Public |
+| 5 | Math | 0.372211 | Public |
+| 6 | StarAtNyte — submission 579805 | 0.273834 | Public |
+| 7 | FZJ_IAS8 | 0.215010 | Public |
+| 8 | Host_37595_Team | 0.195740 | Public |
 
-Our best private result is submission **579805**, Top-1 **0.2738337** (270/986); it is not included in the public table. This is the motion-compass anchor plus the explicit straight-line distance correction. The separate eight-row map-anchor ablation was rejected after isolated testing.
+Our best result is submission **579805**, Top-1 **0.2738337** (270/986), now visible as the sixth public entry. This is the motion-compass anchor plus the explicit straight-line distance correction. The separate eight-row map-anchor ablation was rejected after isolated testing.
 
-The public table currently exposes three test entries. The top method is explicitly named `bounded-geometry-qwen-zero-shot`; it is the only demonstrated route near 0.5. Refresh the official public table with:
+The public table currently exposes eight test entries. The top method is explicitly named `3.5-flash on silent GCS clips`; `bounded-geometry-qwen-zero-shot` remains second. Refresh the official public table with:
 
 ```bash
 python refresh_leaderboard.py
