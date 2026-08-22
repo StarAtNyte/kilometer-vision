@@ -245,17 +245,24 @@ def evaluate(split: str = "validation") -> dict:
                     if isinstance(answer_letter, str) and len(answer_letter) == 1 and answer_letter in gemini_duel_path:
                         gemini_reverse_prediction = ord(answer_letter.upper()) - ord("A")
                         gemini_reverse_confidence = float(reverse_payload.get("response", {}).get("confidence", 0.0))
-            gemini_gated_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
+            # Use the canonical fps1 trace when available; the compact validation
+            # artifact may only contain the fps2/p8 trace.  Keeping this fallback
+            # lets us audit the Gemini gate against the same geometry that is
+            # actually present in the current prediction bundle.
+            gate_variant = "fps1-focal0.9-w256-b256-p16"
+            if gate_variant not in dpvo_predictions:
+                gate_variant = "fps2-focal0.9-w256-b256-p8"
+            gemini_gated_prediction = dpvo_predictions.get(gate_variant)
             gemini_threshold_predictions = {
                 str(confidence_threshold): gemini_gated_prediction
                 for confidence_threshold in (0.98, 0.99, 0.995)
             }
             if gemini_duel_prediction is not None and gemini_gated_prediction is not None:
-                base_scores = dpvo_variants.get("fps1-focal0.9-w256-b256-p16", [])
+                base_scores = dpvo_variants.get(gate_variant, [])
                 ordered_scores = sorted(float(item["score"]) for item in base_scores)
                 margin = ordered_scores[1] - ordered_scores[0] if len(ordered_scores) > 1 else float("inf")
                 for confidence_threshold in (0.98, 0.99, 0.995):
-                    threshold_prediction = dpvo_predictions.get("fps1-focal0.9-w256-b256-p16")
+                    threshold_prediction = dpvo_predictions.get(gate_variant)
                     if (gemini_reverse_prediction == gemini_duel_prediction
                             and gemini_duel_confidence >= confidence_threshold
                             and gemini_reverse_confidence >= confidence_threshold
