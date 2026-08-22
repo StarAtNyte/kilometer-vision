@@ -47,7 +47,7 @@ def _clip(source: Path, start: float, end: float, target: Path) -> None:
 
 
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False) -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high") -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -110,7 +110,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     response = client.models.generate_content(
         model=model, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(thinking_level="high"),
+            thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW,
             max_output_tokens=128))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
@@ -122,5 +122,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high"):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level), indent=2))
