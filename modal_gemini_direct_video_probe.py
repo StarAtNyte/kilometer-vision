@@ -38,16 +38,16 @@ def _source(video_id: str) -> Path:
                 if p.is_file() and p.suffix.lower() in VIDEO_SUFFIXES)
 
 
-def _clip(source: Path, start: float, end: float, target: Path) -> None:
+def _clip(source: Path, start: float, end: float, target: Path, fps: float = 0.5, scale: int = 320) -> None:
     duration = max(1.0, end - start)
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start),
-                    "-i", str(source), "-t", str(duration), "-an", "-vf", "fps=0.5,scale=320:-2",
+                    "-i", str(source), "-t", str(duration), "-an", "-vf", f"fps={fps},scale={scale}:-2",
                     "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-y", str(target)],
                    check=True, timeout=max(120, int(duration * 3)))
 
 
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high") -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -66,7 +66,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         clip_start, clip_end = 0.0, float(probe.stdout.strip())
     else:
         clip_start = float(question.get("start_seconds", 0.0)); clip_end = float(question.get("end_seconds", 60.0))
-    _clip(source, clip_start, clip_end, clip)
+    _clip(source, clip_start, clip_end, clip, fps=fps, scale=scale)
     client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
     uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
     for _ in range(60):
@@ -106,7 +106,12 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         model=model, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
-            media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW,
+            media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_MEDIUM if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
+            # The public leader appears to use a machine-readable single-choice
+            # response.  Enforce the same contract so visual reasoning cannot be
+            # lost to a prose/partial-response parse failure.
+            response_mime_type="text/x.enum",
+            response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
             max_output_tokens=128))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
               "raw_response": response.text, "ground_truth_used_for_inference": False}
@@ -117,5 +122,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high"):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale), indent=2))
