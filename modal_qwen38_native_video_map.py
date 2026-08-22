@@ -22,7 +22,9 @@ APP = modal.App("kilometervision-qwen38-native-video-map")
 CHECKPOINT = "Qwen/Qwen3.8-27B"
 
 
-@APP.function(image=IMAGE, gpu="H200", memory=65536, volumes={"/data": VOLUME}, timeout=60 * 60)
+# A100-80GB is sufficient for the 27B bf16 checkpoint and works on profiles
+# without H200 billing enabled.  Keep this validation probe affordable.
+@APP.function(image=IMAGE, gpu="A100-80GB", memory=65536, volumes={"/data": VOLUME}, timeout=60 * 60)
 def run(split: str = "validation", checkpoint: str = CHECKPOINT):
     import torch
     from transformers import AutoModelForMultimodalLM, AutoProcessor
@@ -40,11 +42,24 @@ def run(split: str = "validation", checkpoint: str = CHECKPOINT):
     with zipfile.ZipFile(archive_path) as archive:
         for video_id, questions in manifest.items():
             motion_path = ROOT / "experiments" / "dpvo-motion" / split / "fps1-focal0.9-w256-b256-p16" / f"{video_id}.json"
+            # Profiles may have a different cached DPVO variant (for example the
+            # provisioned baptinjean volume contains fps2/p8). Use the first
+            # available trajectory rather than silently returning zero rows.
             if not motion_path.exists():
+                candidates = sorted((ROOT / "experiments" / "dpvo-motion" / split).glob("*/" + f"{video_id}.json"))
+                motion_path = candidates[0] if candidates else None
+            if motion_path is None or not motion_path.exists():
                 continue
             motions = json.loads(motion_path.read_text())
             for question_id, question in questions.items():
                 if "map" not in classify_question_facets(question) or len(question.get("image_paths", [])) != 5:
+                    continue
+                try:
+                    source = _source(video_id)
+                except FileNotFoundError:
+                    # The baptinjean volume currently contains only a small
+                    # validation video subset; leave missing videos for a later
+                    # data-copy step instead of aborting the whole probe.
                     continue
                 motion = motions.get(str(question_id), {})
                 trace, timestamps = motion.get("trajectory_2d", []), motion.get("timestamps", [])
@@ -55,7 +70,7 @@ def run(split: str = "validation", checkpoint: str = CHECKPOINT):
                 indices = _motion_aware_indices(trace, count=8)
                 start = float(motion.get("start_seconds", question.get("start_seconds", 0.0)))
                 fps = max(float(motion.get("sample_fps", 1.0)), 1e-6)
-                frames = [_frame(_source(video_id), start + float(timestamps[i]) / fps) for i in indices]
+                frames = [_frame(source, start + float(timestamps[i]) / fps) for i in indices]
                 prompt = (
                     "Solve this five-choice walking-route map question. The first image is a normalized "
                     "top-down comparison: observed trajectory is on the left, candidates A-E are on the right. "
