@@ -180,6 +180,19 @@ def _motion_record(video_id: str, question_id: str, root: Path | None, split: st
     return None
 
 
+def _gemini_choice(video_id: str, question_id: str, root: Path | None, split: str | None) -> int | None:
+    """Read a cached explicit-FPS Gemini enum answer, if available."""
+    if root is None or not split:
+        return None
+    path = root / "experiments" / "gemini-direct-video" / f"{split}-{video_id}-{question_id}.json"
+    try:
+        record = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return None
+    raw = str(record.get("raw_response", "")).strip().upper()
+    return "ABCDE".index(raw) if raw in set("ABCDE") else None
+
+
 def _dpvo_map_choice(video_id: str, question_id: str, question: Mapping[str, Any],
                      root: Path | None, split: str | None) -> int | None:
     """Match a DPVO ground-plane trajectory to the five candidate route maps."""
@@ -299,6 +312,10 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
     # of organizer labels and is intentionally not validation-tuned.
     compiled = compile_options(question)
     category = compiled["category"]
+    if category == "compass" and _experiment_enabled("gemini_compass"):
+        gemini_index = _gemini_choice(video_id, question_id, root, split)
+        if gemini_index is not None:
+            return gemini_index
     if category == "compass" and _experiment_enabled("motion"):
         motion = _motion_record(video_id, question_id, root, split, "compass")
         yaw = motion.get("summary", {}).get("net_yaw_degrees") if motion and motion.get("status") == "ok" else None
