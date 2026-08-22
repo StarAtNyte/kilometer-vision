@@ -1,0 +1,178 @@
+{
+  "model": "gemini-3.7-flash",
+  "split": "validation",
+  "ground_truth_used_for_inference": false,
+  "records": [
+    {
+      "file": "validation-4MYTCny_FZs-0.json",
+      "video_id": "4MYTCny_FZs",
+      "question_id": "0",
+      "raw_response": "B",
+      "category": "compass",
+      "prediction": 1,
+      "answer_id": 1,
+      "correct": true
+    },
+    {
+      "file": "validation-4MYTCny_FZs-1.json",
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "raw_response": "A",
+      "category": "map",
+      "prediction": 0,
+      "answer_id": 3,
+      "correct": false
+    },
+    {
+      "file": "validation-9m3fojdkPjM-0.json",
+      "video_id": "9m3fojdkPjM",
+      "question_id": "0",
+      "raw_response": "C",
+      "category": "landmark",
+      "prediction": 2,
+      "answer_id": 3,
+      "correct": false
+    },
+    {
+      "file": "validation-G0fWvIxy88A-0.json",
+      "video_id": "G0fWvIxy88A",
+      "question_id": "0",
+      "raw_response": "E",
+      "category": "compass",
+      "prediction": 4,
+      "answer_id": 4,
+      "correct": true
+    },
+    {
+      "file": "validation-G0fWvIxy88A-1.json",
+      "video_id": "G0fWvIxy88A",
+      "question_id": "1",
+      "raw_response": "B",
+      "category": "distance",
+      "prediction": 1,
+      "answer_id": 1,
+      "correct": true
+    },
+    {
+      "file": "validation-G0fWvIxy88A-2.json",
+      "video_id": "G0fWvIxy88A",
+      "question_id": "2",
+      "raw_response": "E",
+      "category": "map",
+      "prediction": 4,
+      "answer_id": 4,
+      "correct": true
+    },
+    {
+      "file": "validation-Htw4yFOWghU-0.json",
+      "video_id": "Htw4yFOWghU",
+      "question_id": "0",
+      "raw_response": "A",
+      "category": "map",
+      "prediction": 0,
+      "answer_id": 0,
+      "correct": true
+    },
+    {
+      "file": "validation-UKyT_a-raW4-0.json",
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "raw_response": "A",
+      "category": "map",
+      "prediction": 0,
+      "answer_id": 0,
+      "correct": true
+    },
+    {
+      "file": "validation-WSDe_B5KPco-0.json",
+      "video_id": "WSDe_B5KPco",
+      "question_id": "0",
+      "raw_response": "B",
+      "category": "distance",
+      "prediction": 1,
+      "answer_id": 1,
+      "correct": true
+    },
+    {
+      "file": "validation-Xbp5_WA9Jb4-0.json",
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "0",
+      "raw_response": "D",
+      "category": "distance",
+      "prediction": 3,
+      "answer_id": 3,
+      "correct": true
+    },
+    {
+      "file": "validation-aUJl46bEWYo-0.json",
+      "video_id": "aUJl46bEWYo",
+      "question_id": "0",
+      "raw_response": "C",
+      "category": "compass",
+      "prediction": 2,
+      "answer_id": 0,
+      "correct": false
+    },
+    {
+      "file": "validation-aUJl46bEWYo-1.json",
+      "video_id": "aUJl46bEWYo",
+      "question_id": "1",
+      "raw_response": "D",
+      "category": "distance",
+      "prediction": 3,
+      "answer_id": 3,
+      "correct": true
+    },
+    {
+      "file": "validation-astCIYQCW2c-0.json",
+      "video_id": "astCIYQCW2c",
+      "question_id": "0",
+      "raw_response": "E",
+      "category": "landmark",
+      "prediction": 4,
+      "answer_id": 4,
+      "correct": true
+    },
+    {
+      "file": "validation-buBU7NrfyGM-0.json",
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "raw_response": "B",
+      "category": "map",
+      "prediction": 1,
+      "answer_id": 2,
+      "correct": false
+    },
+    {
+      "file": "validation-fk8wrPYr3uU-0.json",
+      "video_id": "fk8wrPYr3uU",
+      "question_id": "0",
+      "raw_response": "D",
+      "category": "distance",
+      "prediction": 3,
+      "answer_id": 3,
+      "correct": true
+    },
+    {
+      "file": "validation-mA9lYWyXMYU-0.json",
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "0",
+      "raw_response": "A",
+      "category": "compass",
+      "prediction": 0,
+      "answer_id": 2,
+      "correct": false
+    },
+    {
+      "file": "validation-mA9lYWyXMYU-1.json",
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "1",
+      "raw_response": "E",
+      "category": "compass",
+      "prediction": 4,
+      "answer_id": 2,
+      "correct": false
+    }
+  ],
+  "note": "Post-hoc audit only; missing provider record is excluded, not imputed."
+}
