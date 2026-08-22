@@ -81,8 +81,8 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
     prompt = ("Answer the question from the walking-tour video. Reason silently, then return only the "
               "single option letter A, B, C, D, or E as the final response. Do not infer from option position alone.\n"
-              f"Question: {question['question']}\nOptions:\n" +
-              "\n".join(f"{i}: {option}" for i, option in enumerate(question.get("options", []))))
+              f"Question: {question['question']}\nOptions (these letters match the printed candidate labels):\n" +
+              "\n".join(f"{'ABCDE'[i]}. {option}" for i, option in enumerate(question.get("options", []))))
     archive_path = ROOT / "manifests" / f"{split}_images.zip"
     candidate_images = []
     with zipfile.ZipFile(archive_path) as archive:
@@ -95,17 +95,12 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
                 image = image.convert("RGB"); buf = io.BytesIO(); image.save(buf, format="JPEG", quality=88)
             candidate_images.append(image.copy())
     if candidate_images:
-        # A single explicitly labelled sheet prevents multimodal ordering drift.
-        cell_w, cell_h = 420, 420
-        sheet = Image.new("RGB", (cell_w * 3, cell_h * 2), "white")
-        draw = ImageDraw.Draw(sheet)
+        # Separate, explicitly labelled images reduce tiny-map contact-sheet loss.
+        parts.append(types.Part.from_text(text="Candidate maps follow. Each image is labelled by its option letter; compare all five before answering."))
         for index, image in enumerate(candidate_images):
-            image.thumbnail((cell_w - 12, cell_h - 42))
-            x, y = (index % 3) * cell_w, (index // 3) * cell_h
-            sheet.paste(image, (x + 6, y + 36)); draw.text((x + 12, y + 8), f"OPTION {'ABCDE'[index]}", fill="black")
-        buf = io.BytesIO(); sheet.save(buf, format="JPEG", quality=88)
-        parts.append(types.Part.from_text(text="The following single image is a labelled candidate-map sheet. Read options A-E from the printed labels."))
-        parts.append(types.Part.from_bytes(data=buf.getvalue(), mime_type="image/jpeg"))
+            buf = io.BytesIO(); image.save(buf, format="JPEG", quality=90)
+            parts.append(types.Part.from_text(text=f"OPTION {'ABCDE'[index]} CANDIDATE MAP"))
+            parts.append(types.Part.from_bytes(data=buf.getvalue(), mime_type="image/jpeg"))
     parts.append(types.Part.from_text(text=prompt))
     response = client.models.generate_content(
         model=model, contents=[types.Content(role="user", parts=parts)],
