@@ -20,6 +20,7 @@ Updated: 2026-08-20
 - A corrected-FPS distance control (`G0fWvIxy88A`, q1) returned **C** versus gold **B**, so Gemini is not yet a general distance replacement. A landmark control was unavailable due a transient 503; no production merge or submission was attempted.
 - Exposed model selection for the Gemini probe and attempted one `gemini-3.6-flash` corrected-FPS map control; the provider returned 503 before generation. The runner remains ready, but no additional inference is justified while the endpoint is overloaded.
 - Added an opt-in `KILOMETERVISION_ENABLE_GEMINI_COMPASS=1` selector lane that reads only strict A–E cached Gemini enum records and falls back to motion when absent/malformed. A local synthetic smoke test passes; it is intentionally disabled by default until a complete test-side batch is generated.
+- Added `gemini_validation_batch.py`, a bounded family/limit/key-rotation harness for explicit-FPS probes. Dry-run output was verified for all five compass controls; it never submits to EvalAI and is ready for the next service window.
 - Added greedy decoding (`temperature=0`) and re-tested maps. 4MY became stable/correct (**D twice**), but Htw was stably wrong (**C vs A**) and buBU was wrong (**B vs C**, also a known DPVO failure). A simple Gemini/DPVO consensus gate therefore shows no validation gain on these three controls; Gemini remains a compass specialist only.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
