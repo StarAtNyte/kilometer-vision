@@ -2,6 +2,11 @@
 
 Updated: 2026-08-20
 
+## 2026-08-23 — staged Gemini route-certificate control
+
+- Added an opt-in two-stage Gemini contract to `modal_gemini_direct_video_probe.py`: the first call writes an answer-blind route certificate (turn order, crossings, endpoint displacement), and the second call compares that frozen certificate with the candidate maps. This isolates route perception from option selection and is retained for the next quota window.
+- The first controlled map probe (`4MYTCny_FZs`, q1, 512 px/2 fps/high thinking) was stopped by the provider's hard free-tier limit (`429`, 20 requests/project/model) before the second-stage answer. No prediction or submission changed; further Gemini calls are paused to avoid spend.
+
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
 - Found the active Gemini credential under Modal secret `gemini-api-key` (the pooled `gemini-api-keys` secret exposes no supported variable in this profile). No key material is stored locally.

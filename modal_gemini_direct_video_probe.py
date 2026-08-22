@@ -50,7 +50,7 @@ def _clip(source: Path, start: float, end: float, target: Path, fps: float = 0.5
 
 
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24) -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -119,10 +119,22 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             time.sleep(2)
             uploaded = client.files.get(name=uploaded.name)
         parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
+    route_summary = ""
+    if two_stage:
+        route_request = ("Inspect this walking-tour clip and produce a compact, answer-blind route certificate. "
+                         "List only observable temporal facts: start and end scene, ordered sustained turns "
+                         "(left/right), loops or crossings, and relative endpoint displacement. Do not choose "
+                         "an answer option or infer candidate-map identities.")
+        route_response = client.models.generate_content(
+            model=model, contents=[types.Content(role="user", parts=[parts[0], types.Part.from_text(text=route_request)])],
+            config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(thinking_level=thinking_level), max_output_tokens=512))
+        route_summary = getattr(route_response, "text", "") or ""
     map_hint = ("For a map question, first infer the ordered route from the video: starting position, "
                 "ending position, major turns, and relative route shape. Then compare those four facts "
                 "against every candidate map; do not use the candidate's screen position as evidence.\n"
                 if question.get('image_paths') else "")
+    if route_summary:
+        map_hint += "A separate perception pass produced this route certificate; treat it as evidence, not as an answer label:\n" + route_summary + "\n"
     prompt = ("Answer the question from the walking-tour video. Reason silently, then return only the "
               "single option letter A, B, C, D, or E as the final response. Do not infer from option position alone.\n"
               + map_hint + f"Question: {question['question']}\nOptions (these letters match the printed candidate labels):\n" +
@@ -165,5 +177,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage), indent=2))
