@@ -62,6 +62,32 @@ def _silent_full_source(source: Path, target: Path) -> None:
                    check=True, timeout=300)
 
 
+def _upload_cached(client, clip: Path, cache_path: Path):
+    """Reuse an ACTIVE Gemini File after transient generation failures."""
+    from google.genai import types
+    if cache_path.exists():
+        try:
+            saved = json.loads(cache_path.read_text())
+            uploaded = client.files.get(name=saved["name"])
+            state = getattr(uploaded, "state", None)
+            if "ACTIVE" in getattr(state, "name", str(state)):
+                return uploaded
+        except Exception:
+            pass
+    uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
+    for _ in range(60):
+        state = getattr(uploaded, "state", None)
+        name = getattr(state, "name", str(state))
+        if "ACTIVE" in name:
+            cache_path.write_text(json.dumps({"name": uploaded.name, "uri": uploaded.uri}) + "\n")
+            return uploaded
+        if "FAILED" in name:
+            raise RuntimeError(f"Gemini file processing failed: {name}")
+        time.sleep(2)
+        uploaded = client.files.get(name=uploaded.name)
+    raise TimeoutError("Gemini file did not become ACTIVE")
+
+
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
 def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, prepare_only: bool = False) -> dict:
     from google import genai
@@ -79,7 +105,8 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     storyboard_clip = None
     if full_source:
         clip_start, clip_end = 0.0, 0.0
-        _silent_full_source(source, clip)
+        if not clip.exists():
+            _silent_full_source(source, clip)
     elif full_video:
         probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                 "-of", "default=noprint_wrappers=1:nokey=1", str(source)],
@@ -130,16 +157,8 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             uploaded = client.files.get(name=uploaded.name)
         parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
     else:
-        uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
-        for _ in range(60):
-            state = getattr(uploaded, "state", None)
-            name = getattr(state, "name", str(state))
-            if "ACTIVE" in name:
-                break
-            if "FAILED" in name:
-                raise RuntimeError(f"Gemini file processing failed: {name}")
-            time.sleep(2)
-            uploaded = client.files.get(name=uploaded.name)
+        upload_cache = work / f"{split}-{video_id}-{question_id}.upload.json"
+        uploaded = _upload_cached(client, clip, upload_cache)
         parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
     route_summary = ""
     if two_stage:

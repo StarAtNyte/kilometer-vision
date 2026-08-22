@@ -8,6 +8,7 @@ Updated: 2026-08-20
 - The first controlled map probe (`4MYTCny_FZs`, q1, 512 px/2 fps/high thinking) was stopped by the provider's hard free-tier limit (`429`, 20 requests/project/model) before the second-stage answer. No prediction or submission changed; further Gemini calls are paused to avoid spend.
 - Implemented and prepared the missing leader-style media path: a full-source silent MP4 made by audio removal with `-c:v copy`, rather than the prior 24-frame storyboard or question-window re-encode. The known 4MY source remux completed without inference at **1.55 GB**, confirming the path is technically viable; one single direct call is reserved for the next quota reset.
 - The first full-source direct call then uploaded successfully but Gemini returned **503 UNAVAILABLE** during generation (high demand), so it produced no answer and cannot be scored. This is an infrastructure failure, not evidence against the method; do not retry repeatedly or merge anything.
+- Added persistent Gemini File caching keyed by split/video/question. A future retry can reuse the already-processed full-source upload after a transient 503 instead of paying the 1.55-GB upload cost again; no credentials or remote file IDs are committed.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
