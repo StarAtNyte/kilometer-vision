@@ -14,6 +14,7 @@ Updated: 2026-08-20
 - The 0.1 FPS full-tour artifact is **13.1 MB**, but its single controlled inference was refused before generation by the project's recurring Gemini free-tier `429` (20 requests/model/day). The media path now clears both the upload and context-size gates; only provider quota remains, so no further calls are justified today.
 - A pooled-key retry reached Gemini but revealed the 0.1 FPS clip still exceeded the 1,048,576-token limit. The full source is unusually long; the next compact variant is fixed at **0.02 FPS/320 px** (~one frame per 50 seconds), targeting roughly 40–50 chronological frames. No answer was produced.
 - The 0.02 FPS/320 px full-tour probe finally completed generation on pooled key 1: Gemini returned **A** for the known compass control (gold **B**). This is a clean negative for ultra-sparse full-tour sampling, not a quota/media failure; no production answer changed.
+- The paired map control under the same compact full-tour contract also returned **A** (gold **D**). Thus this direct-video variant is rejected on both route orientation and map identity; no test predictions or submission changed.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
