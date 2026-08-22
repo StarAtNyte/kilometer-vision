@@ -171,11 +171,20 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
                 raise RuntimeError(f"Gemini storyboard processing failed: {name}")
             time.sleep(2)
             uploaded = client.files.get(name=uploaded.name)
-        parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
+        # Tell Gemini's File API how sparsely to tokenize the reassembled
+        # storyboard; otherwise it silently defaults to 1 FPS.
+        parts = [types.Part(
+            file_data=types.FileData(file_uri=uploaded.uri, mime_type="video/mp4"),
+            video_metadata=types.VideoMetadata(fps=2.0),
+        )]
     else:
         upload_cache = work / f"{split}-{video_id}-{question_id}.upload.json"
         uploaded = _upload_cached(client, clip, upload_cache)
-        parts = [types.Part.from_uri(file_uri=uploaded.uri, mime_type="video/mp4")]
+        requested_fps = 0.02 if (sampled_full or full_source) else float(fps)
+        parts = [types.Part(
+            file_data=types.FileData(file_uri=uploaded.uri, mime_type="video/mp4"),
+            video_metadata=types.VideoMetadata(fps=requested_fps),
+        )]
     route_summary = ""
     if two_stage:
         route_request = ("Inspect this walking-tour clip and produce a compact, answer-blind route certificate. "
@@ -205,7 +214,12 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
                 continue
             raw = archive.read(matches[0])
             with Image.open(io.BytesIO(raw)) as image:
-                image = image.convert("RGB"); buf = io.BytesIO(); image.save(buf, format="JPEG", quality=88)
+                image = image.convert("RGB")
+                # Candidate maps can be multi-megapixel scans; keep their
+                # geometry legible without letting five images exhaust the
+                # model context before the video is read.
+                image.thumbnail((max(256, scale), max(256, scale)), Image.Resampling.LANCZOS)
+                buf = io.BytesIO(); image.save(buf, format="JPEG", quality=88)
             candidate_images.append(image.copy())
     if candidate_images:
         # Separate, explicitly labelled images reduce tiny-map contact-sheet loss.

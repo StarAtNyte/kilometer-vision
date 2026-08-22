@@ -15,6 +15,8 @@ Updated: 2026-08-20
 - A pooled-key retry reached Gemini but revealed the 0.1 FPS clip still exceeded the 1,048,576-token limit. The full source is unusually long; the next compact variant is fixed at **0.02 FPS/320 px** (~one frame per 50 seconds), targeting roughly 40–50 chronological frames. No answer was produced.
 - The 0.02 FPS/320 px full-tour probe finally completed generation on pooled key 1: Gemini returned **A** for the known compass control (gold **B**). This is a clean negative for ultra-sparse full-tour sampling, not a quota/media failure; no production answer changed.
 - The paired map control under the same compact full-tour contract also returned **A** (gold **D**). Thus this direct-video variant is rejected on both route orientation and map identity; no test predictions or submission changed.
+- Found and fixed the key Gemini API contract bug: the File API defaults to **1 FPS** unless `Part.video_metadata.fps` is explicitly set, so our encoded low-FPS clips were being silently re-sampled and overflowing context. After passing the true FPS, the same compact full-tour compass control changed from **A** to correct **B**.
+- Corrected-FPS exact-window compass controls are now **3/3**: 4MY **B**, mA9 **C**, aUJ **A** (all match gold). This is the first reproducible, model-independent gain over our motion compass lane and is a serious candidate for a Gemini compass specialist. The corrected compact map control remained wrong (A vs D); after resizing candidate maps to model scale, exact-window map returned C vs D without context overflow, so map selection remains unresolved.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
