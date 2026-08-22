@@ -18,7 +18,7 @@ Current EvalAI test leaderboard, checked **August 22, 2026**:
 | 2 | StarAtNyte — submission 579438 | 0.245436 | Public |
 | 3 | Host_37595_Team | 0.195740 | Public |
 
-Our best private result is submission **579675**, Top-1 **0.2505071** (247/986); it is not included in the public table.
+Our best private result is submission **579805**, Top-1 **0.2738337** (270/986); it is not included in the public table. This is the motion-compass anchor plus the explicit straight-line distance correction. The separate eight-row map-anchor ablation was rejected after isolated testing.
 
 The public table currently exposes three test entries. The top method is explicitly named `bounded-geometry-qwen-zero-shot`; it is the only demonstrated route near 0.5. Refresh the official public table with:
 
