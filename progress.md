@@ -1,5 +1,7 @@
 # PATHFINDER progress
 
+- Controlled follow-up (2026-08-23): corrected-FPS Gemini compass batch produced one confirmed correct answer (`4MYTCny_FZs/0 -> B`), then hit the project-wide Gemini 3.5 Flash free-tier 429 quota; the batch was stopped before further spend. A zero-cost Modal map pin-radius sweep initially returned an empty artifact because historical DPVO files use both `VARIANT/video` and `VARIANT/VARIANT/video` layouts. Added a path fallback in commit `81905c8`; the Modal volume currently lacks the validation DPVO artifacts, so no new map score was claimed. The audited marker-guided test candidate remains ready but unsubmitted.
+
 Updated: 2026-08-20
 
 ## 2026-08-23 — staged Gemini route-certificate control
