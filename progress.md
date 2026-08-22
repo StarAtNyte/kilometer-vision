@@ -9,6 +9,7 @@ Updated: 2026-08-20
 - A full-route 48-frame storyboard still answered the compass control **A** (gold B), and one additional G0 map API call timed out; the improvement is not yet validated across the five maps. The other validation videos are absent from the current `baptinjean` volume, so no broad run or test merge was attempted.
 - Repeated the improved exact-window contract on the complete `gpudashboard0` source volume: map controls Htw, UKy, and buBU returned **D/A/A** against gold **A/A/C**; G0 timed out. Together with 4MY=D, this is only **1/4 completed maps**, so the prompt/media change is not promoted despite the isolated 4MY win. The complete source volume is now available for a controlled follow-up if the API budget permits.
 - The Gemini free-tier project then hit its hard 20-request daily quota (429), so further API probing is stopped to avoid uncontrolled spend. A cached marker-guided DPVO map lane remains answer-blind and scored 4/5 on validation, but its 284-row test artifact has no labels and changes 217 answers versus the current combined anchor; it is not safe to submit without a new external signal.
+- Regenerated the non-Frechet marker-guided lane over all 284 cached test-map records. It changes 222 answers versus the straight-line anchor, is 108 answers away from the older DPVO artifact, and has no test labels. The corresponding validation lane is 4/5 (not better than DPVO), so `test_submission_marker_guided_2026-08-22_fixed.json` is preserved and deliberately **not uploaded**.
 
 ## 2026-08-22 — SpatioLM depth/camera-ray probe
 
