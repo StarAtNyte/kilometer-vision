@@ -107,11 +107,6 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
             media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_MEDIUM if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
-            # The public leader appears to use a machine-readable single-choice
-            # response.  Enforce the same contract so visual reasoning cannot be
-            # lost to a prose/partial-response parse failure.
-            response_mime_type="text/x.enum",
-            response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
             max_output_tokens=128))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
               "raw_response": response.text, "ground_truth_used_for_inference": False}
