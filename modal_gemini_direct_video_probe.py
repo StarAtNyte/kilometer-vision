@@ -46,11 +46,11 @@ def _clip(source: Path, start: float, end: float, target: Path) -> None:
                    check=True, timeout=max(120, int(duration * 3)))
 
 
-@APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=15 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0) -> dict:
+@APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False) -> dict:
     from google import genai
     from google.genai import types
-    from PIL import Image
+    from PIL import Image, ImageDraw
 
     VOLUME.reload()
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
@@ -59,8 +59,14 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     work = ROOT / "experiments" / "gemini-direct-video" / "clips"
     work.mkdir(parents=True, exist_ok=True)
     clip = work / f"{split}-{video_id}-{question_id}.mp4"
-    _clip(source, float(question.get("start_seconds", 0.0)),
-          float(question.get("end_seconds", 60.0)), clip)
+    if full_video:
+        probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                "-of", "default=noprint_wrappers=1:nokey=1", str(source)],
+                               check=True, capture_output=True, text=True)
+        clip_start, clip_end = 0.0, float(probe.stdout.strip())
+    else:
+        clip_start = float(question.get("start_seconds", 0.0)); clip_end = float(question.get("end_seconds", 60.0))
+    _clip(source, clip_start, clip_end, clip)
     client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
     uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
     for _ in range(60):
@@ -78,6 +84,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
               f"Question: {question['question']}\nOptions:\n" +
               "\n".join(f"{i}: {option}" for i, option in enumerate(question.get("options", []))))
     archive_path = ROOT / "manifests" / f"{split}_images.zip"
+    candidate_images = []
     with zipfile.ZipFile(archive_path) as archive:
         for index, reference in enumerate(question.get("image_paths", [])):
             matches = [name for name in archive.namelist() if Path(name).name == Path(str(reference)).name]
@@ -86,13 +93,24 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             raw = archive.read(matches[0])
             with Image.open(io.BytesIO(raw)) as image:
                 image = image.convert("RGB"); buf = io.BytesIO(); image.save(buf, format="JPEG", quality=88)
-            parts.append(types.Part.from_text(text=f"Candidate/reference image {index} follows."))
-            parts.append(types.Part.from_bytes(data=buf.getvalue(), mime_type="image/jpeg"))
+            candidate_images.append(image.copy())
+    if candidate_images:
+        # A single explicitly labelled sheet prevents multimodal ordering drift.
+        cell_w, cell_h = 420, 420
+        sheet = Image.new("RGB", (cell_w * 3, cell_h * 2), "white")
+        draw = ImageDraw.Draw(sheet)
+        for index, image in enumerate(candidate_images):
+            image.thumbnail((cell_w - 12, cell_h - 42))
+            x, y = (index % 3) * cell_w, (index // 3) * cell_h
+            sheet.paste(image, (x + 6, y + 36)); draw.text((x + 12, y + 8), f"OPTION {'ABCDE'[index]}", fill="black")
+        buf = io.BytesIO(); sheet.save(buf, format="JPEG", quality=88)
+        parts.append(types.Part.from_text(text="The following single image is a labelled candidate-map sheet. Read options A-E from the printed labels."))
+        parts.append(types.Part.from_bytes(data=buf.getvalue(), mime_type="image/jpeg"))
     parts.append(types.Part.from_text(text=prompt))
     response = client.models.generate_content(
         model=model, contents=[types.Content(role="user", parts=parts)],
         config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(thinking_level="low"),
+            thinking_config=types.ThinkingConfig(thinking_level="high"),
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW,
             max_output_tokens=128))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
@@ -104,5 +122,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video), indent=2))
