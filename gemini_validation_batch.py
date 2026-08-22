@@ -26,13 +26,15 @@ def _family(question: dict) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--family", choices=("all", "compass", "map", "distance", "landmark"), default="compass")
+    parser.add_argument("--split", choices=("validation", "test"), default="validation")
     parser.add_argument("--limit", type=int, default=5)
     parser.add_argument("--key-start", type=int, default=0)
     parser.add_argument("--profile", default="gpudashboard0")
     parser.add_argument("--model", default="gemini-3.5-flash")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
-    manifest = json.loads(Path(".cache/validation.json").read_text())
+    manifest_path = Path(".cache/validation.json") if args.split == "validation" else Path(".cache/test_public_20260811.json")
+    manifest = json.loads(manifest_path.read_text())
     targets = []
     for video_id, questions in manifest.items():
         for question_id, question in questions.items():
@@ -43,7 +45,7 @@ def main() -> None:
         command = [
             "modal", "run", "modal_gemini_direct_video_probe.py",
             "--video-id", video_id, "--question-id", str(question_id),
-            "--split", "validation", "--model", args.model,
+            "--split", args.split, "--model", args.model,
             "--fps", "2", "--scale", "320", "--thinking-level", "low",
             "--key-index", str(args.key_start + offset),
         ]
