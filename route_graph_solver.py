@@ -176,11 +176,26 @@ def main() -> None:
     parser.add_argument("--video-id", action="append", default=[])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--cache", type=Path, required=True)
+    parser.add_argument("--inventory", type=Path, action="append", default=[],
+                        help="optional Overpass JSON files (elements or name->points) for offline use")
     parser.add_argument("--delay", type=float, default=1.05)
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text())
     anchors = json.loads(args.anchors.read_text())["records"]
     cache = json.loads(args.cache.read_text()) if args.cache.exists() else {}
+    offline_inventory: dict[str, dict[str, list[list[float]]]] = {}
+    for path in args.inventory:
+        payload = json.loads(path.read_text())
+        if isinstance(payload, dict) and "elements" in payload:
+            mapped: dict[str, list[list[float]]] = {}
+            for element in payload.get("elements", []):
+                name = element.get("tags", {}).get("name")
+                center = element.get("center")
+                if name and center:
+                    mapped.setdefault(name, []).append([float(center["lat"]), float(center["lon"])])
+            offline_inventory[path.stem.casefold()] = mapped
+        elif isinstance(payload, dict):
+            offline_inventory[path.stem.casefold()] = payload
     wanted = set(args.video_id) if args.video_id else set(manifest)
     records = []
     for video_id in sorted(wanted & set(manifest)):
@@ -190,7 +205,11 @@ def main() -> None:
         if not city:
             continue
         area = area_context(title, city)
-        inventory = overpass_inventory(area, cache, args.delay)
+        inventory = offline_inventory.get(area.casefold())
+        if inventory is None and len(offline_inventory) == 1:
+            inventory = next(iter(offline_inventory.values()))
+        if inventory is None:
+            inventory = overpass_inventory(area, cache, args.delay)
         for question_id, question in manifest[video_id].items():
             if not any(re.search(r"\b(?:head|turn|continue|slight)\b", str(option), re.I) for option in question.get("options", [])):
                 continue
