@@ -229,17 +229,27 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             parts.append(types.Part.from_text(text=f"OPTION {'ABCDE'[index]} CANDIDATE MAP"))
             parts.append(types.Part.from_bytes(data=buf.getvalue(), mime_type="image/jpeg"))
     parts.append(types.Part.from_text(text=prompt))
-    response = client.models.generate_content(
-        model=model, contents=[types.Content(role="user", parts=parts)],
-        config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
-            temperature=0.0,
-            media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_HIGH if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
-            response_mime_type="text/x.enum",
-            response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
-            # Thinking-mode responses need room for the hidden chain plus the
-            # final choice; 128 tokens routinely truncates before the answer.
-            max_output_tokens=1024))
+    config = types.GenerateContentConfig(
+        thinking_config=types.ThinkingConfig(thinking_level=thinking_level),
+        temperature=0.0,
+        media_resolution=(types.MediaResolution.MEDIA_RESOLUTION_HIGH if scale >= 512 else types.MediaResolution.MEDIA_RESOLUTION_LOW),
+        response_mime_type="text/x.enum",
+        response_schema={"type": "STRING", "enum": ["A", "B", "C", "D", "E"]},
+        max_output_tokens=1024)
+    response = None
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=model, contents=[types.Content(role="user", parts=parts)], config=config)
+            break
+        except Exception as error:
+            # Provider 503s are transient; cap retries so quota/cost remains
+            # predictable and never retry malformed requests (400) or quota
+            # exhaustion (429).
+            message = str(error)
+            if "503" not in message or attempt == 2:
+                raise
+            time.sleep(10 * (attempt + 1))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
               "raw_response": response.text, "ground_truth_used_for_inference": False}
     output = ROOT / "experiments" / "gemini-direct-video" / f"{split}-{video_id}-{question_id}.json"
