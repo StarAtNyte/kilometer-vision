@@ -24,6 +24,17 @@
       "correct": false
     },
     {
+      "file": "validation-8dRlTtH1scc-0.json",
+      "video_id": "8dRlTtH1scc",
+      "question_id": "0",
+      "raw_response": "B",
+      "model": "gemini-3.7-flash",
+      "category": "landmark",
+      "prediction": 1,
+      "answer_id": 1,
+      "correct": true
+    },
+    {
       "file": "validation-9m3fojdkPjM-0.json",
       "video_id": "9m3fojdkPjM",
       "question_id": "0",
@@ -174,5 +185,5 @@
       "correct": false
     }
   ],
-  "note": "Post-hoc audit only; missing provider record is excluded, not imputed."
+  "note": "Complete 18-question post-hoc audit; all 18 records persisted answer-blind."
 }
