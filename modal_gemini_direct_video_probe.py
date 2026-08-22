@@ -75,7 +75,9 @@ def _upload_cached(client, clip: Path, cache_path: Path):
         except Exception:
             pass
     uploaded = client.files.upload(file=str(clip), config={"mime_type": "video/mp4"})
-    for _ in range(60):
+    # Full-source tours can take several minutes for Gemini's video indexer;
+    # do not confuse that with a failed model request.
+    for _ in range(360):
         state = getattr(uploaded, "state", None)
         name = getattr(state, "name", str(state))
         if "ACTIVE" in name:
