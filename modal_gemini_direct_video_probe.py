@@ -15,9 +15,9 @@ import modal
 ROOT = Path("/data/2707-kilometer-vision")
 SOURCE_ROOT = Path("/data/shared/walking-tours")
 VOLUME = modal.Volume.from_name("perception-test-2026-data", create_if_missing=True)
-# The singular secret is the active key in the current profile; the pooled
-# secret exists but has no exposed variable names in this account.
-SECRET = modal.Secret.from_name("gemini-api-key")
+# The pooled secret exposes GEMINI_API_KEYS and lets us rotate across the
+# independently provisioned keys when one free-tier project is exhausted.
+SECRET = modal.Secret.from_name("gemini-api-keys")
 MODEL = "gemini-3.5-flash"
 VIDEO_SUFFIXES = {".mp4", ".mkv", ".mov", ".webm", ".avi", ".m4v"}
 IMAGE = (modal.Image.debian_slim(python_version="3.11")
@@ -62,7 +62,7 @@ def _silent_full_source(source: Path, target: Path) -> None:
                    check=True, timeout=300)
 
 
-def _sampled_full_source(source: Path, target: Path, fps: float = 0.1, scale: int = 512) -> None:
+def _sampled_full_source(source: Path, target: Path, fps: float = 0.02, scale: int = 320) -> None:
     """Encode the whole tour at a bounded temporal/spatial rate, silently."""
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(source),
                     "-an", "-vf", f"fps={fps},scale={scale}:-2", "-c:v", "libx264",
@@ -110,14 +110,14 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     source = _source(video_id)
     work = ROOT / "experiments" / "gemini-direct-video" / "clips"
     work.mkdir(parents=True, exist_ok=True)
-    media_tag = "sampled-full-0p1" if sampled_full else "full-source" if full_source else "window"
+    media_tag = "sampled-full-0p02" if sampled_full else "full-source" if full_source else "window"
     clip = work / f"{split}-{video_id}-{question_id}-{media_tag}.mp4"
     storyboard = []
     storyboard_clip = None
     if sampled_full:
         clip_start, clip_end = 0.0, 0.0
         if not clip.exists():
-            _sampled_full_source(source, clip, fps=0.1, scale=scale)
+            _sampled_full_source(source, clip, fps=0.02, scale=min(scale, 320))
     elif full_source:
         clip_start, clip_end = 0.0, 0.0
         if not clip.exists():
