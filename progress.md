@@ -17,6 +17,7 @@ Updated: 2026-08-20
 - The paired map control under the same compact full-tour contract also returned **A** (gold **D**). Thus this direct-video variant is rejected on both route orientation and map identity; no test predictions or submission changed.
 - Found and fixed the key Gemini API contract bug: the File API defaults to **1 FPS** unless `Part.video_metadata.fps` is explicitly set, so our encoded low-FPS clips were being silently re-sampled and overflowing context. After passing the true FPS, the same compact full-tour compass control changed from **A** to correct **B**.
 - Corrected-FPS exact-window compass controls are now **3/3**: 4MY **B**, mA9 **C**, aUJ **A** (all match gold). This is the first reproducible, model-independent gain over our motion compass lane and is a serious candidate for a Gemini compass specialist. The corrected compact map control remained wrong (A vs D); after resizing candidate maps to model scale, exact-window map returned C vs D without context overflow, so map selection remains unresolved.
+- A corrected-FPS distance control (`G0fWvIxy88A`, q1) returned **C** versus gold **B**, so Gemini is not yet a general distance replacement. A landmark control was unavailable due a transient 503; no production merge or submission was attempted.
 
 ## 2026-08-22 — Gemini high-resolution exact-window control
 
