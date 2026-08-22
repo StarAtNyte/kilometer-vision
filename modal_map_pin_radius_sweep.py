@@ -15,8 +15,13 @@ def run(split='validation'):
  VOLUME.reload(); manifest=json.loads((ROOT/'manifests'/f'{split}.json').read_text()); archive=ROOT/'manifests'/f'{split}_images.zip'; rows=[]
  with zipfile.ZipFile(archive) as a:
   for vid,qs in manifest.items():
-   mp=ROOT/'experiments'/'dpvo-motion'/split/VARIANT/f'{vid}.json'
-   if not mp.exists():continue
+   # Historical Modal artifacts were written both as VARIANT/<video> and
+   # VARIANT/VARIANT/<video>; accept either layout so the sweep cannot silently
+   # return an empty result.
+   candidates=(ROOT/'experiments'/'dpvo-motion'/split/VARIANT/f'{vid}.json',
+               ROOT/'experiments'/'dpvo-motion'/split/VARIANT/VARIANT/f'{vid}.json')
+   mp=next((path for path in candidates if path.exists()), None)
+   if mp is None:continue
    motion=json.loads(mp.read_text()); motion=motion.get(vid,motion)
    for qid,q in qs.items():
     if 'map' not in classify_question_facets(q) or len(q.get('image_paths',[]))!=5:continue
