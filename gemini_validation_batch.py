@@ -28,6 +28,7 @@ def main() -> None:
     parser.add_argument("--family", choices=("all", "compass", "map", "distance", "landmark"), default="compass")
     parser.add_argument("--split", choices=("validation", "test"), default="validation")
     parser.add_argument("--limit", type=int, default=5)
+    parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--key-start", type=int, default=0)
     parser.add_argument("--profile", default="gpudashboard0")
     parser.add_argument("--model", default="gemini-3.5-flash")
@@ -40,7 +41,7 @@ def main() -> None:
         for question_id, question in questions.items():
             if args.family == "all" or _family(question) == args.family:
                 targets.append((video_id, question_id, _family(question)))
-    targets = targets[: max(0, args.limit)]
+    targets = targets[max(0, args.offset): max(0, args.offset) + max(0, args.limit)]
     for offset, (video_id, question_id, family) in enumerate(targets):
         command = [
             "modal", "run", "modal_gemini_direct_video_probe.py",
