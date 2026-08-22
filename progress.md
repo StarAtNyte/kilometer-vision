@@ -1,5 +1,7 @@
 # PATHFINDER progress
 
+- New method branch (2026-08-23): added an opt-in order-invariant Gemini endpoint-duel selector (`KILOMETERVISION_ENABLE_GEMINI_DUEL_MAP=1`, commit `d89cca4`). It requires complete base/reversed candidate pairs, identical identity, and confidence >=0.99, preferring Gemini 3.7 artifacts. A synthetic selector test passed; existing labeled duel evidence supports the 5/5 validation gate, but no complete test-side duel artifacts exist yet, so production remains unchanged. One fresh generic Gemini 3.7 map call returned A on Istanbul (gold D), confirming generic direct selection is not sufficient. The attempted fresh endpoint duel was stopped after the Modal call became unresponsive; no answer artifact was produced. An OSM route-graph run was also stopped because both Overpass endpoints stalled; no network-derived predictions were generated.
+
 - Controlled follow-up (2026-08-23): corrected-FPS Gemini compass batch produced one confirmed correct answer (`4MYTCny_FZs/0 -> B`), then hit the project-wide Gemini 3.5 Flash free-tier 429 quota; the batch was stopped before further spend. A zero-cost Modal map pin-radius sweep initially returned an empty artifact because historical DPVO files use both `VARIANT/video` and `VARIANT/VARIANT/video` layouts. Added a path fallback in commit `81905c8`; the Modal volume currently lacks the validation DPVO artifacts, so no new map score was claimed. The audited marker-guided test candidate remains ready but unsubmitted.
 
 Updated: 2026-08-20
