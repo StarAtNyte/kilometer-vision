@@ -62,6 +62,14 @@ def _silent_full_source(source: Path, target: Path) -> None:
                    check=True, timeout=300)
 
 
+def _sampled_full_source(source: Path, target: Path, fps: float = 1.0, scale: int = 512) -> None:
+    """Encode the whole tour at a bounded temporal/spatial rate, silently."""
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(source),
+                    "-an", "-vf", f"fps={fps},scale={scale}:-2", "-c:v", "libx264",
+                    "-preset", "ultrafast", "-crf", "28", "-pix_fmt", "yuv420p", "-y", str(target)],
+                   check=True, timeout=900)
+
+
 def _upload_cached(client, clip: Path, cache_path: Path):
     """Reuse an ACTIVE Gemini File after transient generation failures."""
     from google.genai import types
@@ -91,7 +99,7 @@ def _upload_cached(client, clip: Path, cache_path: Path):
 
 
 @APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, prepare_only: bool = False) -> dict:
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
@@ -102,10 +110,15 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     source = _source(video_id)
     work = ROOT / "experiments" / "gemini-direct-video" / "clips"
     work.mkdir(parents=True, exist_ok=True)
-    clip = work / f"{split}-{video_id}-{question_id}.mp4"
+    media_tag = "sampled-full" if sampled_full else "full-source" if full_source else "window"
+    clip = work / f"{split}-{video_id}-{question_id}-{media_tag}.mp4"
     storyboard = []
     storyboard_clip = None
-    if full_source:
+    if sampled_full:
+        clip_start, clip_end = 0.0, 0.0
+        if not clip.exists():
+            _sampled_full_source(source, clip, fps=1.0, scale=scale)
+    elif full_source:
         clip_start, clip_end = 0.0, 0.0
         if not clip.exists():
             _silent_full_source(source, clip)
@@ -142,6 +155,7 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
     if prepare_only:
         result = {"video_id": video_id, "question_id": str(question_id), "clip": str(clip),
                   "bytes": clip.stat().st_size, "full_source": full_source,
+                  "sampled_full": sampled_full,
                   "full_video": full_video, "ground_truth_used_for_inference": False}
         print(json.dumps(result, indent=2))
         return result
@@ -220,5 +234,5 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, prepare_only: bool = False):
-    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, prepare_only), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, MODEL, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, sampled_full, prepare_only), indent=2))
