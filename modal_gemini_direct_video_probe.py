@@ -17,13 +17,28 @@ SOURCE_ROOT = Path("/data/shared/walking-tours")
 VOLUME = modal.Volume.from_name("perception-test-2026-data", create_if_missing=True)
 # The pooled secret exposes GEMINI_API_KEYS and lets us rotate across the
 # independently provisioned keys when one free-tier project is exhausted.
-SECRET = modal.Secret.from_name("gemini-api-keys")
+# Select the Modal secret at launch via GEMINI_MODAL_SECRET; never store key
+# material in source. The default preserves the pooled production secret.
+SECRET = modal.Secret.from_name(os.environ.get("GEMINI_MODAL_SECRET", "gemini-api-keys"))
 MODEL = "gemini-3.5-flash"
 VIDEO_SUFFIXES = {".mp4", ".mkv", ".mov", ".webm", ".avi", ".m4v"}
 IMAGE = (modal.Image.debian_slim(python_version="3.11")
          .apt_install("ffmpeg")
-         .pip_install("google-genai", "pillow") )
+         .pip_install("google-genai", "pillow", "google-auth") )
 APP = modal.App("kilometervision-gemini-direct-video")
+
+# Vertex AI path: bypasses the AI-Studio free-tier per-key request cap by
+# billing through a real GCP project instead. The GCP secret must always be
+# part of the function's declared deps (not conditional on an env var) --
+# Modal re-hydrates the function inside the remote container, where a plain
+# os.environ flag set only on the local `modal run` invocation is not visible,
+# so a conditional deps list disagrees between local registration and remote
+# hydration. Whether to actually use it is instead a per-call `use_vertex`
+# argument, threaded through normally like any other parameter.
+VERTEX_PROJECT = os.environ.get("VERTEX_PROJECT", "veotest-460812")
+VERTEX_LOCATION = os.environ.get("VERTEX_LOCATION", "global")
+GCP_SECRET_NAME = os.environ.get("GCP_MODAL_SECRET", "gcp-vertex-service-account")
+SECRETS = [SECRET, modal.Secret.from_name(GCP_SECRET_NAME)]
 
 
 def _key(index: int = 0) -> str:
@@ -98,13 +113,19 @@ def _upload_cached(client, clip: Path, cache_path: Path):
     raise TimeoutError("Gemini file did not become ACTIVE")
 
 
-@APP.function(image=IMAGE, secrets=[SECRET], volumes={"/data": VOLUME}, timeout=20 * 60)
-def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False) -> dict:
+@APP.function(image=IMAGE, secrets=SECRETS, volumes={"/data": VOLUME}, timeout=20 * 60)
+def run_one(video_id: str, question_id: str, split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False, use_vertex: bool = False, force: bool = False) -> dict:
     from google import genai
     from google.genai import types
     from PIL import Image, ImageDraw
 
     VOLUME.reload()
+    output_path = ROOT / "experiments" / "gemini-direct-video" / f"{split}-{video_id}-{question_id}.json"
+    if output_path.exists() and not force:
+        try:
+            return json.loads(output_path.read_text())
+        except (OSError, ValueError):
+            pass
     manifest = json.loads((ROOT / "manifests" / f"{split}.json").read_text())
     question = manifest[video_id][str(question_id)]
     source = _source(video_id)
@@ -159,8 +180,29 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
                   "full_video": full_video, "ground_truth_used_for_inference": False}
         print(json.dumps(result, indent=2))
         return result
-    client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
-    if storyboard_clip is not None:
+    if use_vertex:
+        creds_json = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+        if not creds_json:
+            raise RuntimeError(f"use_vertex=True but secret {GCP_SECRET_NAME!r} has no GOOGLE_APPLICATION_CREDENTIALS_JSON")
+        creds_path = Path(tempfile.gettempdir()) / "gcp-vertex-sa.json"
+        creds_path.write_text(creds_json)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(creds_path)
+        client = genai.Client(vertexai=True, project=VERTEX_PROJECT, location=VERTEX_LOCATION,
+                               http_options=types.HttpOptions(timeout=180_000))
+    else:
+        client = genai.Client(api_key=_key(key_index), http_options=types.HttpOptions(timeout=180_000))
+    if use_vertex:
+        # Vertex AI has no Files API (client.files.upload only works on the
+        # Gemini Developer/AI-Studio client) -- send the clip inline instead.
+        # These are short, low-res, silent clips, so they stay well under
+        # Vertex's inline request-size limit.
+        target_clip = storyboard_clip if storyboard_clip is not None else clip
+        requested_fps = 2.0 if storyboard_clip is not None else (0.02 if (sampled_full or full_source) else float(fps))
+        parts = [types.Part(
+            inline_data=types.Blob(data=target_clip.read_bytes(), mime_type="video/mp4"),
+            video_metadata=types.VideoMetadata(fps=requested_fps),
+        )]
+    elif storyboard_clip is not None:
         uploaded = client.files.upload(file=str(storyboard_clip), config={"mime_type": "video/mp4"})
         for _ in range(60):
             state = getattr(uploaded, "state", None)
@@ -252,12 +294,44 @@ def run_one(video_id: str, question_id: str, split: str = "validation", model: s
             time.sleep(10 * (attempt + 1))
     result = {"video_id": video_id, "question_id": str(question_id), "model": model,
               "raw_response": response.text, "ground_truth_used_for_inference": False}
-    output = ROOT / "experiments" / "gemini-direct-video" / f"{split}-{video_id}-{question_id}.json"
-    output.parent.mkdir(parents=True, exist_ok=True); output.write_text(json.dumps(result, indent=2) + "\n")
+    output_path.parent.mkdir(parents=True, exist_ok=True); output_path.write_text(json.dumps(result, indent=2) + "\n")
     VOLUME.commit()
     return result
 
 
 @APP.local_entrypoint()
-def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False):
-    print(json.dumps(run_one.remote(video_id, question_id, split, model, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, sampled_full, prepare_only), indent=2))
+def main(video_id: str = "4MYTCny_FZs", question_id: str = "0", split: str = "validation", model: str = MODEL, key_index: int = 0, full_video: bool = False, thinking_level: str = "high", fps: float = 0.5, scale: int = 320, context_frames: int = 24, two_stage: bool = False, full_source: bool = False, sampled_full: bool = False, prepare_only: bool = False, use_vertex: bool = False, force: bool = False):
+    print(json.dumps(run_one.remote(video_id, question_id, split, model, key_index, full_video, thinking_level, fps, scale, context_frames, two_stage, full_source, sampled_full, prepare_only, use_vertex, force), indent=2))
+
+
+@APP.local_entrypoint()
+def run_all(split: str = "test", model: str = "gemini-3.7-flash", fps: float = 0.5, scale: int = 320,
+            thinking_level: str = "low", use_vertex: bool = True, limit: int = 0, offset: int = 0,
+            sleep_s: float = 1.0):
+    """Sequential answer-blind pass over every question in the split.
+
+    Each call is idempotent (run_one skips and returns the cached record if
+    its output file already exists), so an interrupted run can simply be
+    re-launched with the same arguments to resume from where it left off,
+    without re-billing already-answered questions.
+    """
+    cache_name = "test_manifest.json" if split == "test" else "validation_manifest_latest.json"
+    manifest = json.loads((Path(".cache/remote_probe") / cache_name).read_text())
+    targets = [(video_id, question_id) for video_id, questions in manifest.items()
+               for question_id in questions if isinstance(questions, dict)]
+    targets = targets[offset:(offset + limit) if limit else None]
+    total = len(targets)
+    ok = err = 0
+    for index, (video_id, question_id) in enumerate(targets):
+        try:
+            run_one.remote(video_id, question_id, split=split, model=model, thinking_level=thinking_level,
+                            fps=fps, scale=scale, use_vertex=use_vertex)
+            ok += 1
+            status = "ok"
+        except Exception as error:
+            err += 1
+            status = f"error:{type(error).__name__}: {error}"
+        print(f"[{index + 1}/{total}] {video_id}/{question_id} -> {status}  (ok={ok} err={err})", flush=True)
+        if sleep_s:
+            time.sleep(sleep_s)
+    print(json.dumps({"total": total, "ok": ok, "err": err}, indent=2))

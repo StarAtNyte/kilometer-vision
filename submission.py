@@ -358,6 +358,17 @@ def select_option(video_id: str, question_id: str, question: Mapping[str, Any], 
     # of organizer labels and is intentionally not validation-tuned.
     compiled = compile_options(question)
     category = compiled["category"]
+    if _experiment_enabled("gemini_direct"):
+        # Validated 2026-08-24: direct native-video Gemini 3.7 Flash answers
+        # (experiments/gemini-direct-video/{split}-{video_id}-{question_id}.json)
+        # beat the deterministic/geometry hybrid across every category on the
+        # 18-question labeled validation set (12/18 = 66.7% vs 9/18 = 50%).
+        # Takes priority for any category when a record exists; falls through
+        # to the existing specialists below for anything Gemini hasn't
+        # answered yet (missing record, quota error, unparsed response).
+        gemini_index = _gemini_choice(video_id, question_id, root, split)
+        if gemini_index is not None:
+            return gemini_index
     if category == "compass" and _experiment_enabled("gemini_compass"):
         gemini_index = _gemini_choice(video_id, question_id, root, split)
         if gemini_index is not None:

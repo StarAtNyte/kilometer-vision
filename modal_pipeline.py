@@ -1287,11 +1287,14 @@ if modal is not None:  # pragma: no cover - Modal decorators are tested remotely
         action: str = "bootstrap", split: str = "", source_root: str = str(SHARED_VIDEO_ROOT),
         sample_fps: float = DEFAULT_FRAME_FPS, max_frames: int = DEFAULT_MAX_FRAMES,
         frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "", straight_line: bool = False, dino_landmark: bool = False,
+        gemini_direct: bool = False,
     ) -> dict[str, Any]:
         if straight_line:
             os.environ["KILOMETERVISION_ENABLE_STRAIGHT_LINE"] = "1"
         if dino_landmark:
             os.environ["KILOMETERVISION_ENABLE_DINO_LANDMARK"] = "1"
+        if gemini_direct:
+            os.environ["KILOMETERVISION_ENABLE_GEMINI_DIRECT"] = "1"
         return run_action(action, split or None, root=DATA_ROOT, source_root=source_root, sample_fps=sample_fps, max_frames=max_frames, frame_width=frame_width, video_ids=[video_id] if video_id else None)
 
     @app.local_entrypoint()
@@ -1299,8 +1302,9 @@ if modal is not None:  # pragma: no cover - Modal decorators are tested remotely
         action: str = "bootstrap", split: str = "", source_root: str = str(SHARED_VIDEO_ROOT),
         sample_fps: float = DEFAULT_FRAME_FPS, max_frames: int = DEFAULT_MAX_FRAMES,
         frame_width: int = DEFAULT_FRAME_WIDTH, video_id: str = "", straight_line: bool = False, dino_landmark: bool = False,
+        gemini_direct: bool = False,
     ) -> None:
-        result = modal_action.remote(action, split, source_root, sample_fps, max_frames, frame_width, video_id, straight_line, dino_landmark)
+        result = modal_action.remote(action, split, source_root, sample_fps, max_frames, frame_width, video_id, straight_line, dino_landmark, gemini_direct)
         print(json.dumps(result, indent=2, sort_keys=True))
 def _local_cli() -> None:  # pragma: no cover - CLI wrapper only
     parser = argparse.ArgumentParser(description=__doc__)
