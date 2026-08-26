@@ -4,7 +4,7 @@ PATHFINDER is an evidence-first spatial reasoning pipeline for the Perception Te
 
 ## Data policy
 
-Challenge media and derived artifacts belong only in Modal Volume `perception-test-2026-data`. Shared originals are under `/data/shared/walking-tours`; this project will reference them rather than duplicate videos locally. Local files contain code, manifests/schema documentation, and tiny synthetic fixtures only.
+Challenge media and derived artifacts belong only in Modal Volume `perception-test-2026-data`. Shared originals are under `/data/shared/walking-tours`; this project references them rather than duplicate videos locally. When the owner explicitly authorizes a cross-account bootstrap, media may be transferred through temporary local staging solely to populate another Modal Volume's `/data/shared/walking-tours`; staging is removed immediately after each upload and never committed. Local files otherwise contain code, manifests/schema documentation, and tiny synthetic fixtures only.
 
 The August 11, 2026 organizer release currently reports 13 validation videos / 18 questions and 54 test videos / 986 questions. Re-download updated metadata and images before inference; the organizer explicitly replaced questions.
 

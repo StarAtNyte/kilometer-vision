@@ -1,0 +1,123 @@
+{
+  "method": "gemini-3.7-flash direct exact-window merge over dpvo validation artifact",
+  "ground_truth_used_for_inference": false,
+  "records_total": 18,
+  "gemini_records": 18,
+  "gemini_correct": 12,
+  "gemini_accuracy": 0.6666666666666666,
+  "replacements": [
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "1",
+      "old": 3,
+      "new": 0,
+      "category": "map"
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "0",
+      "old": 0,
+      "new": 2,
+      "category": "landmark"
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "0",
+      "old": 3,
+      "new": 4,
+      "category": "compass"
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "1",
+      "old": 4,
+      "new": 1,
+      "category": "distance"
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "0",
+      "old": 3,
+      "new": 2,
+      "category": "compass"
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "1",
+      "old": 0,
+      "new": 3,
+      "category": "distance"
+    },
+    {
+      "video_id": "astCIYQCW2c",
+      "question_id": "0",
+      "old": 0,
+      "new": 4,
+      "category": "landmark"
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "old": 3,
+      "new": 1,
+      "category": "map"
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "0",
+      "old": 1,
+      "new": 0,
+      "category": "compass"
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "1",
+      "old": 1,
+      "new": 4,
+      "category": "compass"
+    }
+  ],
+  "artifact_sha256": "d5139da6362d7602dbbae6c03a1e67e1b83cde33cf1a7d41428dc0c6030c28a5",
+  "note": "Labels used only for post-hoc evaluation, never inference.",
+  "baseline_correct": 9,
+  "baseline_accuracy": 0.5,
+  "baseline_by_category": {
+    "compass": [
+      1,
+      5
+    ],
+    "map": [
+      4,
+      5
+    ],
+    "distance": [
+      3,
+      5
+    ],
+    "landmark": [
+      1,
+      3
+    ]
+  },
+  "merged_correct": 12,
+  "merged_accuracy": 0.6666666666666666,
+  "merged_by_category": {
+    "compass": [
+      2,
+      5
+    ],
+    "map": [
+      3,
+      5
+    ],
+    "distance": [
+      5,
+      5
+    ],
+    "landmark": [
+      2,
+      3
+    ]
+  },
+  "net_gain": 3
+}

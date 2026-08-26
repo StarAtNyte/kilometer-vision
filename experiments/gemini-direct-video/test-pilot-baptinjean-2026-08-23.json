@@ -1,0 +1,18 @@
+{
+  "split": "test",
+  "profile": "baptinjean",
+  "ground_truth_used_for_inference": false,
+  "media_inventory": "54/54 test videos present in Modal Volume",
+  "secret": "gemini-api-key-baptinjean-temp",
+  "records_observed": [
+    {"video_id": "hUGcHvN4mME", "question_id": "7", "model": "gemini-3.5-flash", "answer": "D"},
+    {"video_id": "hUGcHvN4mME", "question_id": "10", "model": "gemini-3.5-flash", "answer": "C"},
+    {"video_id": "hUGcHvN4mME", "question_id": "19", "model": "gemini-3.5-flash", "answer": "D"},
+    {"video_id": "hUGcHvN4mME", "question_id": "20", "model": "gemini-3.7-flash", "answer": "C"},
+    {"video_id": "hUGcHvN4mME", "question_id": "21", "model": "gemini-3.7-flash", "answer": "D"},
+    {"video_id": "hUGcHvN4mME", "question_id": "22", "model": "gemini-3.7-flash", "answer": "E"},
+    {"video_id": "fGX0Te6pFvk", "question_id": "38", "model": "gemini-3.7-flash", "answer": "B"},
+    {"video_id": "fGX0Te6pFvk", "question_id": "40", "model": "gemini-3.5-flash", "answer": "A"}
+  ],
+  "quota": "Both Gemini 3.5 Flash and 3.7 Flash subsequently returned 429 free-tier quota exhaustion; no test submission was modified."
+}

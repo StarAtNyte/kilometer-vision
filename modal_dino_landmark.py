@@ -113,7 +113,9 @@ def summarize_verifier(split: str='validation'):
     for path in sorted((ROOT/'experiments'/'landmark-dinov2'/split).glob('*.json')):
         for question_id,record in json.loads(path.read_text()).items():
             matches=record.get('top_matches',[])
-            rows.append({'video_id':path.stem,'question_id':question_id,'top_timestamp_seconds':matches[0].get('timestamp_seconds') if matches else None,'top_patch_local_similarity':matches[0].get('patch_local_similarity') if matches else None,'top_mutual_patch_ratio':matches[0].get('mutual_patch_ratio') if matches else None,'top_external_pair_probability':matches[0].get('external_pair_probability') if matches else None,'max_external_pair_probability':max((item.get('external_pair_probability',0) for item in matches),default=None)})
+            probabilities=[item.get('external_pair_probability') for item in matches
+                           if item.get('external_pair_probability') is not None]
+            rows.append({'video_id':path.stem,'question_id':question_id,'top_timestamp_seconds':matches[0].get('timestamp_seconds') if matches else None,'top_patch_local_similarity':matches[0].get('patch_local_similarity') if matches else None,'top_mutual_patch_ratio':matches[0].get('mutual_patch_ratio') if matches else None,'top_external_pair_probability':matches[0].get('external_pair_probability') if matches else None,'max_external_pair_probability':max(probabilities,default=None)})
     return rows
 
 

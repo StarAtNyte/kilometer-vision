@@ -153,3 +153,33 @@ Experiment result: ordered route graphs improved Hu from 1/5 to 2/5, but ORB-der
 - Qwen3-VL/Omni families: `https://github.com/QwenLM/Qwen3-VL`, `https://github.com/QwenLM/Qwen3-Omni`
 
 These sources support component selection; leaderboard claims and future-paper claims are not assumed without a reproducible artifact and a license check.
+
+## Frontier sweep and score-target plan — 2026-08-24
+
+The current external leader is reported as **0.6075** on the 986-question test set. That is approximately 599 correct answers, so a net gain of only one answer would clear the target; broad unverified rewrites are therefore high risk. The local repository records an older 0.57505 Gemini submission, so the 0.6075 artifact/configuration must be treated as an external run until its exact manifest, settings, and checksum are archived.
+
+### Research findings that transfer directly
+
+- **Temporal Chain of Thought** (`arXiv:2507.02001`) uses iterative VLM-guided frame retrieval instead of one uniform sample. It reports that a small, selected context can outperform a much larger uniform context on long videos. Apply this as a question-local retrieval pass: first select turn/landmark/map-evidence frames, then answer from the selected set.
+- **NeuS-QA** (`arXiv:2509.18041`) builds a temporal-logic video automaton from frame propositions and submits only logic-verified segments to the VLM. For this challenge, the useful subset is answer-blind: `start -> turn sequence -> endpoint`, `reference appears -> nearest timestamp`, and `route begins/ends at map pins`.
+- **TRACE** (`arXiv:2603.23404`, ACL 2026) induces a textual allocentric representation containing meta-context, camera trajectory, and entities before spatial QA. This is almost exactly the missing contract in the current direct Gemini lane: produce a route certificate with ordered turns, crossings, endpoint displacement, visible street/POI entities, and uncertainty, then perform candidate selection.
+- **ViSRA** (`arXiv:2605.10106`) is a training-free agent that composes explicit expert spatial cues with an MLLM and reports gains on spatial-video tasks. The transferable idea is orchestration, not the headline score: feed a VLM route/geometry/OCR/track evidence cards and require it to resolve only residual semantic ambiguity.
+- **DINOv3** (`arXiv:2508.10104`, Meta model card) exposes dense patch features intended for retrieval, correspondence, segmentation, and tracking without fine-tuning. It is a direct upgrade path for landmark/reference retrieval and loop-closure proposals. Use a small/base model for all frames and a larger model only for top candidates.
+- **Revisit Anything / SegVLAD** (`arXiv:2409.18049`) retrieves segmented image regions rather than whole-image descriptors, specifically addressing viewpoint changes and partial overlap. This is a strong fit for storefronts, signs, statues, and facades in walking tours.
+- **M-LLM frame selection** (`arXiv:2502.19680`) shows a practical two-level selector: cheap per-frame relevance plus text-level temporal selection over captions. A deterministic approximation can use OCR, novelty, turn energy, and reference-image similarity before spending a Gemini call.
+- **Qwen3-VL** (`arXiv:2511.21631`, official HF models) adds explicit timestamp alignment, interleaved multimodal context, and long video support. The 235B model is too expensive for a blind full replacement here; a 32B thinking/instruct probe is worthwhile only with TRACE-style route text and strict candidate-order controls.
+- **Gemini’s current video documentation** states that File API video is sampled at 1 FPS by default, low resolution costs about 66 tokens/frame, high resolution about 258 tokens/frame, and fast motion may be missed. Explicit video FPS metadata is therefore a required reproducibility field for every experiment.
+
+### Ranked experiments to beat 0.6075
+
+1. **Reproduce the leader contract.** Archive the exact leader settings, then rerun a bounded validation control with `fps=2`, `scale=320`, `thinking=low`, explicit video FPS metadata, and the same model. This is the highest-confidence engineering lever because the repository’s validated batch used 2 FPS while production defaulted to 0.5 FPS.
+2. **TRACE-style Gemini route certificate, map-only.** First call: answer-blind route certificate. Second call: candidate comparison using the frozen certificate and all five maps. Run only on map questions; do not pay two calls for distance/landmark/compass until validation shows a benefit.
+3. **Question-adaptive frame selection.** Build a cheap selector over cached frames using temporal novelty, optical-flow/turn energy, OCR/street text, reference-image similarity, and candidate-map route relevance. Give the final model the selected neighborhood plus a sparse global scaffold. This should improve brief-turn and landmark recall without increasing every clip to high FPS.
+4. **Compass-only temporal ensemble.** Combine the existing motion specialist with corrected-FPS Gemini only when the two route certificates agree on sustained turns; abstain to the existing motion lane on disagreement. The validation evidence supports Gemini as a partial compass specialist, not a universal replacement.
+5. **DINOv3/SegVLAD landmark lane.** Replace the current thumbnail/color fallback for the 112 landmark and 297 distance questions. Retrieve top temporal neighborhoods, then verify with local patch geometry and OCR. Merge only landmark/distance changes and preserve answer-blind evidence.
+6. **Candidate-symmetric map adjudication.** Randomize map display order, run route-certificate comparison twice with different candidate permutations, and accept only stable identity. This addresses the known Gemini positional bias; a single changed answer is not evidence of a gain.
+7. **Only then test new spatial VLMs.** Probe SpatialAxiom-35B, Qwen3-VL-32B/235B, or InternVL3.5 with the structured evidence contract. Do not promote raw video-only outputs: the existing local Qwen and SpatialAxiom map probes already show that generic map selection is the wrong interface.
+
+### Promotion gates
+
+No test answer labels may be used. Promote a lane only if it improves a relevant validation family, is permutation-stable for map choices, has complete answer coverage, and changes no unrelated family. Given the 0.6075 target, the practical objective is a **single net correct answer**, but the candidate must still pass the validation and schema gates before submission.

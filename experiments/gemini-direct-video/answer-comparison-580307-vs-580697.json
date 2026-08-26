@@ -1,0 +1,2381 @@
+{
+  "old_submission_id": 580307,
+  "new_submission_id": 580697,
+  "same": 723,
+  "different": 263,
+  "differences": [
+    {
+      "video_id": "-xsX_SCGi4o",
+      "question_id": "2",
+      "family": "distance",
+      "old": "59 meters",
+      "old_id": 2,
+      "new": "70 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "0spzMyKrd8c",
+      "question_id": "4",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "0",
+      "family": "compass",
+      "old": "North",
+      "old_id": 2,
+      "new": "East",
+      "new_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "10",
+      "family": "distance",
+      "old": "371 meters",
+      "old_id": 0,
+      "new": "310 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "15",
+      "family": "distance",
+      "old": "429 meters",
+      "old_id": 3,
+      "new": "319 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "2",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 3,
+      "new": "South",
+      "new_id": 1
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "21",
+      "family": "distance",
+      "old": "387 meters",
+      "old_id": 2,
+      "new": "353 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "22",
+      "family": "distance",
+      "old": "302 meters",
+      "old_id": 0,
+      "new": "588 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "25",
+      "family": "distance",
+      "old": "413 meters",
+      "old_id": 2,
+      "new": "184 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "26",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "28",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "29",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "30",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "33",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "34",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "41",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "45",
+      "family": "map",
+      "old": "Head southwest on Sivastopol Sk. toward G\u00fcner Sk. | Turn left onto Muratbey Sk",
+      "old_id": 3,
+      "new": "Head northwest on Ne\u015fe Soka\u011f\u0131 toward Sivastopol Sk. | Turn left onto Sivastopol Sk. | Turn left onto Muratbey Sk",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "5",
+      "family": "distance",
+      "old": "154m",
+      "old_id": 1,
+      "new": "360m",
+      "new_id": 4
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "52",
+      "family": "map",
+      "old": "Head southwest on Sivastopol Sk. toward G\u00fcner Sk. | Turn left onto Muratbey Sk",
+      "old_id": 1,
+      "new": "Head southwest on Cemal S\u00fcreya Sk toward Hac\u0131 H\u00fcsam Sk. | Turn left onto G\u00fcner Sk. | Turn right onto Sivastopol Sk.",
+      "new_id": 0
+    },
+    {
+      "video_id": "4MYTCny_FZs",
+      "question_id": "7",
+      "family": "distance",
+      "old": "356m",
+      "old_id": 0,
+      "new": "126m",
+      "new_id": 2
+    },
+    {
+      "video_id": "8dRlTtH1scc",
+      "question_id": "14",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 01:48.",
+      "old_id": 1,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 3
+    },
+    {
+      "video_id": "8dRlTtH1scc",
+      "question_id": "18",
+      "family": "map",
+      "old": "Head northeast on Kr\u0119ta toward Jatki | Turn left onto Podwale | Turn right onto Grodzka",
+      "old_id": 1,
+      "new": "Head north on Podwale toward Grodzka | Turn right onto Grodzka",
+      "new_id": 0
+    },
+    {
+      "video_id": "8dRlTtH1scc",
+      "question_id": "3",
+      "family": "distance",
+      "old": "730m",
+      "old_id": 0,
+      "new": "462m",
+      "new_id": 1
+    },
+    {
+      "video_id": "8dRlTtH1scc",
+      "question_id": "4",
+      "family": "distance",
+      "old": "172 meters",
+      "old_id": 3,
+      "new": "249 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "0",
+      "family": "compass",
+      "old": "West",
+      "old_id": 4,
+      "new": "East",
+      "new_id": 0
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "11",
+      "family": "distance",
+      "old": "440 meters",
+      "old_id": 2,
+      "new": "189 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "12",
+      "family": "distance",
+      "old": "69 meters",
+      "old_id": 0,
+      "new": "120 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "2",
+      "family": "compass",
+      "old": "East",
+      "old_id": 0,
+      "new": "North",
+      "new_id": 2
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "6",
+      "family": "distance",
+      "old": "627m",
+      "old_id": 2,
+      "new": "382m",
+      "new_id": 1
+    },
+    {
+      "video_id": "9m3fojdkPjM",
+      "question_id": "8",
+      "family": "distance",
+      "old": "98m",
+      "old_id": 3,
+      "new": "354m",
+      "new_id": 0
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "11",
+      "family": "compass",
+      "old": "North",
+      "old_id": 3,
+      "new": "West",
+      "new_id": 0
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "13",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 3,
+      "new": "Northwest",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "2",
+      "family": "compass",
+      "old": "West",
+      "old_id": 3,
+      "new": "East",
+      "new_id": 2
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "21",
+      "family": "distance",
+      "old": "169 meters",
+      "old_id": 1,
+      "new": "90 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "22",
+      "family": "distance",
+      "old": "385 meters",
+      "old_id": 0,
+      "new": "260 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "23",
+      "family": "distance",
+      "old": "172 meters",
+      "old_id": 1,
+      "new": "365 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "24",
+      "family": "distance",
+      "old": "314 meters",
+      "old_id": 0,
+      "new": "252 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "28",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "36",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "38",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "44",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "45",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 04:00.",
+      "old_id": 0,
+      "new": "The location has been visited around timestamp 08:14.",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "46",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 09:17.",
+      "old_id": 2,
+      "new": "The location has been visited around timestamp 06:11.",
+      "new_id": 1
+    },
+    {
+      "video_id": "E07rTPgIvn0",
+      "question_id": "7",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 2,
+      "new": "Southeast",
+      "new_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "16",
+      "family": "distance",
+      "old": "350m",
+      "old_id": 0,
+      "new": "135m",
+      "new_id": 1
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "18",
+      "family": "distance",
+      "old": "178 meters",
+      "old_id": 3,
+      "new": "150 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "22",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "23",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "28",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "3",
+      "family": "compass",
+      "old": "East",
+      "old_id": 2,
+      "new": "Northwest",
+      "new_id": 4
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "30",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "4",
+      "family": "compass",
+      "old": "East",
+      "old_id": 2,
+      "new": "Southeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "5",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 3,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "G0fWvIxy88A",
+      "question_id": "7",
+      "family": "distance",
+      "old": "517m",
+      "old_id": 1,
+      "new": "739m",
+      "new_id": 0
+    },
+    {
+      "video_id": "Htw4yFOWghU",
+      "question_id": "8",
+      "family": "map",
+      "old": "Head west on Residenzpl. toward Brodgasse | Continue onto Alter Markt",
+      "old_id": 0,
+      "new": "Head west on Residenzpl. toward Brodgasse | Continue onto Alter Markt | Turn right to stay on Alter Markt",
+      "new_id": 1
+    },
+    {
+      "video_id": "Jr9x-RB4E1U",
+      "question_id": "3",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 02:09.",
+      "old_id": 2,
+      "new": "The location has not been visited before in this video.",
+      "new_id": 0
+    },
+    {
+      "video_id": "Jr9x-RB4E1U",
+      "question_id": "4",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 08:35.",
+      "old_id": 0,
+      "new": "The location has been visited around timestamp 05:58.",
+      "new_id": 4
+    },
+    {
+      "video_id": "LZW_eu7rFgw",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 0,
+      "new": "Northwest",
+      "new_id": 3
+    },
+    {
+      "video_id": "LZW_eu7rFgw",
+      "question_id": "1",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 2,
+      "new": "Northeast",
+      "new_id": 3
+    },
+    {
+      "video_id": "LZW_eu7rFgw",
+      "question_id": "5",
+      "family": "distance",
+      "old": "179 meters",
+      "old_id": 0,
+      "new": "104 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "LZW_eu7rFgw",
+      "question_id": "7",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "LZW_eu7rFgw",
+      "question_id": "9",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "NYgDp4wZ94I",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 3,
+      "new": "North",
+      "new_id": 0
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "16",
+      "family": "distance",
+      "old": "184m",
+      "old_id": 3,
+      "new": "398m",
+      "new_id": 4
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "18",
+      "family": "distance",
+      "old": "367m",
+      "old_id": 4,
+      "new": "139m",
+      "new_id": 2
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "21",
+      "family": "distance",
+      "old": "330 meters",
+      "old_id": 0,
+      "new": "167 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "23",
+      "family": "distance",
+      "old": "178 meters",
+      "old_id": 0,
+      "new": "140 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "24",
+      "family": "distance",
+      "old": "219 meters",
+      "old_id": 3,
+      "new": "529 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "25",
+      "family": "distance",
+      "old": "288 meters",
+      "old_id": 1,
+      "new": "341 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "26",
+      "family": "distance",
+      "old": "334 meters",
+      "old_id": 2,
+      "new": "306 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "Q-JNbrnuVcw",
+      "question_id": "3",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "Southwest",
+      "new_id": 1
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "1",
+      "family": "compass",
+      "old": "East",
+      "old_id": 3,
+      "new": "North",
+      "new_id": 0
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "10",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "12",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "16",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "17",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "20",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "24",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "31",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "40",
+      "family": "map",
+      "old": "Head east on Seminarstra\u00dfe toward Augustinergasse | Turn left onto Kettengasse | Slight left to stay on Kettengasse | Turn right onto Ingrimstra\u00dfe",
+      "old_id": 3,
+      "new": "Head south on Grabengasse toward Seminarstra\u00dfe | Turn left onto Seminarstra\u00dfe | Turn left onto Kettengasse | Slight left to stay on Kettengasse",
+      "new_id": 1
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "43",
+      "family": "map",
+      "old": "Head east on Seminarstra\u00dfe toward Augustinergasse | Turn left onto Kettengasse | Slight left to stay on Kettengasse",
+      "old_id": 2,
+      "new": "Head south on Grabengasse toward Seminarstra\u00dfe | Turn left onto Seminarstra\u00dfe | Turn left onto Kettengasse | Slight left to stay on Kettengasse | Turn right onto Ingrimstra\u00dfe",
+      "new_id": 1
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "5",
+      "family": "distance",
+      "old": "226 meters",
+      "old_id": 1,
+      "new": "228 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "QSmepKM31iQ",
+      "question_id": "8",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "Qrsh9Di_OAk",
+      "question_id": "0",
+      "family": "compass",
+      "old": "West",
+      "old_id": 1,
+      "new": "Southwest",
+      "new_id": 0
+    },
+    {
+      "video_id": "Qrsh9Di_OAk",
+      "question_id": "12",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "Qrsh9Di_OAk",
+      "question_id": "16",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "Qrsh9Di_OAk",
+      "question_id": "3",
+      "family": "distance",
+      "old": "475m",
+      "old_id": 4,
+      "new": "228m",
+      "new_id": 0
+    },
+    {
+      "video_id": "Qrsh9Di_OAk",
+      "question_id": "4",
+      "family": "distance",
+      "old": "178m",
+      "old_id": 0,
+      "new": "467m",
+      "new_id": 3
+    },
+    {
+      "video_id": "UKyT_a-raW4",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "Southwest",
+      "new_id": 0
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "0",
+      "family": "compass",
+      "old": "West",
+      "old_id": 2,
+      "new": "North",
+      "new_id": 3
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "1",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 2,
+      "new": "Southwest",
+      "new_id": 3
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "11",
+      "family": "distance",
+      "old": "183 meters",
+      "old_id": 1,
+      "new": "145 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "14",
+      "family": "distance",
+      "old": "251 meters",
+      "old_id": 1,
+      "new": "138 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "15",
+      "family": "distance",
+      "old": "486 meters",
+      "old_id": 2,
+      "new": "584 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "17",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "24",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "31",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "32",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "33",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "37",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "43",
+      "family": "map",
+      "old": "Head west on Franziskanerpl. toward Weihburggasse | Turn right onto Weihburggasse | Turn left onto Rauhensteingasse | Turn left onto Himmelpfortgasse | Turn right onto Seilerst\u00e4tte",
+      "old_id": 1,
+      "new": "Head northwest on Himmelpfortgasse toward Rauhensteingasse | Turn right onto Rauhensteingasse | Turn right onto Weihburggasse | Turn left onto Franziskanerpl.",
+      "new_id": 4
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "48",
+      "family": "map",
+      "old": "Head west on Franziskanerpl. toward Weihburggasse | Turn right onto Weihburggasse | Turn left onto Rauhensteingasse | Turn left onto Himmelpfortgasse",
+      "old_id": 4,
+      "new": "Head west on Weihburggasse toward Rauhensteingasse | Turn left onto Rauhensteingasse | Turn left onto Himmelpfortgasse | Turn right onto Seilerst\u00e4tte",
+      "new_id": 1
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "5",
+      "family": "distance",
+      "old": "415m",
+      "old_id": 3,
+      "new": "207m",
+      "new_id": 2
+    },
+    {
+      "video_id": "VD-jgk6HKOg",
+      "question_id": "51",
+      "family": "map",
+      "old": "Head northeast on Am Hof toward Schulhof | Turn right onto Schulhof | Turn left onto Parisergasse | Turn right onto Judenpl. | Turn right onto Kurrentgasse",
+      "old_id": 3,
+      "new": "Head northeast on Kurrentgasse toward Judenpl. | Turn left onto Judenpl. | Turn left onto Parisergasse | Continue straight to stay on Parisergasse | Turn right onto Schulhof | Turn left onto Am Hof",
+      "new_id": 0
+    },
+    {
+      "video_id": "WSDe_B5KPco",
+      "question_id": "2",
+      "family": "distance",
+      "old": "219 meters",
+      "old_id": 3,
+      "new": "258 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 1,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "1",
+      "family": "compass",
+      "old": "North",
+      "old_id": 4,
+      "new": "West",
+      "new_id": 1
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "2",
+      "family": "compass",
+      "old": "West",
+      "old_id": 2,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "3",
+      "family": "distance",
+      "old": "323m",
+      "old_id": 2,
+      "new": "594m",
+      "new_id": 0
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "4",
+      "family": "distance",
+      "old": "252 meters",
+      "old_id": 3,
+      "new": "466 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "5",
+      "family": "distance",
+      "old": "690 meters",
+      "old_id": 0,
+      "new": "460 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "6",
+      "family": "distance",
+      "old": "That place is not in the video",
+      "old_id": 4,
+      "new": "238 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "7",
+      "family": "distance",
+      "old": "145 meters",
+      "old_id": 3,
+      "new": "143 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "Xbp5_WA9Jb4",
+      "question_id": "9",
+      "family": "distance",
+      "old": "268 meters",
+      "old_id": 3,
+      "new": "326 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "XvuKVP5fL7Y",
+      "question_id": "0",
+      "family": "distance",
+      "old": "89 meters",
+      "old_id": 2,
+      "new": "125 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "Yy5fPzI4QKg",
+      "question_id": "14",
+      "family": "map",
+      "old": "Head northwest on Br\u00fcckstra\u00dfe toward L\u00fctge Br\u00fcckstra\u00dfe | Turn left onto L\u00fctge Br\u00fcckstra\u00dfe | Turn right onto Gnadenort",
+      "old_id": 0,
+      "new": "Head northwest on Alter Burgwall toward Ludwigstra\u00dfe | Turn left onto Ludwigstra\u00dfe | Turn right onto Br\u00fcckstra\u00dfe | Turn left onto L\u00fctge Br\u00fcckstra\u00dfe",
+      "new_id": 3
+    },
+    {
+      "video_id": "Yy5fPzI4QKg",
+      "question_id": "7",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "Yy5fPzI4QKg",
+      "question_id": "9",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "_NmYvuEILw4",
+      "question_id": "6",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 3,
+      "new": "The location has been visited around timestamp 09:27.",
+      "new_id": 4
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "0",
+      "family": "compass",
+      "old": "North",
+      "old_id": 1,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "11",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "15",
+      "family": "map",
+      "old": "Head east on Karlova toward Liliov\u00e1 | Turn right onto Husova | Turn left onto Karlova | Turn left to stay on Karlova",
+      "old_id": 3,
+      "new": "Head west on Karlova toward Jilsk\u00e1 | Turn right to stay on Karlova | Turn right onto Husova | Turn left onto Karlova",
+      "new_id": 2
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "17",
+      "family": "map",
+      "old": "Head southwest on Mal\u00e9 N\u00e1m. toward Karlova | Continue onto Karlova | Turn right to stay on Karlova",
+      "old_id": 0,
+      "new": "Head west on Karlova toward Jilsk\u00e1 | Turn right to stay on Karlova",
+      "new_id": 2
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "2",
+      "family": "distance",
+      "old": "291m",
+      "old_id": 3,
+      "new": "521m",
+      "new_id": 2
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "3",
+      "family": "distance",
+      "old": "368m",
+      "old_id": 0,
+      "new": "167m",
+      "new_id": 1
+    },
+    {
+      "video_id": "a4y7pJn4a-4",
+      "question_id": "8",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 3,
+      "new": "South",
+      "new_id": 4
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "11",
+      "family": "distance",
+      "old": "472 meters",
+      "old_id": 0,
+      "new": "349 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "13",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "15",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "16",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "18",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "C",
+      "new_id": 2
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "19",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "2",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "Southwest",
+      "new_id": 0
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "3",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 0,
+      "new": "West",
+      "new_id": 4
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "5",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 2,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "aUJl46bEWYo",
+      "question_id": "8",
+      "family": "distance",
+      "old": "107 meters",
+      "old_id": 0,
+      "new": "232 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "astCIYQCW2c",
+      "question_id": "16",
+      "family": "distance",
+      "old": "Less than 5m",
+      "old_id": 2,
+      "new": "265m",
+      "new_id": 4
+    },
+    {
+      "video_id": "astCIYQCW2c",
+      "question_id": "19",
+      "family": "distance",
+      "old": "215 meters",
+      "old_id": 2,
+      "new": "208 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "0",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "1",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "buBU7NrfyGM",
+      "question_id": "10",
+      "family": "map",
+      "old": "Head east on Kaplick\u00e1 toward Rooseveltova | Turn right onto Rooseveltova | Slight right onto Doln\u00ed n\u00e1m\u011bst\u00ed\u010dko",
+      "old_id": 2,
+      "new": "Head east on Horn\u00ed toward Kaplick\u00e1 | Continue onto Kaplick\u00e1 | Turn right onto Rooseveltova",
+      "new_id": 1
+    },
+    {
+      "video_id": "cECanw-2SQw",
+      "question_id": "11",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "cECanw-2SQw",
+      "question_id": "13",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 0,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 1
+    },
+    {
+      "video_id": "cECanw-2SQw",
+      "question_id": "4",
+      "family": "distance",
+      "old": "235 meters",
+      "old_id": 2,
+      "new": "204 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 4,
+      "new": "South",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "10",
+      "family": "compass",
+      "old": "West",
+      "old_id": 3,
+      "new": "North",
+      "new_id": 2
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "101",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "105",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "111",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 08:45.",
+      "old_id": 2,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "112",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 1,
+      "new": "The location has been visited around timestamp 09:21.",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "12",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 3,
+      "new": "South",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "13",
+      "family": "compass",
+      "old": "South",
+      "old_id": 0,
+      "new": "Northwest",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "133",
+      "family": "map",
+      "old": "Continue onto Corte Prima del Milion | Turn left onto Calle de l'Ufficio de la Seta | Turn right onto Salizada S. Giovanni Grisostomo | Take the stairs | Turn left onto Calle Dolfin/Campiello Flaminio Corner | Continue to follow Calle Dolfin",
+      "old_id": 0,
+      "new": "Head northwest on Corte Prima del Milion toward Calle del Teatro | Turn left onto Calle de l'Ufficio de la Seta | Turn right onto Salizada S. Giovanni Grisostomo | Take the stairs",
+      "new_id": 2
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "139",
+      "family": "map",
+      "old": "Head east on Calle Dolfin/Campiello Riccardo Selvatico toward Campiello Flaminio Corner | Continue to follow Calle Dolfin | Turn right onto Ponte dei Zogatoli/Salizada S. Giovanni Grisostomo | Continue to follow Salizada S. Giovanni Grisostomo | Take the stairs | Turn left onto Calle de l'Ufficio de la Seta",
+      "old_id": 3,
+      "new": "Head northwest on Corte Prima del Milion toward Calle del Teatro | Turn left onto Calle de l'Ufficio de la Seta | Turn right onto Salizada S. Giovanni Grisostomo | Take the stairs | Turn left onto Calle Dolfin/Campiello Flaminio Corner | Continue to follow Calle Dolfin | Turn right onto Calle Dolfin/Campiello Riccardo Selvatico | Continue to follow Calle Dolfin",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "14",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 0,
+      "new": "South",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "140",
+      "family": "map",
+      "old": "Head south on Calle Dolfin toward C. de la Posta de Fiorenza | Turn left onto Calle Dolfin/Campiello Riccardo Selvatico | Continue to follow Calle Dolfin | Turn right onto Ponte dei Zogatoli/Salizada S. Giovanni Grisostomo | Continue to follow Salizada S. Giovanni Grisostomo | Take the stairs | Turn left onto Calle de l'Ufficio de la Seta",
+      "old_id": 0,
+      "new": "Head northwest on Corte Prima del Milion toward Calle del Teatro | Turn left onto Calle de l'Ufficio de la Seta | Turn right onto Salizada S. Giovanni Grisostomo | Take the stairs | Turn left onto Calle Dolfin/Campiello Flaminio Corner | Continue to follow Calle Dolfin",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "142",
+      "family": "map",
+      "old": "Head east on Campo S. Marcuola toward Campiello de la Chiesa | Turn left onto Campiello de la Chiesa/Campo S. Marcuola | Continue to follow Campiello de la Chiesa | Turn left onto Rio Ter\u00e0 Drio la Chiesa",
+      "old_id": 4,
+      "new": "Continue straight onto Campo S. Marcuola | Turn left onto Campiello de la Chiesa/Campo S. Marcuola | Continue to follow Campiello de la Chiesa | Turn left onto Rio Ter\u00e0 Drio la Chiesa | Continue onto Calle del Cristo",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "143",
+      "family": "map",
+      "old": "Slight left to stay on Calle del Cristo | Turn left onto C. de la Colona | Turn right onto Ramo de la pagia | Head west on Calle Soranzo | Turn left onto Calle de la Pagia",
+      "old_id": 2,
+      "new": "Head west on Calle del Cristo toward Calle dei Preti | Slight left to stay on Calle del Cristo | Turn left onto C. de la Colona | Turn right onto Ramo de la pagia | Turn right onto Calle de la Pagia",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "147",
+      "family": "map",
+      "old": "Slight left onto Riva del Ferro | Turn right toward Riva del Ferro | Turn right onto Riva del Ferro | Slight left to stay on Riva del Ferro | Turn left onto Calle Larga Mazzini | Turn right onto Campo S. Salvador | Continue onto Calle del Lovo | Take the stairs | Head southwest on Calle del Teatro o de la Commedia toward Corte Teatro",
+      "old_id": 0,
+      "new": "Head southeast on Calle Larga Mazzini toward Calle dei Bombaseri/Ramo dei Bombaseri | Turn right onto Campo S. Salvador | Continue onto Calle del Lovo | Take the stairs",
+      "new_id": 2
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "17",
+      "family": "distance",
+      "old": "350m",
+      "old_id": 0,
+      "new": "786m",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "19",
+      "family": "distance",
+      "old": "136m",
+      "old_id": 1,
+      "new": "456m",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "2",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 2,
+      "new": "Southeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "21",
+      "family": "distance",
+      "old": "208m",
+      "old_id": 4,
+      "new": "437m",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "24",
+      "family": "distance",
+      "old": "508m",
+      "old_id": 2,
+      "new": "296m",
+      "new_id": 3
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "27",
+      "family": "distance",
+      "old": "506 meters",
+      "old_id": 1,
+      "new": "345 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "29",
+      "family": "distance",
+      "old": "297 meters",
+      "old_id": 3,
+      "new": "309 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "30",
+      "family": "distance",
+      "old": "131 meters",
+      "old_id": 1,
+      "new": "183 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "32",
+      "family": "distance",
+      "old": "331 meters",
+      "old_id": 3,
+      "new": "107 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "34",
+      "family": "distance",
+      "old": "276 meters",
+      "old_id": 0,
+      "new": "179 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "35",
+      "family": "distance",
+      "old": "161 meters",
+      "old_id": 2,
+      "new": "141 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "39",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "51",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "53",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "56",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "6",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 0,
+      "new": "Northwest",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "62",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "63",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "7",
+      "family": "compass",
+      "old": "North",
+      "old_id": 1,
+      "new": "South",
+      "new_id": 2
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "70",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "74",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "81",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "85",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "90",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "92",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "93",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "fGX0Te6pFvk",
+      "question_id": "94",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "10",
+      "family": "distance",
+      "old": "171 meters",
+      "old_id": 0,
+      "new": "226 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "18",
+      "family": "distance",
+      "old": "550 meters",
+      "old_id": 0,
+      "new": "304 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "19",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 08:46.",
+      "old_id": 3,
+      "new": "The location has not been visited before in this video.",
+      "new_id": 1
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "2",
+      "family": "compass",
+      "old": "North",
+      "old_id": 2,
+      "new": "Southeast",
+      "new_id": 1
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "22",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 03:06.",
+      "old_id": 4,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 0
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "4",
+      "family": "compass",
+      "old": "North",
+      "old_id": 1,
+      "new": "Southeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "6",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 3,
+      "new": "Southwest",
+      "new_id": 2
+    },
+    {
+      "video_id": "hUGcHvN4mME",
+      "question_id": "9",
+      "family": "distance",
+      "old": "191 meters",
+      "old_id": 2,
+      "new": "276 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "hZyU9MD0QRM",
+      "question_id": "14",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "hZyU9MD0QRM",
+      "question_id": "17",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "hZyU9MD0QRM",
+      "question_id": "19",
+      "family": "map",
+      "old": "C",
+      "old_id": 2,
+      "new": "E",
+      "new_id": 4
+    },
+    {
+      "video_id": "hZyU9MD0QRM",
+      "question_id": "23",
+      "family": "landmark",
+      "old": "The location has been visited at the beginning of the video.",
+      "old_id": 0,
+      "new": "The location has been visited around timestamp 02:10.",
+      "new_id": 1
+    },
+    {
+      "video_id": "jeG62-yrc6I",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "Northeast",
+      "new_id": 3
+    },
+    {
+      "video_id": "jeG62-yrc6I",
+      "question_id": "11",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 4,
+      "new": "The location has been visited around timestamp 07:58.",
+      "new_id": 3
+    },
+    {
+      "video_id": "jeG62-yrc6I",
+      "question_id": "3",
+      "family": "distance",
+      "old": "354m",
+      "old_id": 4,
+      "new": "19m",
+      "new_id": 2
+    },
+    {
+      "video_id": "jeG62-yrc6I",
+      "question_id": "8",
+      "family": "distance",
+      "old": "212 meters",
+      "old_id": 0,
+      "new": "160 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "jyxIRzlkO_g",
+      "question_id": "11",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 1,
+      "new": "The location has been visited around timestamp 09:26.",
+      "new_id": 4
+    },
+    {
+      "video_id": "jyxIRzlkO_g",
+      "question_id": "12",
+      "family": "landmark",
+      "old": "The location has not been visited before in this video.",
+      "old_id": 1,
+      "new": "The location has been visited around timestamp 09:30.",
+      "new_id": 0
+    },
+    {
+      "video_id": "jyxIRzlkO_g",
+      "question_id": "3",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 06:06.",
+      "old_id": 2,
+      "new": "The location has been visited around timestamp 09:37.",
+      "new_id": 4
+    },
+    {
+      "video_id": "jyxIRzlkO_g",
+      "question_id": "5",
+      "family": "landmark",
+      "old": "The location has been visited at the beginning of the video.",
+      "old_id": 1,
+      "new": "The location has been visited around timestamp 09:09.",
+      "new_id": 0
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Southwest",
+      "old_id": 3,
+      "new": "North",
+      "new_id": 4
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "11",
+      "family": "distance",
+      "old": "341 meters",
+      "old_id": 2,
+      "new": "179 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "14",
+      "family": "distance",
+      "old": "243 meters",
+      "old_id": 2,
+      "new": "215 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "3",
+      "family": "compass",
+      "old": "West",
+      "old_id": 4,
+      "new": "North",
+      "new_id": 2
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "8",
+      "family": "distance",
+      "old": "325 meters",
+      "old_id": 0,
+      "new": "268 meters",
+      "new_id": 3
+    },
+    {
+      "video_id": "mA9lYWyXMYU",
+      "question_id": "9",
+      "family": "distance",
+      "old": "335 meters",
+      "old_id": 2,
+      "new": "467 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "nid-1jfNMrQ",
+      "question_id": "1",
+      "family": "compass",
+      "old": "North",
+      "old_id": 4,
+      "new": "Northeast",
+      "new_id": 3
+    },
+    {
+      "video_id": "nid-1jfNMrQ",
+      "question_id": "4",
+      "family": "map",
+      "old": "B",
+      "old_id": 1,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "nid-1jfNMrQ",
+      "question_id": "6",
+      "family": "map",
+      "old": "Head west on Hornburgweg toward R\u00f6dersch\u00fctt | Turn left onto R\u00f6dersch\u00fctt | Turn right onto Hofstatt | Turn left onto Rosengasse | Turn left onto R\u00f6dergasse",
+      "old_id": 1,
+      "new": "Head north on Rosengasse toward Hofstatt | Turn right onto Hofstatt | Turn left onto R\u00f6dersch\u00fctt | Turn right onto Hornburgweg",
+      "new_id": 2
+    },
+    {
+      "video_id": "pqaO_lvwCPM",
+      "question_id": "1",
+      "family": "compass",
+      "old": "East",
+      "old_id": 2,
+      "new": "Northwest",
+      "new_id": 3
+    },
+    {
+      "video_id": "rdp-vrJNB80",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 0,
+      "new": "Southwest",
+      "new_id": 3
+    },
+    {
+      "video_id": "rjCKER5DsYA",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 2,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "rjCKER5DsYA",
+      "question_id": "1",
+      "family": "compass",
+      "old": "East",
+      "old_id": 2,
+      "new": "West",
+      "new_id": 1
+    },
+    {
+      "video_id": "rjCKER5DsYA",
+      "question_id": "4",
+      "family": "map",
+      "old": "E",
+      "old_id": 4,
+      "new": "A",
+      "new_id": 0
+    },
+    {
+      "video_id": "shcBfFqWiHc",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "North",
+      "new_id": 0
+    },
+    {
+      "video_id": "shcBfFqWiHc",
+      "question_id": "1",
+      "family": "compass",
+      "old": "Southwest",
+      "old_id": 0,
+      "new": "West",
+      "new_id": 3
+    },
+    {
+      "video_id": "shcBfFqWiHc",
+      "question_id": "2",
+      "family": "compass",
+      "old": "East",
+      "old_id": 3,
+      "new": "North",
+      "new_id": 4
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "1",
+      "family": "compass",
+      "old": "East",
+      "old_id": 3,
+      "new": "South",
+      "new_id": 4
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "12",
+      "family": "distance",
+      "old": "227 meters",
+      "old_id": 2,
+      "new": "194 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "16",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "18",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "D",
+      "new_id": 3
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "21",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 09:18.",
+      "old_id": 1,
+      "new": "The location has been visited around timestamp 05:23.",
+      "new_id": 3
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "26",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 03:54.",
+      "old_id": 0,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 3
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "28",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 04:12.",
+      "old_id": 0,
+      "new": "The location has been visited around timestamp 01:59.",
+      "new_id": 1
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "5",
+      "family": "distance",
+      "old": "Less than 5m",
+      "old_id": 4,
+      "new": "316m",
+      "new_id": 0
+    },
+    {
+      "video_id": "udrqN2QArHo",
+      "question_id": "6",
+      "family": "distance",
+      "old": "254m",
+      "old_id": 2,
+      "new": "Less than 5m",
+      "new_id": 3
+    },
+    {
+      "video_id": "vbS4LARP5E8",
+      "question_id": "4",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 01:49.",
+      "old_id": 1,
+      "new": "The location has been visited at the beginning of the video.",
+      "new_id": 0
+    },
+    {
+      "video_id": "vs7WqrbboaM",
+      "question_id": "2",
+      "family": "distance",
+      "old": "Less than 5m",
+      "old_id": 2,
+      "new": "205m",
+      "new_id": 3
+    },
+    {
+      "video_id": "vs7WqrbboaM",
+      "question_id": "3",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 07:15.",
+      "old_id": 0,
+      "new": "The location has been visited around timestamp 09:20.",
+      "new_id": 4
+    },
+    {
+      "video_id": "wUMMgkmA6z0",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northwest",
+      "old_id": 1,
+      "new": "North",
+      "new_id": 4
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "1",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 0,
+      "new": "Northeast",
+      "new_id": 4
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "10",
+      "family": "distance",
+      "old": "Less than 5m",
+      "old_id": 4,
+      "new": "212m",
+      "new_id": 2
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "11",
+      "family": "distance",
+      "old": "430m",
+      "old_id": 0,
+      "new": "692m",
+      "new_id": 1
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "12",
+      "family": "distance",
+      "old": "273m",
+      "old_id": 3,
+      "new": "Less than 5m",
+      "new_id": 0
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "14",
+      "family": "distance",
+      "old": "285m",
+      "old_id": 1,
+      "new": "531m",
+      "new_id": 3
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "17",
+      "family": "distance",
+      "old": "369m",
+      "old_id": 0,
+      "new": "166m",
+      "new_id": 2
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "20",
+      "family": "distance",
+      "old": "427 meters",
+      "old_id": 3,
+      "new": "207 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "4",
+      "family": "compass",
+      "old": "East",
+      "old_id": 3,
+      "new": "Northeast",
+      "new_id": 4
+    },
+    {
+      "video_id": "wtO26fd781o",
+      "question_id": "7",
+      "family": "compass",
+      "old": "West",
+      "old_id": 0,
+      "new": "South",
+      "new_id": 3
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "0",
+      "family": "compass",
+      "old": "Northeast",
+      "old_id": 1,
+      "new": "North",
+      "new_id": 4
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "10",
+      "family": "compass",
+      "old": "East",
+      "old_id": 2,
+      "new": "Northeast",
+      "new_id": 4
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "11",
+      "family": "compass",
+      "old": "North",
+      "old_id": 3,
+      "new": "East",
+      "new_id": 2
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "14",
+      "family": "distance",
+      "old": "401m",
+      "old_id": 2,
+      "new": "193m",
+      "new_id": 4
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "25",
+      "family": "distance",
+      "old": "455 meters",
+      "old_id": 3,
+      "new": "289 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "3",
+      "family": "compass",
+      "old": "Southwest",
+      "old_id": 4,
+      "new": "Northeast",
+      "new_id": 0
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "30",
+      "family": "distance",
+      "old": "230 meters",
+      "old_id": 1,
+      "new": "168 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "32",
+      "family": "distance",
+      "old": "218 meters",
+      "old_id": 2,
+      "new": "139 meters",
+      "new_id": 1
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "34",
+      "family": "distance",
+      "old": "158 meters",
+      "old_id": 1,
+      "new": "341 meters",
+      "new_id": 0
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "35",
+      "family": "distance",
+      "old": "67 meters",
+      "old_id": 0,
+      "new": "138 meters",
+      "new_id": 2
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "36",
+      "family": "map",
+      "old": "D",
+      "old_id": 3,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "4",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 4,
+      "new": "North",
+      "new_id": 0
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "43",
+      "family": "map",
+      "old": "A",
+      "old_id": 0,
+      "new": "B",
+      "new_id": 1
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "8",
+      "family": "compass",
+      "old": "West",
+      "old_id": 2,
+      "new": "Southeast",
+      "new_id": 1
+    },
+    {
+      "video_id": "xCikUWtQI7c",
+      "question_id": "9",
+      "family": "compass",
+      "old": "Southeast",
+      "old_id": 2,
+      "new": "Northwest",
+      "new_id": 1
+    },
+    {
+      "video_id": "yLTycPjm0nk",
+      "question_id": "2",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 08:36.",
+      "old_id": 3,
+      "new": "The location has not been visited before in this video.",
+      "new_id": 2
+    },
+    {
+      "video_id": "yLTycPjm0nk",
+      "question_id": "3",
+      "family": "landmark",
+      "old": "The location has been visited around timestamp 09:07.",
+      "old_id": 1,
+      "new": "The location has not been visited before in this video.",
+      "new_id": 0
+    }
+  ],
+  "family_counts": {
+    "distance": 86,
+    "map": 91,
+    "compass": 62,
+    "landmark": 24
+  }
+}

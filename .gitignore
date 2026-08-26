@@ -25,6 +25,7 @@ data/
 videos/
 datasets/
 checkpoints/
+.cache/
 *.mp4
 *.mkv
 *.webm

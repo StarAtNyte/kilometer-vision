@@ -1,0 +1,16 @@
+{
+  "model": "gemini-3.7-flash",
+  "split": "test",
+  "video_id": "hUGcHvN4mME",
+  "family": "distance",
+  "ground_truth_used_for_inference": false,
+  "requests": [
+    {"question_id": "7", "status": "quota_exhausted", "raw_response": null},
+    {"question_id": "19", "status": "ok", "raw_response": "D"},
+    {"question_id": "20", "status": "ok", "raw_response": "C"},
+    {"question_id": "21", "status": "ok", "raw_response": "D"},
+    {"question_id": "22", "status": "ok", "raw_response": "E"}
+  ],
+  "settings": {"fps": 2, "scale": 320, "thinking_level": "low", "windowed": true},
+  "note": "Question 7 hit the Gemini 3.7 free-tier daily quota. The four successful outputs were observed in Modal logs but were not merged into a submission or used to infer accuracy because test labels are hidden."
+}

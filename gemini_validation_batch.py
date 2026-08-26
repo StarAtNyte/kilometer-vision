@@ -31,7 +31,7 @@ def main() -> None:
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--key-start", type=int, default=0)
     parser.add_argument("--profile", default="gpudashboard0")
-    parser.add_argument("--model", default="gemini-3.5-flash")
+    parser.add_argument("--model", default="gemini-3.7-flash")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     manifest_path = Path(".cache/validation.json") if args.split == "validation" else Path(".cache/test_public_20260811.json")
