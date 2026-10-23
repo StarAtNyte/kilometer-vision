@@ -1,6 +1,6 @@
 import unittest
 
-from motion_solver import compass_option_index, compass_prediction, summarize_steps, wrap_degrees
+from kilometer_vision.motion_solver import compass_option_index, compass_prediction, summarize_steps, wrap_degrees
 
 
 class MotionSolverTests(unittest.TestCase):

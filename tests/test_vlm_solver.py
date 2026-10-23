@@ -1,6 +1,6 @@
 import unittest
 
-from vlm_solver import build_prompt, parse_answer, select_frames
+from kilometer_vision.vlm_solver import build_prompt, parse_answer, select_frames
 
 
 class VlmSolverTests(unittest.TestCase):

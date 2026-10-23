@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from route_solver import _distance, _image_vector, estimate_route
+from kilometer_vision.route_solver import _distance, _image_vector, estimate_route
 
 
 class RouteSolverTests(unittest.TestCase):

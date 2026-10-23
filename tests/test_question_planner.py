@@ -1,6 +1,6 @@
 import unittest
 
-from question_planner import classify_question, classify_question_facets, compile_options
+from kilometer_vision.question_planner import classify_question, classify_question_facets, compile_options
 
 
 class QuestionPlannerTests(unittest.TestCase):

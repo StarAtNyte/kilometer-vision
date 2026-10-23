@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 
-from submission import _geometry_distance_estimate, _landmark_presence_index, audit_predictions, generate_predictions, select_option
+from kilometer_vision.submission import _geometry_distance_estimate, _landmark_presence_index, audit_predictions, generate_predictions, select_option
 
 
 class SubmissionTests(unittest.TestCase):

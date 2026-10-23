@@ -1,6 +1,6 @@
 import unittest
 
-from specialists import choose, score_compass, score_distance, score_similarity
+from kilometer_vision.specialists import choose, score_compass, score_distance, score_similarity
 
 
 class SpecialistTests(unittest.TestCase):

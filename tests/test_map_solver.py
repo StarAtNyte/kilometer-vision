@@ -4,7 +4,7 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-from map_solver import discrete_frechet_distance, motion_polyline, ordered_shape_distance, ordered_trace_candidate_scores, resample_polyline
+from kilometer_vision.map_solver import discrete_frechet_distance, motion_polyline, ordered_shape_distance, ordered_trace_candidate_scores, resample_polyline
 
 
 class MapSolverTests(unittest.TestCase):
@@ -57,8 +57,8 @@ class MapSolverTests(unittest.TestCase):
             with zipfile.ZipFile(archive_path, "w") as archive:
                 for reference in question["image_paths"]:
                     archive.writestr(reference, b"map")
-            with patch("map_solver.route_path", return_value=route), patch(
-                "map_solver.route_marker_positions", return_value={"S": route[-1], "E": route[0]}
+            with patch("kilometer_vision.map_solver.route_path", return_value=route), patch(
+                "kilometer_vision.map_solver.route_marker_positions", return_value={"S": route[-1], "E": route[0]}
             ):
                 scores = ordered_trace_candidate_scores(question, list(reversed(route)), archive_path)
         self.assertEqual(len(scores), 5)

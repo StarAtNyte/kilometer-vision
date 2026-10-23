@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from geometry_backend import CameraPose, align_trajectories, apply_alignment, discover_backends, extract_route_signature, fallback_geometry
+from kilometer_vision.geometry_backend import CameraPose, align_trajectories, apply_alignment, discover_backends, extract_route_signature, fallback_geometry
 
 
 class GeometryBackendTests(unittest.TestCase):

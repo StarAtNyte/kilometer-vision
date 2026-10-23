@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from geometry_contract import build_route_signature, load_da3_geometry
+from kilometer_vision.geometry_contract import build_route_signature, load_da3_geometry
 
 
 class GeometryContractTests(unittest.TestCase):
@@ -31,7 +31,7 @@ class GeometryContractTests(unittest.TestCase):
             self.assertEqual(geometry.backend, "da3")
             self.assertTrue(geometry.route_signature.available)
             # 90-degree synthetic rotation, matching the compass-lane fixture already
-            # used for submission.py's relative-yaw math.
+            # used for src/kilometer_vision/submission.py's relative-yaw math.
             self.assertEqual(geometry.route_signature.topology["turn_count"], 1)
             self.assertAlmostEqual(geometry.route_signature.turn_angles_degrees[0], 90.0, places=3)
 

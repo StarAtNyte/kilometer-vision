@@ -6,7 +6,7 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-import modal_pipeline as pipeline
+import kilometer_vision.jobs.modal_pipeline as pipeline
 
 
 class MetadataAuditTests(unittest.TestCase):

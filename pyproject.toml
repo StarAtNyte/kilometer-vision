@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kilometer-vision-pathfinder"
+version = "0.1.0"
+description = "Evidence-first spatial reasoning for walking-tour videos with Modal."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["modal>=1.5,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "numpy>=1.26,<2", "Pillow>=10", "opencv-python-headless>=4.8,<4.12"]
+
+[project.urls]
+Repository = "https://github.com/StarAtNyte/kilometer-vision"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
